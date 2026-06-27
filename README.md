@@ -67,40 +67,40 @@
 Our platform implements a disciplined, multi-stage data science and engineering lifecycle:
  
 ```
-  ╔═══════════════════════════╗
-  ║  📥  Raw Data Ingestion   ║
-  ╚═══════════════════════════╝
-               │
-               ▼
-  ╔══════════════════════════════════════════╗
-  ║  🔬  Forensic Data Cleaning & Imputation ║
-  ║      Handling Nulls, Outliers & Anomalies║
-  ╚══════════════════════════════════════════╝
-               │
-               ▼
-  ╔══════════════════════════════════════╗
-  ║  📊  Exploratory Data Analysis (EDA) ║
-  ║      Isolating the "Worst Offenders" ║
-  ╚══════════════════════════════════════╝
-               │
-               ▼
-  ╔══════════════════════════════════════╗
-  ║  🤖  Predictive ML Engine            ║
-  ║      Regression & Classification     ║
-  ║      11,000+ NYC Building Records    ║
-  ╚══════════════════════════════════════╝
-               │
-               ▼
-  ╔══════════════════════════════════════╗
-  ║  🗺️  Prescriptive Roadmap            ║
-  ║      5-Phase Capital Deployment      ║
-  ╚══════════════════════════════════════╝
-               │
-               ▼
-  ╔══════════════════════════════════════╗
-  ║  📈  Interactive Sensitivity Dash    ║
-  ║      D3.js Financial Stress-Test     ║
-  ╚══════════════════════════════════════╝
+  +----------------------------------------------+
+  |  STAGE 1  :  Raw Data Ingestion               |
+  +----------------------------------------------+
+                         |
+                         v
+  +----------------------------------------------+
+  |  STAGE 2  :  Forensic Data Cleaning           |
+  |              Handling Nulls & Anomalies        |
+  +----------------------------------------------+
+                         |
+                         v
+  +----------------------------------------------+
+  |  STAGE 3  :  Exploratory Data Analysis (EDA)  |
+  |              Isolating the "Worst Offenders"   |
+  +----------------------------------------------+
+                         |
+                         v
+  +----------------------------------------------+
+  |  STAGE 4  :  Predictive ML Engine             |
+  |              Regression & Classification       |
+  |              11,000+ NYC Building Records      |
+  +----------------------------------------------+
+                         |
+                         v
+  +----------------------------------------------+
+  |  STAGE 5  :  Prescriptive Roadmap             |
+  |              5-Phase Capital Deployment        |
+  +----------------------------------------------+
+                         |
+                         v
+  +----------------------------------------------+
+  |  OUTPUT   :  Interactive Sensitivity Dash      |
+  |              D3.js Financial Stress-Test        |
+  +----------------------------------------------+
 ```
  
 ---
@@ -134,9 +134,11 @@ Instead of throwing unhedged capital at energy-efficient properties, we engineer
 <details>
 <summary><strong>💡 Key Discoveries from Feature Importance Modeling</strong></summary>
 <br/>
-1. **Gross Floor Area (GFA)** and **Year Built** are the strongest predictive signals for carbon footprint scaling — outperforming neighborhood, property type, and utility source in model importance ranking.
-2. **Pre-war masonry skyscrapers (1930s era) are not write-offs.** When properly audited via our Waste-heat Energy Transfer (WET) system model, they present the *highest latent return on capital* in the entire portfolio.
-3. **Energy Star Scores are a lagging indicator.** Assets with mid-range scores (50–65) hold disproportionate untapped reduction potential vs. their stated compliance risk.
+<ol>
+  <li><p><strong>Gross Floor Area (GFA)</strong> and <strong>Year Built</strong> are the strongest predictive signals for carbon footprint scaling — outperforming neighborhood, property type, and utility source in model importance ranking.</p></li>
+  <li><p><strong>Pre-war masonry skyscrapers (1930s era) are not write-offs.</strong> When properly audited via our Waste-heat Energy Transfer (WET) system model, they present the <em>highest latent return on capital</em> in the entire portfolio.</p></li>
+  <li><p><strong>Energy Star Scores are a lagging indicator.</strong> Assets with mid-range scores (50–65) hold disproportionate untapped reduction potential vs. their stated compliance risk.</p></li>
+</ol>
 </details>
 <details>
 <summary><strong>🖥️ CLI Audit Playground — Console Demo</strong></summary>
