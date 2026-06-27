@@ -2,7 +2,7 @@
 
 Under New York City's Local Law 97 (LL97), our massive 2.06 Billion Sq. Ft. real estate portfolio was exposed to an astronomical projected penalty of **$2.88 Billion annually** due to carbon emission intensities.
 
-This repository houses the end-to-end data science, machine learning, and strategic engineering pipeline built by **Team C** to forensic-audit the portfolio, identify the "True Culprits" of this environmental bleed, and execute a high-yield, self-funding carbon mitigation roadmap.
+This repository houses the end-to-end data science, machine learning, and strategic engineering pipeline built by **Team X** to forensic-audit the portfolio, identify the "True Culprits" of this environmental bleed, and execute a high-yield, self-funding carbon mitigation roadmap.
 
 ---
 
