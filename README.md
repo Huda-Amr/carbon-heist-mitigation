@@ -1,4 +1,17 @@
-# 🕵️‍♂️ The $2.8 Billion Heist: Data-Driven Decarbonization Counter-Intelligence
+"""<div align="center">
+
+# 🕵️‍♂️ THE $2.8 BILLION HEIST
+### Data-Driven Decarbonization Counter-Intelligence Platform
+
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![D3JS](https://img.shields.io/badge/Viz-D3.js-F9A03F?style=for-the-badge&logo=d3.js&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-Net--Zero%20Secured-00FF66?style=for-the-badge)](#)
+
+*“Compliance is a cost. Leadership is an asset.”* — **Team C**
+
+---
+</div>
 
 Under New York City's Local Law 97 (LL97), our massive 2.06 Billion Sq. Ft. real estate portfolio was exposed to an astronomical projected penalty of **$2.88 Billion annually** due to carbon emission intensities.
 
