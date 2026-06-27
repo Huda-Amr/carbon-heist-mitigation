@@ -121,13 +121,13 @@ $$
 
 Our capital deployment follows a strict **self-funding pipeline** where rapid-payback early interventions generate the necessary liquid reserves to fund deep, structural infrastructure retrofits:
 
-| Phase | Intervention | Strategic Focus | Estimated CAPEX | Annual Savings | Payback Period |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **🟢 Phase 1** | **Surgical Strikes** | Immediate stabilization of the 10 Worst Offenders | $500,000 | $20.6 Million | **0.02 Years (8 Days)** |
-| **🔵 Phase 2** | **Operational Tuning** | Portfolio-wide smart BMS logic and RCx | $2.0 Billion | $336.0 Million | **4.10 - 5.11 Years** |
-| **🟡 Phase 3** | **WET System Integration** | Sewer heat recovery via civic PPPs for 1930s assets | $1.5 Billion (Net) | $122.8 Million | **12.21 Years** |
-| **🔴 Phase 4** | **Deep Electrification** | Modular Air-to-Water clean Heat Pumps | $1.0 Billion | $222.6 Million | **4.49 Years** |
-| **🏆 Total** | **Combined Master Plan** | **Holistic Decarbonization Portfolio** | **~$5.02 Billion** | **>$702 Million** | **7.15 Years** |
+| Scenario | GFA (Sq Ft) | CAPEX | Utility Savings | Avoided Fines | Total Savings | Simple Payback (Yrs) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **🟢 Surgical Strike** | 20,000,000 | \$500,000 | \$2,185,441 | \$18,500,000 | \$20,685,441 | **0.02 (8 Days)** |
+| **🔵 Smart Scale (1960s)** | 400,000,000 | \$2,000,000,000 | \$100,000,000 | \$236,007,076 | \$336,007,076 | **5.95** |
+| **🟡 WET System (1930s)** | 20,000,000 | \$1,500,000,000 | \$40,000,000 | \$82,888,591 | \$122,888,591 | **12.21** |
+| **🔴 Electrification (1980s+)** | 100,000,000 | \$1,000,000,000 | \$60,000,000 | \$162,644,808 | \$222,644,808 | **4.49** |
+| **🏆 Total Portfolio** | **540,000,000** | **\$4,500,500,000** | **\$202,185,441** | **\$500,040,475** | **\$702,225,916** | **6.41** |
 
 ---
 
