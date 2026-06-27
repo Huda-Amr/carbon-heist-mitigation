@@ -36,6 +36,7 @@
 <p>We built an end-to-end data science platform to forensic-audit the portfolio, identify the <strong>"True Culprits,"</strong> and execute a high-yield, self-funding carbon mitigation roadmap — turning a <strong>$2.88B liability into a strategic asset.</strong></p>
 <hr/>
 </div>
+
 ## 📋 Table of Contents
  
 - [🎯 Key Results at a Glance](#-key-results-at-a-glance)
