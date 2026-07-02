@@ -12,7 +12,7 @@
 <br/><br/>
 
 <em>"Compliance is a cost. Leadership is an asset."</em><br/>
-<strong>— Team X</strong>
+<strong>— Team x</strong>
 
 <br/><br/>
 
