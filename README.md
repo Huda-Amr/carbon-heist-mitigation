@@ -18,9 +18,11 @@
 
 ---
 
+<div align="center">
+
 ### 🏆 Executive Portfolio Performance Dashboard
 
-<table>
+<table width="100%" align="center">
   <tr>
     <td align="center" width="33%">
       <br/>

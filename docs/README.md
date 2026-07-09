@@ -19,9 +19,11 @@
 
 ---
 
+<div align="center">
+
 ### 🏆 Executive Project Specification Grid
 
-<table>
+<table width="100%" align="center">
   <tr>
     <td align="center" width="33%">
       <br/>

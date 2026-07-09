@@ -10,9 +10,11 @@
 
 ---
 
+<div align="center">
+
 ### 🏆 Executive Project Scope & Planning Grid
 
-<table>
+<table width="100%" align="center">
   <tr>
     <td align="center" width="33%">
       <br/>
@@ -37,6 +39,8 @@
     </td>
   </tr>
 </table>
+
+</div>
 
 ---
 

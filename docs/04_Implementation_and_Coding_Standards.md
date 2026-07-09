@@ -11,9 +11,11 @@
 
 ---
 
+<div align="center">
+
 ### 🏆 Executive Implementation & Governance Grid
 
-<table>
+<table width="100%" align="center">
   <tr>
     <td align="center" width="33%">
       <br/>
@@ -38,6 +40,8 @@
     </td>
   </tr>
 </table>
+
+</div>
 
 ---
 
