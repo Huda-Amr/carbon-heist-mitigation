@@ -183,13 +183,13 @@ carbon-heist-mitigation/
 
 Our capital deployment follows a strict **self-funding cascade**: rapid-payback early interventions generate immediate operational cash flows that fund deeper structural retrofits without over-leveraging portfolio assets.
 
-| Phase | Strategy Name | Target Archetype | Portfolio Area | Capital Expenditure | Annual Savings | Payback Horizon | Strategic Role |
+| Phase | Strategy&nbsp;Name | Target&nbsp;Archetype | Portfolio&nbsp;Area | CAPEX | Annual&nbsp;Savings | Payback | Strategic Impact |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| **01** | **🟢 Surgical Strike** | High-Intensity Outliers | 20M sq. ft. | **$500K** | **$20.69M** | **8 Days** | Immediate cash-flow injection & high fine avoidance |
-| **02** | **🔵 Smart Scale** | 1960s Commercial / Multi | 400M sq. ft. | **$2.00B** | **$336.01M** | **5.95 Years** | Large-scale HVAC tune-up & BMS retro-commissioning |
-| **03** | **🟡 WET System** | 1930s Pre-War Masonry | 20M sq. ft. | **$1.50B** | **$122.89M** | **12.21 Years** | Waste-heat Energy Transfer (WET) thermal recovery |
-| **04** | **🔴 Electrification Push** | 1980s–Present Towers | 100M sq. ft. | **$1.00B** | **$222.64M** | **4.49 Years** | Fossil heating conversion to electric heat pumps |
-| **🏆** | **TOTAL PORTFOLIO** | **Blended Portfolio** | **540M sq. ft.** | **$4.50B** | **$702.23M** | **6.41 Years** | **Self-Funding Portfolio Transformation** |
+| **01** | **🟢&nbsp;Surgical&nbsp;Strike** | High-Intensity Outliers | 20M&nbsp;sq.ft. | **$500K** | **$20.69M** | **8&nbsp;Days** | Immediate cash-flow injection & high fine avoidance |
+| **02** | **🔵&nbsp;Smart&nbsp;Scale** | 1960s Commercial / Multi | 400M&nbsp;sq.ft. | **$2.00B** | **$336.01M** | **5.95&nbsp;Yrs** | Large-scale HVAC tune-up & BMS retro-commissioning |
+| **03** | **🟡&nbsp;WET&nbsp;System** | 1930s Pre-War Masonry | 20M&nbsp;sq.ft. | **$1.50B** | **$122.89M** | **12.21&nbsp;Yrs** | Waste-heat Energy Transfer (WET) thermal recovery |
+| **04** | **🔴&nbsp;Electrification** | 1980s–Present Towers | 100M&nbsp;sq.ft. | **$1.00B** | **$222.64M** | **4.49&nbsp;Yrs** | Fossil heating conversion to electric heat pumps |
+| **🏆** | **TOTAL&nbsp;PORTFOLIO** | **Blended Portfolio** | **540M&nbsp;sq.ft.** | **$4.50B** | **$702.23M** | **6.41&nbsp;Yrs** | **Self-Funding Portfolio Transformation** |
 
 ---
 
