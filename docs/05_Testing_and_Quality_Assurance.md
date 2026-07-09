@@ -69,7 +69,9 @@ flowchart LR
 
 > [!IMPORTANT]
 > ### **100% Verification SLA**
-> Every system module—from municipal data parsing to Streamlit interactive rendering—has been rigo| Test ID | Test Category | Scenario Description | Input / Condition | Expected Outcome | Actual Result | Status |
+> Every system module—from municipal data parsing to Streamlit interactive rendering—has been rigorously verified against quantitative domain benchmarks.
+
+| Test ID | Test Category | Scenario Description | Input / Condition | Expected Outcome | Actual Result | Status |
 | :---: | :--- | :--- | :--- | :--- | :--- | :---: |
 | **TC&#8209;01** | **Data&nbsp;Engineering** | Ingest Raw LL84 Spreadsheet | 11,000+ Raw NYC municipal disclosure records | Cleanly replace `"Not Available"` with `NaN` without data corruption | Successfully parsed all records | **🟢&nbsp;PASS** |
 | **TC&#8209;02** | **Data&nbsp;Engineering** | Size Threshold Compliance | Apply `GFA >= 50,000 sq ft` filter | Retain only buildings legally subject to LL97 | Retained 11,639 compliant properties | **🟢&nbsp;PASS** |
@@ -87,9 +89,15 @@ The project embeds automated runtime assertions inside `train_ll97_model.py` and
 
 ```python
 # Automated assertion checks executed during pipeline build
-assert len(df) > 10000, "CRITICAL ERROR: Cleaned dataset unexpectedly dropped below 10,000 records!"
-assert df['Property GFA - Calculated (Buildings and Parking) (ft²)'].min() >= 50000, "ERROR: Non-compliant small building detected!"
-assert not df['Total GHG Emissions (Metric Tons CO2e)'].isna().any(), "ERROR: Target feature contains NaN values!"
+assert len(df) > 10000, (
+    "CRITICAL ERROR: Dataset dropped below 10k records!"
+)
+assert df["Property GFA - Calculated (ft²)"].min() >= 50000, (
+    "ERROR: Non-compliant small building detected!"
+)
+assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
+    "ERROR: Target feature contains NaN values!"
+)
 ```
 
 ---

@@ -211,14 +211,26 @@ Our interactive simulation playground (`models/ll97_playground.py`) provides ass
 
 ## 🏛️ Statutory Reference Formulas
 
-> [!IMPORTANT]
-> ### **1. NYC Local Law 97 Statutory Fine Formula**
-> **Penalty ($) = Total Emissions (MT CO₂e) × 268**  
-> *(Where **$268** is the legally mandated penalty rate per metric ton exceeding statutory carbon thresholds)*
+Across all academic documentation files, regulatory penalty exposure and capital payback horizons are evaluated using:
 
-> [!TIP]
-> ### **2. CAPEX Retrofit Payback Formula**
-> **Payback Period (Years) = CAPEX ($) ÷ [Annual Utility Savings ($) + Avoided LL97 Fines ($)]**
+<table width="100%" align="center">
+  <tr>
+    <td width="50%">
+      <h3>⚖️ 1. NYC Local Law 97 Statutory Fine Formula</h3>
+      <p>
+        <strong>Penalty (&#36;) = Total Emissions (MT CO₂e) × 268</strong>
+      </p>
+      <em>Where <strong>&#36;268</strong> is the mandatory fine rate per metric ton exceeding statutory carbon thresholds under NYC Local Law 97.</em>
+    </td>
+    <td width="50%">
+      <h3>📈 2. CAPEX Retrofit Payback Formula</h3>
+      <p>
+        <strong>Payback Period (Years) = CAPEX (&#36;) ÷ [Annual Utility Savings (&#36;) + Avoided LL97 Fines (&#36;)]</strong>
+      </p>
+      <em>Measures capital recovery speed combining annual utility cost reductions and statutory penalty avoidance.</em>
+    </td>
+  </tr>
+</table>
 
 ---
 
