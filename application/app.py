@@ -17,45 +17,94 @@ st.set_page_config(
     initial_sidebar_state="expanded" 
 )
 
-COLOR_GREEN = "#10B981"  
-COLOR_RED = "#EF4444"    
-COLOR_ORANGE = "#F59E0B" 
-COLOR_BLUE = "#3B82F6"   
-COLOR_BG = "#0f172a"     
-COLOR_CARD = "#1e293b"   
+COLOR_GREEN = "#00F59B"  
+COLOR_RED = "#FF4B6E"    
+COLOR_ORANGE = "#FFB800" 
+COLOR_BLUE = "#00D2FF"   
+COLOR_BG = "#090d16"     
+COLOR_CARD = "#131c2e"   
 
 st.markdown(f"""
     <style>
-    .stApp {{ background-color: {COLOR_BG}; color: #f8fafc; }}
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
     
-    /* KPI Cards */
+    .stApp {{
+        background: radial-gradient(circle at 15% 15%, #0d1b33 0%, #090d16 85%);
+        color: #f8fafc;
+        font-family: 'Outfit', sans-serif;
+    }}
+    
+    /* KPI Cards - Ultra Glassmorphism */
     .kpi-container {{
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 2rem;
+        gap: 1.25rem;
+        margin-bottom: 2.25rem;
     }}
     .kpi-card {{
-        background-color: {COLOR_CARD};
-        border-radius: 12px;
-        padding: 1.5rem;
+        background: rgba(19, 28, 46, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 1.6rem;
         flex: 1;
-        min-width: 150px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        min-width: 170px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
         border-top: 4px solid {COLOR_BLUE};
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }}
+    .kpi-card:hover {{
+        transform: translateY(-4px);
+        box-shadow: 0 18px 35px -5px rgba(0, 210, 255, 0.2);
+        border-color: rgba(0, 210, 255, 0.3);
     }}
     .kpi-card.risk {{ border-top-color: {COLOR_RED}; }}
+    .kpi-card.risk:hover {{ box-shadow: 0 18px 35px -5px rgba(255, 75, 110, 0.25); }}
     .kpi-card.good {{ border-top-color: {COLOR_GREEN}; }}
-    .kpi-title {{ font-size: 0.875rem; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 0.5rem; }}
-    .kpi-value {{ font-size: 1.75rem; font-weight: 700; color: #f8fafc; }}
+    .kpi-card.good:hover {{ box-shadow: 0 18px 35px -5px rgba(0, 245, 155, 0.25); }}
     
-    h1, h2, h3 {{ color: #f8fafc !important; font-weight: 600; }}
+    .kpi-title {{ font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 0.6rem; }}
+    .kpi-value {{ font-size: 1.85rem; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }}
+    
+    h1, h2, h3 {{
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.02em;
+    }}
+    
+    /* Tabs Enhancement */
+    .stTabs [data-baseweb="tab-list"] {{
+        gap: 8px;
+        background-color: rgba(19, 28, 46, 0.6);
+        padding: 8px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }}
+    .stTabs [data-baseweb="tab"] {{
+        border-radius: 10px;
+        padding: 10px 20px;
+        color: #94a3b8;
+        font-weight: 600;
+    }}
+    .stTabs [aria-selected="true"] {{
+        background-color: rgba(0, 210, 255, 0.15) !important;
+        color: #00D2FF !important;
+    }}
+    
+    /* Executive Panels */
+    .exec-panel {{
+        background: rgba(19, 28, 46, 0.75);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 1.5rem;
+    }}
     
     /* Image styling */
-    .header-image {{ border-radius: 12px; margin-bottom: 1rem; object-fit: cover; width: 100%; height: 180px; opacity: 0.8; }}
+    .header-image {{ border-radius: 16px; margin-bottom: 1.25rem; object-fit: cover; width: 100%; height: 200px; opacity: 0.85; border: 1px solid rgba(255,255,255,0.08); }}
     
-    /* Insight Panel tweaks */
-    .streamlit-expanderHeader {{ color: #94a3b8 !important; font-weight: 500; }}
+    .streamlit-expanderHeader {{ color: #00D2FF !important; font-weight: 600; }}
     </style>
 """, unsafe_allow_html=True)
 
@@ -839,43 +888,29 @@ with tab4:
         </div>
     """, unsafe_allow_html=True)
 
-    sens_col1, sens_col2 = st.columns([1.1, 1.3])
-
-    with sens_col1:
-        st.markdown("##### 📋 Excel Sensitivity Reference Table (`$/ft²`)")
-        sens_matrix_df = pd.DataFrame({
-            "Penalty Rate ($/MT)": ["$268 (Statutory Base)", "$300 (Moderate Shock)", "$350 (Severe Shock)"],
-            "+0% Shock": [1.405, 1.573, 1.835],
-            "+5% Shock": [1.475, 1.651, 1.926],
-            "+10% Shock": [1.545, 1.730, 2.018],
-            "+15% Shock": [1.616, 1.808, 2.110]
-        })
-        st.dataframe(sens_matrix_df, use_container_width=True, hide_index=True)
-        st.caption("Exact values replicated from the `Sensitivity` sheet in `Co2 Project.xlsx`.")
-
-    with sens_col2:
-        z_matrix = [
-            [1.405, 1.475, 1.545, 1.616],
-            [1.573, 1.651, 1.730, 1.808],
-            [1.835, 1.926, 2.018, 2.110]
-        ]
-        fig_sens = go.Figure(data=go.Heatmap(
-            z=z_matrix,
-            x=["+0% Shock", "+5% Shock", "+10% Shock", "+15% Shock"],
-            y=["$268 / MT", "$300 / MT", "$350 / MT"],
-            colorscale="YlOrRd",
-            texttemplate="$%{z:.3f}/ft²",
-            textfont={"size": 13, "color": "white"}
-        ))
-        fig_sens.update_layout(
-            title="Liability Intensity Heatmap ($/ft²) across Penalty & Emission Shocks",
-            paper_bgcolor=COLOR_CARD,
-            plot_bgcolor=COLOR_CARD,
-            font=dict(color="#f8fafc"),
-            height=260,
-            margin=dict(t=40, b=20, l=60, r=20)
-        )
-        st.plotly_chart(fig_sens, use_container_width=True)
+    z_matrix = [
+        [1.405, 1.475, 1.545, 1.616],
+        [1.573, 1.651, 1.730, 1.808],
+        [1.835, 1.926, 2.018, 2.110]
+    ]
+    fig_sens = go.Figure(data=go.Heatmap(
+        z=z_matrix,
+        x=["+0% Shock", "+5% Shock", "+10% Shock", "+15% Shock"],
+        y=["$268 / MT (Statutory Base)", "$300 / MT (Moderate Escalation)", "$350 / MT (Severe Shock)"],
+        colorscale="Turbo",
+        texttemplate="<b>$%{z:.3f} / ft²</b>",
+        textfont={"size": 15, "color": "white", "family": "Outfit"},
+        hoverinfo="x+y+z"
+    ))
+    fig_sens.update_layout(
+        title="🔥 Portfolio Liability Intensity Matrix ($/ft²) across Penalty & Emission Shocks",
+        paper_bgcolor=COLOR_CARD,
+        plot_bgcolor=COLOR_CARD,
+        font=dict(color="#f8fafc", family="Outfit"),
+        height=300,
+        margin=dict(t=50, b=30, l=180, r=40)
+    )
+    st.plotly_chart(fig_sens, use_container_width=True)
 
     st.markdown("---")
 
