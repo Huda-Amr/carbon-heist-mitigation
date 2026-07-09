@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=200&section=header&text=TECHNICAL%20%26%20ACADEMIC%20DOCUMENTATION&fontSize=48&fontColor=00FF66&fontAlignY=38&desc=NYC%20LL97%20Decarbonization%20Counter-Intelligence%20Suite&descAlignY=62&descSize=18&descColor=8B949E" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=200&section=header&text=ACADEMIC%20DOCUMENTATION%20SUITE&fontSize=44&fontColor=00FF66&fontAlignY=38&desc=NYC%20LL97%20Decarbonization%20Counter-Intelligence%20Suite&descAlignY=62&descSize=18&descColor=8B949E" width="100%" alt="Academic Documentation Suite"/>
 
 <br/>
 

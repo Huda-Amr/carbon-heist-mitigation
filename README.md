@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=220&section=header&text=THE%20%242.88B%20CARBON%20HEIST&fontSize=52&fontColor=00FF66&fontAlignY=36&desc=Data-Driven%20Decarbonization%20Counter-Intelligence%20Platform&descAlignY=62&descSize=18&descColor=8B949E" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=220&section=header&text=THE%202.88B%20CARBON%20HEIST&fontSize=52&fontColor=00FF66&fontAlignY=36&desc=Data-Driven%20Decarbonization%20Counter-Intelligence%20Platform&descAlignY=62&descSize=18&descColor=8B949E" width="100%" alt="The 2.88B Carbon Heist"/>
 
 <br/>
 
@@ -163,6 +163,47 @@ carbon-heist-mitigation/
 ├── ⚖️ LICENSE                      # MIT License
 └── 📄 README.md                    # Project Executive Overview (You are here)
 ```
+
+---
+
+## 🖥️ Live Forensic Audit Showcase (CLI Engine Output)
+
+Our interactive simulation playground (`models/ll97_playground.py`) provides asset managers and MEP engineers with instant forensic carbon audits and scenario stress-testing:
+
+```text
+╔══════════════════════════════════════════════════════════════════════╗
+║             NYC LL97 DATA-DRIVEN FORENSIC AUDIT ENGINE             ║
+║            Trained on 11,639 Compliant Building Records              ║
+╚══════════════════════════════════════════════════════════════════════╝
+[*] Training Phase: Loading Random Forest Regressor (R² = 81.65%)...
+[✓] Model Ready & Verified.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> ASSET SPECIFICATION INPUT
+  Year Built                     : 1934
+  Gross Floor Area (GFA)         : 5,000,000 sq. ft.
+  ENERGY STAR Score (1-100)      : 55
+  Borough                        : Manhattan
+  Primary Property Type          : Commercial Office / Retail
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> STRATEGIC AUDIT VERDICT: COMMERCIAL TOWER — MANHATTAN
+  [PREDICTED GHG EMISSIONS]    31,446.0 Metric Tons CO₂e / yr
+  [ANNUAL STATUTORY PENALTY]   $8,427,528.00 / yr  ($1.69 / sq. ft.)
+  [PORTFOLIO BENCHMARKING]     -30.4% Carbon Intensity vs. Peer Average
+  [OPTIMAL RETROFIT VERDICT]   ⚡ HIGH OPPORTUNITY — WET System & BMS Candidate
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+<details>
+<summary><strong>💡 Strategic Discoveries from Feature Importance Modeling (Click to Expand)</strong></summary>
+
+1. **Gross Floor Area (GFA) & Year Built Dominate Liability:**  
+   Physical asset dimensions and structural age are the two strongest predictors of carbon liability—outranking borough geography and primary utility feed type.
+2. **1930s Pre-War Skyscrapers Offer Maximum ROI:**  
+   Counter-intuitively, pre-war masonry properties hold the highest latent thermal efficiency gains when retrofitted with Waste-heat Energy Transfer (WET) recovery systems.
+3. **ENERGY STAR Scores are a Lagging Indicator:**  
+   Properties with mid-tier ENERGY STAR scores (50–65) yield disproportionately larger fine avoidance per CAPEX dollar invested compared to high-tier properties.
+
+</details>
 
 ---
 
