@@ -30,6 +30,9 @@ C_BG     = "#060b18"
 C_CARD   = "#0d1526"
 C_BORDER = "rgba(255,255,255,0.07)"
 
+with st.sidebar:
+    IS_LIGHT = st.toggle("☀️ Light Mode", value=False, key="light_mode")
+
 # ──────────────────────────────────────────────────────────────
 # GLOBAL STYLES
 # ──────────────────────────────────────────────────────────────
@@ -282,6 +285,196 @@ b, strong {{ color: #ffffff !important; }}
 </style>
 """, unsafe_allow_html=True)
 
+if IS_LIGHT:
+    st.markdown(f"""
+    <style>
+    /* ── ROOT & BACKGROUND ── */
+    html, body, .stApp {{ background: #f9fafb !important; color: #374151 !important; }}
+    .stApp {{ background: #f9fafb !important; }} /* Strip neon gradients for a clean enterprise look */
+
+    /* ── TYPOGRAPHY ── */
+    h1 {{
+        background: linear-gradient(90deg, #1d4ed8, #6d28d9, #047857) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+    }}
+    h2 {{ color: #111827 !important; }}
+    h3 {{ color: #1f2937 !important; }}
+    h4 {{ color: #4b5563 !important; }}
+    p  {{ color: #4b5563 !important; }}
+    b, strong {{ color: #111827 !important; }}
+
+    /* ── SECTION HEADER PILL ── */
+    .section-pill {{
+        background: #eff6ff !important;
+        border: 1px solid #bfdbfe !important;
+        color: #1d4ed8 !important;
+    }}
+
+    /* ── KPI GRID ── */
+    .kpi-card {{
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-top: 3px solid #3b82f6 !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+        border-radius: 12px !important;
+    }}
+    .kpi-card::before {{ display: none !important; }}
+    .kpi-card:hover {{
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+    }}
+    .kpi-card.red  {{ border-top-color: #ef4444 !important; }}
+    .kpi-card.green {{ border-top-color: #10b981 !important; }}
+    .kpi-card.amber {{ border-top-color: #f59e0b !important; }}
+    .kpi-card.purple {{ border-top-color: #8b5cf6 !important; }}
+    
+    .kpi-label {{ color: #6b7280 !important; }}
+    .kpi-val {{ color: #111827 !important; }}
+    .kpi-sub {{ color: #6b7280 !important; }}
+
+    /* ── GLASS PANELS (Solid Clean Cards in Light Mode) ── */
+    .glass-panel {{
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-left: 4px solid #3b82f6 !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+        border-radius: 12px !important;
+    }}
+    .glass-panel.green {{ border-left-color: #10b981 !important; }}
+    .glass-panel.amber {{ border-left-color: #f59e0b !important; }}
+    .glass-panel h3, .glass-panel h4 {{ color: #111827 !important; }}
+    
+    .glass-panel.amber .section-pill {{ background: #fffbeb !important; border-color: #fde68a !important; color: #b45309 !important; }}
+    .glass-panel.green .section-pill {{ background: #ecfdf5 !important; border-color: #a7f3d0 !important; color: #047857 !important; }}
+
+    /* ── DIVIDER ── */
+    .section-div {{ background: #e5e7eb !important; height: 1px !important; margin: 2rem 0 !important; }}
+    .header-image {{ border-color: #e5e7eb !important; opacity: 0.9 !important; }}
+
+    /* ── TABS ── */
+    .stTabs [data-baseweb="tab-list"] {{
+        background: #f3f4f6 !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 10px !important;
+        padding: 4px !important;
+    }}
+    .stTabs [data-baseweb="tab"] {{ color: #6b7280 !important; border-radius: 6px !important; }}
+    .stTabs [data-baseweb="tab"]:hover {{ background: #e5e7eb !important; color: #374151 !important; }}
+    .stTabs [aria-selected="true"] {{
+        background: #ffffff !important;
+        color: #111827 !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }}
+
+    /* ── SIDEBAR ── */
+    [data-testid="stSidebar"] {{
+        background: #ffffff !important;
+        border-right: 1px solid #e5e7eb !important;
+    }}
+    [data-testid="stSidebar"] .stMarkdown p {{ color: #4b5563 !important; }}
+
+    /* ── WIDGETS ── */
+    .stSlider > label, .stSelectbox > label, .stMultiSelect > label {{ color: #374151 !important; font-weight: 500 !important; }}
+    
+    .stSelectbox [data-baseweb="select"] > div,
+    .stMultiSelect [data-baseweb="select"] > div {{
+        background: #f9fafb !important;
+        border-color: #d1d5db !important;
+        border-radius: 8px !important;
+        color: #111827 !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    }}
+    .stTextInput input, .stNumberInput input {{
+        background: #f9fafb !important;
+        border-color: #d1d5db !important;
+        border-radius: 8px !important;
+        color: #111827 !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    }}
+    .stTextInput input:focus, .stNumberInput input:focus, 
+    .stSelectbox [data-baseweb="select"] > div:focus-within,
+    .stMultiSelect [data-baseweb="select"] > div:focus-within {{
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+        background: #ffffff !important;
+    }}
+    
+    .stSlider [data-baseweb="slider"] > div:first-child {{ background: #3b82f6 !important; }}
+    .stSlider [role="slider"] {{
+        background: #ffffff !important;
+        border-color: #d1d5db !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }}
+    [data-testid="stThumbValue"] {{
+        background: #1f2937 !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    }}
+    
+    [data-baseweb="popover"] > div {{
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    }}
+    [data-baseweb="menu"] li:hover {{ background: #f3f4f6 !important; color: #111827 !important; }}
+    [data-baseweb] {{
+        --primary: #3b82f6 !important;
+        --primary400: #3b82f6 !important;
+    }}
+
+    /* ── BUTTONS ── */
+    .stButton > button {{
+        background: #ffffff !important;
+        color: #374151 !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    }}
+    .stButton > button:hover {{
+        background: #f9fafb !important;
+        border-color: #9ca3af !important;
+        color: #111827 !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+        transform: translateY(-1px) !important;
+    }}
+
+    /* ── EXPANDERS ── */
+    .streamlit-expanderHeader {{ color: #374151 !important; font-weight: 600 !important; }}
+    .streamlit-expanderContent {{
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-top: none !important;
+        border-radius: 0 0 12px 12px !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+    }}
+
+    /* ── METRICS ── */
+    [data-testid="stMetric"] > div:first-child {{ color: #6b7280 !important; }}
+    [data-testid="stMetricValue"] {{ color: #111827 !important; }}
+
+    /* ── FORMS ── */
+    [data-testid="stForm"] {{
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+    }}
+
+    /* ── CAPTIONS ── */
+    .stCaption {{ color: #6b7280 !important; }}
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar-thumb {{ background: #cbd5e1 !important; }}
+    ::-webkit-scrollbar-thumb:hover {{ background: #94a3b8 !important; }}
+    </style>
+    """, unsafe_allow_html=True)
+
 
 # ──────────────────────────────────────────────────────────────
 # ML MODEL SETUP
@@ -409,17 +602,17 @@ with st.sidebar:
 # Apply filters
 df = raw_df.copy()
 if search_term and CN in df.columns:                             df = df[df[CN].str.contains(search_term, case=False, na=False)]
-if sel_cities and CCIT in df.columns:                           df = df[df[CCIT].isin(sel_cities)]
-if sel_boros  and CBOR in df.columns:                           df = df[df[CBOR].isin(sel_boros)]
-if sel_types  and CTYP in df.columns:                           df = df[df[CTYP].isin(sel_types)]
-if sel_decades and CDEC in df.columns:                          df = df[df[CDEC].isin(sel_decades)]
-if sel_occ    and COCC in df.columns:                           df = df[df[COCC].isin(sel_occ)]
-if sel_const  and CCST in df.columns:                           df = df[df[CCST].isin(sel_const)]
-if CAGE in df.columns:                                          df = df[df[CAGE].between(sel_age[0], sel_age[1])]
-if CSCO in df.columns:                                          df = df[df[CSCO].fillna(0).between(sel_score[0], sel_score[1])]
-if CGHG in df.columns:                                          df = df[df[CGHG].between(sel_ghg[0], sel_ghg[1])]
-if CPEN in df.columns:                                          df = df[df[CPEN].between(sel_pen[0], sel_pen[1])]
-if exc_alerts and CALT in df.columns:                           df = df[~df[CALT].isin(exc_alerts)]
+if sel_cities and CCIT in df.columns:                            df = df[df[CCIT].isin(sel_cities)]
+if sel_boros  and CBOR in df.columns:                            df = df[df[CBOR].isin(sel_boros)]
+if sel_types  and CTYP in df.columns:                            df = df[df[CTYP].isin(sel_types)]
+if sel_decades and CDEC in df.columns:                           df = df[df[CDEC].isin(sel_decades)]
+if sel_occ    and COCC in df.columns:                            df = df[df[COCC].isin(sel_occ)]
+if sel_const  and CCST in df.columns:                            df = df[df[CCST].isin(sel_const)]
+if CAGE in df.columns:                                           df = df[df[CAGE].between(sel_age[0], sel_age[1])]
+if CSCO in df.columns:                                           df = df[df[CSCO].fillna(0).between(sel_score[0], sel_score[1])]
+if CGHG in df.columns:                                           df = df[df[CGHG].between(sel_ghg[0], sel_ghg[1])]
+if CPEN in df.columns:                                           df = df[df[CPEN].between(sel_pen[0], sel_pen[1])]
+if exc_alerts and CALT in df.columns:                            df = df[~df[CALT].isin(exc_alerts)]
 
 
 # ──────────────────────────────────────────────────────────────
@@ -436,9 +629,18 @@ CHART_BASE = dict(
     hoverlabel=dict(bgcolor="#0d1526", bordercolor=C_BORDER, font_color="#e2e8f0"),
 )
 
+if IS_LIGHT:
+    CHART_BASE.update(
+        template="plotly_white",
+        font=dict(family="Inter", color="#4b5563", size=12),
+        xaxis=dict(gridcolor="#e5e7eb", zerolinecolor="#d1d5db"),
+        yaxis=dict(gridcolor="#e5e7eb", zerolinecolor="#d1d5db"),
+        hoverlabel=dict(bgcolor="#ffffff", bordercolor="#e5e7eb", font_color="#111827"),
+    )
+
 def chart(title="", **kwargs):
     cfg = dict(**CHART_BASE)
-    cfg["title"] = dict(text=title, font=dict(size=14, color="#ffffff", family="Inter"))
+    cfg["title"] = dict(text=title, font=dict(size=14, color=("#111827" if IS_LIGHT else "#ffffff"), family="Inter"))
     cfg.update(kwargs)
     return cfg
 
@@ -541,7 +743,7 @@ with tab1:
         kpi("Total Properties", f"{n_bldg:,}",    sub="in current filter"),
         kpi("Total GHG",        f"{kpi_ghg/1e6:.2f}M tCO₂e", sub="metric tons CO₂ equiv.", cls="red"),
         kpi("LL97 Penalty",     f"${kpi_penalty/1e9:.2f}B",   sub="aggregate exposure",     cls="red"),
-        kpi("Avg ENERGY STAR",  f"{kpi_score:.1f}",           sub="out of 100",             cls="green"),
+        kpi("Avg ENERGY STAR",  f"{kpi_score:.1f}",            sub="out of 100",             cls="green"),
         kpi("Avoided Emissions",f"{kpi_avoided/1e3:.1f}K tCO₂e", sub="via clean power",    cls="green"),
         kpi("High-Risk Assets", f"{high_risk:,}",             sub="top 25% penalty",        cls="amber"),
     ), unsafe_allow_html=True)
@@ -635,7 +837,7 @@ with tab1:
                 chart("NYC Borough Analysis: Fine Exposure vs Intensity", margin=dict(t=50, b=65, l=45, r=45)),
                 legend=dict(orientation="h", yanchor="top", y=-0.22, xanchor="center", x=0.5)
             )
-            fig.update_yaxes(title_text="LL97 Penalty ($)", secondary_y=False, gridcolor="rgba(100,116,139,0.1)")
+            fig.update_yaxes(title_text="LL97 Penalty ($)", secondary_y=False, gridcolor="rgba(100,116,139,0.1)" if not IS_LIGHT else "#e5e7eb")
             fig.update_yaxes(title_text="Avg Intensity (kgCO₂/ft²)", secondary_y=True, showgrid=False)
             st.plotly_chart(fig, width='stretch')
             st.caption("Total statutory fine exposure (bars, left axis) vs average carbon intensity per sq ft (line, right axis).")
@@ -728,10 +930,10 @@ with tab2:
     fig_gauge = go.Figure(go.Indicator(
         mode="gauge+number",
         value=(comb_red/base_em)*100,
-        title={"text": "Emissions Reduction %", "font": {"color": "#94a3b8", "size": 13}},
+        title={"text": "Emissions Reduction %", "font": {"color": ("#4b5563" if IS_LIGHT else "#94a3b8"), "size": 13}},
         number={"suffix": "%", "font": {"color": C_GREEN, "size": 28}},
         gauge={
-            "axis": {"range": [0, 100], "tickcolor": "#475569"},
+            "axis": {"range": [0, 100], "tickcolor": ("#d1d5db" if IS_LIGHT else "#475569")},
             "bar":  {"color": C_GREEN, "thickness": 0.25},
             "bgcolor": "rgba(0,0,0,0)",
             "steps": [
@@ -788,7 +990,7 @@ with tab2:
         radarTrace("S3: Retrofit",   (s3_red/base_em)*100, s3_bldgs,  C_GREEN)
         fig_radar.update_layout(
             chart("Scenario Effectiveness Comparison"),
-            polar=dict(radialaxis=dict(visible=True, range=[0,100], gridcolor="rgba(100,116,139,0.15)")),
+            polar=dict(radialaxis=dict(visible=True, range=[0,100], gridcolor="rgba(100,116,139,0.15)" if not IS_LIGHT else "#e5e7eb")),
         )
         st.plotly_chart(fig_radar, width='stretch')
         st.caption("Holistic impact comparison across the three independent strategies.")
@@ -821,7 +1023,7 @@ with tab2:
 
     st.markdown(f"""
     <div class="glass-panel amber" style="margin-top:1rem;">
-        <div class="section-pill" style="color:{C_AMBER};border-color:rgba(255,184,0,0.3);background:rgba(255,184,0,0.08);">
+        <div class="section-pill">
             💡 C-Suite Integration
         </div>
         <p>For detailed <b>Regulatory & Grid Shock Sensitivity Analysis</b> ($/ft²) or <b>Decade-Built WET Decarbonization Payback Modeling</b>,
@@ -892,9 +1094,9 @@ with tab3:
 
                     st.markdown(kpi_row(
                         kpi("Predicted GHG",        f"{pred_em:,.1f}",     sub="tCO₂e per year",    cls="red"),
-                        kpi("Estimated LL97 Fine",  f"${pred_pen:,.0f}",   sub="per year",           cls="red"),
+                        kpi("Estimated LL97 Fine",  f"${pred_pen:,.0f}",   sub="per year",          cls="red"),
                         kpi("Liability per ft²",    f"${psf:.3f}",         sub="$/ft²"),
-                        kpi("Peer Comparison",      f"{gap:+.1f}%",        sub="vs building type",   cls=g_cls),
+                        kpi("Peer Comparison",      f"{gap:+.1f}%",        sub="vs building type",  cls=g_cls),
                         kpi("LL97 Compliance",      "✅ Compliant" if compliant else "🚫 Non-Compliant",
                             sub=f"limit: {limit:.5f}", cls=c_cls),
                         kpi("Emission Intensity",   f"{intens:.5f}",       sub="tCO₂e/ft²"),
@@ -968,7 +1170,7 @@ with tab4:
         z=z,
         x=["+0%","+5%","+10%","+15%"],
         y=["$268/MT (Base)","$300/MT (Moderate)","$350/MT (Severe)"],
-        colorscale=[[0,"#0d1526"],[0.25,C_CYAN],[0.5,C_PURPLE],[0.75,C_AMBER],[1,C_RED]],
+        colorscale=[[0, ("#ffffff" if IS_LIGHT else "#0d1526")], [0.25,C_CYAN],[0.5,C_PURPLE],[0.75,C_AMBER],[1,C_RED]],
         texttemplate="<b>$%{z:.3f}</b>",
         textfont={"size": 15, "color": "white", "family": "Inter"},
         hovertemplate="Rate: %{y}<br>Shock: %{x}<br>Liability: <b>$%{z:.3f}/ft²</b><extra></extra>",
@@ -1040,10 +1242,10 @@ with tab4:
             labels={"payback":"Payback Period (Years)","short":""},
         )
         fig_pb.update_traces(marker_line_width=0, opacity=0.88, textposition="outside",
-                             textfont=dict(color="#ffffff", size=12))
+                             textfont=dict(color=("#111827" if IS_LIGHT else "#ffffff"), size=12))
         fig_pb.update_layout(
             chart("Payback Period — 5 Strategic Playbooks", height=360, margin=dict(t=48, b=28, l=10, r=55)),
-            yaxis=dict(gridcolor="rgba(100,116,139,0.1)", automargin=True),
+            yaxis=dict(gridcolor="rgba(100,116,139,0.1)" if not IS_LIGHT else "#e5e7eb", automargin=True),
             xaxis_title="",
             coloraxis_showscale=False,
         )
@@ -1052,22 +1254,22 @@ with tab4:
     with pc2:
         st.markdown(f"""
         <div class="glass-panel green" style="min-height:360px; height:auto;">
-            <div class="section-pill" style="color:{C_GREEN};border-color:rgba(0,245,155,0.25);background:rgba(0,245,155,0.07);">
+            <div class="section-pill">
                 ⚙️ Engineering Blueprint
             </div>
             <p style="margin-bottom:0.6rem;">
-                <span style="color:{C_CYAN};font-weight:700;">Target:</span>
-                <span style="color:#e2e8f0;"> {sp['target']}</span>
+                <span style="color:{C_CYAN if not IS_LIGHT else '#3b82f6'};font-weight:700;">Target:</span>
+                <span style="color:{'#e2e8f0' if not IS_LIGHT else '#111827'};"> {sp['target']}</span>
             </p>
             <p style="margin-bottom:1rem;">
-                <span style="color:{C_CYAN};font-weight:700;">Strategy:</span>
-                <span style="color:#cbd5e1;"> {sp['desc']}</span>
+                <span style="color:{C_CYAN if not IS_LIGHT else '#3b82f6'};font-weight:700;">Strategy:</span>
+                <span style="color:{'#cbd5e1' if not IS_LIGHT else '#4b5563'};"> {sp['desc']}</span>
             </p>
             <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(0,245,155,0.2),transparent);margin:0.75rem 0;"></div>
             <p style="font-size:0.85rem;color:#64748b;margin-bottom:0;">
-                💡 <span style="color:{C_GREEN};font-weight:600;">Self-Funding Model:</span>
+                💡 <span style="color:{C_GREEN if not IS_LIGHT else '#10b981'};font-weight:600;">Self-Funding Model:</span>
                 <span style="color:#94a3b8;"> Phase 1 (Surgical Strike — </span>
-                <span style="color:#ffffff;font-weight:600;">0.02 yr payback</span>
+                <span style="color:{'#ffffff' if not IS_LIGHT else '#111827'};font-weight:600;">0.02 yr payback</span>
                 <span style="color:#94a3b8;">) generates immediate cash flow to fund Phases 2 & 3.</span>
             </p>
         </div>
@@ -1088,7 +1290,7 @@ with tab4:
             text=pb_df.sort_values("capex")["capex"].apply(lambda v: f"${v/1e6:.0f}M"),
         )
         fig_capex.update_traces(marker_line_width=0, opacity=0.88, textposition="outside",
-                                textfont=dict(color="#ffffff", size=11))
+                                textfont=dict(color=("#111827" if IS_LIGHT else "#ffffff"), size=11))
         fig_capex.update_layout(
             chart("Required CAPEX by Playbook ($)", height=300, margin=dict(t=48, b=28, l=10, r=65)),
             yaxis=dict(automargin=True), xaxis_title="",
@@ -1113,7 +1315,7 @@ with tab4:
                 kpi("Self-Fund Strategy", "Phase 1 → 3", sub="0.02 yr → 12.25 yr"),
             )}
             <p style="font-size:0.82rem;color:#475569;margin-top:0.5rem;">
-                💡 The <span style="color:{C_GREEN};font-weight:600;">Self-Funding Model</span> means you don't need
+                💡 The <span style="color:{C_GREEN if not IS_LIGHT else '#10b981'};font-weight:600;">Self-Funding Model</span> means you don't need
                 the full ${total_capex/1e9:.1f}B upfront — Phase 1 quick-wins generate liquidity to de-risk
                 and fund deeper Phase 2 & 3 investments.
             </p>
