@@ -18,6 +18,21 @@
 
 <hr/>
 
+### 📚 Project Documentation Suite (Data Analysis & Engineering Track)
+
+All official academic and technical project documentation files are available in the [`docs/`](./docs/README.md) directory:
+
+| Doc ID | Section Title | Key Topics Covered | Document Link |
+| :---: | :--- | :--- | :--- |
+| **01** | **Project Planning & Management** | Project Proposal, Gantt Chart Timeline, Team Roles, Risk Assessment & KPIs | [01_Project_Proposal_and_Planning.md](./docs/01_Project_Proposal_and_Planning.md) |
+| **02** | **Requirements Gathering** | Stakeholder Analysis, User Stories, Functional & Non-Functional Requirements | [02_Requirements_and_Stakeholders.md](./docs/02_Requirements_and_Stakeholders.md) |
+| **03** | **System Analysis & Design** | 5-Pillar Architecture, ER Diagram, Database Schemas, DFD & Sequence Diagrams | [03_System_Analysis_and_Design.md](./docs/03_System_Analysis_and_Design.md) |
+| **04** | **Implementation & Standards** | PEP 8 Coding Standards, Modular Structure, Security, Version Control Strategy | [04_Implementation_and_Coding_Standards.md](./docs/04_Implementation_and_Coding_Standards.md) |
+| **05** | **Testing & Quality Assurance** | End-to-End Test Matrix, Automated Pipeline Assertions, Bug Reports Log | [05_Testing_and_Quality_Assurance.md](./docs/05_Testing_and_Quality_Assurance.md) |
+| **06** | **User Manual & Deployment** | Step-by-Step User Manual, Local Setup Guide, Execution Commands | [06_User_Manual_and_Deployment.md](./docs/06_User_Manual_and_Deployment.md) |
+
+<hr/>
+
 <h3>🏙️ The Mission</h3>
 
 <p><strong>NYC Local Law 97 (LL97)</strong> exposed our 2.06 billion sq. ft. real estate portfolio to an annual carbon penalty of:</p>
