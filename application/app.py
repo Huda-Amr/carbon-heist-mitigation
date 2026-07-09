@@ -428,8 +428,11 @@ with tab1:
     c5, c6 = st.columns(2)
     with c5:
         if all(c in df.columns for c in [C_AGE, C_INTENSITY, C_NAME]):
-            fig_age = px.scatter(df, x=C_AGE, y=C_INTENSITY, opacity=0.6, hover_name=C_NAME, hover_data=[C_TYPE, C_GHG],
-                                 trendline="ols", trendline_color_override=COLOR_ORANGE)
+            try:
+                fig_age = px.scatter(df, x=C_AGE, y=C_INTENSITY, opacity=0.6, hover_name=C_NAME, hover_data=[C_TYPE, C_GHG],
+                                     trendline="ols", trendline_color_override=COLOR_ORANGE)
+            except Exception:
+                fig_age = px.scatter(df, x=C_AGE, y=C_INTENSITY, opacity=0.6, hover_name=C_NAME, hover_data=[C_TYPE, C_GHG])
             fig_age.update_traces(marker_color=COLOR_BLUE)
             fig_age.update_layout(get_layout("Building Age vs. Emission Intensity"))
             st.plotly_chart(fig_age, use_container_width=True)
