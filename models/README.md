@@ -8,7 +8,7 @@ Welcome to the **Machine Learning Layer** of the **Carbon Heist Mitigation Platf
 
 | File Name | Description |
 | :--- | :--- |
-| **`train_ll97_model.py`** | Automated Python model training pipeline (`scikit-learn`, `joblib`). Loads cleaned records, applies outlier guardrails ($\text{Site EUI} < 2000$), encodes categorical features, trains a **Random Forest Regressor**, validates accuracy ($R^2 = 81.65\%$), and exports serialized models. |
+| **`train_ll97_model.py`** | Automated Python model training pipeline (`scikit-learn`, `joblib`). Loads cleaned records, applies outlier guardrails (**Site EUI < 2000**), encodes categorical features, trains a **Random Forest Regressor**, validates accuracy (**R² = 81.65%**), and exports serialized models. |
 | **`ll97_playground.py`** | Interactive command-line simulation playground. Allows engineers to input custom building specifications (Year Built, GFA, Energy Star, Borough, Property Type) and inspect predicted emissions and financial penalties in real time. |
 | **`ll97_model.joblib`** | Serialized trained **Random Forest Regressor** model (`n_estimators=150`, `max_depth=20`) ready for production inference. |
 | **`ll97_encoders.joblib`** | Serialized categorical feature encoders ensuring consistency across training, testing, and UI inference. |
@@ -21,8 +21,8 @@ The predictive regression model is trained on **11,622 compliant NYC commercial 
 - **Algorithm:** `RandomForestRegressor`
 - **Predictors (Features):** `Year Built`, `Gross Floor Area (GFA)`, `ENERGY STAR Score`, `Borough`, `Primary Property Type`
 - **Target Variable:** `Total GHG Emissions (Metric Tons CO2e)`
-- **Validated Accuracy ($R^2$):** **$81.65\%$**
-- **Mean Absolute Error (MAE):** **$212.99\text{ MT CO}_2\text{e}$**
+- **Validated Accuracy (R²):** **81.65%**
+- **Mean Absolute Error (MAE):** **212.99 MT CO₂e**
 
 ---
 
