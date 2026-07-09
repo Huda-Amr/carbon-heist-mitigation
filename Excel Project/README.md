@@ -61,3 +61,12 @@ Across all financial sheets, statutory penalty exposure is evaluated using the o
 | **11** | **`WET Scenario`** | Whole-Building Energy Transformation (WET) scenario modeling deep energy retrofits. |
 | **12** | **`1960s Smart Scale`** | Specialized decarbonization strategy tailored for aging 1960s post-war commercial and residential archetypes. |
 | **13** | **`Electrification Push`** | Playbook evaluating the conversion of fossil-based heating systems to electric heat pumps. |
+
+---
+
+<div align="center">
+
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../docs/README.md)
+
+</div>

@@ -126,8 +126,9 @@ flowchart LR
 
 <div align="center">
 
-[![Prev Document](https://img.shields.io/badge/Prev-Doc_01:_Planning-181717?style=for-the-badge)](./01_Project_Proposal_and_Planning.md)&nbsp;
-[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_03:_Architecture-00E5FF?style=for-the-badge)](./03_System_Analysis_and_Design.md)
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Prev Document](https://img.shields.io/badge/PREV-DOC%2001:%20PLANNING-181717?style=for-the-badge)](./01_Project_Proposal_and_Planning.md)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20BACK%20TO-DOCS%20SUITE-181717?style=for-the-badge)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/NEXT-DOC%2003:%20ARCHITECTURE-00E5FF?style=for-the-badge)](./03_System_Analysis_and_Design.md)
 
 </div>

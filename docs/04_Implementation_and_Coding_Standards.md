@@ -129,8 +129,9 @@ gitGraph
 
 <div align="center">
 
-[![Prev Document](https://img.shields.io/badge/Prev-Doc_03:_Architecture-181717?style=for-the-badge)](./03_System_Analysis_and_Design.md)&nbsp;
-[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_05:_Testing_QA-00E5FF?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Prev Document](https://img.shields.io/badge/PREV-DOC%2003:%20ARCHITECTURE-181717?style=for-the-badge)](./03_System_Analysis_and_Design.md)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20BACK%20TO-DOCS%20SUITE-181717?style=for-the-badge)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/NEXT-DOC%2005:%20TESTING%20QA-00E5FF?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)
 
 </div>

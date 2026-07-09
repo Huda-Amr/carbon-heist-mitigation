@@ -114,8 +114,9 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 
 <div align="center">
 
-[![Prev Document](https://img.shields.io/badge/Prev-Doc_04:_Implementation-181717?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)&nbsp;
-[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_06:_User_Manual-00E5FF?style=for-the-badge)](./06_User_Manual_and_Deployment.md)
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Prev Document](https://img.shields.io/badge/PREV-DOC%2004:%20IMPLEMENTATION-181717?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20BACK%20TO-DOCS%20SUITE-181717?style=for-the-badge)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/NEXT-DOC%2006:%20USER%20MANUAL-00E5FF?style=for-the-badge)](./06_User_Manual_and_Deployment.md)
 
 </div>

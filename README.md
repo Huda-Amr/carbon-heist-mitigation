@@ -326,8 +326,7 @@ streamlit run app.py
 
 <br/><br/>
 
-<a href="https://github.com/ahmedadelamin/carbon-heist-mitigation">
-  <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub"/>
-</a>
+[![Return to Top](https://img.shields.io/badge/⬆️%20BACK%20TO-TOP%20OF%20PAGE-00FF66?style=for-the-badge&logo=github&logoColor=black)](#)&nbsp;
+[![Academic Docs Suite](https://img.shields.io/badge/📑%20EXPLORE-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](./docs/README.md)
 
 </div>

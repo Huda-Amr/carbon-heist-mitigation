@@ -161,7 +161,8 @@ gantt
 
 <div align="center">
 
-[![Prev Document](https://img.shields.io/badge/Prev-Docs_Suite-181717?style=for-the-badge)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_02:_Requirements-00E5FF?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20BACK%20TO-DOCS%20SUITE-181717?style=for-the-badge)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/NEXT-DOC%2002:%20REQUIREMENTS-00E5FF?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)
 
 </div>

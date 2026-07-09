@@ -144,8 +144,6 @@ Across all academic documentation files, regulatory penalty exposure and capital
 
 <br/><br/>
 
-<a href="https://github.com/ahmedadelamin/carbon-heist-mitigation">
-  <img src="https://img.shields.io/badge/Back%20to-Main%20Repository-181717?style=for-the-badge&logo=github" alt="GitHub"/>
-</a>
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)
 
 </div>

@@ -72,3 +72,12 @@ mysql -u root -p < carbon_heist_schema_mysql.sql
 ```powershell
 sqlcmd -S localhost -U sa -P YourPassword -i carbon_heist_schema_mssql.sql
 ```
+
+---
+
+<div align="center">
+
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../docs/README.md)
+
+</div>

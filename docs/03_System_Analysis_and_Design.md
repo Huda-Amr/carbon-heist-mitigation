@@ -202,8 +202,9 @@ stateDiagram-v2
 
 <div align="center">
 
-[![Prev Document](https://img.shields.io/badge/Prev-Doc_02:_Requirements-181717?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)&nbsp;
-[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_04:_Implementation-00E5FF?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Prev Document](https://img.shields.io/badge/PREV-DOC%2002:%20REQUIREMENTS-181717?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20BACK%20TO-DOCS%20SUITE-181717?style=for-the-badge)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/NEXT-DOC%2004:%20IMPLEMENTATION-00E5FF?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)
 
 </div>

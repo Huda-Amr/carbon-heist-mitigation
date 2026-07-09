@@ -64,3 +64,12 @@ streamlit run app.py
 ```
 
 The dashboard will open automatically in your browser at `http://localhost:8501`.
+
+---
+
+<div align="center">
+
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../docs/README.md)
+
+</div>
