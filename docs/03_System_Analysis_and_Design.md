@@ -1,4 +1,45 @@
-# 3. System Analysis & Design
+<div align="center">
+
+[![Prev Document](https://img.shields.io/badge/Prev-Doc_02:_Requirements-181717?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)&nbsp;
+[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/Next-Doc_04:_Implementation-00E5FF?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)
+
+# 📑 DOC 03 — SYSTEM ANALYSIS & DESIGN ARCHITECTURE
+### *Carbon Heist Mitigation & NYC Local Law 97 Intelligence Platform*
+
+</div>
+
+---
+
+### 🏆 Executive System Architecture Grid
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <br/>
+      🏗️ <strong>System Blueprint</strong><br/>
+      <h2 style="color: #00FF66;">5-Layer Stack</h2>
+      <em>ETL, DB, ML, Domain, UI</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      🗄️ <strong>Relational Schema</strong><br/>
+      <h2 style="color: #00E5FF;">3NF Normalized</h2>
+      <em>MySQL + MSSQL Schemas</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      🤖 <strong>AI Model Pipeline</strong><br/>
+      <h2 style="color: #FF4B4B;">R² = 81.65%</h2>
+      <em>RandomForestRegressor</em>
+      <br/><br/>
+    </td>
+  </tr>
+</table>
+
+---
 
 ## 3.1 Problem Statement & Software Architecture
 
@@ -43,7 +84,9 @@ graph TD
 
 ## 3.2 Database Design & Data Modeling (ER Diagram)
 
-The relational schema follows **3rd Normal Form (3NF)** to eliminate data redundancy across building dimensions and historical annual measurements.
+> [!IMPORTANT]
+> ### **3rd Normal Form (3NF) Normalization Standard**
+> The relational schema enforces strict 3NF decomposition to eliminate anomaly duplication across geographical lookups (`BOROUGHS`), property classes (`PROPERTY_TYPES`), and annual metering facts (`ENERGY_METRICS`, `LL97_PENALTIES`).
 
 ### Entity-Relationship Diagram (ERD)
 
@@ -150,3 +193,13 @@ stateDiagram-v2
     SaveCleanData --> GeneratePDF: Write LL97_Data_Cleaning_Report.pdf
     GeneratePDF --> [*]
 ```
+
+---
+
+<div align="center">
+
+[![Prev Document](https://img.shields.io/badge/Prev-Doc_02:_Requirements-181717?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)&nbsp;
+[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/Next-Doc_04:_Implementation-00E5FF?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)
+
+</div>

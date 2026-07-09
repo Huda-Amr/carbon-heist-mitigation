@@ -1,51 +1,109 @@
-# 6. User Manual, Deployment & Execution Guide
+<div align="center">
 
-## 6.1 System Requirements & Hardware Dependencies
+[![Prev Document](https://img.shields.io/badge/Prev-Doc_05:_Testing_QA-181717?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)&nbsp;
+[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
+[![Download Word Report](https://img.shields.io/badge/Download-DOCX_Master_Report-9B51E0?style=for-the-badge)](./Carbon_Heist_Mitigation_Documentation.docx)
+
+# 📑 DOC 06 — USER MANUAL & DEPLOYMENT GUIDE
+### *Carbon Heist Mitigation & NYC Local Law 97 Intelligence Platform*
+
+</div>
+
+---
+
+### 🏆 Executive Deployment Operations Grid
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <br/>
+      ⚡ <strong>Setup Time</strong><br/>
+      <h2 style="color: #00FF66;">&lt; 3 Minutes</h2>
+      <em>Zero Configuration Friction</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      🌐 <strong>Streamlit Port</strong><br/>
+      <h2 style="color: #00E5FF;">Port 8501</h2>
+      <em>Local & Cloud Ready</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      🐍 <strong>Python Runtime</strong><br/>
+      <h2 style="color: #FF4B4B;">Python 3.9+</h2>
+      <em>Win / macOS / Linux OS</em>
+      <br/><br/>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 6.1 Execution Workflow Architecture
+
+```mermaid
+flowchart TD
+    START["CLONE REPOSITORY\ngit clone https://github.com/..."]:::cmd --> PIP["INSTALL DEPENDENCIES\npip install -r requirements"]:::cmd
+    PIP --> CHOICE{"Select Operating Interface"}
+    CHOICE -->|Web UI| WEB["STREAMLIT EXECUTIVE DASHBOARD\ncd application && streamlit run app.py"]:::ui
+    CHOICE -->|Terminal| CLI["CLI PREDICTIVE PLAYGROUND\ncd models && python ll97_playground.py"]:::cli
+    CHOICE -->|ETL Engine| ETL["RUN DATA CLEANING PIPELINE\ncd data && python Clean_Data_Pipeline.py"]:::etl
+
+    classDef cmd fill:#161B22,stroke:#8B949E,stroke-width:2px,color:#C9D1D9
+    classDef ui fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66
+    classDef cli fill:#0D1117,stroke:#00E5FF,stroke-width:2px,color:#00E5FF
+    classDef etl fill:#0D1117,stroke:#F7931E,stroke-width:2px,color:#F7931E
+```
+
+---
+
+## 6.2 System Requirements & Hardware Dependencies
 
 To execute the **Carbon Heist Mitigation Platform** locally, the system requires the following environment:
 - **Operating System:** Windows 10/11, macOS 11+, or Linux (Ubuntu 20.04+)
-- **Python Environment:** Python 3.10+
-- **Memory (RAM):** 4 GB minimum (8 GB recommended for fast pandas workbook manipulation)
+- **Python Environment:** Python 3.9 or higher
+- **Memory (RAM):** 4 GB minimum (8 GB recommended for rapid pandas matrix calculation)
 - **Disk Space:** 500 MB free space (including raw Excel datasets and serialized ML models)
 
 ---
 
-## 6.2 Installation Steps & Configuration Guide
+## 6.3 Quick Start Installation & Execution
 
-### 1. Clone Repository
-Open your command terminal or PowerShell and clone the official project repository:
+> [!TIP]
+> ### **Single-Command Launch**
+> Once Python dependencies are installed, you can launch the full visual dashboard instantly on `http://localhost:8501`.
+
+### 1. Clone Repository & Install Dependencies
+Open your terminal or PowerShell:
 ```bash
 git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git
 cd carbon-heist-mitigation
-```
-
-### 2. Install Python Dependencies
-Install all required libraries using `pip`:
-```bash
 pip install pandas numpy scikit-learn openpyxl streamlit plotly joblib fpdf2
 ```
 
 ---
 
-## 6.3 Execution Guide (Running Locally)
+### 2. Execution Modes
 
-### Option A: Launch Interactive Executive Web Dashboard (Streamlit)
+#### Option A: Launch Interactive Executive Web Dashboard (Streamlit)
 To start the production web interface for real-time portfolio modeling:
 ```bash
 cd application
 streamlit run app.py
 ```
-*The dashboard will automatically open in your default browser at `http://localhost:8501`.*
+*The dashboard will automatically open in your browser at `http://localhost:8501`.*
 
-### Option B: Run AI Predictive Playground in Terminal
+#### Option B: Run AI Predictive Playground in Terminal
 To interactively test building archetypes in your command line:
 ```bash
 cd models
 python ll97_playground.py
 ```
 
-### Option C: Execute Automated Data Cleaning Pipeline
-To regenerate the clean dataset (`sample_nyc_energy.xlsx`) from raw LL84 spreadsheets:
+#### Option C: Execute Automated Data Cleaning Pipeline
+To regenerate the clean dataset (`sample_nyc_energy.xlsx`) and audit PDF:
 ```bash
 cd data
 python Clean_Data_Pipeline.py
@@ -55,9 +113,13 @@ python Clean_Data_Pipeline.py
 
 ## 6.4 Step-by-Step End User Manual
 
+> [!IMPORTANT]
+> ### **Decarbonization Scenario Simulation**
+> Use the UI sliders in `app.py` to test how Energy Star improvements or Electrification upgrades immediately reduce statutory fine exposure ($/sq. ft.).
+
 ### Navigating the Executive Streamlit Dashboard (`app.py`)
 1. **Sidebar Controls (Asset Profile Setup):**
-   - Use the sidebar controls to choose the building **Borough** (Manhattan, Queens, Brooklyn, Bronx, Staten Island).
+   - Choose the building **Borough** (Manhattan, Queens, Brooklyn, Bronx, Staten Island).
    - Select the **Primary Property Type** (e.g., Office, Multifamily Housing, Retail Store).
    - Set the **Year Built** and **Gross Floor Area (GFA)** slider.
 2. **Review Real-Time KPI Cards:**
@@ -74,3 +136,13 @@ python Clean_Data_Pipeline.py
 To initialize the relational schema in your SQL server:
 - **For MySQL / PostgreSQL:** Execute `database/carbon_heist_schema_mysql.sql`
 - **For Microsoft SQL Server (T-SQL):** Execute `database/carbon_heist_schema_mssql.sql`
+
+---
+
+<div align="center">
+
+[![Prev Document](https://img.shields.io/badge/Prev-Doc_05:_Testing_QA-181717?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)&nbsp;
+[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
+[![Download Word Report](https://img.shields.io/badge/Download-DOCX_Master_Report-9B51E0?style=for-the-badge)](./Carbon_Heist_Mitigation_Documentation.docx)
+
+</div>

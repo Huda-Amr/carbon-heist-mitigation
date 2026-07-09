@@ -1,8 +1,53 @@
-# 4. Implementation, Coding Standards & Version Control
+<div align="center">
+
+[![Prev Document](https://img.shields.io/badge/Prev-Doc_03:_Architecture-181717?style=for-the-badge)](./03_System_Analysis_and_Design.md)&nbsp;
+[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/Next-Doc_05:_Testing_QA-00E5FF?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)
+
+# 📑 DOC 04 — IMPLEMENTATION & CODING STANDARDS
+### *Carbon Heist Mitigation & NYC Local Law 97 Intelligence Platform*
+
+</div>
+
+---
+
+### 🏆 Executive Implementation & Governance Grid
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <br/>
+      🐍 <strong>Python Standard</strong><br/>
+      <h2 style="color: #00FF66;">PEP 8 Strict</h2>
+      <em>Modular & Clean Codebase</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      🛡️ <strong>Data Guardrails</strong><br/>
+      <h2 style="color: #00E5FF;">EUI &lt; 2000</h2>
+      <em>Outlier & Null Protection</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      🗃️ <strong>SQL Dialects</strong><br/>
+      <h2 style="color: #FF4B4B;">Dual Engine</h2>
+      <em>MySQL / PG & MSSQL T-SQL</em>
+      <br/><br/>
+    </td>
+  </tr>
+</table>
+
+---
 
 ## 4.1 Coding Standards & Naming Conventions
 
 The codebase rigorously adheres to standard software engineering guidelines across all programming languages:
+
+> [!IMPORTANT]
+> ### **PEP 8 Compliance & Type Safety**
+> All core analytical and data processing modules enforce strict adherence to PEP 8 formatting guidelines, clear function signatures, and comprehensive Google/NumPy docstrings.
 
 ### Python Coding Standards (PEP 8)
 - **Variable & Function Names:** `snake_case` is used for variables, function names, and module names (`train_strategic_model()`, `file_name`, `sample_nyc_energy.xlsx`).
@@ -17,35 +62,27 @@ The codebase rigorously adheres to standard software engineering guidelines acro
 
 ---
 
-## 4.2 Modular Code & Reusability
+## 4.2 Modular Code Architecture & Package Partitioning
 
-To ensure separation of concerns and long-term maintainability, the codebase is partitioned into reusable packages:
+```mermaid
+flowchart TD
+    ROOT["📁 carbon-heist-mitigation/ (Workspace Root)"]:::root --> APP["📁 application/\n• app.py (Streamlit UI)\n• input.xlsx & results.csv"]:::pkg
+    ROOT --> DATA["📁 data/\n• Clean_Data_Pipeline.py\n• sample_nyc_energy.xlsx"]:::pkg
+    ROOT --> DB["📁 database/\n• carbon_heist_schema_mysql.sql\n• carbon_heist_schema_mssql.sql"]:::pkg
+    ROOT --> ML["📁 models/\n• train_ll97_model.py\n• ll97_playground.py & .joblib"]:::pkg
+    ROOT --> EXCEL["📁 Excel Project/\n• Co2 Project.xlsx (13 Sheets)"]:::pkg
 
-```
-carbon-heist-mitigation/
-├── application/             # Presentation Layer
-│   ├── app.py               # Interactive Streamlit Web App
-│   ├── input.xlsx           # Production test case harness
-│   └── results.csv          # Output verification matrix
-├── data/                    # Data Engineering & ETL Pipeline
-│   ├── Clean_Data_Pipeline.py # Modular 8-step data cleaning engine
-│   └── sample_nyc_energy.xlsx # Cleaned reference artifact
-├── database/                # Persistence & Data Definition Layer
-│   ├── carbon_heist_schema_mysql.sql # MySQL / PostgreSQL DDL
-│   ├── carbon_heist_schema_mssql.sql # Microsoft SQL Server T-SQL DDL
-│   └── NYC_Energy_Chen_ERD.drawio    # ERD Architectural Diagram
-├── models/                  # Artificial Intelligence & Prediction Layer
-│   ├── train_ll97_model.py  # Model training script
-│   ├── ll97_playground.py   # Terminal diagnostic playground
-│   ├── ll97_model.joblib    # Serialized Random Forest weights
-│   └── ll97_encoders.joblib # Serialized categorical encoders
-└── Excel Project/           # Financial Domain Engine
-    └── Co2 Project.xlsx     # 13-sheet domain & scenario reference
+    classDef root fill:#161B22,stroke:#00FF66,stroke-width:2px,color:#00FF66
+    classDef pkg fill:#0D1117,stroke:#30363D,stroke-width:2px,color:#E6EDF3
 ```
 
 ---
 
-## 4.3 Security & Error Handling
+## 4.3 Security & Error Handling Architecture
+
+> [!TIP]
+> ### **Runtime Exception Shielding**
+> All external CLI and UI user inputs pass through explicit numeric type coercion and guardrail checks (`pd.to_numeric(errors='coerce')`) to eliminate unhandled runtime exceptions.
 
 - **Data Validation:** All external user inputs in `app.py` and `ll97_playground.py` are wrapped in type coercion blocks (`float()`, `pd.to_numeric(errors='coerce')`) to prevent unexpected runtime crashes or unhandled exceptions.
 - **Outlier Guardrails:** Predictive models enforce physical domain guardrails (`Site EUI < 2000`, `GFA > 0`) to prevent out-of-distribution hallucinations.
@@ -53,13 +90,43 @@ carbon-heist-mitigation/
 
 ---
 
-## 4.4 Version Control & Collaboration Strategy
+## 4.4 Version Control & Collaboration Workflow
 
 ### Version Control Repository
 - **Platform:** GitHub  
-- **Repository Visibility:** Public / Shared Enterprise  
+- **Repository Visibility:** Public Enterprise Repository  
 - **URL:** [carbon-heist-mitigation Repository](https://github.com/ahmedadelamin/carbon-heist-mitigation)
 
-### Branching Strategy
-- **`main` Branch:** Production-ready codebase containing verified ML weights, complete SQL DDL scripts, and live Streamlit app code.
-- **Commit History:** Meaningful atomic commit messages clearly stating technical changes (e.g., `"Sync playground filters with main model"`, `"Rename SQL schema for MySQL and add dedicated schema for Microsoft SQL Server"`).
+### Branching & Release Workflow
+
+```mermaid
+gitGraph
+    commit id: "Initial Project Setup"
+    branch feature/etl-pipeline
+    checkout feature/etl-pipeline
+    commit id: "Add 8-Step Data Pipeline"
+    commit id: "Generate PDF Report"
+    checkout main
+    merge feature/etl-pipeline id: "Merge ETL Module"
+    branch feature/ml-engine
+    checkout feature/ml-engine
+    commit id: "Train Random Forest Regressor"
+    commit id: "Achieve R2 = 81.65%"
+    checkout main
+    merge feature/ml-engine id: "Merge ML Models"
+    branch feature/streamlit-ui
+    checkout feature/streamlit-ui
+    commit id: "Build Interactive App UI"
+    checkout main
+    merge feature/streamlit-ui id: "Production Release"
+```
+
+---
+
+<div align="center">
+
+[![Prev Document](https://img.shields.io/badge/Prev-Doc_03:_Architecture-181717?style=for-the-badge)](./03_System_Analysis_and_Design.md)&nbsp;
+[![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
+[![Next Document](https://img.shields.io/badge/Next-Doc_05:_Testing_QA-00E5FF?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)
+
+</div>
