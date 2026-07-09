@@ -41,19 +41,19 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
     section 1. Architecture
-    Requirements & Scope         :a1, 2026-05-01, 12d
-    Database Schema & ERD        :a2, after a1, 10d
+    Requirements & Scope         :a1, 2026-05-01, 10d
+    Database Schema & ERD        :a2, 2026-05-12, 10d
     section 2. Data Pipeline
-    ETL Script & Cleaning        :b1, 2026-05-23, 14d
-    Audit Validation & Report    :b2, after b1, 7d
+    ETL Script & Cleaning        :b1, 2026-05-22, 12d
+    Audit Validation & Report    :b2, 2026-06-04, 7d
     section 3. AI Modeling
-    Feature Engineering          :c1, 2026-06-13, 10d
-    Random Forest Training       :c2, after c1, 10d
+    Feature Engineering          :c1, 2026-06-11, 8d
+    Random Forest Training       :c2, 2026-06-19, 8d
     section 4. Web Dashboard
-    Streamlit UI Development     :d1, 2026-07-03, 10d
-    Interactive Plotly Charts    :d2, after d1, 7d
+    Streamlit UI                 :d1, 2026-06-27, 8d
+    Plotly Charts                :d2, 2026-07-05, 6d
     section 5. Deployment
-    QA Audit & Documentation     :e1, after d2, 5d
+    QA & Documentation           :e1, 2026-07-11, 5d
 ```
 
 #### Detailed Milestone Breakdown
