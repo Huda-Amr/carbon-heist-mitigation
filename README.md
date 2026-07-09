@@ -1,103 +1,113 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=200&section=header&text=THE%20%242.8B%20HEIST&fontSize=60&fontColor=00FF66&fontAlignY=38&desc=Data-Driven%20Decarbonization%20Counter-Intelligence&descAlignY=60&descSize=18&descColor=8B949E" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=220&section=header&text=THE%20%242.88B%20CARBON%20HEIST&fontSize=52&fontColor=00FF66&fontAlignY=36&desc=Data-Driven%20Decarbonization%20Counter-Intelligence%20Platform&descAlignY=62&descSize=18&descColor=8B949E" width="100%"/>
 
 <br/>
 
 <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>&nbsp;
-<a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/ML-Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
-<a href="#-interactive-sensitivity-dashboard"><img src="https://img.shields.io/badge/Viz-D3.js-F9A03F?style=for-the-badge&logo=d3.js&logoColor=white" alt="D3.js"/></a>&nbsp;
-<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License"/></a>&nbsp;
-<img src="https://img.shields.io/badge/Status-Net--Zero%20Secured-00FF66?style=for-the-badge&logo=checkmarx&logoColor=black" alt="Status"/>
+<a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/AI%20Engine-Random%20Forest%20(81.65%25)-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
+<a href="#-interactive-decision-support-dashboard"><img src="https://img.shields.io/badge/UI%20Dashboard-Streamlit%20%2B%20Plotly-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>&nbsp;
+<a href="database/"><img src="https://img.shields.io/badge/Database-MySQL%20%2B%20MSSQL%203NF-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="Database"/></a>&nbsp;
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-00FF66?style=for-the-badge" alt="License"/></a>
 
 <br/><br/>
 
-<em>"Compliance is a cost. Leadership is an asset."</em><br/>
-<strong>— Team x</strong>
+<em>"Compliance is a cost. Executive leadership is an asset."</em><br/>
+<strong>— Team X · NYC Local Law 97 Intelligence Platform</strong>
 
 <br/><br/>
 
-<hr/>
+---
 
-### 📚 Project Documentation Suite (Data Analysis & Engineering Track)
-
-All official academic and technical project documentation files are available in the [`docs/`](./docs/README.md) directory:
-
-| Doc ID | Section Title | Key Topics Covered | Document Link |
-| :---: | :--- | :--- | :--- |
-| **01** | **Project Planning & Management** | Project Proposal, Gantt Chart Timeline, Team Roles, Risk Assessment & KPIs | [01_Project_Proposal_and_Planning.md](./docs/01_Project_Proposal_and_Planning.md) |
-| **02** | **Requirements Gathering** | Stakeholder Analysis, User Stories, Functional & Non-Functional Requirements | [02_Requirements_and_Stakeholders.md](./docs/02_Requirements_and_Stakeholders.md) |
-| **03** | **System Analysis & Design** | 5-Pillar Architecture, ER Diagram, Database Schemas, DFD & Sequence Diagrams | [03_System_Analysis_and_Design.md](./docs/03_System_Analysis_and_Design.md) |
-| **04** | **Implementation & Standards** | PEP 8 Coding Standards, Modular Structure, Security, Version Control Strategy | [04_Implementation_and_Coding_Standards.md](./docs/04_Implementation_and_Coding_Standards.md) |
-| **05** | **Testing & Quality Assurance** | End-to-End Test Matrix, Automated Pipeline Assertions, Bug Reports Log | [05_Testing_and_Quality_Assurance.md](./docs/05_Testing_and_Quality_Assurance.md) |
-| **06** | **User Manual & Deployment** | Step-by-Step User Manual, Local Setup Guide, Execution Commands | [06_User_Manual_and_Deployment.md](./docs/06_User_Manual_and_Deployment.md) |
-
-<hr/>
-
-<h3>🏙️ The Mission</h3>
-
-<p><strong>NYC Local Law 97 (LL97)</strong> exposed our 2.06 billion sq. ft. real estate portfolio to an annual carbon penalty of:</p>
-
-<br/>
+### 🏆 Executive Portfolio Performance Dashboard
 
 <table>
   <tr>
-    <td align="center">
+    <td align="center" width="33%">
       <br/>
-      <strong>⚠️ &nbsp; ANNUAL LIABILITY EXPOSURE</strong>
+      🏢 <strong>Portfolio Scale</strong><br/>
+      <h2 style="color: #00FF66;">2.06 Billion Sq. Ft.</h2>
+      <em>11,639 NYC Properties</em>
       <br/><br/>
-      <strong>$2,880,000,000</strong>
+    </td>
+    <td align="center" width="33%">
       <br/>
-      <em>2.06 Billion Sq. Ft. Portfolio</em>
+      ⚠️ <strong>Annual LL97 Liability</strong><br/>
+      <h2 style="color: #FF4B4B;">$2.88 Billion / yr</h2>
+      <em>Statutory Fine ($268 / MT)</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      💰 <strong>Net Annual Savings</strong><br/>
+      <h2 style="color: #00E5FF;">$702.23 Million</h2>
+      <em>Blended Payback: 6.41 Years</em>
+      <br/><br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <br/>
+      🤖 <strong>Predictive AI Accuracy</strong><br/>
+      <h2>R² = 81.65%</h2>
+      <em>Random Forest Regressor</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      ⚡ <strong>Surgical Phase Payback</strong><br/>
+      <h2>8 Days</h2>
+      <em>Immediate Cash-Flow Positive</em>
+      <br/><br/>
+    </td>
+    <td align="center" width="33%">
+      <br/>
+      🗄️ <strong>Database Architecture</strong><br/>
+      <h2>3NF Relational</h2>
+      <em>MySQL & MSSQL Schemas</em>
       <br/><br/>
     </td>
   </tr>
 </table>
 
-<br/>
-
-<p>We built an end-to-end data science platform to forensic-audit the portfolio, identify the <strong>"True Culprits,"</strong> and execute a high-yield, self-funding carbon mitigation roadmap — turning a <strong>$2.88B liability into a strategic asset.</strong></p>
-
-<hr/>
 </div>
 
-## 📋 Table of Contents
+---
 
-- [🎯 Key Results at a Glance](#-key-results-at-a-glance)
-- [🛠️ End-to-End Project Workflow](#️-end-to-end-project-workflow)
-- [📂 Repository Structure](#-repository-structure)
-- [🤖 The ML Insights Engine](#-the-ml-insights-engine)
-- [📊 Interactive Sensitivity Dashboard](#-interactive-sensitivity-dashboard)
-- [🗺️ The 5-Scenario Decarbonization Pipeline](#️-the-5-scenario-decarbonization-pipeline)
-- [🚀 Quick Start](#-quick-start)
-- [👥 The Heist Crew — Team X](#-the-heist-crew--team-x)
-- [⚖️ License](#️-license)
+## 🏙️ The Mission & Challenge
+
+New York City's **Local Law 97 (LL97)** imposes strict carbon emission caps on buildings exceeding 25,000 sq. ft. Starting in 2024—and escalating dramatically in 2030—properties exceeding statutory thresholds face mandatory annual fines of **$268 per metric ton of CO₂e**.
+
+Across our **2.06 Billion Sq. Ft. real estate portfolio (11,639 validated records)**, unmitigated exposure amounts to **$2.88 Billion annually**—effectively a recurring carbon heist on net operating income (NOI).
+
+We built an end-to-end data engineering, machine learning, and interactive financial decision-support platform to forensic-audit the portfolio, isolate the **"True Culprits,"** and deploy a self-funding 5-phase decarbonization roadmap that transforms a regulatory liability into a high-yield strategic asset.
 
 ---
 
-## 🎯 Key Results at a Glance
+## 📚 Official Project Documentation Suite
 
-| Metric | Value |
-|:---|:---:|
-| 🏢 Portfolio Size | **2.06 Billion Sq. Ft.** |
-| 💰 Liability Neutralized | **$2.88 Billion / yr** |
-| 🏗️ Buildings Analyzed | **11,000+** |
-| 📉 Best-Case Payback | **8 Days (Surgical Strike)** |
-| 📈 Total Annual Savings (Blended) | **$702 Million** |
-| ⏱️ Blended Portfolio Payback | **6.41 Years** |
+All academic and technical deliverables for the **Data Analysis & Engineering Track** are available in the [`docs/`](./docs/) directory:
+
+| Doc ID | Deliverable Title | Core Focus & Highlights | Status | Read Link |
+| :---: | :--- | :--- | :---: | :---: |
+| **01** | **Project Planning & Management** | Project Proposal, Sequential Gantt Roadmap, Team Roles, Risk Matrix | 🟢 Complete | [📖 Doc 01](./docs/01_Project_Proposal_and_Planning.md) |
+| **02** | **Requirements Gathering** | Stakeholder Persona Matrix, User Stories, Functional & NFR Specs | 🟢 Complete | [📖 Doc 02](./docs/02_Requirements_and_Stakeholders.md) |
+| **03** | **System Analysis & Design** | 5-Layer Architecture, Normalized ERD, DFD Levels, Sequence Diagrams | 🟢 Complete | [📖 Doc 03](./docs/03_System_Analysis_and_Design.md) |
+| **04** | **Implementation & Standards** | PEP 8 Coding Guidelines, Modular Python Packages, Security Audits | 🟢 Complete | [📖 Doc 04](./docs/04_Implementation_and_Coding_Standards.md) |
+| **05** | **Testing & Quality Assurance** | End-to-End Verification Matrix, Pipeline Assertions, Bug Tracking | 🟢 Complete | [📖 Doc 05](./docs/05_Testing_and_Quality_Assurance.md) |
+| **06** | **User Manual & Deployment** | Step-by-Step Installation Guide, CLI Operations, Troubleshooting | 🟢 Complete | [📖 Doc 06](./docs/06_User_Manual_and_Deployment.md) |
+| **DOCX** | **Official Word Documentation** | Comprehensive formatted academic report with executive KPI cards | 🟢 Complete | [📥 Word File](./docs/Carbon_Heist_Mitigation_Documentation.docx) |
 
 ---
 
-## 🛠️ End-to-End Project Workflow
-
-Our platform implements a disciplined, multi-stage data science and engineering lifecycle:
+## 🛠️ End-to-End Data Science & Engineering Architecture
 
 ```mermaid
 flowchart TD
-    A["📥 STAGE 1 — Raw Data Ingestion"]:::stage --> B["🧹 STAGE 2 — Forensic Data Cleaning\nHandling Nulls & Anomalies"]:::stage
-    B --> C["🔍 STAGE 3 — Exploratory Data Analysis\nIsolating the Worst Offenders"]:::stage
-    C --> D["🤖 STAGE 4 — Predictive ML Engine\nRegression & Classification\n11,000+ NYC Building Records"]:::stage
-    D --> E["🗺️ STAGE 5 — Prescriptive Roadmap\n5-Phase Capital Deployment"]:::stage
-    E --> F["📊 OUTPUT — Interactive Sensitivity Dash\nD3.js Financial Stress-Test"]:::output
+    A["📥 STAGE 1: Municipal Data Ingestion\nNYC LL84 Open Data Portal (11,639 Records)"]:::stage --> B["🧹 STAGE 2: Forensic Data Hygiene\n8-Step Automated Cleaning & Imputation Pipeline"]:::stage
+    B --> C["🗄️ STAGE 3: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
+    C --> D["🤖 STAGE 4: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
+    D --> E["🗺️ STAGE 5: Prescriptive Capital Roadmap\n5-Phase Self-Funding Decarbonization Pipeline"]:::stage
+    E --> F["📊 STAGE 6: Interactive Decision Support\nStreamlit & Plotly Real-Time Scenario Dashboard"]:::output
 
     classDef stage fill:#161B22,stroke:#30363D,stroke-width:2px,color:#C9D1D9,font-size:14px
     classDef output fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66,font-size:14px
@@ -105,12 +115,12 @@ flowchart TD
 
 ---
 
-## 📂 Repository Structure
+## 📂 Complete Repository Tree
 
 ```text
 carbon-heist-mitigation/
 │
-├── 📁 docs/                        # Complete 6-Part Technical & Academic Documentation Suite
+├── 📁 docs/                        # Official 6-Part Technical & Academic Documentation Suite
 │   ├── 📄 01_Project_Proposal_and_Planning.md
 │   ├── 📄 02_Requirements_and_Stakeholders.md
 │   ├── 📄 03_System_Analysis_and_Design.md
@@ -120,25 +130,30 @@ carbon-heist-mitigation/
 │   └── 📄 Carbon_Heist_Mitigation_Documentation.docx
 │
 ├── 📁 Excel Project/               # Domain Reference & Financial Engineering Models
+│   ├── 📄 README.md                # Guide to all 13 financial engineering sheets
 │   └── 📊 Co2 Project.xlsx         # 13-sheet comprehensive LL97 compliance & retrofit workbook
 │
 ├── 📁 application/                 # Presentation & UI Layer
+│   ├── 📄 README.md                # Dashboard setup & usage instructions
 │   ├── 🐍 app.py                   # Streamlit & Plotly Interactive Executive Dashboard
 │   ├── 📊 input.xlsx               # Clean building benchmarking records for dashboard UI
 │   └── 📊 results.csv              # Exported simulation analytics
 │
 ├── 📁 models/                      # AI & Machine Learning Layer (R² = 81.65%)
-│   ├── 🐍 train_ll97_model.py      # ML pipeline: preprocessing, feature engineering & training
+│   ├── 📄 README.md                # ML architecture & training documentation
+│   ├── 🐍 train_ll97_model.py      # Automated model training pipeline
 │   ├── 🐍 ll97_playground.py       # Interactive CLI simulation audit tool
 │   ├── 💾 ll97_model.joblib        # Serialized Random Forest Regressor
 │   └── 💾 ll97_encoders.joblib     # Serialized categorical feature encoders
 │
 ├── 📁 data/                        # Data Engineering & ETL Pipeline
-│   ├── 🐍 Clean_Data_Pipeline.py   # Automated 8-step cleaning & null imputation pipeline
+│   ├── 📄 README.md                # 8-step cleaning pipeline overview
+│   ├── 🐍 Clean_Data_Pipeline.py   # Automated cleaning & null imputation script
 │   ├── 📊 sample_nyc_energy.xlsx   # Validated dataset (11,639 compliant NYC buildings)
 │   └── 📄 LL97_Data_Cleaning_Report.pdf # Automated PDF audit report
 │
 ├── 📁 database/                    # Relational Database & Persistence Layer (3NF)
+│   ├── 📄 README.md                # Database design & schema guide
 │   ├── 📜 carbon_heist_schema_mysql.sql # SQL DDL for MySQL & PostgreSQL
 │   ├── 📜 carbon_heist_schema_mssql.sql # Dedicated T-SQL DDL for Microsoft SQL Server
 │   ├── 📊 NYC_Energy_CO2_Tables_V2.xlsx # Table data dictionary & relational mappings
@@ -146,156 +161,90 @@ carbon-heist-mitigation/
 │
 ├── 📄 requirements.txt             # Python environment dependencies
 ├── ⚖️ LICENSE                      # MIT License
-└── 📄 README.md                    # Project Executive Overview
+└── 📄 README.md                    # Project Executive Overview (You are here)
 ```
 
 ---
 
-## 🤖 The ML Insights Engine
-
-Instead of throwing unhedged capital at energy-efficient properties, we engineered a **Predictive ML Regression & Classification Pipeline** using `scikit-learn` to process municipal energy records of **11,000+ NYC buildings**.
-
-<details>
-<summary><strong>💡 Key Discoveries from Feature Importance Modeling</strong></summary>
-
-1. **Gross Floor Area (GFA)** and **Year Built** are the strongest predictive signals for carbon footprint scaling — outperforming neighborhood, property type, and utility source in model importance ranking.
-
-2. **Pre-war masonry skyscrapers (1930s era) are not write-offs.** When properly audited via our Waste-heat Energy Transfer (WET) system model, they present the *highest latent return on capital* in the entire portfolio.
-
-3. **Energy Star Scores are a lagging indicator.** Assets with mid-range scores (50–65) hold disproportionate untapped reduction potential vs. their stated compliance risk.
-
-</details>
-
-<details>
-<summary><strong>🖥️ CLI Audit Playground — Console Demo</strong></summary>
-
-```
-C:\Users\TeamX\Desktop> python ll97_playground.py
-╔════════════════════════════════════════════════════╗
-║       LL97 DATA-DRIVEN FORENSIC AUDIT ENGINE       ║
-║       Trained on 11,000+ NYC Building Records      ║
-╚════════════════════════════════════════════════════╝
-[*] Training Phase: Analyzing patterns in 11,247 records...
-[✓] Model Ready.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
->>> ASSET INPUT
-  Year Built          [or 'exit']: 1934
-  GFA (sq ft)                    : 5,000,000
-  Energy Star Score (1-100)      : 55
-  Borough                        : Bronx
-  Property Type                  : Multifamily Housing
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
->>> STRATEGIC AUDIT: MULTIFAMILY HOUSING — BRONX
-  [PREDICTED EMISSIONS]   31,446.0 Metric Tons CO2e / yr
-  [CARBON LIABILITY]      $1.69 / sqft  (Total Exposure)
-  [PEER COMPARISON]       -30.4% vs. Portfolio Average
-  [VERDICT]  ⚡ HIGH OPPORTUNITY — WET System Candidate
-```
-
-</details>
-
----
-
-## 📊 Interactive Sensitivity Dashboard
-
-To stress-test our carbon mitigation strategy against severe economic and regulatory shifts, we built an **Interactive Sensitivity Analysis Dashboard** in D3.js.
+## 🏛️ Statutory Reference Formulas
 
 > [!IMPORTANT]
-> ### **1. Statutory Fine Formula (NYC LL97)**
-> **Penalty ($) = Total Emissions (MT CO₂e) × 268**
-> *(Where **$268** is the mandatory fine rate per metric ton exceeding statutory carbon thresholds)*
+> ### **1. NYC Local Law 97 Statutory Fine Formula**
+> **Penalty ($) = Total Emissions (MT CO₂e) × 268**  
+> *(Where **$268** is the legally mandated penalty rate per metric ton exceeding statutory carbon thresholds)*
 
 > [!TIP]
-> ### **2. Core Payback Financial Formula**
+> ### **2. CAPEX Retrofit Payback Formula**
 > **Payback Period (Years) = CAPEX ($) ÷ [Annual Utility Savings ($) + Avoided LL97 Fines ($)]**
 
-<details>
-<summary><strong>📐 Dashboard Features</strong></summary>
+---
 
-| Feature | Description |
-|:---|:---|
-| 📏 **Log Scale Toggle** | Visualize the Surgical Strike ($31.64/sqft return) alongside billion-dollar capital projects on the same axis |
-| 🎛️ **Sensitivity Sliders** | Adjust carbon price, discount rate, and utility escalation assumptions in real-time |
-| ⚠️ **Phase 2 Impact Proof** | Bypassing BMS Systems & Tuning degrades overall payback from **7.15 yrs → 12.3 yrs** — empirically proven |
-| 💹 **Waterfall View** | Visualize the self-funding cascade: early-phase savings unlock later-phase CAPEX |
+## 🗺️ The 5-Scenario Self-Funding Decarbonization Pipeline
 
-</details>
+Our capital deployment follows a strict **self-funding cascade**: rapid-payback early interventions generate immediate operational cash flows that fund deeper structural retrofits without over-leveraging portfolio assets.
+
+| Phase | Strategy Name | Target Archetype | Portfolio Area | Capital Expenditure | Annual Savings | Payback Horizon | Strategic Role |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **01** | **🟢 Surgical Strike** | High-Intensity Outliers | 20M sq. ft. | **$500K** | **$20.69M** | **8 Days** | Immediate cash-flow injection & high fine avoidance |
+| **02** | **🔵 Smart Scale** | 1960s Commercial / Multi | 400M sq. ft. | **$2.00B** | **$336.01M** | **5.95 Years** | Large-scale HVAC tune-up & BMS retro-commissioning |
+| **03** | **🟡 WET System** | 1930s Pre-War Masonry | 20M sq. ft. | **$1.50B** | **$122.89M** | **12.21 Years** | Waste-heat Energy Transfer (WET) thermal recovery |
+| **04** | **🔴 Electrification Push** | 1980s–Present Towers | 100M sq. ft. | **$1.00B** | **$222.64M** | **4.49 Years** | Fossil heating conversion to electric heat pumps |
+| **🏆** | **TOTAL PORTFOLIO** | **Blended Portfolio** | **540M sq. ft.** | **$4.50B** | **$702.23M** | **6.41 Years** | **Self-Funding Portfolio Transformation** |
 
 ---
 
-## 🗺️ The 5-Scenario Decarbonization Pipeline
+## 🚀 Quick Start Guide
 
-Our capital deployment follows a strict **self-funding pipeline**: rapid-payback early interventions generate the liquid reserves needed to fund deep structural retrofits.
-
-| # | Scenario | GFA | CAPEX | Utility Savings | Avoided Fines | Total Savings | Payback |
-|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| 🟢 | **Surgical Strike** | 20M sqft | $500K | $2.19M | $18.50M | $20.69M | **8 Days** |
-| 🔵 | **Smart Scale** *(1960s)* | 400M sqft | $2.00B | $100.00M | $236.01M | $336.01M | **5.95 yrs** |
-| 🟡 | **WET System** *(1930s)* | 20M sqft | $1.50B | $40.00M | $82.89M | $122.89M | **12.21 yrs** |
-| 🔴 | **Full Electrification** *(1980s+)* | 100M sqft | $1.00B | $60.00M | $162.64M | $222.64M | **4.49 yrs** |
-| 🏆 | **Total Portfolio** | **540M sqft** | **$4.50B** | **$202.19M** | **$500.04M** | **$702.23M** | **6.41 yrs** |
-
-> 💡 **Self-Funding Logic:** The Surgical Strike (8-day payback) generates immediate cash flow that seeds the Smart Scale phase, which in turn funds the deeper WET and Electrification infrastructure — making the entire $4.5B roadmap capital-efficient.
-
----
-
-## 🚀 Quick Start
-
-**Prerequisites:** Python 3.9+, pip
-
+### 1. Clone & Setup Environment
 ```bash
-# 1. Clone the repository
 git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git
 cd carbon-heist-mitigation
-
-# 2. Install dependencies
 pip install -r requirements.txt
+```
 
-# 3. Run the automated data cleaning & audit pipeline
+### 2. Execute Automated Data Pipeline
+```bash
 python data/Clean_Data_Pipeline.py
+```
 
-# 4. Train / retrain the Random Forest ML model (R² = 81.65%)
+### 3. Train Machine Learning Regressor
+```bash
 python models/train_ll97_model.py
+```
 
-# 5. Launch the interactive executive web dashboard
+### 4. Launch Executive Streamlit Dashboard
+```bash
 cd application
 streamlit run app.py
 ```
-
-The Streamlit executive dashboard will open automatically at `http://localhost:8501`.
+> The interactive web dashboard will automatically open in your default browser at `http://localhost:8501`.
 
 ---
 
 ## 👥 The Heist Crew — Team X
 
-*Five specialists. One mission. Zero excuses.*
+*Five data science and engineering specialists. One mission.*
 
-| Role | Operative | Domain |
-|:---:|:---|:---|
-| 🧠 **The Mastermind** | **Ahmed Adel Amin** | ML Pipeline Architecture · Forensic Cleaning · Feature Engineering |
-| ⚙️ **The Engineer** | **Ledia Sobhy** | WET System Design · Heat Pump Integration · HVAC Thermal Modeling |
-| 📋 **The Regulator** | **Huda Amr** | LL97 Policy Audit · Portfolio Emissions Mapping · Environmental Strategy |
-| 💹 **The Strategist** | **Hagar Hussein** | Sensitivity Stress-Testing · Capital Optimization · Payback & ROI Modeling |
-| 🔍 **The Analyst** | **Abeer Adel** | Data Analysis · Portfolio Benchmarking · Insights Reporting |
-
----
-
-## ⚖️ License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+| Operational Role | Team Member | Primary Responsibility & Domain |
+| :--- | :--- | :--- |
+| 🧠 **Lead Data Scientist** | **Ahmed Adel Amin** | ML Regression Pipeline · Feature Engineering · Automated ETL Wrangle |
+| ⚙️ **MEP & Thermal Lead** | **Ledia Sobhy** | WET System Thermodynamic Design · Heat Pump Modeling |
+| 📋 **Regulatory Specialist** | **Huda Amr** | NYC Local Law 97 Audit · Portfolio Compliance Strategy |
+| 💹 **Financial Strategist** | **Hagar Hussein** | CAPEX Payback Modeling · Sensitivity Analysis · Cash Flow Cascade |
+| 🔍 **Analytics Specialist** | **Abeer Adel** | Peer Benchmarking · KPI Visualizations · Reporting Suite |
 
 ---
 
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=120&section=footer" width="100%"/>
 
-<em>Securing the Skyline — One Data Point at a Time</em><br/>
-<strong>Team X · NYC · 2026</strong>
+<strong>Turning a $2.88B Regulatory Liability into a High-Yield Strategic Asset</strong><br/>
+<em>Team X · NYC LL97 Decarbonization Intelligence Platform · 2026</em>
 
 <br/><br/>
 
 <a href="https://github.com/ahmedadelamin/carbon-heist-mitigation">
-  <img src="https://img.shields.io/badge/View%20on-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub"/>
 </a>
 
 </div>
