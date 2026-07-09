@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 import joblib
 import sys
 from pathlib import Path
@@ -597,14 +598,47 @@ with tab1:
             st.plotly_chart(hbar(type_df, CGHG, CTYP, "Emissions by Building Type (tCO₂e)", C_CYAN), use_container_width=True)
             st.caption("Aggregated emissions by primary property use-case.")
     with c4:
-        if CBOR in df.columns and CPEN in df.columns:
-            boro_df = df.groupby(CBOR)[[CGHG, CPEN]].sum().reset_index()
-            fig = px.bar(boro_df, x=CBOR, y=[CGHG, CPEN], barmode="group",
-                         color_discrete_sequence=[C_CYAN, C_RED])
-            fig.update_traces(marker_line_width=0, opacity=0.88)
-            fig.update_layout(chart("Borough Analysis: Emissions vs Penalties"), legend_title_text="")
+        if CBOR in df.columns and CPEN in df.columns and CINT in df.columns:
+            valid_boros = ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island']
+            boro_df = (
+                df[df[CBOR].isin(valid_boros)]
+                .groupby(CBOR)
+                .agg({CPEN: "sum", CGHG: "sum", CINT: "mean"})
+                .reset_index()
+                .sort_values(CPEN, ascending=False)
+            )
+            fig = make_subplots(specs=[[{"secondary_y": True}]])
+            fig.add_trace(
+                go.Bar(
+                    x=boro_df[CBOR],
+                    y=boro_df[CPEN],
+                    name="LL97 Fine Exposure ($)",
+                    marker_color=C_CYAN,
+                    opacity=0.88,
+                    hovertemplate="<b>%{x}</b><br>Fine Liability: $%{y:,.0f}<extra></extra>",
+                ),
+                secondary_y=False,
+            )
+            fig.add_trace(
+                go.Scatter(
+                    x=boro_df[CBOR],
+                    y=boro_df[CINT],
+                    name="Avg Intensity (kgCO₂/ft²)",
+                    mode="lines+markers",
+                    marker=dict(color=C_AMBER, size=8),
+                    line=dict(color=C_AMBER, width=2.5),
+                    hovertemplate="Avg Intensity: %{y:.2f} kgCO₂/ft²<extra></extra>",
+                ),
+                secondary_y=True,
+            )
+            fig.update_layout(
+                chart("NYC Borough Analysis: Fine Exposure vs Intensity"),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+            )
+            fig.update_yaxes(title_text="LL97 Penalty ($)", secondary_y=False, gridcolor="rgba(100,116,139,0.1)")
+            fig.update_yaxes(title_text="Avg Intensity (kgCO₂/ft²)", secondary_y=True, showgrid=False)
             st.plotly_chart(fig, use_container_width=True)
-            st.caption("Geographic split of carbon exposure vs. financial risk.")
+            st.caption("Total statutory fine exposure (bars, left axis) vs average carbon intensity per sq ft (line, right axis).")
 
     st.markdown(section_div(), unsafe_allow_html=True)
 
@@ -708,7 +742,7 @@ with tab2:
             "borderwidth": 0,
         },
     ))
-    fig_gauge.update_layout(dict(**CHART_BASE, height=220, margin=dict(t=30, b=0, l=10, r=10)))
+    fig_gauge.update_layout(chart("", height=220, margin=dict(t=30, b=0, l=10, r=10)))
     with m4:
         st.plotly_chart(fig_gauge, use_container_width=True)
 
@@ -940,9 +974,7 @@ with tab4:
         hovertemplate="Rate: %{y}<br>Shock: %{x}<br>Liability: <b>$%{z:.3f}/ft²</b><extra></extra>",
     ))
     fig_hm.update_layout(
-        dict(**CHART_BASE,
-             title=dict(text="Portfolio Liability Intensity Matrix ($/ft²)", font=dict(size=14, color="#ffffff", family="Inter")),
-             height=280, margin=dict(t=48, b=28, l=150, r=28)),
+        chart("Portfolio Liability Intensity Matrix ($/ft²)", height=280, margin=dict(t=48, b=28, l=150, r=28))
     )
     st.plotly_chart(fig_hm, use_container_width=True)
 
@@ -1010,9 +1042,7 @@ with tab4:
         fig_pb.update_traces(marker_line_width=0, opacity=0.88, textposition="outside",
                              textfont=dict(color="#ffffff", size=12))
         fig_pb.update_layout(
-            dict(**CHART_BASE,
-                 title=dict(text="Payback Period — 5 Strategic Playbooks", font=dict(size=14, color="#ffffff", family="Inter")),
-                 height=360, margin=dict(t=48, b=28, l=10, r=55)),
+            chart("Payback Period — 5 Strategic Playbooks", height=360, margin=dict(t=48, b=28, l=10, r=55)),
             yaxis=dict(gridcolor="rgba(100,116,139,0.1)", automargin=True),
             xaxis_title="",
             coloraxis_showscale=False,
@@ -1060,9 +1090,7 @@ with tab4:
         fig_capex.update_traces(marker_line_width=0, opacity=0.88, textposition="outside",
                                 textfont=dict(color="#ffffff", size=11))
         fig_capex.update_layout(
-            dict(**CHART_BASE,
-                 title=dict(text="Required CAPEX by Playbook ($)", font=dict(size=14, color="#ffffff", family="Inter")),
-                 height=300, margin=dict(t=48, b=28, l=10, r=65)),
+            chart("Required CAPEX by Playbook ($)", height=300, margin=dict(t=48, b=28, l=10, r=65)),
             yaxis=dict(automargin=True), xaxis_title="",
             coloraxis_showscale=False,
         )
