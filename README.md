@@ -176,7 +176,7 @@ Our interactive simulation playground (`models/ll97_playground.py`) provides ass
 
 ```text
 ╔══════════════════════════════════════════════════════════════════════╗
-║             NYC LL97 DATA-DRIVEN FORENSIC AUDIT ENGINE             ║
+║             NYC LL97 DATA-DRIVEN FORENSIC AUDIT ENGINE               ║
 ║            Trained on 11,639 Compliant Building Records              ║
 ╚══════════════════════════════════════════════════════════════════════╝
 [*] Training Phase: Loading Random Forest Regressor (R² = 81.65%)...
