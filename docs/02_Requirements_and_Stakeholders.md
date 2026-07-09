@@ -87,10 +87,10 @@ flowchart LR
 
 | Use Case ID | Name | Primary Actor | Description & Trigger |
 | :---: | :--- | :--- | :--- |
-| **UC-01** | **Ingest&nbsp;&&nbsp;Clean&nbsp;LL84&nbsp;Data** | Data Engineer / System | Automated ingestion of raw municipal Excel spreadsheets, applying 8-step cleaning and validation rules. |
-| **UC-02** | **Predict&nbsp;Carbon&nbsp;Footprint** | ML Predictive Engine | Given physical building features, predict annual Total GHG Emissions using trained Random Forest Regressor. |
-| **UC-03** | **Simulate&nbsp;Decarbonization** | Asset Manager | Adjust UI sliders (Energy Star score improvement, Electrification shift) to calculate revised carbon penalty exposure. |
-| **UC-04** | **Export&nbsp;Executive&nbsp;Report** | Sustainability Officer | Generate summary KPI cards and compliance reports for presentation to C-suite executives. |
+| **UC&#8209;01** | **Ingest&nbsp;&&nbsp;Clean&nbsp;LL84&nbsp;Data** | Data Engineer / System | Automated ingestion of raw municipal Excel spreadsheets, applying 8-step cleaning and validation rules. |
+| **UC&#8209;02** | **Predict&nbsp;Carbon&nbsp;Footprint** | ML Predictive Engine | Given physical building features, predict annual Total GHG Emissions using trained Random Forest Regressor. |
+| **UC&#8209;03** | **Simulate&nbsp;Decarbonization** | Asset Manager | Adjust UI sliders (Energy Star score improvement, Electrification shift) to calculate revised carbon penalty exposure. |
+| **UC&#8209;04** | **Export&nbsp;Executive&nbsp;Report** | Sustainability Officer | Generate summary KPI cards and compliance reports for presentation to C-suite executives. |
 
 ---
 

@@ -69,17 +69,15 @@ flowchart LR
 
 > [!IMPORTANT]
 > ### **100% Verification SLA**
-> Every system module—from municipal data parsing to Streamlit interactive rendering—has been rigorously verified against quantitative domain benchmarks.
-
-| Test ID | Test Category | Scenario Description | Input / Condition | Expected Outcome | Actual Result | Status |
+> Every system module—from municipal data parsing to Streamlit interactive rendering—has been rigo| Test ID | Test Category | Scenario Description | Input / Condition | Expected Outcome | Actual Result | Status |
 | :---: | :--- | :--- | :--- | :--- | :--- | :---: |
-| **TC-01** | **Data&nbsp;Engineering** | Ingest Raw LL84 Spreadsheet | 11,000+ Raw NYC municipal disclosure records | Cleanly replace `"Not Available"` with `NaN` without data corruption | Successfully parsed all records | **🟢&nbsp;PASS** |
-| **TC-02** | **Data&nbsp;Engineering** | Size Threshold Compliance | Apply `GFA >= 50,000 sq ft` filter | Retain only buildings legally subject to LL97 | Retained 11,639 compliant properties | **🟢&nbsp;PASS** |
-| **TC-03** | **Data&nbsp;Engineering** | Borough Normalization | Input misspelled city names (`"Ny"`, `"Quuens"`, `"beonx"`) | Map to correct standard NYC borough strings | Exactly 0 invalid addresses remaining | **🟢&nbsp;PASS** |
-| **TC-04** | **Machine&nbsp;Learning** | Random Forest Regressor Accuracy | Train model on 80/20 train/test split | Achieve $R^2 \ge 75\%$ and MAE $\le 250$ MT CO₂e | **$R^2 = 81.65\%$**, **MAE = 212.99** | **🟢&nbsp;PASS** |
-| **TC-05** | **Machine&nbsp;Learning** | Outlier Alignment Parity | Ensure `train_ll97_model.py` and `ll97_playground.py` match | Both scripts filter `Site EUI < 2000` | Both scripts yield exact $81.65\%$ accuracy | **🟢&nbsp;PASS** |
-| **TC-06** | **Financial&nbsp;Engine** | LL97 Statutory Fine Calculation | 1930s Asset (150k sq. ft., predicted 1,422.1 MT CO₂e) | Exact calculation: $\$2.54$ penalty / sq. ft. | Verified exact match ($\$2.54$/ft²) | **🟢&nbsp;PASS** |
-| **TC-07** | **UI&nbsp;/&nbsp;Dashboard** | Interactive Slider Recalculation | Adjust Energy Star slider from 40 to 85 | Instant chart update showing reduced carbon penalty | Rendered under 0.3s | **🟢&nbsp;PASS** |
+| **TC&#8209;01** | **Data&nbsp;Engineering** | Ingest Raw LL84 Spreadsheet | 11,000+ Raw NYC municipal disclosure records | Cleanly replace `"Not Available"` with `NaN` without data corruption | Successfully parsed all records | **🟢&nbsp;PASS** |
+| **TC&#8209;02** | **Data&nbsp;Engineering** | Size Threshold Compliance | Apply `GFA >= 50,000 sq ft` filter | Retain only buildings legally subject to LL97 | Retained 11,639 compliant properties | **🟢&nbsp;PASS** |
+| **TC&#8209;03** | **Data&nbsp;Engineering** | Borough Normalization | Input misspelled city names (`"Ny"`, `"Quuens"`, `"beonx"`) | Map to correct standard NYC borough strings | Exactly 0 invalid addresses remaining | **🟢&nbsp;PASS** |
+| **TC&#8209;04** | **Machine&nbsp;Learning** | Random Forest Regressor Accuracy | Train model on 80/20 train/test split | Achieve **R² ≥ 75%** and **MAE ≤ 250 MT CO₂e** | **R² = 81.65%**, **MAE = 212.99** | **🟢&nbsp;PASS** |
+| **TC&#8209;05** | **Machine&nbsp;Learning** | Outlier Alignment Parity | Ensure `train_ll97_model.py` and `ll97_playground.py` match | Both scripts filter `Site EUI < 2000` | Both scripts yield exact **81.65%** accuracy | **🟢&nbsp;PASS** |
+| **TC&#8209;06** | **Financial&nbsp;Engine** | LL97 Statutory Fine Calculation | 1930s Asset (150k sq. ft., predicted 1,422.1 MT CO₂e) | Exact calculation: **$2.54 penalty / sq. ft.** | Verified exact match (**$2.54/ft²**) | **🟢&nbsp;PASS** |
+| **TC&#8209;07** | **UI&nbsp;/&nbsp;Dashboard** | Interactive Slider Recalculation | Adjust Energy Star slider from 40 to 85 | Instant chart update showing reduced carbon penalty | Rendered under 0.3s | **🟢&nbsp;PASS** |
 
 ---
 
@@ -100,9 +98,9 @@ assert not df['Total GHG Emissions (Metric Tons CO2e)'].isna().any(), "ERROR: Ta
 
 | Bug ID | Date Reported | Description of Issue | Root Cause Analysis | Corrective Action & Resolution |
 | :---: | :---: | :--- | :--- | :--- |
-| **BUG-01** | 2026-06-30 | Playground accuracy dropped to **63.8%** compared to **81.65%** in main model script. | `ll97_playground.py` had an outdated filter (`Site EUI < 1500`) that truncated extreme variance compared to `train_ll97_model.py`. | Synchronized data cleaning filters across both files (`Site EUI < 2000`); playground accuracy restored to **81.65%**. |
-| **BUG-02** | 2026-06-30 | Python terminal reported `SyntaxWarning: "\d" is an invalid escape sequence` on path load. | Windows relative file path `..\data\sample_nyc_energy.xlsx` was interpreted by Python regex tokenizer as escape sequence `\d`. | Standardized relative file paths to POSIX forward slashes (`../data/sample_nyc_energy.xlsx`) across all scripts. |
-| **BUG-03** | 2026-07-02 | Microsoft SQL Server rejected DDL file with syntax error near `ON DELETE RESTRICT`. | Microsoft SQL Server (T-SQL) does not support standard ANSI `ON DELETE RESTRICT` syntax. | Created dedicated Microsoft SQL Server schema (`carbon_heist_schema_mssql.sql`) replacing `RESTRICT` with `ON DELETE NO ACTION`. |
+| **BUG&#8209;01** | 2026&#8209;06&#8209;30 | Playground accuracy dropped to **63.8%** compared to **81.65%** in main model script. | `ll97_playground.py` had an outdated filter (`Site EUI < 1500`) that truncated extreme variance compared to `train_ll97_model.py`. | Synchronized data cleaning filters across both files (`Site EUI < 2000`); playground accuracy restored to **81.65%**. |
+| **BUG&#8209;02** | 2026&#8209;06&#8209;30 | Python terminal reported `SyntaxWarning: "\d" is an invalid escape sequence` on path load. | Windows relative file path `..\data\sample_nyc_energy.xlsx` was interpreted by Python regex tokenizer as escape sequence `\d`. | Standardized relative file paths to POSIX forward slashes (`../data/sample_nyc_energy.xlsx`) across all scripts. |
+| **BUG&#8209;03** | 2026&#8209;07&#8209;02 | Microsoft SQL Server rejected DDL file with syntax error near `ON DELETE RESTRICT`. | Microsoft SQL Server (T-SQL) does not support standard ANSI `ON DELETE RESTRICT` syntax. | Created dedicated Microsoft SQL Server schema (`carbon_heist_schema_mssql.sql`) replacing `RESTRICT` with `ON DELETE NO ACTION`. |(`carbon_heist_schema_mssql.sql`) replacing `RESTRICT` with `ON DELETE NO ACTION`. |
 
 ---
 
