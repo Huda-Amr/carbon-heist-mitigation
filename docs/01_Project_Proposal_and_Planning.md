@@ -37,25 +37,33 @@ The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, mach
 
 ```mermaid
 gantt
-    title Carbon Heist Mitigation Platform - Implementation Timeline
+    title Implementation Timeline & Project Roadmap
     dateFormat  YYYY-MM-DD
-    section Phase 1: Requirements & Architecture
-    Stakeholder & Regulatory Analysis       :a1, 2026-05-01, 10d
-    Relational Database & ERD Design        :a2, after a1, 10d
-    section Phase 2: Data Engineering (ETL)
-    Raw Data Assessment & Cleaning Script   :b1, 2026-05-20, 15d
-    Pipeline Validation & PDF Audit Report  :b2, after b1, 7d
-    section Phase 3: AI & Predictive Modeling
-    Feature Engineering & Encoding          :c1, 2026-06-10, 10d
-    Random Forest Training & Hyper-tuning   :c2, after c1, 10d
-    Model Persistence & Playground Testing  :c3, after c2, 5d
-    section Phase 4: Full-Stack UI & Analytics
-    Streamlit Dashboard Architecture        :d1, 2026-06-25, 12d
-    Interactive Plotly Charts & Simulation  :d2, after d1, 10d
-    section Phase 5: Testing & Deployment
-    End-to-End Testing & QA Audit           :e1, 2026-07-05, 5d
-    Documentation & GitHub Repository Sync  :e2, after e1, 5d
+    axisFormat  %b %d
+    section 1. Architecture
+    Requirements & Scope         :a1, 2026-05-01, 12d
+    Database Schema & ERD        :a2, after a1, 10d
+    section 2. Data Pipeline
+    ETL Script & Cleaning        :b1, 2026-05-23, 14d
+    Audit Validation & Report    :b2, after b1, 7d
+    section 3. AI Modeling
+    Feature Engineering          :c1, 2026-06-13, 10d
+    Random Forest Training       :c2, after c1, 10d
+    section 4. Web Dashboard
+    Streamlit UI Development     :d1, 2026-07-03, 10d
+    Interactive Plotly Charts    :d2, after d1, 7d
+    section 5. Deployment
+    QA Audit & Documentation     :e1, after d2, 5d
 ```
+
+#### Detailed Milestone Breakdown
+| Phase | Key Milestone / Deliverable | Target Date | Duration |
+| :--- | :--- | :---: | :---: |
+| **Phase 1: Architecture** | Complete Stakeholder Requirements & Relational ERD (`carbon_heist_schema_mysql.sql`) | May 22, 2026 | 22 Days |
+| **Phase 2: Data Engineering** | Execute Data Cleaning Pipeline & PDF Report (`sample_nyc_energy.xlsx`) | Jun 12, 2026 | 21 Days |
+| **Phase 3: AI & Predictive Modeling** | Train Random Forest Regressor (`ll97_model.joblib`) with $R^2 = 81.6\%$ | Jul 02, 2026 | 20 Days |
+| **Phase 4: Web Dashboard** | Deploy Interactive Executive Streamlit App (`app.py`) | Jul 19, 2026 | 17 Days |
+| **Phase 5: Deployment & QA** | Conduct End-to-End QA Testing & Publish GitHub Documentation Suite | Jul 24, 2026 | 5 Days |
 
 ---
 
@@ -94,5 +102,5 @@ gantt
    - **Target:** UI recalculation and chart re-rendering under 1.5 seconds upon slider adjustment.
    - **Achieved:** Sub-second response time (~0.3s) via optimized Streamlit caching and vectorized Pandas calculations.
 4. **Regulatory Calculation Precision:**
-   - **Target:** Exact mathematical alignment with NYC statutory penalty formula: $\text{Penalty} = (\text{Total Emissions} - \text{Statutory Limit}) \times \$268$.
+   - **Target:** Exact mathematical alignment with NYC statutory penalty formula: $\text{Penalty} = \text{Total Emissions} \times 268$.
    - **Achieved:** Verified across 13 engineering scenarios against official Excel financial models.
