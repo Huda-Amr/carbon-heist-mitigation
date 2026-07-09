@@ -1,3 +1,4 @@
+<a id="top"></a>
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=220&section=header&text=THE%202.88B%20CARBON%20HEIST&fontSize=52&fontColor=00FF66&fontAlignY=36&desc=Data-Driven%20Decarbonization%20Counter-Intelligence%20Platform&descAlignY=62&descSize=18&descColor=8B949E" width="100%" alt="The 2.88B Carbon Heist"/>
 
@@ -326,7 +327,8 @@ streamlit run app.py
 
 <br/><br/>
 
-[![Return to Top](https://img.shields.io/badge/⬆️%20BACK%20TO-TOP%20OF%20PAGE-00FF66?style=for-the-badge&logo=github&logoColor=black)](#)&nbsp;
+[![Return to Top](https://img.shields.io/badge/⬆️%20BACK%20TO-TOP%20OF%20PAGE-00FF66?style=for-the-badge&logo=github&logoColor=black)](#top)&nbsp;
+[![Main Repo Home](https://img.shields.io/badge/🏠%20MAIN%20REPOSITORY-HOME-181717?style=for-the-badge&logo=github)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
 [![Academic Docs Suite](https://img.shields.io/badge/📑%20EXPLORE-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](./docs/README.md)
 
 </div>
