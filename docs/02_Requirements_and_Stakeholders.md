@@ -37,7 +37,7 @@ Identifying key stakeholders, their primary responsibilities, pain points, and s
 - **FR-01 (Data Ingestion & Preprocessing):** The system shall ingest raw Excel (.xlsx) files formatted per NYC Local Law 84 disclosure standards.
 - **FR-02 (Data Cleaning & Normalization):** The system shall automatically replace string placeholders (`"Not Available"`), filter properties below 50,000 sq. ft., correct typo-ridden borough/city names, and remove records with critical meter data gaps.
 - **FR-03 (Predictive Emissions Inference):** The system shall provide an inference endpoint utilizing the serialized Random Forest ML model (`ll97_model.joblib`) to estimate annual greenhouse gas emissions given `[Year Built, GFA, Energy Star Score, Borough, Property Type]`.
-- **FR-04 (Carbon Liability Calculation):** The system shall calculate statutory carbon penalty exposure using the official formula: $\text{Penalty Exposure} = \text{Predicted Emissions} \times 268$.
+- **FR-04 (Carbon Liability Calculation):** The system shall calculate statutory carbon penalty exposure using the official formula: **Penalty Exposure ($) = Total Emissions (MT CO₂e) × 268**.
 - **FR-05 (Interactive Visualization Dashboard):** The system shall render interactive KPI cards, peer comparison charts, and engineering playbook recommendations via Streamlit and Plotly.
 - **FR-06 (Relational Persistence Integration):** The system shall define standard SQL DDL structures capable of storing normalized physical property dimensions, annual metering facts, and compliance alerts.
 

@@ -14,16 +14,25 @@ Welcome to the **Application Layer** of the **Carbon Heist Mitigation Platform**
 
 ---
 
+## 🏛️ Statutory Fine Reference Formula
+
+The interactive dashboard evaluates building carbon liability instantly using the official statutory fine formula:
+
+> [!IMPORTANT]
+> ### **Penalty ($) = Total Emissions (MT CO₂e) × 268**
+> Where **$268** is the mandatory statutory fine per metric ton of **CO₂e** under NYC Local Law 97.
+
+---
+
 ## 🎯 Key Features of the Dashboard
 
 1. **Real-Time Statutory Penalty Calculation:**
-   - Evaluates building carbon liability instantly using the official statutory fine formula:
-     $$\text{Penalty} = \text{Total Emissions} \times 268$$
+   - Evaluates baseline fine liabilities and simulates financial savings immediately upon adjusting parameter inputs.
 2. **Interactive Decarbonization Simulation (Sliders):**
    - **Energy Star Efficiency Slider:** Simulate insulation and HVAC optimization improvements.
    - **Electrification Shift Slider:** Model transitioning heating fuel systems from fossil gas to electric heat pumps.
 3. **Peer Comparison & Benchmarking:**
-   - Visualizes your building's Carbon Intensity ($\text{kg CO}_2\text{e / sq. ft.}$) against the NYC borough and property type averages.
+   - Visualizes your building's Carbon Intensity (**kg CO₂e / sq. ft.**) against the NYC borough and property type averages.
 
 ---
 
