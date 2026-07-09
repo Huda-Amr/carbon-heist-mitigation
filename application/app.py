@@ -570,7 +570,7 @@ with tab1:
         if all(c in df.columns for c in [CN, CGHG]):
             top_ghg = df.nlargest(10, CGHG).sort_values(CGHG, ascending=True)
             fig = hbar(top_ghg, CGHG, CN, "Top 10 Buildings by GHG Emissions", C_RED, [CTYP, CBOR])
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
             st.caption("Gross tCO₂e contributions from the worst-emitting properties.")
             with st.expander("🔍 Insights: Top Polluters"):
                 h = top_ghg.iloc[-1]
@@ -580,7 +580,7 @@ with tab1:
         if all(c in df.columns for c in [CN, CPEN]):
             top_pen = df.nlargest(10, CPEN).sort_values(CPEN, ascending=True)
             fig = hbar(top_pen, CPEN, CN, "Top 10 Buildings by LL97 Fine Exposure", C_RED, [CGHG])
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
             st.caption("Highest estimated statutory fines under Local Law 97.")
             with st.expander("💡 Insights: Financial Risk"):
                 hr = top_pen.iloc[-1]
@@ -595,7 +595,7 @@ with tab1:
     with c3:
         if CTYP in df.columns and CGHG in df.columns:
             type_df = df.groupby(CTYP)[CGHG].sum().reset_index().nlargest(10, CGHG).sort_values(CGHG, ascending=True)
-            st.plotly_chart(hbar(type_df, CGHG, CTYP, "Emissions by Building Type (tCO₂e)", C_CYAN), use_container_width=True)
+            st.plotly_chart(hbar(type_df, CGHG, CTYP, "Emissions by Building Type (tCO₂e)", C_CYAN), width='stretch')
             st.caption("Aggregated emissions by primary property use-case.")
     with c4:
         if CBOR in df.columns and CPEN in df.columns and CINT in df.columns:
@@ -637,7 +637,7 @@ with tab1:
             )
             fig.update_yaxes(title_text="LL97 Penalty ($)", secondary_y=False, gridcolor="rgba(100,116,139,0.1)")
             fig.update_yaxes(title_text="Avg Intensity (kgCO₂/ft²)", secondary_y=True, showgrid=False)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
             st.caption("Total statutory fine exposure (bars, left axis) vs average carbon intensity per sq ft (line, right axis).")
 
     st.markdown(section_div(), unsafe_allow_html=True)
@@ -654,7 +654,7 @@ with tab1:
                 fig = px.scatter(df, x=CAGE, y=CINT, opacity=0.55, hover_name=CN)
             fig.update_traces(marker_color=C_CYAN, selector=dict(mode="markers"))
             fig.update_layout(chart("Building Age vs Emission Intensity"))
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
             st.caption("Relationship between infrastructure age and carbon efficiency.")
             with st.expander("💡 Insights: Infrastructure Age"):
                 corr = df[CAGE].corr(df[CINT]) if len(df.dropna(subset=[CAGE, CINT])) > 2 else 0
@@ -665,7 +665,7 @@ with tab1:
         if energy_cols:
             esums = df[energy_cols].sum().sort_values(ascending=True)
             edf   = pd.DataFrame({"Source": esums.index.str.replace(" Use (kBtu)", "", regex=False), "kBtu": esums.values})
-            st.plotly_chart(hbar(edf, "kBtu", "Source", "Portfolio Energy Source Breakdown", C_CYAN), use_container_width=True)
+            st.plotly_chart(hbar(edf, "kBtu", "Source", "Portfolio Energy Source Breakdown", C_CYAN), width='stretch')
             st.caption("Aggregate consumption by fuel/utility type.")
 
     c7, c8 = st.columns(2)
@@ -674,14 +674,14 @@ with tab1:
             fig = px.scatter(df, x=CSCO, y=CINT, color=CSCO, hover_name=CN,
                              color_continuous_scale="RdYlGn", opacity=0.65)
             fig.update_layout(chart("ENERGY STAR Score vs Emission Intensity"))
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
             st.caption("Higher ENERGY STAR scores should correlate with lower carbon intensity.")
     with c8:
         if CALT in df.columns:
             aseries = df[CALT].dropna().astype(str).str.split(",").explode().str.strip()
             acnt    = aseries.value_counts().reset_index().head(10).sort_values("count", ascending=True)
             acnt.columns = ["Alert Type", "Frequency"]
-            st.plotly_chart(hbar(acnt, "Frequency", "Alert Type", "Data Quality Alerts Detected", C_AMBER), use_container_width=True)
+            st.plotly_chart(hbar(acnt, "Frequency", "Alert Type", "Data Quality Alerts Detected", C_AMBER), width='stretch')
             st.caption("Most common utility reporting anomalies in the dataset.")
 
 
@@ -744,7 +744,7 @@ with tab2:
     ))
     fig_gauge.update_layout(chart("", height=220, margin=dict(t=30, b=0, l=10, r=10)))
     with m4:
-        st.plotly_chart(fig_gauge, use_container_width=True)
+        st.plotly_chart(fig_gauge, width='stretch')
 
     with st.expander("💡 Strategy Analysis"):
         scenarios_tbl = pd.DataFrame({
@@ -773,7 +773,7 @@ with tab2:
             totals={"marker": {"color": C_CYAN}},
         ))
         fig_wf.update_layout(chart("Emissions Reduction Waterfall (tCO₂e)"))
-        st.plotly_chart(fig_wf, use_container_width=True)
+        st.plotly_chart(fig_wf, width='stretch')
         st.caption("Step-by-step impact from baseline to final residual footprint.")
     with bc2:
         cats = ["CO₂ Reduction %","Penalty Savings %","Portfolio Coverage %"]
@@ -790,7 +790,7 @@ with tab2:
             chart("Scenario Effectiveness Comparison"),
             polar=dict(radialaxis=dict(visible=True, range=[0,100], gridcolor="rgba(100,116,139,0.15)")),
         )
-        st.plotly_chart(fig_radar, use_container_width=True)
+        st.plotly_chart(fig_radar, width='stretch')
         st.caption("Holistic impact comparison across the three independent strategies.")
 
     bc3, bc4 = st.columns(2)
@@ -805,7 +805,7 @@ with tab2:
                           color_discrete_sequence=[C_GREEN, C_CYAN])
         fig_comp.update_traces(marker_line_width=0, opacity=0.88)
         fig_comp.update_layout(chart("Scenario Return vs Impact"), yaxis_title="")
-        st.plotly_chart(fig_comp, use_container_width=True)
+        st.plotly_chart(fig_comp, width='stretch')
         st.caption("Hover for exact physical and financial yield per scenario.")
     with bc4:
         df_road = pd.DataFrame([
@@ -816,7 +816,7 @@ with tab2:
         fig_tl = px.timeline(df_road, x_start="Start", x_end="Finish", y="Task", color="Phase",
                              color_discrete_sequence=[C_CYAN, C_AMBER, C_GREEN])
         fig_tl.update_layout(chart("Strategic Implementation Roadmap"))
-        st.plotly_chart(fig_tl, use_container_width=True)
+        st.plotly_chart(fig_tl, width='stretch')
         st.caption("Proposed multi-phase execution timeline across 2024–2026.")
 
     st.markdown(f"""
@@ -862,7 +862,7 @@ with tab3:
             with f3:
                 prop_type = st.selectbox("Primary Property Type", type_classes)
                 st.markdown("<div style='height:1.9rem'></div>", unsafe_allow_html=True)
-            submitted = st.form_submit_button("⚡ Generate Prediction", use_container_width=True)
+            submitted = st.form_submit_button("⚡ Generate Prediction", width='stretch')
 
         if submitted:
             errs = validate_ml_inputs(yr, gfa, score)
@@ -922,7 +922,7 @@ with tab3:
                 "Importance": ml_model.feature_importances_,
             }).sort_values("Importance", ascending=True)
             st.plotly_chart(hbar(imp_df, "Importance", "Feature", "Random Forest Feature Importance", C_CYAN),
-                            use_container_width=True)
+                            width='stretch')
             st.caption("Relative influence of each input on the model's GHG emissions predictions.")
         else:
             st.info("Feature importance unavailable for this model type.")
@@ -976,7 +976,7 @@ with tab4:
     fig_hm.update_layout(
         chart("Portfolio Liability Intensity Matrix ($/ft²)", height=280, margin=dict(t=48, b=28, l=150, r=28))
     )
-    st.plotly_chart(fig_hm, use_container_width=True)
+    st.plotly_chart(fig_hm, width='stretch')
 
     # ── Section 2: Playbooks
     st.markdown(section_div(), unsafe_allow_html=True)
@@ -1047,7 +1047,7 @@ with tab4:
             xaxis_title="",
             coloraxis_showscale=False,
         )
-        st.plotly_chart(fig_pb, use_container_width=True)
+        st.plotly_chart(fig_pb, width='stretch')
 
     with pc2:
         st.markdown(f"""
@@ -1094,7 +1094,7 @@ with tab4:
             yaxis=dict(automargin=True), xaxis_title="",
             coloraxis_showscale=False,
         )
-        st.plotly_chart(fig_capex, use_container_width=True)
+        st.plotly_chart(fig_capex, width='stretch')
 
     with tc2:
         total_capex   = pb_df["capex"].sum()
