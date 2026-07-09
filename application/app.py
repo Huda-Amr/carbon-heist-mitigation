@@ -266,6 +266,15 @@ st.markdown(f"""
         box-shadow: 0 8px 25px rgba(0, 210, 255, 0.35) !important;
     }}
     
+    /* ===== BOLD TEXT VISIBILITY ===== */
+    b, strong {{
+        color: #ffffff !important;
+        font-weight: 700;
+    }}
+    .exec-panel b, .exec-panel strong {{
+        color: #00D2FF !important;
+    }}
+    
     /* ===== SCROLLBAR ===== */
     ::-webkit-scrollbar {{ width: 6px; }}
     ::-webkit-scrollbar-track {{ background: transparent; }}
@@ -1163,40 +1172,51 @@ with tab4:
         </div>
     """, unsafe_allow_html=True)
 
-    pb_chart_col, pb_info_col = st.columns([1.35, 1.05])
+    # Short labels for clean chart display
+    short_labels = [
+        "Surgical Strike",
+        "Retro-commissioning",
+        "1960s Smart Scale",
+        "1930s WET Systems",
+        "Electrification Push"
+    ]
+    playbook_scenarios["Short"] = short_labels
+
+    pb_chart_col, pb_info_col = st.columns([1.2, 1.2])
 
     with pb_chart_col:
         fig_pb = px.bar(
-            playbook_scenarios,
-            x="Scenario",
-            y="Payback_Years",
+            playbook_scenarios.sort_values("Payback_Years", ascending=True),
+            y="Short",
+            x="Payback_Years",
+            orientation="h",
             color="Annual_Savings",
             color_continuous_scale=[[0, "#00D2FF"], [0.5, "#A855F7"], [1, "#00F59B"]],
-            labels={"Payback_Years": "Payback Period (Years)", "Scenario": "Playbook"},
-            text=playbook_scenarios["Payback_Years"].apply(lambda v: f"{v:.2f} yrs")
+            labels={"Payback_Years": "Payback Period (Years)", "Short": ""},
+            text=playbook_scenarios.sort_values("Payback_Years", ascending=True)["Payback_Years"].apply(lambda v: f"{v:.2f} yrs")
         )
-        fig_pb.update_traces(marker_line_width=0, opacity=0.9, textposition="outside", textfont_color="#ffffff")
+        fig_pb.update_traces(marker_line_width=0, opacity=0.9, textposition="outside", textfont=dict(color="#ffffff", size=13))
         fig_pb.update_layout(
             title=dict(text="Payback Period across the 5 Strategic Playbooks", font=dict(size=15, color="#ffffff", family="Inter")),
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
-            font=dict(color="#94a3b8", family="Inter"),
-            margin=dict(t=50, b=30, l=40, r=20),
-            height=340,
-            xaxis=dict(gridcolor="rgba(100,116,139,0.1)"),
-            yaxis=dict(gridcolor="rgba(100,116,139,0.1)")
+            font=dict(color="#cbd5e1", family="Inter", size=13),
+            margin=dict(t=50, b=30, l=10, r=60),
+            height=380,
+            xaxis=dict(gridcolor="rgba(100,116,139,0.1)", title=""),
+            yaxis=dict(gridcolor="rgba(100,116,139,0.1)", automargin=True)
         )
         st.plotly_chart(fig_pb, use_container_width=True)
 
     with pb_info_col:
         st.markdown(f"""
-            <div class="exec-panel" style="margin-top: 0px; height: 310px; overflow-y: auto;">
-                <h4 style="color: {COLOR_GREEN} !important;">⚙️ Playbook Engineering Blueprint</h4>
-                <p><b>Target Scope:</b> {selected_playbook['Target']}</p>
-                <p><b>Execution Strategy:</b> {selected_playbook['Desc']}</p>
-                <hr style="border-color: #334155; margin: 10px 0;">
-                <p style="margin-bottom: 0px; font-size: 0.92rem; color: #cbd5e1;">
-                    💡 <b>Self-Funding Portfolio Note:</b> Phase 1 quick wins (Surgical Strike at <b>0.02 yrs payback</b>) generate immediate positive cash flow to subsidize deeper capital projects in Phases 2 and 3.
+            <div class="exec-panel" style="height: 380px; overflow-y: auto;">
+                <h4 style="color: {COLOR_GREEN} !important; -webkit-text-fill-color: {COLOR_GREEN} !important; background: none !important;">⚙️ Playbook Engineering Blueprint</h4>
+                <p style="color: #e2e8f0; margin-bottom: 12px;"><span style="color: {COLOR_BLUE}; font-weight: 700;">Target Scope:</span> {selected_playbook['Target']}</p>
+                <p style="color: #e2e8f0; margin-bottom: 12px;"><span style="color: {COLOR_BLUE}; font-weight: 700;">Execution Strategy:</span> {selected_playbook['Desc']}</p>
+                <hr style="border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 210, 255, 0.3), transparent); margin: 14px 0;">
+                <p style="margin-bottom: 0; font-size: 0.9rem; color: #94a3b8;">
+                    💡 <span style="color: {COLOR_GREEN}; font-weight: 700;">Self-Funding Model:</span> Phase 1 quick wins (Surgical Strike at <span style="color: #ffffff; font-weight: 700;">0.02 yrs payback</span>) generate immediate cash flow to subsidize Phases 2 & 3.
                 </p>
             </div>
         """, unsafe_allow_html=True)
