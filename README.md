@@ -240,40 +240,40 @@ Across all academic documentation files, regulatory penalty exposure and capital
 
 Our capital deployment follows a strict **self-funding cascade**: rapid-payback early interventions generate immediate operational cash flows that fund deeper structural retrofits without over-leveraging portfolio assets.
 
-| Phase | Strategy&nbsp;Name | Target&nbsp;Archetype | Portfolio&nbsp;Area | CAPEX | Annual&nbsp;Savings | Payback | Strategic Impact |
-| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| **01** | **🟢&nbsp;Surgical&nbsp;Strike** | High-Intensity Outliers | 20M&nbsp;sq.ft. | **$500K** | **$20.69M** | **8&nbsp;Days** | Immediate cash-flow injection & high fine avoidance |
-| **02** | **🔵&nbsp;Smart&nbsp;Scale** | 1960s Commercial / Multi | 400M&nbsp;sq.ft. | **$2.00B** | **$336.01M** | **5.95&nbsp;Yrs** | Large-scale HVAC tune-up & BMS retro-commissioning |
-| **03** | **🟡&nbsp;WET&nbsp;System** | 1930s Pre-War Masonry | 20M&nbsp;sq.ft. | **$1.50B** | **$122.89M** | **12.21&nbsp;Yrs** | Waste-heat Energy Transfer (WET) thermal recovery |
-| **04** | **🔴&nbsp;Electrification** | 1980s–Present Towers | 100M&nbsp;sq.ft. | **$1.00B** | **$222.64M** | **4.49&nbsp;Yrs** | Fossil heating conversion to electric heat pumps |
-| **🏆** | **TOTAL&nbsp;PORTFOLIO** | **Blended Portfolio** | **540M&nbsp;sq.ft.** | **$4.50B** | **$702.23M** | **6.41&nbsp;Yrs** | **Self-Funding Portfolio Transformation** |
+| Phase & Strategy | Portfolio Scope | CAPEX | Annual Savings & Payback | Strategic Impact |
+| :--- | :---: | :---: | :--- | :--- |
+| **01 · 🟢 Surgical Strike**<br/>*High-Intensity Outliers* | **20M sq. ft.** | **$500K** | **$20.69M / yr**<br/>⚡ *Payback: 8 Days* | Immediate cash-flow injection & statutory fine avoidance |
+| **02 · 🔵 Smart Scale**<br/>*1960s Commercial / Multi* | **400M sq. ft.** | **$2.00B** | **$336.01M / yr**<br/>⚡ *Payback: 5.95 Yrs* | Large-scale HVAC tune-up & BMS retro-commissioning |
+| **03 · 🟡 WET System**<br/>*1930s Pre-War Masonry* | **20M sq. ft.** | **$1.50B** | **$122.89M / yr**<br/>⚡ *Payback: 12.21 Yrs* | Waste-heat Energy Transfer (WET) thermal recovery |
+| **04 · 🔴 Electrification**<br/>*1980s–Present Towers* | **100M sq. ft.** | **$1.00B** | **$222.64M / yr**<br/>⚡ *Payback: 4.49 Yrs* | Fossil heating conversion to electric heat pumps |
+| **🏆 TOTAL PORTFOLIO**<br/>*Blended Portfolio* | **540M sq. ft.** | **$4.50B** | **$702.23M / yr**<br/>🎯 **Blended: 6.41 Yrs** | **Self-Funding Portfolio Transformation** |
 
 ---
 
 ## 🚀 Quick Start Guide
 
-<table width="100%" align="center">
-  <tr>
-    <th width="35%" align="left">Execution Stage</th>
-    <th width="65%" align="left">Terminal Command & Action</th>
-  </tr>
-  <tr>
-    <td><strong>1. Clone & Setup Environment</strong><br/><em>Install dependencies</em></td>
-    <td><code>git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git</code><br/><code>cd carbon-heist-mitigation && pip install -r requirements.txt</code></td>
-  </tr>
-  <tr>
-    <td><strong>2. Execute Data Pipeline</strong><br/><em>Clean LL84 records & impute nulls</em></td>
-    <td><code>python data/Clean_Data_Pipeline.py</code></td>
-  </tr>
-  <tr>
-    <td><strong>3. Train ML Regressor</strong><br/><em>Train Random Forest (R² = 81.65%)</em></td>
-    <td><code>python models/train_ll97_model.py</code></td>
-  </tr>
-  <tr>
-    <td><strong>4. Launch UI Dashboard</strong><br/><em>Interactive Streamlit App</em></td>
-    <td><code>cd application && streamlit run app.py</code></td>
-  </tr>
-</table>
+### 1. Clone & Setup Environment
+```bash
+git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git
+cd carbon-heist-mitigation
+pip install -r requirements.txt
+```
+
+### 2. Execute Automated Data Pipeline
+```bash
+python data/Clean_Data_Pipeline.py
+```
+
+### 3. Train Machine Learning Regressor
+```bash
+python models/train_ll97_model.py
+```
+
+### 4. Launch Executive Streamlit Dashboard
+```bash
+cd application
+streamlit run app.py
+```
 
 > **Live Dashboard Access:** Once launched, the interactive web dashboard automatically opens at `http://localhost:8501`.
 
