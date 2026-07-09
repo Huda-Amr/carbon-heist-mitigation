@@ -21,90 +21,256 @@ COLOR_GREEN = "#00F59B"
 COLOR_RED = "#FF4B6E"    
 COLOR_ORANGE = "#FFB800" 
 COLOR_BLUE = "#00D2FF"   
-COLOR_BG = "#090d16"     
-COLOR_CARD = "#131c2e"   
+COLOR_PURPLE = "#A855F7"
+COLOR_BG = "#060b18"     
+COLOR_CARD = "#0f1729"   
 
 st.markdown(f"""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
+    /* ===== GLOBAL CANVAS ===== */
     .stApp {{
-        background: radial-gradient(circle at 15% 15%, #0d1b33 0%, #090d16 85%);
-        color: #f8fafc;
-        font-family: 'Outfit', sans-serif;
+        background: linear-gradient(135deg, #060b18 0%, #0c1225 30%, #0a0f1f 60%, #060b18 100%);
+        color: #e2e8f0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }}
     
-    /* KPI Cards - Ultra Glassmorphism */
-    .kpi-container {{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.25rem;
-        margin-bottom: 2.25rem;
+    /* Subtle animated mesh overlay */
+    .stApp::before {{
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: 
+            radial-gradient(ellipse at 20% 50%, rgba(0, 210, 255, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 80%, rgba(0, 245, 155, 0.03) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 0;
     }}
-    .kpi-card {{
-        background: rgba(19, 28, 46, 0.75);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
-        padding: 1.6rem;
-        flex: 1;
-        min-width: 170px;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
-        border-top: 4px solid {COLOR_BLUE};
-        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ===== TYPOGRAPHY ===== */
+    h1 {{
+        background: linear-gradient(135deg, #00D2FF 0%, #A855F7 50%, #00F59B 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        font-weight: 800 !important;
+        font-size: 2.4rem !important;
+        letter-spacing: -0.03em;
     }}
-    .kpi-card:hover {{
-        transform: translateY(-4px);
-        box-shadow: 0 18px 35px -5px rgba(0, 210, 255, 0.2);
-        border-color: rgba(0, 210, 255, 0.3);
-    }}
-    .kpi-card.risk {{ border-top-color: {COLOR_RED}; }}
-    .kpi-card.risk:hover {{ box-shadow: 0 18px 35px -5px rgba(255, 75, 110, 0.25); }}
-    .kpi-card.good {{ border-top-color: {COLOR_GREEN}; }}
-    .kpi-card.good:hover {{ box-shadow: 0 18px 35px -5px rgba(0, 245, 155, 0.25); }}
-    
-    .kpi-title {{ font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 0.6rem; }}
-    .kpi-value {{ font-size: 1.85rem; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }}
-    
-    h1, h2, h3 {{
+    h2, h3 {{
         color: #ffffff !important;
         font-weight: 700 !important;
         letter-spacing: -0.02em;
     }}
+    h4 {{
+        color: #cbd5e1 !important;
+        font-weight: 600 !important;
+    }}
     
-    /* Tabs Enhancement */
-    .stTabs [data-baseweb="tab-list"] {{
-        gap: 8px;
-        background-color: rgba(19, 28, 46, 0.6);
-        padding: 8px;
-        border-radius: 14px;
+    /* ===== KPI CARDS - PREMIUM GLASS ===== */
+    .kpi-container {{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }}
+    .kpi-card {{
+        background: linear-gradient(145deg, rgba(15, 23, 41, 0.85), rgba(15, 23, 41, 0.6));
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
+        padding: 1.4rem 1.5rem;
+        flex: 1;
+        min-width: 165px;
+        box-shadow: 
+            0 4px 30px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        border-top: 3px solid {COLOR_BLUE};
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }}
+    .kpi-card::after {{
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 200%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+        transition: left 0.6s ease;
+    }}
+    .kpi-card:hover::after {{
+        left: 100%;
+    }}
+    .kpi-card:hover {{
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 
+            0 20px 40px rgba(0, 210, 255, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        border-color: rgba(0, 210, 255, 0.2);
+    }}
+    .kpi-card.risk {{ border-top-color: {COLOR_RED}; }}
+    .kpi-card.risk:hover {{ box-shadow: 0 20px 40px rgba(255, 75, 110, 0.15), inset 0 1px 0 rgba(255,255,255,0.08); }}
+    .kpi-card.good {{ border-top-color: {COLOR_GREEN}; }}
+    .kpi-card.good:hover {{ box-shadow: 0 20px 40px rgba(0, 245, 155, 0.15), inset 0 1px 0 rgba(255,255,255,0.08); }}
+    
+    .kpi-title {{
+        font-size: 0.72rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }}
+    .kpi-value {{
+        font-size: 1.65rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+    }}
+    
+    /* ===== TAB BAR ===== */
+    .stTabs [data-baseweb="tab-list"] {{
+        gap: 4px;
+        background: linear-gradient(135deg, rgba(15, 23, 41, 0.7), rgba(15, 23, 41, 0.5));
+        backdrop-filter: blur(12px);
+        padding: 6px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
     }}
     .stTabs [data-baseweb="tab"] {{
-        border-radius: 10px;
-        padding: 10px 20px;
-        color: #94a3b8;
+        border-radius: 12px;
+        padding: 10px 18px;
+        color: #64748b;
         font-weight: 600;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+    }}
+    .stTabs [data-baseweb="tab"]:hover {{
+        color: #94a3b8;
+        background-color: rgba(255, 255, 255, 0.03);
     }}
     .stTabs [aria-selected="true"] {{
-        background-color: rgba(0, 210, 255, 0.15) !important;
+        background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), rgba(168, 85, 247, 0.1)) !important;
         color: #00D2FF !important;
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
     }}
     
-    /* Executive Panels */
+    /* ===== EXECUTIVE PANELS ===== */
     .exec-panel {{
-        background: rgba(19, 28, 46, 0.75);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
+        background: linear-gradient(145deg, rgba(15, 23, 41, 0.85), rgba(15, 23, 41, 0.55));
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
+        padding: 1.8rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        border-left: 3px solid {COLOR_BLUE};
+    }}
+    .exec-panel h3, .exec-panel h4 {{
+        background: linear-gradient(135deg, #00D2FF, #A855F7) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        margin-bottom: 0.8rem;
+    }}
+    .exec-panel p {{
+        color: #cbd5e1;
+        line-height: 1.7;
+        font-size: 0.95rem;
+    }}
+    .exec-panel b {{
+        color: #ffffff;
+    }}
+    
+    /* ===== SIDEBAR ===== */
+    [data-testid="stSidebar"] {{
+        background: linear-gradient(180deg, #0c1225 0%, #080e1c 100%) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }}
+    [data-testid="stSidebar"] .stMarkdown h3 {{
+        font-size: 0.9rem;
+        color: #64748b !important;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }}
+    
+    /* ===== WIDGETS ===== */
+    .stSlider > div > div > div > div {{
+        background: linear-gradient(90deg, {COLOR_BLUE}, {COLOR_PURPLE}) !important;
+    }}
+    .stSelectbox > div > div {{
+        background-color: rgba(15, 23, 41, 0.8) !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+        border-radius: 12px !important;
+    }}
+    
+    /* ===== EXPANDERS ===== */
+    .streamlit-expanderHeader {{
+        color: #94a3b8 !important;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }}
+    .streamlit-expanderContent {{
+        background: rgba(15, 23, 41, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: 0 0 14px 14px;
+    }}
+    
+    /* ===== METRICS DELTA ===== */
+    [data-testid="stMetricDelta"] {{
+        font-weight: 600;
+    }}
+    
+    /* ===== DIVIDERS ===== */
+    hr {{
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 210, 255, 0.2), rgba(168, 85, 247, 0.2), transparent);
+        margin: 2rem 0;
+    }}
+    
+    /* ===== IMAGE HEADERS ===== */
+    .header-image {{
+        border-radius: 18px;
+        margin-bottom: 1.5rem;
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+        opacity: 0.8;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }}
+    
+    /* ===== FORMS ===== */
+    [data-testid="stForm"] {{
+        background: rgba(15, 23, 41, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
         padding: 1.5rem;
     }}
+    .stButton > button {{
+        background: linear-gradient(135deg, {COLOR_BLUE}, {COLOR_PURPLE}) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 12px !important;
+        font-weight: 600 !important;
+        padding: 0.6rem 1.5rem !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(0, 210, 255, 0.25) !important;
+    }}
+    .stButton > button:hover {{
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 210, 255, 0.35) !important;
+    }}
     
-    /* Image styling */
-    .header-image {{ border-radius: 16px; margin-bottom: 1.25rem; object-fit: cover; width: 100%; height: 200px; opacity: 0.85; border: 1px solid rgba(255,255,255,0.08); }}
-    
-    .streamlit-expanderHeader {{ color: #00D2FF !important; font-weight: 600; }}
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar {{ width: 6px; }}
+    ::-webkit-scrollbar-track {{ background: transparent; }}
+    ::-webkit-scrollbar-thumb {{ background: rgba(100, 116, 139, 0.3); border-radius: 3px; }}
+    ::-webkit-scrollbar-thumb:hover {{ background: rgba(100, 116, 139, 0.5); }}
     </style>
 """, unsafe_allow_html=True)
 
@@ -263,17 +429,23 @@ if exc_alerts and C_ALERTS in df.columns:
 # ==========================================
 def get_layout(title=""):
     return dict(
-        title=dict(text=title, font=dict(size=16, color="#f8fafc")),
+        title=dict(text=title, font=dict(size=15, color="#ffffff", family="Inter")),
         template="plotly_dark",
         plot_bgcolor="rgba(0,0,0,0)",
         paper_bgcolor="rgba(0,0,0,0)",
         margin=dict(t=50, b=30, l=30, r=30),
-        font=dict(color="#94a3b8")
+        font=dict(color="#94a3b8", family="Inter"),
+        xaxis=dict(gridcolor="rgba(100,116,139,0.1)", zerolinecolor="rgba(100,116,139,0.15)"),
+        yaxis=dict(gridcolor="rgba(100,116,139,0.1)", zerolinecolor="rgba(100,116,139,0.15)")
     )
 
 def plot_horizontal_bar(data, x, y, title, color_hex, hover_cols=None):
     fig = px.bar(data, x=x, y=y, orientation='h', hover_data=hover_cols)
-    fig.update_traces(marker_color=color_hex)
+    fig.update_traces(
+        marker_color=color_hex,
+        marker_line_width=0,
+        opacity=0.9
+    )
     fig.update_layout(get_layout(title), yaxis={'categoryorder':'total ascending'})
     return fig
 
@@ -896,19 +1068,19 @@ with tab4:
     fig_sens = go.Figure(data=go.Heatmap(
         z=z_matrix,
         x=["+0% Shock", "+5% Shock", "+10% Shock", "+15% Shock"],
-        y=["$268 / MT (Statutory Base)", "$300 / MT (Moderate Escalation)", "$350 / MT (Severe Shock)"],
-        colorscale="Turbo",
-        texttemplate="<b>$%{z:.3f} / ft²</b>",
-        textfont={"size": 15, "color": "white", "family": "Outfit"},
-        hoverinfo="x+y+z"
+        y=["$268 / MT (Base)", "$300 / MT (Moderate)", "$350 / MT (Severe)"],
+        colorscale=[[0, "#0f1729"], [0.25, "#00D2FF"], [0.5, "#A855F7"], [0.75, "#FFB800"], [1, "#FF4B6E"]],
+        texttemplate="<b>$%{z:.3f}</b>",
+        textfont={"size": 16, "color": "white", "family": "Inter"},
+        hovertemplate="Penalty: %{y}<br>Shock: %{x}<br>Liability: <b>$%{z:.3f}/ft²</b><extra></extra>"
     ))
     fig_sens.update_layout(
-        title="🔥 Portfolio Liability Intensity Matrix ($/ft²) across Penalty & Emission Shocks",
-        paper_bgcolor=COLOR_CARD,
-        plot_bgcolor=COLOR_CARD,
-        font=dict(color="#f8fafc", family="Outfit"),
+        title=dict(text="Portfolio Liability Intensity Matrix ($/ft²)", font=dict(size=15, color="#ffffff", family="Inter")),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#94a3b8", family="Inter"),
         height=300,
-        margin=dict(t=50, b=30, l=180, r=40)
+        margin=dict(t=50, b=30, l=160, r=40)
     )
     st.plotly_chart(fig_sens, use_container_width=True)
 
@@ -999,17 +1171,20 @@ with tab4:
             x="Scenario",
             y="Payback_Years",
             color="Annual_Savings",
-            color_continuous_scale="Viridis",
+            color_continuous_scale=[[0, "#00D2FF"], [0.5, "#A855F7"], [1, "#00F59B"]],
             labels={"Payback_Years": "Payback Period (Years)", "Scenario": "Playbook"},
             text=playbook_scenarios["Payback_Years"].apply(lambda v: f"{v:.2f} yrs")
         )
+        fig_pb.update_traces(marker_line_width=0, opacity=0.9, textposition="outside", textfont_color="#ffffff")
         fig_pb.update_layout(
-            title="Payback Period (Years) across the 5 Strategic Playbooks",
-            paper_bgcolor=COLOR_CARD,
-            plot_bgcolor=COLOR_CARD,
-            font=dict(color="#f8fafc"),
+            title=dict(text="Payback Period across the 5 Strategic Playbooks", font=dict(size=15, color="#ffffff", family="Inter")),
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+            font=dict(color="#94a3b8", family="Inter"),
             margin=dict(t=50, b=30, l=40, r=20),
-            height=310
+            height=340,
+            xaxis=dict(gridcolor="rgba(100,116,139,0.1)"),
+            yaxis=dict(gridcolor="rgba(100,116,139,0.1)")
         )
         st.plotly_chart(fig_pb, use_container_width=True)
 
