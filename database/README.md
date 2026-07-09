@@ -16,6 +16,36 @@ Welcome to the **Database Layer** of the **Carbon Heist Mitigation Platform**. T
 
 ---
 
+## 🗺️ Relational Schema Entity-Relationship Flow (3NF)
+
+```mermaid
+erDiagram
+    BOROUGHS ||--o{ PROPERTIES : "contains"
+    PROPERTY_TYPES ||--o{ PROPERTIES : "categorizes"
+    PROPERTIES ||--|| ENERGY_METRICS : "records annual"
+    PROPERTIES ||--|| EMISSION_METRICS : "generates"
+    PROPERTIES ||--|| LL97_PENALTIES : "incurs statutory"
+    PROPERTIES ||--o{ PROPERTY_FUEL_USAGE : "consumes"
+    PROPERTIES ||--o{ PROPERTY_ALERTS : "triggers"
+
+    PROPERTIES {
+        int property_id PK
+        string property_name
+        int year_built
+        decimal gfa_ft2
+        int borough_id FK
+    }
+    LL97_PENALTIES {
+        int penalty_id PK
+        int property_id FK
+        decimal total_ghg_emissions
+        decimal statutory_penalty_usd
+        string compliance_status
+    }
+```
+
+---
+
 ## 🏛️ Normalized Schema Architecture (3NF)
 
 The database design splits wide municipal spreadsheets into clean, normalized relational entities:
@@ -29,14 +59,16 @@ The database design splits wide municipal spreadsheets into clean, normalized re
 
 ---
 
-## 🚀 How to Initialize the Database
+## 🚀 How to Initialize the Database Schema
+
+To deploy the schema to your SQL server instance:
 
 ### For MySQL / MariaDB / PostgreSQL:
 ```bash
-mysql -u root -p < database/carbon_heist_schema_mysql.sql
+mysql -u root -p < carbon_heist_schema_mysql.sql
 ```
 
-### For Microsoft SQL Server (T-SQL via SQLCMD):
-```bash
-sqlcmd -S localhost -U sa -P YourPassword -i database/carbon_heist_schema_mssql.sql
+### For Microsoft SQL Server (T-SQL):
+```powershell
+sqlcmd -S localhost -U sa -P YourPassword -i carbon_heist_schema_mssql.sql
 ```

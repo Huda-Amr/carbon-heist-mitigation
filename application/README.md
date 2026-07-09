@@ -14,6 +14,24 @@ Welcome to the **Application Layer** of the **Carbon Heist Mitigation Platform**
 
 ---
 
+## ⚙️ Interactive UI & Simulation Flow
+
+```mermaid
+flowchart LR
+    DATA["📊 input.xlsx\nValidated Building Records"]:::in --> UI["🖥️ Streamlit Front-End\napp.py Dashboard UI"]:::ui
+    SLIDERS["🎛️ User Interactive Sliders\n• ENERGY STAR Score Shift\n• Electrification % Transition"]:::in --> UI
+    UI --> CALC["🧮 Real-Time LL97 Fine Engine\nPenalty = Emissions × $268"]:::calc
+    CALC --> VIZ["📈 Plotly Peer Benchmarking\nInteractive Bar & Scatter Plots"]:::viz
+    CALC --> EXP["📥 Executive CSV Export\nresults.csv Compliance Log"]:::viz
+
+    classDef in fill:#161B22,stroke:#8B949E,stroke-width:2px,color:#C9D1D9
+    classDef ui fill:#0D1117,stroke:#FF4B4B,stroke-width:2px,color:#FF4B4B
+    classDef calc fill:#0D1117,stroke:#F7931E,stroke-width:2px,color:#F7931E
+    classDef viz fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66
+```
+
+---
+
 ## 🏛️ Statutory Fine Reference Formula
 
 The interactive dashboard evaluates building carbon liability instantly using the official statutory fine formula:

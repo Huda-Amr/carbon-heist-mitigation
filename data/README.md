@@ -16,9 +16,27 @@ Welcome to the **Data Layer** of the **Carbon Heist Mitigation Platform**. This 
 
 ---
 
-## ⚙️ Automated 8-Step Cleaning Pipeline
+## ⚙️ Automated 8-Step Cleaning Architecture
 
-The script `Clean_Data_Pipeline.py` performs the following rigorous data hygiene steps:
+```mermaid
+flowchart TD
+    RAW["📥 Raw NYC LL84 Disclosure Data\n(Raw Municipal Benchmarking Records)"]:::raw --> S1["1️⃣ Null Standardization\nReplace 'Not Available' & Placeholders with NaN"]:::step
+    S1 --> S2["2️⃣ Operational Filtering\nFilter Non-Operational & Municipal Test Sites"]:::step
+    S2 --> S3["3️⃣ Statutory Size Threshold\nRetain Compliant Buildings: GFA ≥ 50,000 sq. ft."]:::step
+    S3 --> S4["4️⃣ Borough Normalization\nStandardize Typos ('Ny', 'Quuens', 'beonx')"]:::step
+    S4 --> S5["5️⃣ Data Completeness Auditing\nDrop Missing 12-Month Meter Facts"]:::step
+    S5 --> S6["6️⃣ Outlier Mitigation\nRemove Unphysical Anomalies (Penalty/ft² > $1,700)"]:::step
+    S6 --> S7["7️⃣ Deduplication\nRemove Duplicate Disclosure & Property IDs"]:::step
+    S7 --> OUT["✅ Clean Master Dataset\n11,639 Validated Compliant Buildings"]:::out
+    S7 --> PDF["📄 Automated PDF Audit Report\nLL97_Data_Cleaning_Report.pdf"]:::pdf
+
+    classDef raw fill:#161B22,stroke:#8B949E,stroke-width:2px,color:#C9D1D9
+    classDef step fill:#0D1117,stroke:#30363D,stroke-width:2px,color:#E6EDF3
+    classDef out fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66
+    classDef pdf fill:#0D1117,stroke:#00E5FF,stroke-width:2px,color:#00E5FF
+```
+
+### Detailed Pipeline Steps:
 1. **Null Standardization:** Replaces string placeholders like `"Not Available"` with standard numeric `NaN`.
 2. **Operational Filtering:** Filters out non-operational or municipal test properties.
 3. **Statutory Size Threshold:** Retains only buildings legally subject to LL97 limits (**GFA ≥ 50,000 sq. ft.**).

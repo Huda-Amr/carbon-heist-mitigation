@@ -12,6 +12,28 @@ Welcome to the **Domain & Financial Engineering Layer** of the **Carbon Heist Mi
 
 ---
 
+## ⚙️ Financial & Engineering 13-Sheet Architecture
+
+```mermaid
+flowchart TD
+    RAW["1️⃣ Data & 2️⃣ Clean Sheets\nNYC LL84 Benchmarking Data Records"]:::raw --> AN["3️⃣ Analysis & 8️⃣ Factors\nCarbon Emission Factors & Intensity Statistics"]:::an
+    AN --> CARDS["4️⃣ Data Cards & 7️⃣ Executive Summary\nExecutive KPI Dashboards & C-Suite Overview"]:::cards
+    AN --> SENS["5️⃣ Sensitivity & 6️⃣ Scenario Sheets\nCAPEX Stress-Testing & NPV / ROI Projections"]:::sens
+    SENS --> PB1["9️⃣ Surgical Strike Playbook\nImmediate Low-Cost Interventions (8-Day Payback)"]:::pb
+    SENS --> PB2["🔟 Retro-commissioning Playbook\nHVAC Tuning & BMS Setpoints"]:::pb
+    SENS --> PB3["1️⃣1️⃣ WET Scenario Playbook\nWaste-Heat Energy Transfer Deep Retrofit"]:::pb
+    SENS --> PB4["1️⃣2️⃣ 1960s Smart Scale Playbook\nTargeted Decarbonization for Aging Archetypes"]:::pb
+    SENS --> PB5["1️⃣3️⃣ Electrification Push Playbook\nFossil Heating to Electric Heat Pumps"]:::pb
+
+    classDef raw fill:#161B22,stroke:#8B949E,stroke-width:2px,color:#C9D1D9
+    classDef an fill:#0D1117,stroke:#30363D,stroke-width:2px,color:#E6EDF3
+    classDef cards fill:#0D1117,stroke:#00E5FF,stroke-width:2px,color:#00E5FF
+    classDef sens fill:#0D1117,stroke:#F7931E,stroke-width:2px,color:#F7931E
+    classDef pb fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66
+```
+
+---
+
 ## 🏛️ Statutory Fine Reference Formula
 
 Across all financial sheets, statutory penalty exposure is evaluated using the official Local Law 97 formula:

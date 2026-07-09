@@ -15,10 +15,25 @@ Welcome to the **Machine Learning Layer** of the **Carbon Heist Mitigation Platf
 
 ---
 
-## 📈 Model Architecture & Performance
+## 📈 Model Architecture & Flow
 
-The predictive regression model is trained on **11,622 compliant NYC commercial & residential buildings**:
-- **Algorithm:** `RandomForestRegressor`
+```mermaid
+flowchart LR
+    IN["📊 Clean NYC Data\n11,622 Buildings"]:::input --> FE["🛠️ Feature Engineering & Guardrails\nSite EUI < 2000 & Categorical Encoders"]:::proc
+    FE --> RF["🤖 Random Forest Regressor\n150 Decision Trees, Max Depth 20"]:::ml
+    RF --> EVAL["✅ Validation Accuracy\nR² = 81.65% | MAE = 212.99 MT CO₂e"]:::eval
+    EVAL --> OUT1["💾 ll97_model.joblib"]:::art
+    EVAL --> OUT2["🖥️ Interactive CLI Audit\nll97_playground.py"]:::art
+
+    classDef input fill:#161B22,stroke:#8B949E,stroke-width:2px,color:#C9D1D9
+    classDef proc fill:#0D1117,stroke:#30363D,stroke-width:2px,color:#E6EDF3
+    classDef ml fill:#0D1117,stroke:#F7931E,stroke-width:2px,color:#F7931E
+    classDef eval fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66
+    classDef art fill:#0D1117,stroke:#00E5FF,stroke-width:2px,color:#00E5FF
+```
+
+### Model Performance Highlights:
+- **Algorithm:** `RandomForestRegressor` (`n_estimators=150`, `max_depth=20`)
 - **Predictors (Features):** `Year Built`, `Gross Floor Area (GFA)`, `ENERGY STAR Score`, `Borough`, `Primary Property Type`
 - **Target Variable:** `Total GHG Emissions (Metric Tons CO2e)`
 - **Validated Accuracy (R²):** **81.65%**
