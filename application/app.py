@@ -297,10 +297,11 @@ def validate_ml_inputs(year_built, gfa, score):
 # ==========================================
 st.title("🌍 ESG & Carbon Mitigation Dashboard")
 
-tab1, tab2, tab3 = st.tabs([
+tab1, tab2, tab3, tab4 = st.tabs([
     "Section 1: Problem Analysis",
     "Section 2: Mitigation Scenarios",
-    "Section 3: ML Prediction Engine"
+    "Section 3: ML Prediction Engine",
+    "Section 4: Financial Sensitivity & CAPEX Scenarios"
 ])
 
 # ---------------------------------------------------------
@@ -650,6 +651,9 @@ with tab2:
         st.plotly_chart(fig_timeline, use_container_width=True)
         st.caption("A proposed multi-year project timeline to execute the combined strategy.")
 
+    st.markdown("---")
+    st.info("💡 **C-Suite Financial Integration:** Looking for detailed **Regulatory & Grid Shock Sensitivity Analysis (`$/ft²`)** or **Decade-Built WET Decarbonization Payback Modeling**? Navigate directly to **Section 4: Financial Sensitivity & CAPEX Scenarios** above to explore Hagar Hussein's financial engineering suites.")
+
 # ---------------------------------------------------------
 # TAB 3: ML PREDICTION ENGINE
 # ---------------------------------------------------------
@@ -782,3 +786,182 @@ with tab3:
             st.caption("Relative contribution of each input feature to the Random Forest's emissions predictions.")
         else:
             st.info("Feature importance is unavailable for this model type.")
+
+# ---------------------------------------------------------
+# TAB 4: FINANCIAL SENSITIVITY & CAPEX SCENARIOS
+# ---------------------------------------------------------
+with tab4:
+    st.markdown("### 💼 C-Suite Financial Modeling: Sensitivity & Decarbonization Payback Scenarios")
+    st.caption("Integrates Hagar Hussein's financial engineering models directly from the Excel project suite (`Sensitivity` & `Scenario` sheets) to evaluate regulatory shocks, CAPEX co-funding, and Whole-Building Energy Transformation (WET) payback cascades.")
+
+    st.markdown("---")
+
+    # =========================================================
+    # SECTION 4.1: SENSITIVITY MATRIX (REGULATORY & GRID SHOCKS)
+    # =========================================================
+    st.markdown("#### 1️⃣ Regulatory & Grid Shock Sensitivity Simulator")
+    st.markdown("Evaluate portfolio-wide financial liability per square foot (`$/ft²`) under varying Local Law 97 penalty rates and grid emission factor escalations.")
+
+    scol1, scol2 = st.columns(2)
+    with scol1:
+        sim_penalty_rate = st.slider(
+            "⚖️ Statutory Fine Rate ($ / Metric Ton CO₂e)",
+            min_value=268, max_value=400, value=268, step=16,
+            help="Mandatory fine rate under Local Law 97 ($268/MT baseline statutory rate)."
+        )
+    with scol2:
+        sim_shock_pct = st.slider(
+            "⚡ Grid / Operational Emissions Shock (%)",
+            min_value=0, max_value=25, value=0, step=5,
+            help="Simulates sudden increases in grid carbon intensity or extreme weather heating demand."
+        )
+
+    base_portfolio_ghg = df[C_GHG].sum() if C_GHG in df.columns else 10560815.4
+    total_portfolio_gfa = 2014727607.4  # Exact portfolio GFA from Excel Sensitivity Sheet
+
+    sim_ghg = base_portfolio_ghg * (1 + sim_shock_pct / 100.0)
+    sim_total_penalty = sim_ghg * sim_penalty_rate
+    sim_penalty_psf = sim_total_penalty / total_portfolio_gfa
+    baseline_psf_excel = 1.4048045585936528
+
+    psf_variance = ((sim_penalty_psf - baseline_psf_excel) / baseline_psf_excel) * 100.0
+    psf_card_class = "risk" if psf_variance > 0 else "good"
+
+    st.markdown(f"""
+        <div class="kpi-container">
+            <div class="kpi-card risk"><div class="kpi-title">Simulated Portfolio Fine Exposure</div><div class="kpi-value">💵 ${sim_total_penalty:,.0f} / yr</div></div>
+            <div class="kpi-card {psf_card_class}"><div class="kpi-title">True Penalty Per SqFt</div><div class="kpi-value">📐 ${sim_penalty_psf:.3f} / ft²</div></div>
+            <div class="kpi-card"><div class="kpi-title">Variance vs Baseline ($1.405/ft²)</div><div class="kpi-value">📊 {psf_variance:+.1f}%</div></div>
+            <div class="kpi-card"><div class="kpi-title">Simulated Emissions Volume</div><div class="kpi-value">🏭 {sim_ghg:,.0f} tCO₂e</div></div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    sens_col1, sens_col2 = st.columns([1.1, 1.3])
+
+    with sens_col1:
+        st.markdown("##### 📋 Excel Sensitivity Reference Table (`$/ft²`)")
+        sens_matrix_df = pd.DataFrame({
+            "Penalty Rate ($/MT)": ["$268 (Statutory Base)", "$300 (Moderate Shock)", "$350 (Severe Shock)"],
+            "+0% Shock": [1.405, 1.573, 1.835],
+            "+5% Shock": [1.475, 1.651, 1.926],
+            "+10% Shock": [1.545, 1.730, 2.018],
+            "+15% Shock": [1.616, 1.808, 2.110]
+        })
+        st.dataframe(sens_matrix_df, use_container_width=True, hide_index=True)
+        st.caption("Exact values replicated from the `Sensitivity` sheet in `Co2 Project.xlsx`.")
+
+    with sens_col2:
+        z_matrix = [
+            [1.405, 1.475, 1.545, 1.616],
+            [1.573, 1.651, 1.730, 1.808],
+            [1.835, 1.926, 2.018, 2.110]
+        ]
+        fig_sens = go.Figure(data=go.Heatmap(
+            z=z_matrix,
+            x=["+0% Shock", "+5% Shock", "+10% Shock", "+15% Shock"],
+            y=["$268 / MT", "$300 / MT", "$350 / MT"],
+            colorscale="YlOrRd",
+            texttemplate="$%{z:.3f}/ft²",
+            textfont={"size": 13, "color": "white"}
+        ))
+        fig_sens.update_layout(
+            title="Liability Intensity Heatmap ($/ft²) across Penalty & Emission Shocks",
+            paper_bgcolor=COLOR_CARD,
+            plot_bgcolor=COLOR_CARD,
+            font=dict(color="#f8fafc"),
+            height=260,
+            margin=dict(t=40, b=20, l=60, r=20)
+        )
+        st.plotly_chart(fig_sens, use_container_width=True)
+
+    st.markdown("---")
+
+    # =========================================================
+    # SECTION 4.2: DECADE-BUILT WET DECARBONIZATION & PAYBACK
+    # =========================================================
+    st.markdown("#### 2️⃣ Decade-Built Decarbonization & WET CAPEX Payback Simulator")
+    st.markdown("Model Whole-Building Energy Transformation (WET) retrofits across historical NYC building archetypes, analyzing government grant co-funding, corporate CAPEX, and multi-year financial payback cascades.")
+
+    decade_excel_data = pd.DataFrame([
+        {"Decade": "1930s (Pre-War Heritage - WET Focus)", "Baseline_PSF": 1.632, "Retrofit_PSF": 0.979, "GHG": 1141704, "Total_Penalty": 305976618, "CAPEX": 1499764152},
+        {"Decade": "1940s Commercial & Residential", "Baseline_PSF": 1.405, "Retrofit_PSF": 0.843, "GHG": 559613, "Total_Penalty": 149976415, "CAPEX": 734884433},
+        {"Decade": "1950s Post-War Boom", "Baseline_PSF": 1.412, "Retrofit_PSF": 0.847, "GHG": 1150777, "Total_Penalty": 308408102, "CAPEX": 1511199699},
+        {"Decade": "1970s High-Rise Portfolio", "Baseline_PSF": 1.584, "Retrofit_PSF": 0.950, "GHG": 1171128, "Total_Penalty": 313862277, "CAPEX": 1537925158},
+        {"Decade": "1990s Modern Commercial", "Baseline_PSF": 1.915, "Retrofit_PSF": 1.149, "GHG": 446461, "Total_Penalty": 119651441, "CAPEX": 586292060},
+        {"Decade": "1890s Historic Landmarks", "Baseline_PSF": 2.019, "Retrofit_PSF": 1.211, "GHG": 132171, "Total_Penalty": 35421694, "CAPEX": 173566300}
+    ])
+
+    sel_decade_row = st.selectbox(
+        "🏗️ Select Building Decade Archetype to Model",
+        decade_excel_data["Decade"].tolist(),
+        index=0
+    )
+
+    selected_arch = decade_excel_data[decade_excel_data["Decade"] == sel_decade_row].iloc[0]
+
+    p1, p2, p3 = st.columns(3)
+    with p1:
+        grant_share_pct = st.slider("🏛️ Government Grant Co-Funding (%)", min_value=0, max_value=80, value=50, step=5) / 100.0
+    with p2:
+        emissions_cut_pct = st.slider("📉 Target WET Emissions Reduction (%)", min_value=10, max_value=70, value=40, step=5) / 100.0
+    with p3:
+        corp_savings_share = st.slider("💵 Corporate Annual Savings Share (%)", min_value=10, max_value=50, value=20, step=5) / 100.0
+
+    arch_capex = selected_arch["CAPEX"]
+    gov_grant_amt = arch_capex * grant_share_pct
+    net_company_capex = arch_capex * (1.0 - grant_share_pct)
+    annual_company_savings = selected_arch["Total_Penalty"] * corp_savings_share
+    payback_years = net_company_capex / annual_company_savings if annual_company_savings > 0 else 99.9
+
+    st.markdown(f"""
+        <div class="kpi-container">
+            <div class="kpi-card"><div class="kpi-title">Gross Project CAPEX</div><div class="kpi-value">💵 ${arch_capex:,.0f}</div></div>
+            <div class="kpi-card good"><div class="kpi-title">Government Grant Subsidy ({grant_share_pct*100:.0f}%)</div><div class="kpi-value">🏛️ ${gov_grant_amt:,.0f}</div></div>
+            <div class="kpi-card risk"><div class="kpi-title">Net Corporate CAPEX</div><div class="kpi-value">🏢 ${net_company_capex:,.0f}</div></div>
+            <div class="kpi-card good"><div class="kpi-title">Corporate Fine Savings</div><div class="kpi-value">💰 ${annual_company_savings:,.0f}/yr</div></div>
+            <div class="kpi-card good"><div class="kpi-title">Corporate Payback Period</div><div class="kpi-value">⏱️ {payback_years:.2f} Years</div></div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    dec_chart_col, dec_info_col = st.columns([1.35, 1.05])
+
+    with dec_chart_col:
+        chart_df = decade_excel_data.melt(
+            id_vars=["Decade"],
+            value_vars=["Baseline_PSF", "Retrofit_PSF"],
+            var_name="Metric",
+            value_name="Penalty ($/ft²)"
+        )
+        chart_df["Metric"] = chart_df["Metric"].replace({
+            "Baseline_PSF": "Baseline Penalty ($/ft²)",
+            "Retrofit_PSF": "Post-WET Retrofit Penalty ($/ft²)"
+        })
+        fig_dec = px.bar(
+            chart_df,
+            x="Decade",
+            y="Penalty ($/ft²)",
+            color="Metric",
+            barmode="group",
+            color_discrete_sequence=[COLOR_RED, COLOR_GREEN]
+        )
+        fig_dec.update_layout(
+            title="True Penalty Per SqFt Before vs After WET Retrofit by Decade Built",
+            paper_bgcolor=COLOR_CARD,
+            plot_bgcolor=COLOR_CARD,
+            font=dict(color="#f8fafc"),
+            legend=dict(orientation="h", ybottom=1.1, yanchor="bottom"),
+            margin=dict(t=60, b=20, l=40, r=20),
+            height=320
+        )
+        st.plotly_chart(fig_dec, use_container_width=True)
+
+    with dec_info_col:
+        st.markdown(f"""
+            <div class="exec-panel" style="margin-top: 0px; height: 320px; overflow-y: auto;">
+                <h4 style="color: {COLOR_GREEN} !important;">⚙️ WET Technical Process: Wastewater Heat Recovery</h4>
+                <p><b>1. Basement Heat Interception:</b> A specialized industrial heat exchanger is installed in the building’s basement, intercepting the main municipal wastewater outflow line.</p>
+                <p><b>2. Thermal Energy Transfer:</b> The exchanger extracts residual heat from outgoing graywater and transfers it to a clean, closed-loop glycol transfer fluid.</p>
+                <p><b>3. Heat Pump Amplification:</b> High-Efficiency Electric Water-to-Water Heat Pumps elevate this thermal energy to supply 100% of domestic hot water and baseline space heating.</p>
+                <p style="margin-bottom: 0px;"><b>4. Regulatory Result:</b> Eliminates fossil-gas boiler combustion, cutting baseline GHG emissions by <b>{emissions_cut_pct*100:.0f}%</b> and achieving an exact <b>{payback_years:.2f}-year corporate payback</b>.</p>
+            </div>
+        """, unsafe_allow_html=True)
