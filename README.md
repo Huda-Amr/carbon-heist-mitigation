@@ -215,17 +215,17 @@ Across all academic documentation files, regulatory penalty exposure and capital
 
 <table width="100%" align="center">
   <tr>
-    <td width="50%">
+    <td width="50%" style="padding: 16px;">
       <h3>⚖️ 1. NYC Local Law 97 Statutory Fine Formula</h3>
       <p>
-        <strong>Penalty (&#36;) = Total Emissions (MT CO₂e) × 268</strong>
+        <strong>Penalty [in USD] = Total Emissions (MT CO₂e) × 268</strong>
       </p>
-      <em>Where <strong>&#36;268</strong> is the mandatory fine rate per metric ton exceeding statutory carbon thresholds under NYC Local Law 97.</em>
+      <em>Where <strong>268 USD</strong> is the mandatory fine rate per metric ton exceeding statutory carbon thresholds under NYC Local Law 97.</em>
     </td>
-    <td width="50%">
+    <td width="50%" style="padding: 16px;">
       <h3>📈 2. CAPEX Retrofit Payback Formula</h3>
       <p>
-        <strong>Payback Period (Years) = CAPEX (&#36;) ÷ [Annual Utility Savings (&#36;) + Avoided LL97 Fines (&#36;)]</strong>
+        <strong>Payback Period (Years) = CAPEX [in USD] ÷ (Annual Utility Savings [in USD] + Avoided LL97 Fines [in USD])</strong>
       </p>
       <em>Measures capital recovery speed combining annual utility cost reductions and statutory penalty avoidance.</em>
     </td>
@@ -250,29 +250,30 @@ Our capital deployment follows a strict **self-funding cascade**: rapid-payback 
 
 ## 🚀 Quick Start Guide
 
-### 1. Clone & Setup Environment
-```bash
-git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git
-cd carbon-heist-mitigation
-pip install -r requirements.txt
-```
+<table width="100%" align="center">
+  <tr>
+    <th width="35%" align="left">Execution Stage</th>
+    <th width="65%" align="left">Terminal Command & Action</th>
+  </tr>
+  <tr>
+    <td><strong>1. Clone & Setup Environment</strong><br/><em>Install dependencies</em></td>
+    <td><code>git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git</code><br/><code>cd carbon-heist-mitigation && pip install -r requirements.txt</code></td>
+  </tr>
+  <tr>
+    <td><strong>2. Execute Data Pipeline</strong><br/><em>Clean LL84 records & impute nulls</em></td>
+    <td><code>python data/Clean_Data_Pipeline.py</code></td>
+  </tr>
+  <tr>
+    <td><strong>3. Train ML Regressor</strong><br/><em>Train Random Forest (R² = 81.65%)</em></td>
+    <td><code>python models/train_ll97_model.py</code></td>
+  </tr>
+  <tr>
+    <td><strong>4. Launch UI Dashboard</strong><br/><em>Interactive Streamlit App</em></td>
+    <td><code>cd application && streamlit run app.py</code></td>
+  </tr>
+</table>
 
-### 2. Execute Automated Data Pipeline
-```bash
-python data/Clean_Data_Pipeline.py
-```
-
-### 3. Train Machine Learning Regressor
-```bash
-python models/train_ll97_model.py
-```
-
-### 4. Launch Executive Streamlit Dashboard
-```bash
-cd application
-streamlit run app.py
-```
-> The interactive web dashboard will automatically open in your default browser at `http://localhost:8501`.
+> **Live Dashboard Access:** Once launched, the interactive web dashboard automatically opens at `http://localhost:8501`.
 
 ---
 
@@ -280,13 +281,38 @@ streamlit run app.py
 
 *Five data science and engineering specialists. One mission.*
 
-| Operational Role | Team Member | Primary Responsibility & Domain |
-| :--- | :--- | :--- |
-| 🧠 **Lead Data Scientist** | **Ahmed Adel Amin** | ML Regression Pipeline · Feature Engineering · Automated ETL Wrangle |
-| ⚙️ **MEP & Thermal Lead** | **Ledia Sobhy** | WET System Thermodynamic Design · Heat Pump Modeling |
-| 📋 **Regulatory Specialist** | **Huda Amr** | NYC Local Law 97 Audit · Portfolio Compliance Strategy |
-| 💹 **Financial Strategist** | **Hagar Hussein** | CAPEX Payback Modeling · Sensitivity Analysis · Cash Flow Cascade |
-| 🔍 **Analytics Specialist** | **Abeer Adel** | Peer Benchmarking · KPI Visualizations · Reporting Suite |
+<table width="100%" align="center">
+  <tr>
+    <th width="28%" align="left">Operational Role</th>
+    <th width="25%" align="left">Team Member</th>
+    <th width="47%" align="left">Primary Responsibility & Domain</th>
+  </tr>
+  <tr>
+    <td>🧠&nbsp;<strong>Lead&nbsp;Data&nbsp;Scientist</strong></td>
+    <td><strong>Ahmed&nbsp;Adel&nbsp;Amin</strong></td>
+    <td>ML Regression Pipeline · Feature Engineering · Automated ETL Wrangle</td>
+  </tr>
+  <tr>
+    <td>⚙️&nbsp;<strong>MEP&nbsp;&&nbsp;Thermal&nbsp;Lead</strong></td>
+    <td><strong>Ledia&nbsp;Sobhy</strong></td>
+    <td>WET System Thermodynamic Design · Heat Pump Modeling</td>
+  </tr>
+  <tr>
+    <td>📋&nbsp;<strong>Regulatory&nbsp;Specialist</strong></td>
+    <td><strong>Huda&nbsp;Amr</strong></td>
+    <td>NYC Local Law 97 Audit · Portfolio Compliance Strategy</td>
+  </tr>
+  <tr>
+    <td>💹&nbsp;<strong>Financial&nbsp;Strategist</strong></td>
+    <td><strong>Hagar&nbsp;Hussein</strong></td>
+    <td>CAPEX Payback Modeling · Sensitivity Analysis · Cash Flow Cascade</td>
+  </tr>
+  <tr>
+    <td>🔍&nbsp;<strong>Analytics&nbsp;Specialist</strong></td>
+    <td><strong>Abeer&nbsp;Adel</strong></td>
+    <td>Peer Benchmarking · KPI Visualizations · Reporting Suite</td>
+  </tr>
+</table>
 
 ---
 
