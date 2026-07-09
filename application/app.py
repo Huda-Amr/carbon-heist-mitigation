@@ -201,10 +201,53 @@ st.markdown(f"""
     .stSlider > div > div > div > div {{
         background: linear-gradient(90deg, {COLOR_BLUE}, {COLOR_PURPLE}) !important;
     }}
-    .stSelectbox > div > div {{
+    /* Slider thumb */
+    .stSlider [role="slider"] {{
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+        box-shadow: 0 0 8px rgba(0, 210, 255, 0.4) !important;
+    }}
+    /* Slider thumb value tooltip */
+    .stSlider [data-testid="stThumbValue"],
+    .stSlider [role="slider"] > div {{
+        background-color: {COLOR_CARD} !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }}
+    /* Kill the default Streamlit blue on ALL focused/active inputs */
+    .stSlider > div > div > div > div > div {{
+        background-color: transparent !important;
+    }}
+    input:focus, textarea:focus, [data-baseweb] *:focus {{
+        border-color: rgba(0, 210, 255, 0.4) !important;
+        box-shadow: 0 0 0 1px rgba(0, 210, 255, 0.2) !important;
+    }}
+    /* Number input and text input */
+    .stNumberInput input, .stTextInput input {{
+        background-color: rgba(15, 23, 41, 0.8) !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+        color: #ffffff !important;
+        border-radius: 10px !important;
+    }}
+    /* Selectbox and Multiselect */
+    .stSelectbox > div > div, .stMultiSelect > div > div {{
         background-color: rgba(15, 23, 41, 0.8) !important;
         border-color: rgba(255, 255, 255, 0.08) !important;
         border-radius: 12px !important;
+    }}
+    /* Dropdown menus */
+    [data-baseweb="popover"] {{
+        background-color: {COLOR_CARD} !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 12px !important;
+    }}
+    [data-baseweb="popover"] li:hover {{
+        background-color: rgba(0, 210, 255, 0.1) !important;
+    }}
+    /* Override BaseWeb primary color (the ugly blue) */
+    [data-baseweb] {{
+        --primary: {COLOR_BLUE} !important;
+        --primary400: {COLOR_BLUE} !important;
     }}
     
     /* ===== EXPANDERS ===== */
