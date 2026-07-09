@@ -110,26 +110,43 @@ flowchart TD
 ```text
 carbon-heist-mitigation/
 │
-├── 📁 models/
+├── 📁 docs/                        # Complete 6-Part Technical & Academic Documentation Suite
+│   ├── 📄 01_Project_Proposal_and_Planning.md
+│   ├── 📄 02_Requirements_and_Stakeholders.md
+│   ├── 📄 03_System_Analysis_and_Design.md
+│   ├── 📄 04_Implementation_and_Coding_Standards.md
+│   ├── 📄 05_Testing_and_Quality_Assurance.md
+│   ├── 📄 06_User_Manual_and_Deployment.md
+│   └── 📄 Carbon_Heist_Mitigation_Documentation.docx
+│
+├── 📁 Excel Project/               # Domain Reference & Financial Engineering Models
+│   └── 📊 Co2 Project.xlsx         # 13-sheet comprehensive LL97 compliance & retrofit workbook
+│
+├── 📁 application/                 # Presentation & UI Layer
+│   ├── 🐍 app.py                   # Streamlit & Plotly Interactive Executive Dashboard
+│   ├── 📊 input.xlsx               # Clean building benchmarking records for dashboard UI
+│   └── 📊 results.csv              # Exported simulation analytics
+│
+├── 📁 models/                      # AI & Machine Learning Layer (R² = 81.65%)
 │   ├── 🐍 train_ll97_model.py      # ML pipeline: preprocessing, feature engineering & training
-│   └── 🐍 ll97_playground.py       # Interactive CLI audit tool for individual assets
+│   ├── 🐍 ll97_playground.py       # Interactive CLI simulation audit tool
+│   ├── 💾 ll97_model.joblib        # Serialized Random Forest Regressor
+│   └── 💾 ll97_encoders.joblib     # Serialized categorical feature encoders
 │
-├── 📁 data/
-│   ├── 🐍 clean_data_pipeline.py   # Dataset wrangling, cleaning & null-value imputation
-│   └── 📊 sample_nyc_energy.xlsx   # Anonymized slice of 11,000+ NYC building energy records
+├── 📁 data/                        # Data Engineering & ETL Pipeline
+│   ├── 🐍 Clean_Data_Pipeline.py   # Automated 8-step cleaning & null imputation pipeline
+│   ├── 📊 sample_nyc_energy.xlsx   # Validated dataset (11,639 compliant NYC buildings)
+│   └── 📄 LL97_Data_Cleaning_Report.pdf # Automated PDF audit report
 │
-├── 📁 application/
-│   ├── 🐍 app.py                   # Streamlit Dashboard Application
-│   └── 📊 results.csv              # Underlying analysis dataset
+├── 📁 database/                    # Relational Database & Persistence Layer (3NF)
+│   ├── 📜 carbon_heist_schema_mysql.sql # SQL DDL for MySQL & PostgreSQL
+│   ├── 📜 carbon_heist_schema_mssql.sql # Dedicated T-SQL DDL for Microsoft SQL Server
+│   ├── 📊 NYC_Energy_CO2_Tables_V2.xlsx # Table data dictionary & relational mappings
+│   └── 🗺️ NYC_Energy_Chen_ERD.drawio  # Editable Chen-style ER Diagram
 │
-├── 📁 database/
-│   ├── 📜 carbon_heist_schema.sql  # SQL DDL script for database initialization & constraints
-│   ├── 📊 NYC_Energy_CO2_Tables_V2.xlsx # Data dictionary and mapping
-│   └── 🗺️ NYC_Energy_Chen_ERD.drawio # Entity-Relationship Diagram
-│
-├── 📄 requirements.txt             # Python dependencies
+├── 📄 requirements.txt             # Python environment dependencies
 ├── ⚖️ LICENSE                      # MIT License
-└── 📄 README.md                    # You are here
+└── 📄 README.md                    # Project Executive Overview
 ```
 
 ---
@@ -183,11 +200,14 @@ C:\Users\TeamX\Desktop> python ll97_playground.py
 
 To stress-test our carbon mitigation strategy against severe economic and regulatory shifts, we built an **Interactive Sensitivity Analysis Dashboard** in D3.js.
 
-**Core Financial Formula:**
+> [!IMPORTANT]
+> ### **1. Statutory Fine Formula (NYC LL97)**
+> **Penalty ($) = Total Emissions (MT CO₂e) × 268**
+> *(Where **$268** is the mandatory fine rate per metric ton exceeding statutory carbon thresholds)*
 
-$$
-\text{Payback Period} = \frac{\text{CAPEX}}{\text{Annual Savings (Utility Savings + Avoided Fines)}}
-$$
+> [!TIP]
+> ### **2. Core Payback Financial Formula**
+> **Payback Period (Years) = CAPEX ($) ÷ [Annual Utility Savings ($) + Avoided LL97 Fines ($)]**
 
 <details>
 <summary><strong>📐 Dashboard Features</strong></summary>
@@ -231,14 +251,18 @@ cd carbon-heist-mitigation
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. (Optional) Train / retrain the ML model
+# 3. Run the automated data cleaning & audit pipeline
+python data/Clean_Data_Pipeline.py
+
+# 4. Train / retrain the Random Forest ML model (R² = 81.65%)
 python models/train_ll97_model.py
 
-# 4. Launch the interactive forensic audit tool
-python models/ll97_playground.py
+# 5. Launch the interactive executive web dashboard
+cd application
+streamlit run app.py
 ```
 
-Open `app/sensitivity_dash.html` directly in any modern browser — no server required.
+The Streamlit executive dashboard will open automatically at `http://localhost:8501`.
 
 ---
 
