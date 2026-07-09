@@ -1,3 +1,9 @@
+import sys
+import os
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
@@ -5,7 +11,6 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error
 import joblib
-import os
 
 # --- LL97 CURRENT LIMITS (2024-2029 Phase) ---
 # Simplified to focus on immediate regulatory reality based on current law
