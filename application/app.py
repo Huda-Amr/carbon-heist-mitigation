@@ -632,8 +632,8 @@ with tab1:
                 secondary_y=True,
             )
             fig.update_layout(
-                chart("NYC Borough Analysis: Fine Exposure vs Intensity"),
-                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+                chart("NYC Borough Analysis: Fine Exposure vs Intensity", margin=dict(t=50, b=65, l=45, r=45)),
+                legend=dict(orientation="h", yanchor="top", y=-0.22, xanchor="center", x=0.5)
             )
             fig.update_yaxes(title_text="LL97 Penalty ($)", secondary_y=False, gridcolor="rgba(100,116,139,0.1)")
             fig.update_yaxes(title_text="Avg Intensity (kgCO₂/ft²)", secondary_y=True, showgrid=False)
@@ -1051,7 +1051,7 @@ with tab4:
 
     with pc2:
         st.markdown(f"""
-        <div class="glass-panel green" style="height:360px;overflow-y:auto;">
+        <div class="glass-panel green" style="min-height:360px; height:auto;">
             <div class="section-pill" style="color:{C_GREEN};border-color:rgba(0,245,155,0.25);background:rgba(0,245,155,0.07);">
                 ⚙️ Engineering Blueprint
             </div>
@@ -1102,7 +1102,7 @@ with tab4:
         avg_payback   = pb_df["payback"].mean()
 
         st.markdown(f"""
-        <div class="glass-panel" style="height:300px;">
+        <div class="glass-panel" style="min-height:300px; height:auto;">
             <div class="section-pill">🌍 Portfolio Investment Summary</div>
             {kpi_row(
                 kpi("Total CAPEX (5 Playbooks)",  f"${total_capex/1e9:.2f}B", sub="gross investment"),
