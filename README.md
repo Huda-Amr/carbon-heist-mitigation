@@ -75,7 +75,7 @@
 
 ## 🏙️ The Mission & Challenge
 
-New York City's **Local Law 97 (LL97)** imposes strict carbon emission caps on buildings exceeding 25,000 sq. ft. Starting in 2024—and escalating dramatically in 2030—properties exceeding statutory thresholds face mandatory annual fines of **$268 per metric ton of CO₂e**.
+New York City's **Local Law 97 (LL97)** imposes strict carbon emission caps on buildings exceeding 50,000 sq. ft. Starting in 2024—and escalating dramatically in 2030—properties exceeding statutory thresholds face mandatory annual fines of **$268 per metric ton of CO₂e**.
 
 Across our **2.06 Billion Sq. Ft. real estate portfolio (11,639 validated records)**, unmitigated exposure amounts to **$2.88 Billion annually**—effectively a recurring carbon heist on net operating income (NOI).
 
