@@ -880,91 +880,113 @@ with tab4:
     st.markdown("---")
 
     # =========================================================
-    # SECTION 4.2: DECADE-BUILT WET DECARBONIZATION & PAYBACK
+    # SECTION 4.2: THE 5 STRATEGIC DECARBONIZATION PLAYBOOKS
     # =========================================================
-    st.markdown("#### 2️⃣ Decade-Built Decarbonization & WET CAPEX Payback Simulator")
-    st.markdown("Model Whole-Building Energy Transformation (WET) retrofits across historical NYC building archetypes, analyzing government grant co-funding, corporate CAPEX, and multi-year financial payback cascades.")
+    st.markdown("#### 2️⃣ The 5 Strategic Decarbonization & Engineering Playbooks (`Scenario` Sheet)")
+    st.markdown("Explore Hagar Hussein's **5 core engineering playbooks** from the Excel model, spanning quick-win operational repairs, retro-commissioning, targeted package retrofits, historic WET wastewater heat recovery, and full electrification.")
 
-    decade_excel_data = pd.DataFrame([
-        {"Decade": "1930s (Pre-War Heritage - WET Focus)", "Baseline_PSF": 1.632, "Retrofit_PSF": 0.979, "GHG": 1141704, "Total_Penalty": 305976618, "CAPEX": 1499764152},
-        {"Decade": "1940s Commercial & Residential", "Baseline_PSF": 1.405, "Retrofit_PSF": 0.843, "GHG": 559613, "Total_Penalty": 149976415, "CAPEX": 734884433},
-        {"Decade": "1950s Post-War Boom", "Baseline_PSF": 1.412, "Retrofit_PSF": 0.847, "GHG": 1150777, "Total_Penalty": 308408102, "CAPEX": 1511199699},
-        {"Decade": "1970s High-Rise Portfolio", "Baseline_PSF": 1.584, "Retrofit_PSF": 0.950, "GHG": 1171128, "Total_Penalty": 313862277, "CAPEX": 1537925158},
-        {"Decade": "1990s Modern Commercial", "Baseline_PSF": 1.915, "Retrofit_PSF": 1.149, "GHG": 446461, "Total_Penalty": 119651441, "CAPEX": 586292060},
-        {"Decade": "1890s Historic Landmarks", "Baseline_PSF": 2.019, "Retrofit_PSF": 1.211, "GHG": 132171, "Total_Penalty": 35421694, "CAPEX": 173566300}
+    playbook_scenarios = pd.DataFrame([
+        {
+            "Scenario": "1. Surgical Strike (Top 10 Worst Offenders Quick Win)",
+            "Target": "10 Worst Offenders (0.07% Portfolio Area)",
+            "CAPEX": 500000.0,
+            "Annual_Savings": 20594117.0,
+            "Payback_Years": 0.024,
+            "Baseline_Penalty": 51485292.0,
+            "Post_Penalty": 30891175.0,
+            "Desc": "Dispatch engineering task force for Level 2 Energy Audit strictly on Top 10 worst offenders. Execute rapid low-cost OPEX repairs (fixing leaks, recalibrating sensors, correcting BMS scheduling). Immediately wipes out nearly 2% of portfolio penalty exposure."
+        },
+        {
+            "Scenario": "2. Retro-commissioning & BMS Optimization (RCx Turnaround)",
+            "Target": "Buildings with ENERGY STAR Score < 50",
+            "CAPEX": 802166574.0,
+            "Annual_Savings": 243615631.0,
+            "Payback_Years": 3.29,
+            "Baseline_Penalty": 974462526.0,
+            "Post_Penalty": 730846894.0,
+            "Desc": "Implement Retro-commissioning (RCx) and BMS optimization ($1.50/sq.ft) to bring underperforming properties up to a target ENERGY STAR score of 75. Achieves a 25% drop in energy consumption and LL97 penalties."
+        },
+        {
+            "Scenario": "3. 1960s Smart Scale Strategy (Optimization Package)",
+            "Target": "1960s Built Properties ($2.50/sq.ft Package)",
+            "CAPEX": 785244162.0,
+            "Annual_Savings": 88033696.0,
+            "Payback_Years": 8.92,
+            "Baseline_Penalty": 440168480.0,
+            "Post_Penalty": 352134784.0,
+            "Desc": "Deploy $2.50/sq.ft optimization package: networked LED lighting with daylight sensors, VFD HVAC motor integration, Demand Control Ventilation (DCV CO2 sensors), and mechanical tuning (steam traps, boiler controls)."
+        },
+        {
+            "Scenario": "4. 1930s Infrastructure Innovation (WET Systems - Wastewater Energy Transfer)",
+            "Target": "1930s Historic Pre-War Properties",
+            "CAPEX": 1499764152.0,
+            "Annual_Savings": 61195324.0,
+            "Payback_Years": 12.25,
+            "Baseline_Penalty": 305976618.0,
+            "Post_Penalty": 183585971.0,
+            "Desc": "Public-Private Partnership (PPP) with 50% government grant ($749.88M). Intercept municipal wastewater lines in basement with industrial heat exchangers and amplify thermal energy via High-Efficiency Heat Pumps."
+        },
+        {
+            "Scenario": "5. Electrification Push (Fuel Mix Optimization - Oil #4 to Heat Pumps)",
+            "Target": "Properties using high-risk Fuel Oil #4",
+            "CAPEX": 1889125740.0,
+            "Annual_Savings": 181993196.0,
+            "Payback_Years": 10.38,
+            "Baseline_Penalty": 134362550.0,
+            "Post_Penalty": 94053785.0,
+            "Desc": "Replace fossil Fuel Oil #4 boilers with Electric Heat Pumps ($20/sq.ft). Combines 30% penalty reduction with $1.50/sq.ft utility bill savings to achieve a ~10-year payback."
+        }
     ])
 
-    sel_decade_row = st.selectbox(
-        "🏗️ Select Building Decade Archetype to Model",
-        decade_excel_data["Decade"].tolist(),
+    sel_scenario_name = st.selectbox(
+        "🎯 Select Engineering Playbook Scenario to Analyze",
+        playbook_scenarios["Scenario"].tolist(),
         index=0
     )
 
-    selected_arch = decade_excel_data[decade_excel_data["Decade"] == sel_decade_row].iloc[0]
-
-    p1, p2, p3 = st.columns(3)
-    with p1:
-        grant_share_pct = st.slider("🏛️ Government Grant Co-Funding (%)", min_value=0, max_value=80, value=50, step=5) / 100.0
-    with p2:
-        emissions_cut_pct = st.slider("📉 Target WET Emissions Reduction (%)", min_value=10, max_value=70, value=40, step=5) / 100.0
-    with p3:
-        corp_savings_share = st.slider("💵 Corporate Annual Savings Share (%)", min_value=10, max_value=50, value=20, step=5) / 100.0
-
-    arch_capex = selected_arch["CAPEX"]
-    gov_grant_amt = arch_capex * grant_share_pct
-    net_company_capex = arch_capex * (1.0 - grant_share_pct)
-    annual_company_savings = selected_arch["Total_Penalty"] * corp_savings_share
-    payback_years = net_company_capex / annual_company_savings if annual_company_savings > 0 else 99.9
+    selected_playbook = playbook_scenarios[playbook_scenarios["Scenario"] == sel_scenario_name].iloc[0]
 
     st.markdown(f"""
         <div class="kpi-container">
-            <div class="kpi-card"><div class="kpi-title">Gross Project CAPEX</div><div class="kpi-value">💵 ${arch_capex:,.0f}</div></div>
-            <div class="kpi-card good"><div class="kpi-title">Government Grant Subsidy ({grant_share_pct*100:.0f}%)</div><div class="kpi-value">🏛️ ${gov_grant_amt:,.0f}</div></div>
-            <div class="kpi-card risk"><div class="kpi-title">Net Corporate CAPEX</div><div class="kpi-value">🏢 ${net_company_capex:,.0f}</div></div>
-            <div class="kpi-card good"><div class="kpi-title">Corporate Fine Savings</div><div class="kpi-value">💰 ${annual_company_savings:,.0f}/yr</div></div>
-            <div class="kpi-card good"><div class="kpi-title">Corporate Payback Period</div><div class="kpi-value">⏱️ {payback_years:.2f} Years</div></div>
+            <div class="kpi-card"><div class="kpi-title">Required CAPEX Investment</div><div class="kpi-value">💵 ${selected_playbook['CAPEX']:,.0f}</div></div>
+            <div class="kpi-card good"><div class="kpi-title">Annual Corporate Savings</div><div class="kpi-value">💰 ${selected_playbook['Annual_Savings']:,.0f}/yr</div></div>
+            <div class="kpi-card good"><div class="kpi-title">Payback Period</div><div class="kpi-value">⏱️ {selected_playbook['Payback_Years']:.2f} Years</div></div>
+            <div class="kpi-card risk"><div class="kpi-title">Baseline Fine Exposure</div><div class="kpi-value">🚨 ${selected_playbook['Baseline_Penalty']:,.0f}</div></div>
+            <div class="kpi-card good"><div class="kpi-title">Post-Playbook Penalty</div><div class="kpi-value">✅ ${selected_playbook['Post_Penalty']:,.0f}</div></div>
         </div>
     """, unsafe_allow_html=True)
 
-    dec_chart_col, dec_info_col = st.columns([1.35, 1.05])
+    pb_chart_col, pb_info_col = st.columns([1.35, 1.05])
 
-    with dec_chart_col:
-        chart_df = decade_excel_data.melt(
-            id_vars=["Decade"],
-            value_vars=["Baseline_PSF", "Retrofit_PSF"],
-            var_name="Metric",
-            value_name="Penalty ($/ft²)"
+    with pb_chart_col:
+        fig_pb = px.bar(
+            playbook_scenarios,
+            x="Scenario",
+            y="Payback_Years",
+            color="Annual_Savings",
+            color_continuous_scale="Viridis",
+            labels={"Payback_Years": "Payback Period (Years)", "Scenario": "Playbook"},
+            text=playbook_scenarios["Payback_Years"].apply(lambda v: f"{v:.2f} yrs")
         )
-        chart_df["Metric"] = chart_df["Metric"].replace({
-            "Baseline_PSF": "Baseline Penalty ($/ft²)",
-            "Retrofit_PSF": "Post-WET Retrofit Penalty ($/ft²)"
-        })
-        fig_dec = px.bar(
-            chart_df,
-            x="Decade",
-            y="Penalty ($/ft²)",
-            color="Metric",
-            barmode="group",
-            color_discrete_sequence=[COLOR_RED, COLOR_GREEN]
-        )
-        fig_dec.update_layout(
-            title="True Penalty Per SqFt Before vs After WET Retrofit by Decade Built",
+        fig_pb.update_layout(
+            title="Payback Period (Years) across the 5 Strategic Playbooks",
             paper_bgcolor=COLOR_CARD,
             plot_bgcolor=COLOR_CARD,
             font=dict(color="#f8fafc"),
-            legend=dict(orientation="h", ybottom=1.1, yanchor="bottom"),
-            margin=dict(t=60, b=20, l=40, r=20),
-            height=320
+            margin=dict(t=50, b=30, l=40, r=20),
+            height=310
         )
-        st.plotly_chart(fig_dec, use_container_width=True)
+        st.plotly_chart(fig_pb, use_container_width=True)
 
-    with dec_info_col:
+    with pb_info_col:
         st.markdown(f"""
-            <div class="exec-panel" style="margin-top: 0px; height: 320px; overflow-y: auto;">
-                <h4 style="color: {COLOR_GREEN} !important;">⚙️ WET Technical Process: Wastewater Heat Recovery</h4>
-                <p><b>1. Basement Heat Interception:</b> A specialized industrial heat exchanger is installed in the building’s basement, intercepting the main municipal wastewater outflow line.</p>
-                <p><b>2. Thermal Energy Transfer:</b> The exchanger extracts residual heat from outgoing graywater and transfers it to a clean, closed-loop glycol transfer fluid.</p>
-                <p><b>3. Heat Pump Amplification:</b> High-Efficiency Electric Water-to-Water Heat Pumps elevate this thermal energy to supply 100% of domestic hot water and baseline space heating.</p>
-                <p style="margin-bottom: 0px;"><b>4. Regulatory Result:</b> Eliminates fossil-gas boiler combustion, cutting baseline GHG emissions by <b>{emissions_cut_pct*100:.0f}%</b> and achieving an exact <b>{payback_years:.2f}-year corporate payback</b>.</p>
+            <div class="exec-panel" style="margin-top: 0px; height: 310px; overflow-y: auto;">
+                <h4 style="color: {COLOR_GREEN} !important;">⚙️ Playbook Engineering Blueprint</h4>
+                <p><b>Target Scope:</b> {selected_playbook['Target']}</p>
+                <p><b>Execution Strategy:</b> {selected_playbook['Desc']}</p>
+                <hr style="border-color: #334155; margin: 10px 0;">
+                <p style="margin-bottom: 0px; font-size: 0.92rem; color: #cbd5e1;">
+                    💡 <b>Self-Funding Portfolio Note:</b> Phase 1 quick wins (Surgical Strike at <b>0.02 yrs payback</b>) generate immediate positive cash flow to subsidize deeper capital projects in Phases 2 and 3.
+                </p>
             </div>
         """, unsafe_allow_html=True)
