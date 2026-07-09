@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+import joblib
+import sys
 from pathlib import Path
 
 # ==========================================
@@ -56,6 +58,25 @@ st.markdown(f"""
     .streamlit-expanderHeader {{ color: #94a3b8 !important; font-weight: 500; }}
     </style>
 """, unsafe_allow_html=True)
+
+# ==========================================
+# ML MODEL SETUP
+# ==========================================
+MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
+if str(MODELS_DIR) not in sys.path:
+    sys.path.insert(0, str(MODELS_DIR))
+
+try:
+    from ll97_playground import get_data_driven_insights, CURRENT_LIMITS
+    ML_INSIGHTS_AVAILABLE = True
+except ImportError:
+    ML_INSIGHTS_AVAILABLE = False
+    CURRENT_LIMITS = {"Default": 0.00750}
+
+    def get_data_driven_insights(year, score, emissions, gfa, prop_type, type_avg_data, global_avg):
+        fallback_diagnosis = ["Diagnostic engine unavailable: could not import 'models/ll97_playground.py'."]
+        fallback_recommendations = ["Verify that 'models/ll97_playground.py' exists and is importable."]
+        return fallback_diagnosis, fallback_recommendations, 0.0
 
 # ==========================================
 # DATA HANDLING 
@@ -207,12 +228,80 @@ def plot_horizontal_bar(data, x, y, title, color_hex, hover_cols=None):
     fig.update_layout(get_layout(title), yaxis={'categoryorder':'total ascending'})
     return fig
 
+
+@st.cache_resource
+def load_ml_assets():
+    """Loads the pre-trained LL97 model and its encoders without retraining."""
+    model_path = MODELS_DIR / "ll97_model.joblib"
+    encoders_path = MODELS_DIR / "ll97_encoders.joblib"
+    try:
+        if not model_path.exists() or not encoders_path.exists():
+            return None, None
+        model = joblib.load(model_path)
+        encoders = joblib.load(encoders_path)
+        return model, encoders
+    except Exception:
+        return None, None
+
+
+def compute_peer_benchmarks(dataset, encoders):
+    """
+    Returns (type_avg_per_sqft, global_avg_per_sqft) for peer comparison.
+    Uses the values saved alongside the model if present; otherwise reconstructs
+    per-sqft emissions from the dashboard dataset by back-solving GFA from the
+    existing emissions intensity column.
+    """
+    if isinstance(encoders, dict) and "type_avg" in encoders and "global_avg" in encoders:
+        return encoders["type_avg"], encoders["global_avg"]
+
+    if C_GHG not in dataset.columns or C_TYPE not in dataset.columns:
+        return {}, 1.0
+
+    working = dataset.dropna(subset=[C_GHG, C_TYPE]).copy()
+
+    if C_INTENSITY in working.columns:
+        working["Estimated GFA"] = np.where(
+            working[C_INTENSITY] > 0,
+            (working[C_GHG] * 1000) / working[C_INTENSITY],
+            np.nan
+        )
+        working = working.dropna(subset=["Estimated GFA"])
+        if len(working) > 0:
+            type_groups = working.groupby(C_TYPE)
+            type_avg = (type_groups[C_GHG].sum() / type_groups["Estimated GFA"].sum()).to_dict()
+            global_avg = working[C_GHG].sum() / working["Estimated GFA"].sum()
+            return type_avg, global_avg
+
+    type_avg = working.groupby(C_TYPE)[C_GHG].mean().to_dict()
+    global_avg = working[C_GHG].mean() if len(working) > 0 else 1.0
+    return type_avg, global_avg
+
+
+def validate_ml_inputs(year_built, gfa, score):
+    """Validates ML prediction inputs and returns a list of error messages."""
+    errors = []
+    current_year = 2026
+
+    if year_built is None or year_built < 1800 or year_built > current_year:
+        errors.append(f"⚠️ Year Built must be between 1800 and {current_year}.")
+    if gfa is None or gfa <= 0:
+        errors.append("⚠️ Gross Floor Area must be a positive number.")
+    if score is None or not (0 <= score <= 100):
+        errors.append("⚠️ ENERGY STAR Score must be between 0 and 100.")
+
+    return errors
+
+
 # ==========================================
 # MAIN DASHBOARD LAYOUT
 # ==========================================
 st.title("🌍 ESG & Carbon Mitigation Dashboard")
 
-tab1, tab2 = st.tabs(["Section 1: Problem Analysis", "Section 2: Mitigation Scenarios"])
+tab1, tab2, tab3 = st.tabs([
+    "Section 1: Problem Analysis",
+    "Section 2: Mitigation Scenarios",
+    "Section 3: ML Prediction Engine"
+])
 
 # ---------------------------------------------------------
 # TAB 1: PROBLEM ANALYSIS
@@ -560,3 +649,136 @@ with tab2:
         fig_timeline.update_layout(get_layout("Strategic Implementation Roadmap"))
         st.plotly_chart(fig_timeline, use_container_width=True)
         st.caption("A proposed multi-year project timeline to execute the combined strategy.")
+
+# ---------------------------------------------------------
+# TAB 3: ML PREDICTION ENGINE
+# ---------------------------------------------------------
+with tab3:
+    st.markdown("### 🤖 AI-Powered Emissions & LL97 Liability Predictor")
+    st.caption("Enter a building's characteristics to forecast GHG emissions and estimate Local Law 97 penalty exposure using the trained Random Forest model.")
+
+    ml_model, ml_encoders = load_ml_assets()
+
+    if ml_model is None or ml_encoders is None:
+        st.error(
+            "⚠️ ML model assets not found. Please ensure 'll97_model.joblib' and "
+            "'ll97_encoders.joblib' exist in the 'models' directory and were generated "
+            "by one of the training scripts."
+        )
+    elif not isinstance(ml_encoders, dict) or "bor" not in ml_encoders or "typ" not in ml_encoders:
+        st.error("⚠️ The loaded encoders file is malformed. Expected keys 'bor' and 'typ' were not found.")
+    else:
+        borough_classes = list(ml_encoders["bor"].classes_)
+        type_classes = list(ml_encoders["typ"].classes_)
+        type_avg, global_avg = compute_peer_benchmarks(raw_df, ml_encoders)
+
+        st.markdown("---")
+        st.markdown("#### 🔮 Building Profile")
+
+        with st.form("ml_prediction_form"):
+            f1, f2, f3 = st.columns(3)
+            with f1:
+                input_year_built = st.number_input("Year Built", min_value=1800, max_value=2026, value=1990, step=1)
+                input_gfa = st.number_input("Gross Floor Area (sq ft)", min_value=1.0, value=100000.0, step=1000.0)
+            with f2:
+                input_score = st.number_input("ENERGY STAR Score", min_value=0, max_value=100, value=50, step=1)
+                input_borough = st.selectbox("Borough", borough_classes)
+            with f3:
+                input_type = st.selectbox("Primary Property Type", type_classes)
+                st.markdown("&nbsp;")
+
+            submitted = st.form_submit_button("⚡ Generate Prediction", use_container_width=True)
+
+        if submitted:
+            validation_errors = validate_ml_inputs(input_year_built, input_gfa, input_score)
+
+            if validation_errors:
+                for error in validation_errors:
+                    st.error(error)
+            else:
+                try:
+                    borough_code = ml_encoders["bor"].transform([input_borough])[0]
+                    type_code = ml_encoders["typ"].transform([input_type])[0]
+
+                    feature_columns = [
+                        "Year Built",
+                        "Property GFA - Calculated (Buildings and Parking) (ft²)",
+                        "ENERGY STAR Score",
+                        "Borough_Enc",
+                        "Type_Enc"
+                    ]
+                    input_frame = pd.DataFrame(
+                        [[input_year_built, input_gfa, input_score, borough_code, type_code]],
+                        columns=feature_columns
+                    )
+
+                    predicted_emissions = float(ml_model.predict(input_frame)[0])
+                    predicted_penalty = predicted_emissions * 268
+                    liability_psf = predicted_penalty / input_gfa
+                    predicted_intensity = predicted_emissions / input_gfa
+                    ll97_limit = CURRENT_LIMITS.get(input_type, CURRENT_LIMITS.get("Default", 0.00750))
+                    is_compliant = predicted_intensity <= ll97_limit
+
+                    diagnosis, recommendations, efficiency_gap = get_data_driven_insights(
+                        input_year_built, input_score, predicted_emissions, input_gfa,
+                        input_type, type_avg, global_avg
+                    )
+
+                    st.markdown("---")
+                    st.markdown("#### 📋 Prediction Results")
+
+                    gap_card_class = "risk" if efficiency_gap > 0 else "good"
+                    gap_icon = "📈" if efficiency_gap > 0 else "📉"
+                    compliance_card_class = "good" if is_compliant else "risk"
+                    compliance_label = "Compliant" if is_compliant else "Non-Compliant"
+                    compliance_icon = "✅" if is_compliant else "🚫"
+
+                    st.markdown(f"""
+                        <div class="kpi-container">
+                            <div class="kpi-card risk"><div class="kpi-title">Predicted GHG Emissions</div><div class="kpi-value">🏭 {predicted_emissions:,.1f} tCO₂e/yr</div></div>
+                            <div class="kpi-card risk"><div class="kpi-title">Est. LL97 Penalty</div><div class="kpi-value">💵 ${predicted_penalty:,.0f}/yr</div></div>
+                            <div class="kpi-card"><div class="kpi-title">Liability per Sq Ft</div><div class="kpi-value">📐 ${liability_psf:.2f}/ft²</div></div>
+                            <div class="kpi-card {gap_card_class}"><div class="kpi-title">Peer Comparison</div><div class="kpi-value">{gap_icon} {efficiency_gap:+.1f}%</div></div>
+                        </div>
+                        <div class="kpi-container">
+                            <div class="kpi-card {compliance_card_class}"><div class="kpi-title">LL97 Compliance Status</div><div class="kpi-value">{compliance_icon} {compliance_label}</div></div>
+                            <div class="kpi-card"><div class="kpi-title">Emission Intensity</div><div class="kpi-value">📊 {predicted_intensity:.5f} tCO₂e/ft²</div></div>
+                            <div class="kpi-card"><div class="kpi-title">Current LL97 Limit</div><div class="kpi-value">🎯 {ll97_limit:.5f} tCO₂e/ft²</div></div>
+                        </div>
+                    """, unsafe_allow_html=True)
+
+                    insight_col1, insight_col2 = st.columns(2)
+                    with insight_col1:
+                        with st.expander("🔍 Data-Driven Diagnosis", expanded=True):
+                            for item in diagnosis:
+                                st.info(item)
+                    with insight_col2:
+                        with st.expander("🛠️ Recommended Actions", expanded=True):
+                            for item in recommendations:
+                                st.success(item)
+
+                    if not ML_INSIGHTS_AVAILABLE:
+                        st.warning(
+                            "Diagnostic insights are running in fallback mode because "
+                            "'models/ll97_playground.py' could not be imported."
+                        )
+
+                except Exception as exc:
+                    st.error(f"⚠️ Prediction failed due to an unexpected error: {exc}")
+
+        st.markdown("---")
+        st.markdown("#### 📈 Model Insights")
+
+        if hasattr(ml_model, "feature_importances_"):
+            importance_df = pd.DataFrame({
+                "Feature": ["Year Built", "GFA (Area)", "ENERGY STAR Score", "Borough", "Property Type"],
+                "Importance": ml_model.feature_importances_
+            }).sort_values("Importance", ascending=True)
+
+            st.plotly_chart(
+                plot_horizontal_bar(importance_df, "Importance", "Feature", "Model Feature Importance", COLOR_BLUE),
+                use_container_width=True
+            )
+            st.caption("Relative contribution of each input feature to the Random Forest's emissions predictions.")
+        else:
+            st.info("Feature importance is unavailable for this model type.")
