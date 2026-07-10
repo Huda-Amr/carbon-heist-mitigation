@@ -108,9 +108,9 @@ All academic and technical deliverables for the **Data Analysis & Engineering Tr
 
 ```mermaid
 flowchart TD
-    A["📥 STAGE 1: Municipal Data Ingestion\nNYC LL84 Open Data Portal (11,639 Records)"]:::stage --> B["🧹 STAGE 2: Forensic Data Cleaning & Hygiene\n8-Step Automated Cleaning & Outlier Imputation Pipeline"]:::clean
-    B --> C["🗄️ STAGE 3: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
-    B --> EX["📊 STAGE 4: Excel Executive C-Suite Dashboard\n13-Sheet Interactive Financial Model & KPI Dashboard"]:::excel
+    A["📥 STAGE 1: Municipal Raw Data Ingestion\nNYC LL84 Open Data Portal (Raw Municipal Dump)"]:::stage --> B["🧹 STAGE 2: Forensic Data Cleaning & Hygiene\n8-Step Automated Pipeline → Validated Portfolio (11,639 Cleaned Records)"]:::clean
+    B --> EX["📊 STAGE 3: Excel Executive C-Suite Dashboard\n13-Sheet Interactive Financial Model & KPI Dashboard"]:::excel
+    B --> C["🗄️ STAGE 4: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
     C --> D["🤖 STAGE 5: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
     EX --> E["🗺️ STAGE 6: Prescriptive Capital Roadmap\n5-Phase Self-Funding Decarbonization Pipeline"]:::stage
     D --> E

@@ -26,7 +26,7 @@ The **Application Layer (`application/`)** hosts the full-stack, highly interact
 
 ```mermaid
 flowchart LR
-    RAW["📥 NYC LL84 Raw Data\n(Open Data Portal)"]:::raw --> CLEAN["🧹 Forensic Data Hygiene\n(Cleaning & Imputation Pipeline)"]:::clean
+    RAW["📥 NYC LL84 Raw Data\n(Open Data Portal Dump)"]:::raw --> CLEAN["🧹 Forensic Data Hygiene\nCleaning Pipeline → 11,639 Cleaned Records"]:::clean
     CLEAN --> EXCEL["📊 Excel C-Suite Dashboard\n(13-Sheet Financial Model)"]:::excel
     CLEAN --> DATA["📊 input.xlsx / results.csv\nCleaned Portfolio Database"]:::data
     DATA --> CORE["🖥️ Streamlit Core Engine\napp.py Web Dashboard"]:::core
