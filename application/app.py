@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 # ──────────────────────────────────────────────────────────────
-# PAGE CONFIG
+# PAGE CONFIG · NYC LL97 Decarbonization Intelligence Platform v2.83B
 # ──────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Carbon Heist Mitigation · ESG Dashboard",
