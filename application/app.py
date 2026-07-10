@@ -33,6 +33,12 @@ C_BORDER = "rgba(255,255,255,0.07)"
 with st.sidebar:
     IS_LIGHT = st.toggle("☀️ Light Mode", value=False, key="light_mode")
 
+PANEL_BG = "#ffffff" if IS_LIGHT else "rgba(13,21,38,0.9)"
+TEXT_MAIN = "#0f172a" if IS_LIGHT else "#ffffff"
+TEXT_SUB = "#334155" if IS_LIGHT else "#94a3b8"
+TEXT_MUTED = "#64748b"
+INPUT_BG = "#f9fafb" if IS_LIGHT else "rgba(13,21,38,0.9)"
+
 # ──────────────────────────────────────────────────────────────
 # GLOBAL STYLES
 # ──────────────────────────────────────────────────────────────
