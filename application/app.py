@@ -1221,7 +1221,7 @@ with tab4:
          "desc":"Deploy $2.50/ft² package: networked LED + daylight sensors, VFD HVAC motors, CO₂-sensor Demand Control Ventilation, steam trap repairs, and boiler control upgrades."},
         {"name":"1930s WET Systems",    "short":"1930s WET Systems",
          "target":"1930s historic pre-war properties",
-         "capex":1_499_764_152,  "savings":61_195_324,  "payback":12.25,
+         "capex":1_499_764_152,  "savings":122_390_647,  "payback":12.25,
          "base_pen":305_976_618, "post_pen":183_585_971,
          "desc":"Public-Private Partnership (50% government grant = $749M). Install basement wastewater heat exchangers and high-efficiency water-to-water heat pumps to eliminate fossil combustion."},
         {"name":"Electrification Push", "short":"Electrification Push",
