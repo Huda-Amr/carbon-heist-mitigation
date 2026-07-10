@@ -736,30 +736,6 @@ with col_meta:
     if len(df) < len(raw_df):
         st.info(f"🔽 Filters active: {len(raw_df)-len(df):,} properties hidden")
 
-st.markdown('<div style="height:0.5rem"></div>', unsafe_allow_html=True)
-
-with st.expander("⚡ Quick Filters & Search Bar / شريط الفلترة والبحث السريع (أو استخدم القائمة الجانبية 👈)", expanded=False):
-    q1, q2, q3, q4 = st.columns([2, 2, 2, 1])
-    with q1:
-        q_search = st.text_input("🔍 Search Property Name", "", key="q_search")
-    with q2:
-        q_boros = st.multiselect("Borough", raw_df[CBOR].dropna().unique() if CBOR in raw_df.columns else [], key="q_boros")
-    with q3:
-        q_types = st.multiselect("Property Type", raw_df[CTYP].dropna().unique() if CTYP in raw_df.columns else [], key="q_types")
-    with q4:
-        st.markdown("<div style='height:1.7rem'></div>", unsafe_allow_html=True)
-        if st.button("🔄 Reset / إعادة ضبط", key="reset_top"):
-            st.rerun()
-
-    st.caption("💡 لفتح القائمة الجانبية للفلاتر المتقدمة (Sidebar) في أي وقت: اضغط على السهم [ > ] أعلى يسار الشاشة.")
-
-if q_search and CN in df.columns:
-    df = df[df[CN].str.contains(q_search, case=False, na=False)]
-if q_boros and CBOR in df.columns:
-    df = df[df[CBOR].isin(q_boros)]
-if q_types and CTYP in df.columns:
-    df = df[df[CTYP].isin(q_types)]
-
 tab1, tab2, tab3, tab4 = st.tabs([
     "  📊  Problem Analysis  ",
     "  🛠️  Mitigation Scenarios  ",
