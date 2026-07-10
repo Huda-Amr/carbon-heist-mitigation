@@ -52,9 +52,22 @@ html, body, .stApp {{
                 {C_BG};
 }}
 
-/* ── HIDE STREAMLIT CHROME ── */
-#MainMenu, footer, header {{ visibility: hidden; }}
+/* ── STREAMLIT CHROME & SIDEBAR TOGGLE ── */
+#MainMenu, footer {{ visibility: hidden; }}
 [data-testid="stDecoration"] {{ display: none; }}
+[data-testid="stHeader"] {{
+    background: transparent !important;
+}}
+[data-testid="collapsedControl"] {{
+    display: flex !important;
+    visibility: visible !important;
+    color: {C_CYAN} !important;
+    background: {PANEL_BG} !important;
+    border: 1px solid {C_BORDER} !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+    z-index: 999999 !important;
+}}
 
 /* ── TYPOGRAPHY ── */
 h1 {{
@@ -568,12 +581,12 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
     st.markdown("<div style='font-size:0.7rem;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;'>📍 Location</div>", unsafe_allow_html=True)
-    with st.expander("Location Filters", expanded=False):
+    with st.expander("Location Filters", expanded=True):
         sel_cities = st.multiselect("City", raw_df[CCIT].dropna().unique() if CCIT in raw_df.columns else [])
         sel_boros  = st.multiselect("Borough", raw_df[CBOR].dropna().unique() if CBOR in raw_df.columns else [])
 
     st.markdown("<div style='font-size:0.7rem;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:0.1em;margin:0.75rem 0 0.5rem;'>🏢 Property</div>", unsafe_allow_html=True)
-    with st.expander("Property Details", expanded=False):
+    with st.expander("Property Details", expanded=True):
         sel_types   = st.multiselect("Property Type", raw_df[CTYP].dropna().unique() if CTYP in raw_df.columns else [])
         sel_decades = st.multiselect("Decade Built", sorted(raw_df[CDEC].dropna().unique()) if CDEC in raw_df.columns else [])
         sel_occ     = st.multiselect("Occupancy", raw_df[COCC].dropna().unique() if COCC in raw_df.columns else [])
@@ -718,6 +731,28 @@ with col_meta:
         st.info(f"🔽 Filters active: {len(raw_df)-len(df):,} properties hidden")
 
 st.markdown('<div style="height:0.5rem"></div>', unsafe_allow_html=True)
+
+with st.expander("⚡ Quick Filters & Search Bar / شريط الفلترة والبحث السريع (أو استخدم القائمة الجانبية 👈)", expanded=False):
+    q1, q2, q3, q4 = st.columns([2, 2, 2, 1])
+    with q1:
+        q_search = st.text_input("🔍 Search Property Name", "", key="q_search")
+    with q2:
+        q_boros = st.multiselect("Borough", raw_df[CBOR].dropna().unique() if CBOR in raw_df.columns else [], key="q_boros")
+    with q3:
+        q_types = st.multiselect("Property Type", raw_df[CTYP].dropna().unique() if CTYP in raw_df.columns else [], key="q_types")
+    with q4:
+        st.markdown("<div style='height:1.7rem'></div>", unsafe_allow_html=True)
+        if st.button("🔄 Reset / إعادة ضبط", key="reset_top"):
+            st.rerun()
+
+    st.caption("💡 لفتح القائمة الجانبية للفلاتر المتقدمة (Sidebar) في أي وقت: اضغط على السهم [ > ] أعلى يسار الشاشة.")
+
+if q_search and CN in df.columns:
+    df = df[df[CN].str.contains(q_search, case=False, na=False)]
+if q_boros and CBOR in df.columns:
+    df = df[df[CBOR].isin(q_boros)]
+if q_types and CTYP in df.columns:
+    df = df[df[CTYP].isin(q_types)]
 
 tab1, tab2, tab3, tab4 = st.tabs([
     "  📊  Problem Analysis  ",
