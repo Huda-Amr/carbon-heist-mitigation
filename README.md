@@ -264,9 +264,18 @@ Our capital deployment follows a strict **self-funding cascade**: rapid-payback 
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Quick Start & Live Application
 
-### 1. Clone & Setup Environment
+### 🌐 Option A: Instant Cloud Access (Zero Setup)
+Launch the fully deployed **Streamlit C-Suite Interactive Dashboard** directly in your browser:
+<br/>
+[![Open Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE%20APP-LAUNCH%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+
+- **Live URL:** [https://carbon-heist-mitigation.streamlit.app/](https://carbon-heist-mitigation.streamlit.app/)
+
+### 💻 Option B: Local Installation & Execution
+
+#### 1. Clone & Setup Environment
 ```bash
 git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git
 cd carbon-heist-mitigation

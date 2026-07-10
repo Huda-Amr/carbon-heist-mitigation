@@ -1,7 +1,8 @@
 <div align="center">
 
 [![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-181717?style=for-the-badge&logo=github)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_02:_Requirements-00E5FF?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)
+[![Next Document](https://img.shields.io/badge/Next-Doc_02:_Requirements-00E5FF?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)&nbsp;
+[![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 
 # 📑 DOC 01 — PROJECT PROPOSAL & EXECUTIVE PLANNING
 ### *Carbon Heist Mitigation & NYC Local Law 97 Intelligence Platform*
