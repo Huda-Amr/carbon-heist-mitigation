@@ -44,7 +44,7 @@
     <td align="center" width="33%">
       <br/>
       ⚠️ <strong>Statutory Liability</strong><br/>
-      <h2 style="color: #FF4B4B;">$2.88 Billion / yr</h2>
+      <h2 style="color: #FF4B4B;">$2.83 Billion / yr</h2>
       <em>NYC Local Law 97 Penalty</em>
       <br/><br/>
     </td>

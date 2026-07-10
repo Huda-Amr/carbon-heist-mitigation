@@ -1,6 +1,6 @@
 <a id="top"></a>
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=220&section=header&text=THE%202.88B%20CARBON%20HEIST&fontSize=52&fontColor=00FF66&fontAlignY=36&desc=Data-Driven%20Decarbonization%20Counter-Intelligence%20Platform&descAlignY=62&descSize=18&descColor=8B949E" width="100%" alt="The 2.88B Carbon Heist"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=220&section=header&text=THE%202.83B%20CARBON%20HEIST&fontSize=52&fontColor=00FF66&fontAlignY=36&desc=Data-Driven%20Decarbonization%20Counter-Intelligence%20Platform&descAlignY=62&descSize=18&descColor=8B949E" width="100%" alt="The 2.83B Carbon Heist"/>
 
 <br/>
 
@@ -37,7 +37,7 @@
     <td align="center" width="33%">
       <br/>
       ⚠️ <strong>Annual LL97 Liability</strong><br/>
-      <h2 style="color: #FF4B4B;">$2.88 Billion / yr</h2>
+      <h2 style="color: #FF4B4B;">$2.83 Billion / yr</h2>
       <em>Statutory Fine ($268 / MT)</em>
       <br/><br/>
     </td>
@@ -82,7 +82,7 @@
 
 New York City's **Local Law 97 (LL97)** imposes strict carbon emission caps on buildings exceeding 50,000 sq. ft. Starting in 2024—and escalating dramatically in 2030—properties exceeding statutory thresholds face mandatory annual fines of **$268 per metric ton of CO₂e**.
 
-Across our **2.06 Billion Sq. Ft. real estate portfolio (11,639 validated records)**, unmitigated exposure amounts to **$2.88 Billion annually**—effectively a recurring carbon heist on net operating income (NOI).
+Across our **2.06 Billion Sq. Ft. real estate portfolio (11,639 validated records)**, unmitigated exposure amounts to **$2.83 Billion annually**—effectively a recurring carbon heist on net operating income (NOI).
 
 We built an end-to-end data engineering, machine learning, and interactive financial decision-support platform to forensic-audit the portfolio, isolate the **"True Culprits,"** and deploy a self-funding 5-phase decarbonization roadmap that transforms a regulatory liability into a high-yield strategic asset.
 
@@ -326,7 +326,7 @@ streamlit run app.py
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=120&section=footer" width="100%"/>
 
-<strong>Turning a $2.88B Regulatory Liability into a High-Yield Strategic Asset</strong><br/>
+<strong>Turning a $2.83B Regulatory Liability into a High-Yield Strategic Asset</strong><br/>
 <em>Team X · NYC LL97 Decarbonization Intelligence Platform · 2026</em>
 
 <br/><br/>
