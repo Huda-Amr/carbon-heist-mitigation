@@ -4,9 +4,10 @@
 
 <br/>
 
+<a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20APP-OPEN%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Streamlit App"/></a>&nbsp;
 <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>&nbsp;
 <a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/AI%20Engine-Random%20Forest%20(81.65%25)-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
-<a href="#-interactive-decision-support-dashboard"><img src="https://img.shields.io/badge/UI%20Dashboard-Streamlit%20%2B%20Plotly-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>&nbsp;
+<a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/UI%20Dashboard-Streamlit%20%2B%20Plotly-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>&nbsp;
 <a href="database/"><img src="https://img.shields.io/badge/Database-MySQL%20%2B%20MSSQL%203NF-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="Database"/></a>&nbsp;
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-00FF66?style=for-the-badge" alt="License"/></a>
 
@@ -73,6 +74,10 @@
     </td>
   </tr>
 </table>
+
+> [!TIP]
+> ### 🌐 **[Click Here to Launch the Live Interactive C-Suite Dashboard Online](https://carbon-heist-mitigation.streamlit.app/)**
+> Explore all 11,639 NYC properties, interactive real-time mitigation sliders, Random Forest AI compliance predictions, and 5-playbook CAPEX financial modeling directly in your browser.
 
 </div>
 
@@ -332,6 +337,7 @@ streamlit run app.py
 
 <br/><br/>
 
+[![Launch Live App](https://img.shields.io/badge/🌐%20LIVE%20APP-LAUNCH%20ONLINE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)&nbsp;
 [![Return to Top](https://img.shields.io/badge/⬆️%20BACK%20TO-TOP%20OF%20PAGE-00FF66?style=for-the-badge&logo=github&logoColor=black)](#top)&nbsp;
 [![Main Repo Home](https://img.shields.io/badge/🏠%20MAIN%20REPOSITORY-HOME-181717?style=for-the-badge&logo=github)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
 [![Academic Docs Suite](https://img.shields.io/badge/📑%20EXPLORE-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](./docs/README.md)

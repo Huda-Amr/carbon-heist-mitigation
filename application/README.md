@@ -4,6 +4,7 @@
 
   <br/>
 
+  <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20APP-LAUNCH%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Streamlit App"/></a>&nbsp;
   <a href="https://streamlit.io"><img src="https://img.shields.io/badge/Framework-Streamlit%201.35%2B-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>&nbsp;
   <a href="https://plotly.com"><img src="https://img.shields.io/badge/Visualizations-Plotly%20Dynamic-3B82F6?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"/></a>&nbsp;
   <a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/ML%20Inference-Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
@@ -23,6 +24,10 @@
 ## 🏢 Executive Overview
 
 The **Application Layer (`application/`)** hosts the full-stack, highly interactive **Carbon Heist Mitigation Dashboard (`app.py`)**. Designed specifically for real estate asset owners, C-Suite executives, sustainability directors, and MEP engineers, this dashboard bridges the gap between **raw building energy benchmarking data**, **statutory fine calculations**, **machine learning compliance inference**, and **capital expenditure (CAPEX) financial engineering**.
+
+> [!TIP]
+> ### 🌐 **[Launch the Live C-Suite Interactive Dashboard Online](https://carbon-heist-mitigation.streamlit.app/)**
+> Access real-time portfolio emissions analysis, slider-driven mitigation simulations, machine learning risk inference, and 5-playbook CAPEX financial engineering directly in your browser without local setup.
 
 ```mermaid
 flowchart LR

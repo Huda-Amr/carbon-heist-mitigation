@@ -9,6 +9,7 @@
 <a href="./04_Implementation_and_Coding_Standards.md"><img src="https://img.shields.io/badge/Doc%2004-PEP%208%20Implementation-F7931E?style=for-the-badge" alt="Doc 04"/></a>&nbsp;
 <a href="./05_Testing_and_Quality_Assurance.md"><img src="https://img.shields.io/badge/Doc%2005-QA%20Test%20Matrix-9B51E0?style=for-the-badge" alt="Doc 05"/></a>&nbsp;
 <a href="./06_User_Manual_and_Deployment.md"><img src="https://img.shields.io/badge/Doc%2006-User%20Manual-FF4B4B?style=for-the-badge" alt="Doc 06"/></a>
+<br/><a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20APP-OPEN%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Streamlit App"/></a>
 
 <br/><br/>
 
