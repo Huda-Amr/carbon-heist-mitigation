@@ -85,12 +85,12 @@ Delivers rigorous capital allocation and financial sensitivity analysis:
 All calculations inside the dashboard strictly enforce the official NYC statutory penalty structure:
 
 ```math
-\text{Annual LL97 Penalty} = \max(0,\; \text{Total Emissions} - \text{Statutory Limit}) \times 268
+\text{Annual LL97 Penalty} = \text{Total Emissions} \times 268
 ```
 
 > [!IMPORTANT]
-> ### **Statutory Fine = Excess Emissions (MT CO₂e) × $268**
-> Where **$268 per Metric Ton of CO₂e** is the mandatory fine rate established under Local Law 97 for emissions exceeding building occupancy limits.
+> ### **Statutory Fine = Total Emissions (MT CO₂e) × $268**
+> Where **$268 per Metric Ton of CO₂e** is the mandatory fine rate established under NYC Local Law 97.
 
 ---
 
