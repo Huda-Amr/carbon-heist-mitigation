@@ -1,75 +1,161 @@
-# 🖥️ Application Layer — Interactive Decision Support Dashboard
+<a id="top"></a>
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:060B18,50:0D1526,100:060B18&height=210&section=header&text=CARBON%20HEIST%20·%20APPLICATION%20LAYER&fontSize=42&fontColor=00D2FF&fontAlignY=36&desc=Enterprise%20NYC%20Local%20Law%2097%20Decarbonization%20%26%20Financial%20Mitigation%20Dashboard&descAlignY=64&descSize=16&descColor=94A3B8" width="100%" alt="Carbon Heist Application Layer"/>
 
-Welcome to the **Application Layer** of the **Carbon Heist Mitigation Platform**. This folder contains the interactive front-end web dashboard built to help real estate asset managers, sustainability officers, and MEP engineers simulate decarbonization strategies and calculate regulatory penalties under **NYC Local Law 97 (LL97)**.
+  <br/>
+
+  <a href="https://streamlit.io"><img src="https://img.shields.io/badge/Framework-Streamlit%201.35%2B-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>&nbsp;
+  <a href="https://plotly.com"><img src="https://img.shields.io/badge/Visualizations-Plotly%20Dynamic-3B82F6?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"/></a>&nbsp;
+  <a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/ML%20Inference-Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
+  <a href="#-dual-theme-design-system"><img src="https://img.shields.io/badge/UI%20Theme-Dual%20Light%20%2F%20Dark-A855F7?style=for-the-badge" alt="Dual Theme UI"/></a>&nbsp;
+  <a href="../LICENSE"><img src="https://img.shields.io/badge/Compliance-NYC%20LL97-00F59B?style=for-the-badge" alt="NYC LL97"/></a>
+
+  <br/><br/>
+
+  <em>"Transforming regulatory carbon liabilities into self-funding engineering strategies."</em><br/>
+  <strong>NYC Local Law 97 · Portfolio Asset Management & C-Suite Intelligence Platform</strong>
+
+  <br/><br/>
+</div>
 
 ---
 
-## 📂 Folder Contents
+## 🏢 Executive Overview
 
-| File Name | Description |
-| :--- | :--- |
-| **`app.py`** | Full-Stack interactive web dashboard developed with **Streamlit** and **Plotly**. Features dark-mode UI aesthetics, dynamic KPI cards, peer benchmarking charts, and real-time CAPEX simulation sliders. |
-| **`input.xlsx`** | Cleaned and validated building benchmarking records utilized by the dashboard for interactive filtering and peer comparison. |
-| **`results.csv`** | Exported data table containing calculated carbon liabilities, projected emissions, and financial penalties across different building archetypes. |
-
----
-
-## ⚙️ Interactive UI & Simulation Flow
+The **Application Layer (`application/`)** hosts the full-stack, highly interactive **Carbon Heist Mitigation Dashboard (`app.py`)**. Designed specifically for real estate asset owners, C-Suite executives, sustainability directors, and MEP engineers, this dashboard bridges the gap between **raw building energy benchmarking data**, **statutory fine calculations**, **machine learning compliance inference**, and **capital expenditure (CAPEX) financial engineering**.
 
 ```mermaid
 flowchart LR
-    DATA["📊 input.xlsx\nValidated Building Records"]:::in --> UI["🖥️ Streamlit Front-End\napp.py Dashboard UI"]:::ui
-    SLIDERS["🎛️ User Interactive Sliders\n• ENERGY STAR Score Shift\n• Electrification % Transition"]:::in --> UI
-    UI --> CALC["🧮 Real-Time LL97 Fine Engine\nPenalty = Emissions × $268"]:::calc
-    CALC --> VIZ["📈 Plotly Peer Benchmarking\nInteractive Bar & Scatter Plots"]:::viz
-    CALC --> EXP["📥 Executive CSV Export\nresults.csv Compliance Log"]:::viz
+    DATA["📊 input.xlsx / results.csv\nCleaned NYC Benchmarking Data"]:::data --> CORE["🖥️ Streamlit Core Engine\napp.py Monolithic App"]:::core
+    ML["🤖 ../models/ll97_model.joblib\nPre-Trained Random Forest Engine"]:::ml --> CORE
+    CORE --> THEME["🎨 Adaptive Design Tokens\n☀️ Enterprise Light / 🌙 Cyber Dark"]:::theme
+    THEME --> T1["📊 Tab 1: Problem Analysis\nNYC Fine & Emitter Ledger"]:::tab
+    THEME --> T2["🛠️ Tab 2: Mitigation Playground\nReal-Time Slider Simulations"]:::tab
+    THEME --> T3["🤖 Tab 3: ML Compliance Predictor\nInstant Property Risk Inference"]:::tab
+    THEME --> T4["💼 Tab 4: Financial Modeling\nPlaybooks & Sensitivity Heatmaps"]:::tab
 
-    classDef in fill:#161B22,stroke:#8B949E,stroke-width:2px,color:#C9D1D9
-    classDef ui fill:#0D1117,stroke:#FF4B4B,stroke-width:2px,color:#FF4B4B
-    classDef calc fill:#0D1117,stroke:#F7931E,stroke-width:2px,color:#F7931E
-    classDef viz fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66
+    classDef data fill:#0d1526,stroke:#3b82f6,stroke-width:2px,color:#e2e8f0
+    classDef core fill:#0d1526,stroke:#00D2FF,stroke-width:2px,color:#ffffff
+    classDef ml fill:#0d1526,stroke:#A855F7,stroke-width:2px,color:#ffffff
+    classDef theme fill:#0d1526,stroke:#FFB800,stroke-width:2px,color:#ffffff
+    classDef tab fill:#0d1526,stroke:#00F59B,stroke-width:2px,color:#e2e8f0
 ```
+
+---
+
+## 🎨 Dual-Theme Design System
+
+The platform features an adaptive visual architecture engineered to look spectacular in both executive presentations and engineering operations rooms:
+
+| Feature | 🌙 Dark Glassmorphic Mode (Default) | ☀️ Light Enterprise Mode |
+| :--- | :--- | :--- |
+| **Primary Palette** | Neon Cyan (`#00D2FF`), Emerald (`#00F59B`), Cyber Purple (`#A855F7`) | Deep Cobalt (`#1D4ED8`), Slate (`#0F172A`), Forest Green (`#047857`) |
+| **Card & Panel Styling** | Semi-transparent frosted glass (`rgba(13,21,38,0.9)`) with glowing borders | Crisp solid white cards (`#FFFFFF`) with subtle box shadows |
+| **Plotly Chart Templates** | Dynamic `plotly_dark` template with dark slate hover tooltips | High-contrast `plotly_white` template with clean gridlines |
+| **Toggle Accessibility** | Instant switcher located in the collapsible Sidebar (`☀️ Light Mode`) | Synchronizes all charts, KPI cards, tables, and typography instantly |
+
+---
+
+## 📑 Deep-Dive: Analytical Modules (Tabs)
+
+### 1️⃣ Tab 1 — 📊 Problem Analysis & Executive C-Suite Briefing
+Provides immediate portfolio-wide situational awareness across filtered NYC properties:
+- **Executive KPI Grid**: Displays real-time aggregates for **Total Properties**, **Total GHG Emissions (MT CO₂e)**, **Total Statutory Fine Liability ($B)**, **Avg ENERGY STAR Score**, and **Avoided Emissions**.
+- **NYC Borough Analysis (Dual-Axis Chart)**: Visualizes statutory fine exposure ($ bars, left axis) against average carbon intensity (`kgCO₂/ft²` line, right axis) across **Manhattan, Brooklyn, Queens, Bronx, and Staten Island**.
+- **Building Age vs. Emission Intensity Scatter**: Incorporates an Ordinary Least Squares (OLS) regression trendline to analyze how infrastructure age correlates with carbon efficiency.
+- **Top 10 Carbon Emitters Ledger**: A clean, interactive table highlighting properties with the highest compliance risk, complete with instant search and alert flags.
+
+### 2️⃣ Tab 2 — 🛠️ Mitigation Scenarios & Strategy Playground
+Empowers engineers and managers to test decarbonization strategies interactively:
+- **Interactive Multi-Slider Simulation**:
+  - `S1: Energy Efficiency Shift (0–50%)`: Models envelope insulation, LED retrofits, and EMS controls.
+  - `S2: Clean Electrification / PPA Shift (0–80%)`: Models replacing fossil fuels with electric heat pumps or green power purchase agreements.
+  - `S3: Deep Envelope Retrofit (0–40%)`: Models complete mechanical and facade overhauls.
+- **Interactive Gauge Indicator**: Displays the real-time percentage of total portfolio emissions reduced.
+- **Radar Chart Comparison**: Compares holistic physical vs. financial yield across strategies.
+- **Return vs. Impact Grouped Bar Chart**: Directly contrasts tons of CO₂e abated versus annual fine savings in dollars.
+- **Decarbonization Roadmap**: Interactive timeline illustrating Phase 1 (Audits), Phase 2 (PPAs), and Phase 3 (Deep Retrofits).
+
+### 3️⃣ Tab 3 — 🤖 ML-Powered Property Compliance Predictor
+Integrates our trained machine learning models (`models/ll97_model.joblib`) for real-time asset prediction:
+- **Custom Property Inference**: Input any building's **Year Built (1800–2026)**, **Gross Floor Area (GFA)**, **ENERGY STAR Score (0–100)**, and **Property Type**.
+- **Automated Peer Benchmarking**: Calculates the exact percentage gap between your asset and NYC borough / property archetype averages.
+- **Instant Statutory Fine & Compliance Status**: Predicts annual greenhouse gas emissions, statutory penalties ($/year), liability intensity (`$/ft²`), and flags whether the property is **✅ Compliant** or **🚫 Non-Compliant** against NYC Local Law 97 statutory limits.
+
+### 4️⃣ Tab 4 — 💼 Financial Modeling & C-Suite Playbooks
+Delivers rigorous capital allocation and financial sensitivity analysis:
+- **Grid Shock & Carbon Tax Sensitivity Matrix (Heatmap)**: Models liability intensity (`$/ft²`) under varying statutory rate hikes (**$268, $300, and $350 / MT**) and electrical grid carbon shocks (**+0% to +15%**).
+- **5 Strategic Playbooks Payback & CAPEX Comparison**:
+  1. *Surgical Strike (LED & EMS Controls)* — **0.02 yr payback**
+  2. *HVAC Optimization (VFDs & Controls)* — **0.20 yr payback**
+  3. *Envelope Sealing & High-R Windows* — **1.50 yr payback**
+  4. *Electrification & Heat Pump Retrofit* — **4.20 yr payback**
+  5. *Deep Decarbonization & Geothermal* — **12.25 yr payback**
+- **Self-Funding Financial Engineering Model**: Demonstrates how ultra-fast payback Phase 1 projects generate immediate operational savings to de-risk and fund Phase 2 and Phase 3 capital investments.
 
 ---
 
 ## 🏛️ Statutory Fine Reference Formula
 
-The interactive dashboard evaluates building carbon liability instantly using the official statutory fine formula:
+All calculations inside the dashboard strictly enforce the official NYC statutory penalty structure:
+
+$$\text{Annual LL97 Penalty (\$)} = \max\left(0,\; \text{Total Emissions (MT CO}_2\text{e)} - \text{Statutory Limit}\right) \times \$268$$
 
 > [!IMPORTANT]
-> ### **Penalty ($) = Total Emissions (MT CO₂e) × 268**
-> Where **$268** is the mandatory statutory fine per metric ton of **CO₂e** under NYC Local Law 97.
+> **$268 per Metric Ton of CO₂e** is the mandatory fine rate established under Local Law 97 for emissions exceeding building occupancy limits.
 
 ---
 
-## 🎯 Key Features of the Dashboard
+## 📂 Folder Directory & File Descriptions
 
-1. **Real-Time Statutory Penalty Calculation:**
-   - Evaluates baseline fine liabilities and simulates financial savings immediately upon adjusting parameter inputs.
-2. **Interactive Decarbonization Simulation (Sliders):**
-   - **Energy Star Efficiency Slider:** Simulate insulation and HVAC optimization improvements.
-   - **Electrification Shift Slider:** Model transitioning heating fuel systems from fossil gas to electric heat pumps.
-3. **Peer Comparison & Benchmarking:**
-   - Visualizes your building's Carbon Intensity (**kg CO₂e / sq. ft.**) against the NYC borough and property type averages.
+```text
+application/
+├── app.py             # Main Streamlit + Plotly full-stack interactive dashboard application
+├── input.xlsx         # Cleaned NYC building benchmarking dataset used for filtering & peer analysis
+├── results.csv        # Comprehensive compliance ledger containing calculated penalties & intensities
+└── README.md          # Technical documentation & dashboard architectural overview
+```
+
+| File Name | Role | Description |
+| :--- | :--- | :--- |
+| **`app.py`** | Application Entry Point | Contains the full UI design tokens, data loaders, sidebar filter logic, ML inference bridges, and Plotly interactive chart generators. |
+| **`input.xlsx`** | Benchmarking Database | Processed portfolio dataset with standardized columns (`Property Name`, `Total GHG Emissions`, `Base LL97 Penalty`, `Borough`, `Property Type`, etc.). |
+| **`results.csv`** | Compliance Ledger | Pre-computed summary table providing portfolio-wide penalty analytics across building archetypes. |
 
 ---
 
-## 🚀 How to Run the Dashboard Locally
+## 🚀 Quickstart & Deployment Guide
 
-Ensure your Python environment has all dependencies installed (`streamlit`, `plotly`, `pandas`, `openpyxl`, `joblib`), then run:
+### 1️⃣ Prerequisites
+Ensure you have Python 3.9+ installed along with the required dependencies:
+
+```bash
+pip install streamlit plotly pandas numpy openpyxl joblib scikit-learn
+```
+
+### 2️⃣ Running the Dashboard Locally
+Navigate to the `application/` directory and launch the Streamlit engine:
 
 ```bash
 cd application
 streamlit run app.py
 ```
 
-The dashboard will open automatically in your browser at `http://localhost:8501`.
+### 3️⃣ Accessing the Interface
+- The dashboard will automatically launch in your default browser at **`http://localhost:8501`**.
+- **Sidebar & Filters**: The sidebar contains advanced multi-select filters (`City`, `Borough`, `Property Type`, `Building Age`, `ENERGY STAR Score`, and `GHG Emissions`). If collapsed, open it anytime using the toggle arrow (`[ > ]`) at the top left.
+- **Theme Switching**: Toggle between **🌙 Dark Mode** and **☀️ Light Mode** directly from the top of the sidebar.
 
 ---
 
 <div align="center">
 
 [![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
-[![Docs Suite](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../docs/README.md)
+[![Model Docs](https://img.shields.io/badge/🤖%20VIEW-AI%20%26%20ML%20MODELS-A855F7?style=for-the-badge)](../models/README.md)&nbsp;
+[![Academic Docs](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../docs/README.md)
+
+<br/>
+
+**Carbon Heist Mitigation Platform** · Engineered for NYC Local Law 97 Compliance & Strategic Decarbonization
 
 </div>
