@@ -942,7 +942,7 @@ with tab2:
 
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Residual Emissions (tCO₂e)", f"{rem:,.0f}", f"-{comb_red:,.0f} ({(comb_red/base_em*100):.1f}%)")
-    m2.metric("LL97 Penalty Avoided",        f"${savings(comb_red):,.0f}", "projected annual")
+    m2.metric("Annual LL97 Fine Avoided",    f"${savings(comb_red):,.0f} / yr", "recurring annual savings")
     m3.metric("Buildings Impacted",          f"{len(df):,}", "portfolio wide")
 
     fig_gauge = go.Figure(go.Indicator(
@@ -1241,12 +1241,12 @@ with tab4:
 
     pen_saved = sp["base_pen"] - sp["post_pen"]
     st.markdown(kpi_row(
-        kpi("Required CAPEX",         f"${sp['capex']/1e6:.1f}M",        sub="gross investment"),
-        kpi("Annual Fine Savings",    f"${sp['savings']/1e6:.1f}M",       sub="per year",   cls="green"),
-        kpi("Payback Period",         f"{sp['payback']:.2f} yrs",         sub="corporate",  cls="green"),
-        kpi("Baseline Exposure",      f"${sp['base_pen']/1e6:.1f}M",      sub="before",     cls="red"),
-        kpi("Post-Playbook Penalty",  f"${sp['post_pen']/1e6:.1f}M",      sub="after",      cls="green"),
-        kpi("Penalty Eliminated",     f"${pen_saved/1e6:.1f}M",           sub="saved",      cls="green"),
+        kpi("Required CAPEX",            f"${sp['capex']/1e6:.1f}M",          sub="gross investment"),
+        kpi("Annual Fine Savings",       f"${sp['savings']/1e6:.1f}M / yr",   sub="recurring / yr", cls="green"),
+        kpi("Payback Period",            f"{sp['payback']:.2f} yrs",          sub="corporate",      cls="green"),
+        kpi("Baseline Exposure",         f"${sp['base_pen']/1e6:.1f}M / yr",  sub="before / yr",    cls="red"),
+        kpi("Post-Playbook Penalty",     f"${sp['post_pen']/1e6:.1f}M / yr",  sub="after / yr",     cls="green"),
+        kpi("Annual Penalty Eliminated", f"${pen_saved/1e6:.1f}M / yr",       sub="saved / yr",     cls="green"),
     ), unsafe_allow_html=True)
 
     pc1, pc2 = st.columns([1.2, 1.0])
@@ -1325,8 +1325,8 @@ with tab4:
         <div class="glass-panel" style="min-height:300px; height:auto;">
             <div class="section-pill">🌍 Portfolio Investment Summary</div>
             {kpi_row(
-                kpi("Total CAPEX (5 Playbooks)",  f"${total_capex/1e9:.2f}B", sub="gross investment"),
-                kpi("Total Annual Savings",        f"${total_savings/1e6:.0f}M", sub="per year", cls="green"),
+                kpi("Total CAPEX (5 Playbooks)",  f"${total_capex/1e9:.2f}B",      sub="gross investment"),
+                kpi("Total Annual Savings",       f"${total_savings/1e6:.0f}M / yr", sub="recurring annual savings", cls="green"),
             )}
             {kpi_row(
                 kpi("Average Payback",   f"{avg_payback:.1f} yrs", sub="portfolio average"),

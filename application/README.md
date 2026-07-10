@@ -77,6 +77,11 @@ Integrates our trained machine learning models (`models/ll97_model.joblib`) for 
 - **Instant Statutory Fine & Compliance Status**: Predicts annual greenhouse gas emissions, statutory penalties ($/year), liability intensity (`$/ft²`), and flags whether the property is **✅ Compliant** or **🚫 Non-Compliant** against NYC Local Law 97 statutory limits.
 
 ### 4️⃣ Tab 4 — 💼 Financial Modeling & C-Suite Playbooks
+
+> [!IMPORTANT]
+> ### **All Savings Figures Represent Recurring Annual Savings ($ / Year)**
+> Every savings value calculated across the dashboard (such as `Annual Fine Savings`, `Annual LL97 Fine Avoided`, and `Annual Penalty Eliminated`) represents **recurring annual fine avoidance and operational cost savings ($ / yr)** generated every single year.
+
 Delivers rigorous capital allocation and financial sensitivity analysis:
 - **Grid Shock & Carbon Tax Sensitivity Matrix (Heatmap)**: Models liability intensity (`$/ft²`) under varying statutory rate hikes (**$268, $300, and $350 / MT**) and electrical grid carbon shocks (**+0% to +15%**).
 - **5 Strategic Playbooks Payback & CAPEX Comparison**:

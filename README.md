@@ -44,9 +44,9 @@
     </td>
     <td align="center" width="33%">
       <br/>
-      💰 <strong>Net Annual Savings</strong><br/>
-      <h2 style="color: #00E5FF;">$656.63 Million</h2>
-      <em>Blended Payback: 6.97 Years</em>
+      💰 <strong>Recurring Annual Savings</strong><br/>
+      <h2 style="color: #00E5FF;">$656.63 Million / yr</h2>
+      <em>Annual Fine & Utility Cost Avoidance</em>
       <br/><br/>
     </td>
   </tr>
@@ -250,7 +250,11 @@ Across all academic documentation files, regulatory penalty exposure and capital
 
 Our capital deployment follows a strict **self-funding cascade**: rapid-payback early interventions generate immediate operational cash flows that fund deeper structural retrofits without over-leveraging portfolio assets.
 
-| Phase & Strategy | Portfolio Scope | CAPEX | Annual Savings & Payback | Strategic Impact |
+> [!IMPORTANT]
+> ### **All Savings Figures Represent Recurring Annual Savings ($ / Year)**
+> Every savings metric reported across the dashboard and tables represents **recurring annual statutory fine avoidance and operational utility savings ($ / yr)** generated recursively every year following retrofit completion.
+
+| Phase & Strategy | Portfolio Scope | CAPEX | Recurring Annual Savings & Payback | Strategic Impact |
 | :--- | :--- | :---: | :--- | :--- |
 | **01 · 🟢 Surgical Strike**<br/>*Top 10 Worst Offenders* | **0.07% Area** | **$500K** | **$20.59M / yr**<br/>⚡ *Payback: 0.02 Yrs (8 Days)* | Level 2 Energy Audits & low-cost BMS/sensor fixes |
 | **02 · 🔵 Retro-commissioning**<br/>*ENERGY STAR Score < 50* | **Low-Score Bldgs** | **$802.17M** | **$243.62M / yr**<br/>⚡ *Payback: 3.29 Yrs* | RCx & BMS optimization at $1.50/ft² |
