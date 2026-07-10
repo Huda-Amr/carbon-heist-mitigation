@@ -41,21 +41,6 @@ flowchart LR
     classDef tab fill:#0d1526,stroke:#00F59B,stroke-width:2px,color:#e2e8f0
 ```
 
----
-
-## 🎨 Dual-Theme Design System
-
-The platform features an adaptive visual architecture engineered to look spectacular in both executive presentations and engineering operations rooms:
-
-| Feature | 🌙 Dark Glassmorphic Mode (Default) | ☀️ Light Enterprise Mode |
-| :--- | :--- | :--- |
-| **Primary Palette** | Neon Cyan (`#00D2FF`), Emerald (`#00F59B`), Cyber Purple (`#A855F7`) | Deep Cobalt (`#1D4ED8`), Slate (`#0F172A`), Forest Green (`#047857`) |
-| **Card & Panel Styling** | Semi-transparent frosted glass (`rgba(13,21,38,0.9)`) with glowing borders | Crisp solid white cards (`#FFFFFF`) with subtle box shadows |
-| **Plotly Chart Templates** | Dynamic `plotly_dark` template with dark slate hover tooltips | High-contrast `plotly_white` template with clean gridlines |
-| **Toggle Accessibility** | Instant switcher located in the collapsible Sidebar (`☀️ Light Mode`) | Synchronizes all charts, KPI cards, tables, and typography instantly |
-
----
-
 ## 📑 Deep-Dive: Analytical Modules (Tabs)
 
 ### 1️⃣ Tab 1 — 📊 Problem Analysis & Executive C-Suite Briefing
