@@ -560,7 +560,7 @@ with st.sidebar:
         <div style="padding: 1rem 0 0.5rem;">
             <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.25rem;">
                 <span style="font-size:1.4rem;">🌍</span>
-                <span style="font-size:1rem;font-weight:700;color:#ffffff;">Carbon Heist</span>
+                <span style="font-size:1rem;font-weight:700;color:{'#111827' if IS_LIGHT else '#ffffff'};">Carbon Heist</span>
             </div>
             <div style="font-size:0.72rem;color:#475569;letter-spacing:0.08em;text-transform:uppercase;">ESG Mitigation Platform</div>
         </div>
@@ -633,8 +633,9 @@ if IS_LIGHT:
     CHART_BASE.update(
         template="plotly_white",
         font=dict(family="Inter", color="#4b5563", size=12),
-        xaxis=dict(gridcolor="#e5e7eb", zerolinecolor="#d1d5db"),
-        yaxis=dict(gridcolor="#e5e7eb", zerolinecolor="#d1d5db"),
+        xaxis=dict(gridcolor="#e5e7eb", zerolinecolor="#d1d5db", tickfont=dict(color="#374151")),
+        yaxis=dict(gridcolor="#e5e7eb", zerolinecolor="#d1d5db", tickfont=dict(color="#374151")),
+        legend=dict(font=dict(color="#111827")),
         hoverlabel=dict(bgcolor="#ffffff", bordercolor="#e5e7eb", font_color="#111827"),
     )
 
@@ -1172,7 +1173,7 @@ with tab4:
         y=["$268/MT (Base)","$300/MT (Moderate)","$350/MT (Severe)"],
         colorscale=[[0, ("#ffffff" if IS_LIGHT else "#0d1526")], [0.25,C_CYAN],[0.5,C_PURPLE],[0.75,C_AMBER],[1,C_RED]],
         texttemplate="<b>$%{z:.3f}</b>",
-        textfont={"size": 15, "color": "white", "family": "Inter"},
+        textfont={"size": 15, "color": ("#111827" if IS_LIGHT else "white"), "family": "Inter"},
         hovertemplate="Rate: %{y}<br>Shock: %{x}<br>Liability: <b>$%{z:.3f}/ft²</b><extra></extra>",
     ))
     fig_hm.update_layout(
