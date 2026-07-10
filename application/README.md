@@ -75,12 +75,12 @@ Integrates our trained machine learning models (`models/ll97_model.joblib`) for 
 Delivers rigorous capital allocation and financial sensitivity analysis:
 - **Grid Shock & Carbon Tax Sensitivity Matrix (Heatmap)**: Models liability intensity (`$/ft²`) under varying statutory rate hikes (**$268, $300, and $350 / MT**) and electrical grid carbon shocks (**+0% to +15%**).
 - **5 Strategic Playbooks Payback & CAPEX Comparison**:
-  1. *Surgical Strike (LED & EMS Controls)* — **0.02 yr payback**
-  2. *HVAC Optimization (VFDs & Controls)* — **0.20 yr payback**
-  3. *Envelope Sealing & High-R Windows* — **1.50 yr payback**
-  4. *Electrification & Heat Pump Retrofit* — **4.20 yr payback**
-  5. *Deep Decarbonization & Geothermal* — **12.25 yr payback**
-- **Self-Funding Financial Engineering Model**: Demonstrates how ultra-fast payback Phase 1 projects generate immediate operational savings to de-risk and fund Phase 2 and Phase 3 capital investments.
+  1. *Surgical Strike (Level 2 Audits & Low-Cost Repairs)* — **0.02 yr payback (8 days)**
+  2. *Retro-commissioning (RCx & BMS Optimization)* — **3.29 yr payback**
+  3. *1960s Smart Scale (LED, VFD Motors & Controls)* — **8.92 yr payback**
+  4. *1930s WET Systems (Wastewater Heat Recovery)* — **12.25 yr payback**
+  5. *Electrification Push (Fuel Oil #4 to Heat Pumps)* — **10.38 yr payback**
+- **Self-Funding Financial Engineering Model**: Demonstrates how ultra-fast payback Phase 1 projects generate immediate operational savings to de-risk and fund deeper capital investments.
 
 ---
 

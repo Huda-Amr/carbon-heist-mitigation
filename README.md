@@ -44,8 +44,8 @@
     <td align="center" width="33%">
       <br/>
       💰 <strong>Net Annual Savings</strong><br/>
-      <h2 style="color: #00E5FF;">$702.23 Million</h2>
-      <em>Blended Payback: 6.41 Years</em>
+      <h2 style="color: #00E5FF;">$595.43 Million</h2>
+      <em>Blended Payback: 6.97 Years</em>
       <br/><br/>
     </td>
   </tr>
@@ -246,12 +246,13 @@ Across all academic documentation files, regulatory penalty exposure and capital
 Our capital deployment follows a strict **self-funding cascade**: rapid-payback early interventions generate immediate operational cash flows that fund deeper structural retrofits without over-leveraging portfolio assets.
 
 | Phase & Strategy | Portfolio Scope | CAPEX | Annual Savings & Payback | Strategic Impact |
-| :--- | :---: | :---: | :--- | :--- |
-| **01 · 🟢 Surgical Strike**<br/>*High-Intensity Outliers* | **20M sq. ft.** | **$500K** | **$20.69M / yr**<br/>⚡ *Payback: 8 Days* | Immediate cash-flow injection & statutory fine avoidance |
-| **02 · 🔵 Smart Scale**<br/>*1960s Commercial / Multi* | **400M sq. ft.** | **$2.00B** | **$336.01M / yr**<br/>⚡ *Payback: 5.95 Yrs* | Large-scale HVAC tune-up & BMS retro-commissioning |
-| **03 · 🟡 WET System**<br/>*1930s Pre-War Masonry* | **20M sq. ft.** | **$1.50B** | **$122.89M / yr**<br/>⚡ *Payback: 12.21 Yrs* | Waste-heat Energy Transfer (WET) thermal recovery |
-| **04 · 🔴 Electrification**<br/>*1980s–Present Towers* | **100M sq. ft.** | **$1.00B** | **$222.64M / yr**<br/>⚡ *Payback: 4.49 Yrs* | Fossil heating conversion to electric heat pumps |
-| **🏆 TOTAL PORTFOLIO**<br/>*Blended Portfolio* | **540M sq. ft.** | **$4.50B** | **$702.23M / yr**<br/>🎯 **Blended: 6.41 Yrs** | **Self-Funding Portfolio Transformation** |
+| :--- | :--- | :---: | :--- | :--- |
+| **01 · 🟢 Surgical Strike**<br/>*Top 10 Worst Offenders* | **0.07% Area** | **$500K** | **$20.59M / yr**<br/>⚡ *Payback: 0.02 Yrs (8 Days)* | Level 2 Energy Audits & low-cost BMS/sensor fixes |
+| **02 · 🔵 Retro-commissioning**<br/>*ENERGY STAR Score < 50* | **Low-Score Bldgs** | **$802.17M** | **$243.62M / yr**<br/>⚡ *Payback: 3.29 Yrs* | RCx & BMS optimization at $1.50/ft² |
+| **03 · 🟡 1960s Smart Scale**<br/>*1960s Commercial / Multi* | **1960s Archetype** | **$785.24M** | **$88.03M / yr**<br/>⚡ *Payback: 8.92 Yrs* | Networked LED, VFD motors & steam trap repairs |
+| **04 · 🟠 1930s WET Systems**<br/>*1930s Historic Pre-War* | **Pre-War Masonry** | **$1.50B** | **$61.20M / yr**<br/>⚡ *Payback: 12.25 Yrs* | Wastewater Heat Exchangers & PPP grant funding |
+| **05 · 🔴 Electrification Push**<br/>*Fuel Oil #4 Boilers* | **High-Risk Oil #4** | **$1.89B** | **$181.99M / yr**<br/>⚡ *Payback: 10.38 Yrs* | Electric Heat Pumps conversion ($20/ft²) |
+| **🏆 TOTAL PORTFOLIO**<br/>*Blended 5-Playbook Strategy* | **Entire Portfolio** | **$4.98B** | **$595.43M / yr**<br/>🎯 **Blended: 6.97 Yrs** | **Self-Funding Decarbonization Cascade** |
 
 ---
 
