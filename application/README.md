@@ -1,6 +1,6 @@
 <a id="top"></a>
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:060B18,50:0D1526,100:060B18&height=210&section=header&text=CARBON%20HEIST%20·%20APPLICATION%20LAYER&fontSize=42&fontColor=00D2FF&fontAlignY=36&desc=Enterprise%20NYC%20Local%20Law%2097%20Decarbonization%20%26%20Financial%20Mitigation%20Dashboard&descAlignY=64&descSize=16&descColor=94A3B8" width="100%" alt="Carbon Heist Application Layer"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=220&section=header&text=APPLICATION%20LAYER%20DASHBOARD&fontSize=46&fontColor=00D2FF&fontAlignY=36&desc=NYC%20Local%20Law%2097%20Decarbonization%20and%20Financial%20Mitigation%20Platform&descAlignY=62&descSize=18&descColor=8B949E" width="100%" alt="Application Layer Dashboard"/>
 
   <br/>
 
