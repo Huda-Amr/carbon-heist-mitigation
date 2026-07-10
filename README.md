@@ -74,12 +74,11 @@
     </td>
   </tr>
 </table>
+</div>
 
 > [!TIP]
 > ### 🌐 **[Click Here to Launch the Live Interactive C-Suite Dashboard Online](https://carbon-heist-mitigation.streamlit.app/)**
 > Explore all 11,639 NYC properties, interactive real-time mitigation sliders, Random Forest AI compliance predictions, and 5-playbook CAPEX financial modeling directly in your browser.
-
-</div>
 
 ---
 

@@ -8,11 +8,11 @@
 # 📑 DOC 06 — USER MANUAL & DEPLOYMENT GUIDE
 ### *Carbon Heist Mitigation & NYC Local Law 97 Intelligence Platform*
 
+</div>
+
 > [!TIP]
 > ### 🌐 **[Instant Online Access: Launch Live Streamlit Cloud Application](https://carbon-heist-mitigation.streamlit.app/)**
 > Explore the fully deployed dashboard in your browser without any local installation.
-
-</div>
 
 ---
 
