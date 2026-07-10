@@ -26,18 +26,22 @@ The **Application Layer (`application/`)** hosts the full-stack, highly interact
 
 ```mermaid
 flowchart LR
-    DATA["📊 input.xlsx / results.csv\nCleaned NYC Benchmarking Data"]:::data --> CORE["🖥️ Streamlit Core Engine\napp.py Monolithic App"]:::core
-    ML["🤖 ../models/ll97_model.joblib\nPre-Trained Random Forest Engine"]:::ml --> CORE
-    CORE --> THEME["🎨 Adaptive Design Tokens\n☀️ Enterprise Light / 🌙 Cyber Dark"]:::theme
-    THEME --> T1["📊 Tab 1: Problem Analysis\nNYC Fine & Emitter Ledger"]:::tab
-    THEME --> T2["🛠️ Tab 2: Mitigation Playground\nReal-Time Slider Simulations"]:::tab
-    THEME --> T3["🤖 Tab 3: ML Compliance Predictor\nInstant Property Risk Inference"]:::tab
-    THEME --> T4["💼 Tab 4: Financial Modeling\nPlaybooks & Sensitivity Heatmaps"]:::tab
+    RAW["📥 NYC LL84 Raw Data\n(Open Data Portal)"]:::raw --> CLEAN["🧹 Forensic Data Hygiene\n(Cleaning & Imputation Pipeline)"]:::clean
+    CLEAN --> EXCEL["📊 Excel C-Suite Dashboard\n(13-Sheet Financial Model)"]:::excel
+    CLEAN --> DATA["📊 input.xlsx / results.csv\nCleaned Portfolio Database"]:::data
+    DATA --> CORE["🖥️ Streamlit Core Engine\napp.py Web Dashboard"]:::core
+    ML["🤖 ../models/ll97_model.joblib\nRandom Forest Predictor"]:::ml --> CORE
+    CORE --> T1["📊 Tab 1: Problem Analysis"]:::tab
+    CORE --> T2["🛠️ Tab 2: Mitigation Playground"]:::tab
+    CORE --> T3["🤖 Tab 3: ML Predictor"]:::tab
+    CORE --> T4["💼 Tab 4: Financial Playbooks"]:::tab
 
+    classDef raw fill:#0d1526,stroke:#64748b,stroke-width:2px,color:#e2e8f0
+    classDef clean fill:#0d1526,stroke:#00E5FF,stroke-width:2px,color:#ffffff
+    classDef excel fill:#0d1526,stroke:#FFB800,stroke-width:2px,color:#ffffff
     classDef data fill:#0d1526,stroke:#3b82f6,stroke-width:2px,color:#e2e8f0
     classDef core fill:#0d1526,stroke:#00D2FF,stroke-width:2px,color:#ffffff
     classDef ml fill:#0d1526,stroke:#A855F7,stroke-width:2px,color:#ffffff
-    classDef theme fill:#0d1526,stroke:#FFB800,stroke-width:2px,color:#ffffff
     classDef tab fill:#0d1526,stroke:#00F59B,stroke-width:2px,color:#e2e8f0
 ```
 

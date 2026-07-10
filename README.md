@@ -108,13 +108,17 @@ All academic and technical deliverables for the **Data Analysis & Engineering Tr
 
 ```mermaid
 flowchart TD
-    A["📥 STAGE 1: Municipal Data Ingestion\nNYC LL84 Open Data Portal (11,639 Records)"]:::stage --> B["🧹 STAGE 2: Forensic Data Hygiene\n8-Step Automated Cleaning & Imputation Pipeline"]:::stage
+    A["📥 STAGE 1: Municipal Data Ingestion\nNYC LL84 Open Data Portal (11,639 Records)"]:::stage --> B["🧹 STAGE 2: Forensic Data Cleaning & Hygiene\n8-Step Automated Cleaning & Outlier Imputation Pipeline"]:::clean
     B --> C["🗄️ STAGE 3: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
-    C --> D["🤖 STAGE 4: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
-    D --> E["🗺️ STAGE 5: Prescriptive Capital Roadmap\n5-Phase Self-Funding Decarbonization Pipeline"]:::stage
-    E --> F["📊 STAGE 6: Interactive Decision Support\nStreamlit & Plotly Real-Time Scenario Dashboard"]:::output
+    B --> EX["📊 STAGE 4: Excel Executive C-Suite Dashboard\n13-Sheet Interactive Financial Model & KPI Dashboard"]:::excel
+    C --> D["🤖 STAGE 5: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
+    EX --> E["🗺️ STAGE 6: Prescriptive Capital Roadmap\n5-Phase Self-Funding Decarbonization Pipeline"]:::stage
+    D --> E
+    E --> F["🖥️ STAGE 7: Full-Stack Web Application\nStreamlit & Plotly Interactive Decision Dashboard"]:::output
 
     classDef stage fill:#161B22,stroke:#30363D,stroke-width:2px,color:#C9D1D9,font-size:14px
+    classDef clean fill:#0D1117,stroke:#00E5FF,stroke-width:2px,color:#00E5FF,font-size:14px
+    classDef excel fill:#0D1117,stroke:#FFB800,stroke-width:2px,color:#FFB800,font-size:14px
     classDef output fill:#0D1117,stroke:#00FF66,stroke-width:2px,color:#00FF66,font-size:14px
 ```
 
