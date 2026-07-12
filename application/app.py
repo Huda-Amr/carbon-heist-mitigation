@@ -589,7 +589,8 @@ with st.sidebar:
     st.markdown("<div style='font-size:0.7rem;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;'>📍 Location</div>", unsafe_allow_html=True)
     with st.expander("Location Filters", expanded=True):
         sel_cities = st.multiselect("City", raw_df[CCIT].dropna().unique() if CCIT in raw_df.columns else [])
-        sel_boros  = st.multiselect("Borough", raw_df[CBOR].dropna().unique() if CBOR in raw_df.columns else [])
+        valid_boros = [b for b in raw_df[CBOR].dropna().unique() if b not in ["Outside NYC", "Invalid/Address", "Unknown", "N/A"]] if CBOR in raw_df.columns else []
+        sel_boros  = st.multiselect("Borough", sorted(valid_boros))
 
     st.markdown("<div style='font-size:0.7rem;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:0.1em;margin:0.75rem 0 0.5rem;'>🏢 Property</div>", unsafe_allow_html=True)
     with st.expander("Property Details", expanded=True):
@@ -1351,10 +1352,12 @@ with tab4:
 with tab5:
     st.markdown(section_div(), unsafe_allow_html=True)
     st.markdown(pill("🤖", "LL97 C-Suite AI Co-Pilot & Strategic Chart Scientist"), unsafe_allow_html=True)
-    st.markdown("<p style='color:#64748b;font-size:0.88rem;margin-top:-0.2rem;'>Executive AI Assistant trained on all 11,639 NYC properties, statutory formulas ($268/MT CO₂e), and Hagar Hussein's 5 Decarbonization Playbooks. Click any strategic button below for instant visualizations & intelligence.</p>", unsafe_allow_html=True)
+    
+    sub_color = "#374151" if IS_LIGHT else "#94a3b8"
+    st.markdown(f"<p style='color:{sub_color};font-size:0.9rem;margin-top:-0.2rem;line-height:1.6;'>Executive AI Assistant trained on all <b>11,639 NYC properties</b>, statutory Local Law 97 formulas (<b>$268/MT CO₂e</b>), and Hagar Hussein's <b>5 Decarbonization Playbooks</b>. Click any strategic button below for instant adaptive visualizations & executive intelligence.</p>", unsafe_allow_html=True)
 
     # High-impact Executive Quick Prompt Buttons
-    st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.5rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.6rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
     qp1, qp2, qp3, qp4 = st.columns(4)
     quick_query = None
     with qp1:
@@ -1365,14 +1368,14 @@ with tab5:
             quick_query = "Plot the cumulative Net Cash Flow and ROI trajectory over a 15-year horizon"
     with qp3:
         if st.button("⚖️ Plot Fine Reduction Waterfall", use_container_width=True):
-            quick_query = "Plot the statutory LL97 Fine Reduction Waterfall across all 5 Playbooks"
+            quick_query = "Plot the statutory LL97 Fine Reduction Waterfall across all 5 Playbooks starting from $2.83B baseline"
     with qp4:
-        if st.button("🏢 Top 10 Offenders Audit Scope", use_container_width=True):
-            quick_query = "Analyze the Top 10 Worst Offending Buildings and plot their fine mitigation potential"
+        if st.button("📊 Compare CAPEX vs Net Benefit", use_container_width=True):
+            quick_query = "Compare upfront CAPEX versus Net Annual Benefit across all 5 Decarbonization Playbooks"
 
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = [
-            {"role": "assistant", "content": "Welcome to the **NYC Carbon Heist Mitigation AI C-Suite Co-Pilot**! Click any of the **Strategic Buttons above** to dynamically generate interactive **Execution Roadmaps**, **15-Year Cash Flow Trajectories**, **Fine Reduction Waterfalls**, or ask me any custom quantitative question about our **11,639 audited properties**."}
+            {"role": "assistant", "content": "Welcome to the **NYC Carbon Heist Mitigation AI C-Suite Co-Pilot**! Click any of the **Strategic Buttons above** to render interactive **Execution Roadmaps**, **15-Year Cash Flow Trajectories**, **Fine Reduction Waterfalls**, or **CAPEX vs Net Benefit Comparisons**."}
         ]
 
     # Handle quick query or input
@@ -1388,20 +1391,54 @@ with tab5:
 
         if any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "schedule", "milestone", "5-phase"]):
             chart_type = "roadmap_gantt"
-            response_text = "### 🗺️ Strategic 5-Phase Decarbonization Execution Roadmap\n\nThe interactive Gantt timeline below details the phased deployment schedule across our 11,639 properties. By sequencing interventions according to capital velocity, early quick-wins generate immediate liquidity to fund deeper Phase 3–5 structural retrofits:\n* **Phase 1 · Surgical Strike (Y0.0–Y0.5):** Rapid Level 2 audits and BMS setback scheduling across Top 10 offenders (`8-Day Payback → $20.55M/yr Net Cash Flow`).\n* **Phase 2 · Retro-commissioning (Y0.5–Y2.0):** Comprehensive RCx & DDC upgrades on low-score assets (`$1.50/ft² → $240.37M/yr Net Cash Flow`).\n* **Phase 3 · 1960s Smart Scale (Y1.5–Y4.0):** Networked LED lighting & VFD motor retrofits (`$2.50/ft² → $85.23M/yr Net Cash Flow`).\n* **Phase 4 · 1930s WET Systems (Y3.0–Y6.0):** Historic sewer wastewater heat recovery leveraging **50% PPP Grants ($749M)** (`$117.89M/yr Net Cash Flow`).\n* **Phase 5 · Electrification Push (Y5.0–Y8.0):** Complete replacement of Fuel Oil #4 boilers with Electric Heat Pumps (`$176.89M/yr Net Cash Flow`)."
+            response_text = """### 🗺️ Strategic 5-Phase Decarbonization Execution Roadmap
+
+The interactive Gantt schedule below details the phased deployment across our **11,639 properties**. By sequencing interventions according to capital velocity, early quick-wins generate immediate liquidity to fund deeper Phase 3–5 structural retrofits:
+
+* **Phase 1 · Surgical Strike (Y0.0 – Y0.5):** Rapid Level 2 audits and BMS setback scheduling across Top 10 offenders — **8-Day Payback → $20.55M/yr Net Cash Flow**
+* **Phase 2 · Retro-commissioning (Y0.5 – Y2.0):** Comprehensive RCx & DDC upgrades on low-score assets — **$1.50/ft² → $240.37M/yr Net Cash Flow**
+* **Phase 3 · 1960s Smart Scale (Y1.5 – Y4.0):** Networked LED lighting & VFD motor retrofits — **$2.50/ft² → $85.23M/yr Net Cash Flow**
+* **Phase 4 · 1930s WET Systems (Y3.0 – Y6.0):** Historic sewer wastewater heat recovery leveraging **50% PPP Grants ($749M)** — **12.25 Yr Payback → $117.89M/yr Net Cash Flow**
+* **Phase 5 · Electrification Push (Y5.0 – Y8.0):** Complete replacement of Fuel Oil #4 boilers with Electric Heat Pumps — **10.38 Yr Payback → $176.89M/yr Net Cash Flow**
+"""
         elif any(w in q_lower for w in ["trajectory", "15-year", "cumulative", "cash flow", "roi", "horizon"]):
             chart_type = "cash_trajectory"
-            response_text = "### 📉 15-Year Cumulative Net Cash Flow & ROI Trajectory\n\nThe area chart below illustrates the self-funding financial cascade over a 15-year horizon. After achieving full blended capital recovery at **Year 7.58**, the portfolio generates exponential positive net operational surpluses, accumulating over **$4.63 Billion in cumulative net savings** by Year 15."
-        elif any(w in q_lower for w in ["waterfall", "reduction", "eliminated", "liability cascade"]):
+            response_text = """### 📉 15-Year Cumulative Net Cash Flow & ROI Trajectory
+
+The adaptive area chart below illustrates the self-funding financial cascade over a 15-year horizon. After achieving full blended capital recovery at **Year 7.58**, the portfolio generates exponential positive net operational surpluses, accumulating over **$4.63 Billion in cumulative net savings** by Year 15.
+"""
+        elif any(w in q_lower for w in ["waterfall", "reduction", "eliminated", "liability cascade", "starting from"]):
             chart_type = "fine_waterfall"
-            response_text = "### ⚖️ LL97 Statutory Fine Reduction Waterfall\n\nThe interactive waterfall chart below bridges our initial baseline unmitigated fine exposure (**$2.83 Billion/year**) down to our post-mitigation residual exposure, demonstrating how each individual playbook systematically eliminates statutory liabilities."
-        elif any(w in q_lower for w in ["offenders", "top 10", "worst", "audit scope"]):
-            chart_type = "top10_audit"
-            response_text = "### 🏢 Level 2 Forensic Audit Scope: Top 10 Worst Offending Assets\n\nTargeting only **0.07% of total portfolio area** (the Top 10 highest penalty-emitting properties) unlocks disproportionate financial impact. These assets represent our highest-velocity intervention opportunity, requiring only **$500,000 CAPEX** to eliminate **$20.59 Million/year** in statutory fines."
+            response_text = """### ⚖️ LL97 Statutory Fine Reduction Waterfall
+
+The step-down waterfall chart below starts at our unmitigated baseline liability (**$2.83 Billion/year** evaluated at **$268/MT CO₂e**) and demonstrates how each individual decarbonization playbook systematically strips away statutory penalties, generating **$656.63 Million/yr** in gross annual reductions.
+"""
+        elif any(w in q_lower for w in ["compare capex", "capex vs", "net benefit", "comparison", "playbooks"]):
+            chart_type = "playbooks_comp"
+            response_text = """### 📊 Strategic Comparison: Initial CAPEX vs. Net Annual Benefit
+
+The grouped comparison chart below benchmarks upfront capital expenditure against recurring annual net cash flow across each of the 5 Strategic Playbooks:
+* **Playbook 01 (Surgical Strike):** Minimal **$500K CAPEX** unlocks **$20.55M/yr** recurring net benefit (**0.02 Yr Payback**).
+* **Playbook 02 (Retro-commissioning):** **$802.17M CAPEX** yields **$240.37M/yr** recurring net benefit (**3.29 Yr Payback**).
+* **Total Portfolio Performance:** **$4.98B CAPEX** yields **$640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
+"""
         else:
-            response_text = f"### 🤖 Executive C-Suite Analysis: `{query_to_process}`\n\nBased on your query, here is the quantitative portfolio assessment across our verified Local Law 97 database:\n* **Portfolio Assets:** 11,639 audited properties across NYC's 5 boroughs.\n* **Baseline Statutory Liability:** `$2,830,683,648 / yr` (`$2.83 Billion/year` evaluated at `$268/MT CO₂e`).\n* **Blended Strategy Execution:** Combined CAPEX of `$4.98 Billion` generates `$656.63 Million/yr` in gross savings and **`$640.93 Million/yr` in Net Annual Cash Flow** after itemized OPEX (`$15.70M/yr`).\n* **Blended Portfolio Payback:** **`7.58 Years`** across all 5 Decarbonization Playbooks.\n\n💡 *Tip: Click any prompt button above to render interactive Gantt Execution Roadmaps, Cash Flow Trajectories, or Fine Waterfalls.*"
+            response_text = f"""### 🤖 Executive C-Suite Analysis: `{query_to_process}`
+
+Based on your query, here is the quantitative portfolio assessment across our verified Local Law 97 database:
+* **Portfolio Assets:** 11,639 audited properties across NYC's 5 boroughs.
+* **Baseline Statutory Liability:** **$2.83 Billion/year** (evaluated at **$268/MT CO₂e**).
+* **Blended Strategy Execution:** Combined CAPEX of **$4.98 Billion** generates **$656.63 Million/yr** in gross savings and **$640.93 Million/yr in Net Annual Cash Flow** after itemized OPEX (**$15.70M/yr**).
+* **Blended Portfolio Payback:** **7.58 Years** across all 5 Decarbonization Playbooks.
+
+💡 *Tip: Click any prompt button above to render interactive Gantt Execution Roadmaps, Cash Flow Trajectories, or Fine Waterfalls.*
+"""
 
         st.session_state["chat_history"].append({"role": "assistant", "content": response_text, "chart": chart_type})
+
+    # Adaptive Theme Backgrounds
+    bg_paper = "rgba(255, 255, 255, 0.85)" if IS_LIGHT else "rgba(15, 23, 42, 0.75)"
+    bg_plot  = "rgba(248, 250, 252, 0.6)"  if IS_LIGHT else "rgba(15, 23, 42, 0.4)"
 
     # Display chat messages
     for msg in st.session_state["chat_history"]:
@@ -1421,16 +1458,19 @@ with tab5:
                     roadmap_df, x_start="Start", x_end="End", y="Playbook",
                     color="Playbook",
                     color_discrete_sequence=[C_GREEN, C_CYAN, C_AMBER, C_PURPLE, C_RED],
-                    hover_data=["CAPEX", "Net_Savings", "Payback"],
-                    title="<b>NYC Portfolio 8-Year Master Execution Roadmap (Gantt Schedule)</b>"
+                    hover_data=["CAPEX", "Net_Savings", "Payback"]
                 )
                 fig_r.update_yaxes(autorange="reversed")
-                fig_r.update_layout(height=360, margin=dict(t=48, b=28, l=10, r=10), showlegend=False)
-                st.plotly_chart(fig_r, width='stretch')
+                fig_r.update_layout(
+                    chart("NYC Portfolio 8-Year Master Execution Roadmap (Gantt Schedule)", height=380),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot,
+                    showlegend=False
+                )
+                st.plotly_chart(fig_r, width='stretch', theme=None)
 
             elif chart_t == "cash_trajectory":
                 years = list(range(0, 16))
-                # Blended CAPEX = $4.98B deployed smoothly across years 0-6; net savings $640.93M/yr recurring
                 cum_net = []
                 net_savings_yr = 640_932_287
                 for y in years:
@@ -1441,38 +1481,58 @@ with tab5:
                 traj_df = pd.DataFrame({"Year": [f"Year {y}" for y in years], "Cumulative Net Cash Flow ($)": cum_net})
                 fig_t = px.area(
                     traj_df, x="Year", y="Cumulative Net Cash Flow ($)",
-                    title="<b>15-Year Cumulative Net Cash Flow Trajectory (Breakeven at Year 7.58)</b>",
                     color_discrete_sequence=[C_GREEN]
                 )
                 fig_t.add_hline(y=0, line_dash="dash", line_color="#ef4444", annotation_text="Breakeven Threshold (Year 7.58)")
-                fig_t.update_layout(height=360, margin=dict(t=48, b=28, l=10, r=10))
-                st.plotly_chart(fig_t, width='stretch')
+                fig_t.update_layout(
+                    chart("15-Year Cumulative Net Cash Flow Trajectory (Breakeven at Year 7.58)", height=380),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot
+                )
+                st.plotly_chart(fig_t, width='stretch', theme=None)
 
             elif chart_t == "fine_waterfall":
-                wf_data = [
-                    {"Measure": "relative", "x": "01 · Surgical Strike",      "y": 20_594_117},
-                    {"Measure": "relative", "x": "02 · Retro-commissioning",  "y": 243_615_631},
-                    {"Measure": "relative", "x": "03 · 1960s Smart Scale",    "y": 88_033_696},
-                    {"Measure": "relative", "x": "04 · 1930s WET Systems",    "y": 122_390_647},
-                    {"Measure": "relative", "x": "05 · Electrification Push", "y": 181_993_196},
-                ]
-                wf_df = pd.DataFrame(wf_data)
-                fig_w = px.bar(
-                    wf_df, x="x", y="y", color="x",
-                    labels={"y": "Annual Fine & Utility Savings ($ / yr)", "x": "Decarbonization Playbook"},
-                    title="<b>Recurring Annual Savings Contribution by Playbook ($656.63M/yr Total)</b>",
-                    color_discrete_sequence=[C_GREEN, C_CYAN, C_AMBER, C_PURPLE, C_RED]
+                fig_w = go.Figure(go.Waterfall(
+                    name="LL97 Penalty Reduction",
+                    orientation="v",
+                    measure=["absolute", "relative", "relative", "relative", "relative", "relative", "total"],
+                    x=[
+                        "Baseline Fine ($2.83B)",
+                        "01 · Surgical Strike",
+                        "02 · Retro-commissioning",
+                        "03 · 1960s Smart Scale",
+                        "04 · 1930s WET Systems",
+                        "05 · Electrification Push",
+                        "Gross Annual Savings"
+                    ],
+                    textposition="outside",
+                    text=["$2.83B Baseline", "-$20.6M", "-$243.6M", "-$88.0M", "-$122.4M", "-$182.0M", "$656.6M Total Saved"],
+                    y=[2830683648, -20594117, -243615631, -88033696, -122390647, -181993196, 656626287],
+                    connector={"line": {"color": "rgba(148, 163, 184, 0.35)", "width": 1.5, "dash": "dot"}},
+                    decreasing={"marker": {"color": "#10b981"}},
+                    increasing={"marker": {"color": "#ef4444"}},
+                    totals={"marker": {"color": "#0ea5e9"}}
+                ))
+                fig_w.update_layout(
+                    chart("LL97 Statutory Fine Reduction Waterfall: Baseline Liability vs Playbook Savings", height=400),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot,
+                    showlegend=False
                 )
-                fig_w.update_layout(height=360, margin=dict(t=48, b=28, l=10, r=10), showlegend=False)
-                st.plotly_chart(fig_w, width='stretch')
+                st.plotly_chart(fig_w, width='stretch', theme=None)
 
-            elif chart_t == "top10_audit" and CN in df.columns and CPEN in df.columns:
-                top10_df = df.nlargest(10, CPEN).sort_values(CPEN, ascending=True)
-                fig_t10 = px.bar(
-                    top10_df, x=CPEN, y=CN, orientation="h",
-                    color=CPEN, color_continuous_scale=[[0, C_AMBER], [1, C_RED]],
-                    labels={CPEN: "Statutory Fine Exposure ($/yr)", CN: "Property Name"},
-                    title="<b>Top 10 Worst Offending Properties: Immediate Surgical Strike Targets</b>"
+            elif chart_t == "playbooks_comp":
+                pb_comp_df = pd.DataFrame(PLAYBOOKS)
+                fig_c = px.bar(
+                    pb_comp_df, x="short", y=["capex", "net_savings"],
+                    barmode="group",
+                    labels={"value": "USD ($)", "short": "Decarbonization Playbook", "variable": "Metric"},
+                    color_discrete_map={"capex": C_CYAN, "net_savings": C_GREEN}
                 )
-                fig_t10.update_layout(height=360, margin=dict(t=48, b=28, l=10, r=10), coloraxis_showscale=False)
-                st.plotly_chart(fig_t10, width='stretch')
+                fig_c.update_layout(
+                    chart("Strategic Comparison: Initial CAPEX vs Net Annual Benefit ($/yr)", height=380),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot,
+                    legend_title_text=""
+                )
+                st.plotly_chart(fig_c, width='stretch', theme=None)
