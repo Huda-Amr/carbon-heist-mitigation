@@ -4,7 +4,7 @@ try:
 except ImportError:
     HAS_GENAI = False
 
-import urllib.request
+import requests as _requests
 import json
 
 def call_gemini_ai(prompt_text, api_key, system_instruction=""):
@@ -18,14 +18,10 @@ def call_gemini_ai(prompt_text, api_key, system_instruction=""):
         payload["systemInstruction"] = {
             "parts": [{"text": system_instruction}]
         }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json"}
-    )
-    with urllib.request.urlopen(req, timeout=30) as res:
-        res_json = json.loads(res.read().decode("utf-8"))
-        return res_json["candidates"][0]["content"]["parts"][0]["text"]
+    resp = _requests.post(url, json=payload, timeout=30)
+    resp.raise_for_status()
+    res_json = resp.json()
+    return res_json["candidates"][0]["content"]["parts"][0]["text"]
 
 import streamlit as st
 import pandas as pd
@@ -1519,15 +1515,19 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
 """
         else:
             # If Gemini AI key is available, invoke true Generative AI reasoning via direct REST API
+            gemini_succeeded = False
             if active_gemini_key:
                 try:
-                    ai_reply = call_gemini_ai(query_to_process, active_gemini_key, GEMINI_SYSTEM_PROMPT)
+                    with st.spinner("🧠 Gemini 2.5 Flash is thinking..."):
+                        ai_reply = call_gemini_ai(query_to_process, active_gemini_key, GEMINI_SYSTEM_PROMPT)
                     response_text = ai_reply + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
+                    gemini_succeeded = True
                 except Exception as e:
-                    response_text = f"⚠️ *Gemini AI Error: {str(e)}*<br><br>"
+                    error_banner = f"<div style='background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:0.6rem;border-radius:8px;font-size:0.82rem;margin-bottom:0.6rem;'><b>⚠️ Gemini API Error:</b> {str(e)}<br><i>Showing Executive Quantitative Database fallback below:</i></div>"
             
-            # Fallback high-precision analytical responses if no API key or exception
-            if not response_text or "⚠️" in response_text:
+            # Fallback high-precision analytical responses if no API key or Gemini failed
+            if not gemini_succeeded:
+                prefix = error_banner if active_gemini_key and "error_banner" in locals() else ""
                 if q_lower in ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "howdy", "hola", "hi there", "hello there", "مرحبا", "اهلا", "سلام"]:
                     response_text = """### 👋 Hello! Welcome to the Executive C-Suite Co-Pilot
 
@@ -1584,6 +1584,9 @@ Based on your query, here is our quantitative portfolio assessment across our ve
 
 💡 *Tip: Connect a Google Gemini API key above for live Generative AI reasoning, or click any prompt button to render interactive charts.*
 """
+
+        if not gemini_succeeded and "error_banner" in locals():
+            response_text = error_banner + response_text
 
         st.session_state["chat_history"].append({"role": "assistant", "content": response_text, "chart": chart_type})
 
