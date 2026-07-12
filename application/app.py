@@ -1493,7 +1493,7 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
             if HAS_GENAI and active_gemini_key:
                 try:
                     genai.configure(api_key=active_gemini_key)
-                    model = genai.GenerativeModel("gemini-1.5-flash", system_instruction=GEMINI_SYSTEM_PROMPT)
+                    model = genai.GenerativeModel("gemini-2.5-flash", system_instruction=GEMINI_SYSTEM_PROMPT)
                     ai_res = model.generate_content(query_to_process)
                     response_text = ai_res.text
                 except Exception as e:
