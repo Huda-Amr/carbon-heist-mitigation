@@ -8,6 +8,7 @@
 <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>&nbsp;
 <a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/AI%20Engine-Random%20Forest%20(81.65%25)-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
 <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/UI%20Dashboard-Streamlit%20%2B%20Plotly-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>&nbsp;
+<a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20Flash%20%2B%20Local%20Engine-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="AI Chatbot"/></a>&nbsp;
 <a href="database/"><img src="https://img.shields.io/badge/Database-MySQL%20%2B%20MSSQL%203NF-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="Database"/></a>&nbsp;
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-00FF66?style=for-the-badge" alt="License"/></a>
 
@@ -67,9 +68,9 @@
     </td>
     <td align="center" width="33%">
       <br/>
-      🗄️ <strong>Database Architecture</strong><br/>
-      <h2>3NF Relational</h2>
-      <em>MySQL & MSSQL Schemas</em>
+      💬 <strong>AI Executive Co-Pilot</strong><br/>
+      <h2>Gemini 2.5 + Local</h2>
+      <em>Live Dual-Engine Chatbot</em>
       <br/><br/>
     </td>
   </tr>
@@ -79,6 +80,15 @@
 > [!TIP]
 > ### 🌐 **[Click Here to Launch the Live Interactive C-Suite Dashboard Online](https://carbon-heist-mitigation.streamlit.app/)**
 > Explore all 11,639 NYC properties, interactive real-time mitigation sliders, Random Forest AI compliance predictions, and 5-playbook CAPEX financial modeling directly in your browser.
+
+---
+
+## 💬 Live AI Executive Chatbot & Dual-Engine Interactive Visualization
+
+The live Streamlit application features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,639-property forensic dataset:
+
+- **🧠 Live Generative AI Mode (Google Gemini 2.5 Flash):** Connect any Google Gemini API key directly in the UI header to enable live C-Suite strategic reasoning. The AI parses any natural-language prompt, computes executive metrics, and dynamically generates custom interactive Plotly visualizations on the fly. Built-in **Multi-Model Auto-Fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`)** and exponential backoff retry guarantee high resilience.
+- **⚡ Local Quantitative & Charting Engine (Offline/Rate-Limit Safe):** Even without an API key or during API rate limits (`HTTP 429`), our embedded local dataset engine parses natural-language queries (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) and instantly renders both quantitative C-Suite text analysis and interactive Plotly charts directly from our audited `sample_nyc_energy.xlsx` database.
 
 ---
 
