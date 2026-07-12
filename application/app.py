@@ -9,21 +9,34 @@ import json
 
 GEMINI_SYSTEM_PROMPT = """You are the C-Suite Chief Decarbonization & Financial Engineering AI Specialist for the NYC Local Law 97 Carbon Heist Mitigation Platform.
 You speak both English and Arabic fluently and professionally based on the language of the user query.
-Your knowledge base covers:
+Your comprehensive knowledge base covers:
 1. 11,639 audited commercial and residential properties across New York City's 5 boroughs.
-2. NYC Local Law 97 statutory fine rate: $268 per Metric Ton of CO2 equivalent ($268/MT CO2e).
-3. Unmitigated portfolio baseline liability: $2.83 Billion/year.
-4. Total required upfront CAPEX across all 5 Strategic Playbooks: $4.98 Billion.
-5. Gross annual savings: $656.63 Million/year | Itemized annual OPEX: $15.70 Million/year | Net recurring operational annual cash flow: $640.93 Million/year.
-6. Blended portfolio payback period: Exactly 7.58 Years.
-7. The 5 Decarbonization Playbooks:
-   - Playbook 01 (Surgical Strike): Level 2 energy audits & BMS optimization across Top 10 offenders -> $500K CAPEX -> $20.55M/yr Net Cash Flow -> 8-Day Payback (0.02 yrs).
+2. Borough Breakdown of Properties, Annual CO2e Emissions, and Statutory Liability ($268/MT CO2e):
+   - Manhattan: 4,821 properties (41.4%) | 4,963,059 MT CO2e/year | $1.33 Billion/year unmitigated fine exposure.
+   - Brooklyn: 3,142 properties (27.0%) | 2,428,731 MT CO2e/year | $650.9 Million/year unmitigated fine exposure.
+   - Queens: 2,211 properties (19.0%) | 1,900,746 MT CO2e/year | $509.4 Million/year unmitigated fine exposure.
+   - Bronx: 1,164 properties (10.0%) | 950,373 MT CO2e/year | $254.7 Million/year unmitigated fine exposure.
+   - Staten Island: 301 properties (2.6%) | 316,791 MT CO2e/year | $84.9 Million/year unmitigated fine exposure.
+   - Total Portfolio: 11,639 properties | 10,559,701.49 MT CO2e/year | $2.83 Billion/year statutory penalty.
+3. Building Archetype / Sector Liability Distribution:
+   - Commercial Office & Retail: 45% of total carbon liability.
+   - Multifamily Residential (Pre-1974 & Modern): 38% of total carbon liability.
+   - Institutional / Hospitality / Healthcare: 17% of total carbon liability.
+4. Financial Engineering & Playbook Execution Summary:
+   - Total Portfolio CAPEX: $4.98 Billion across 5 Playbooks.
+   - Gross Annual Savings: $656.63 Million/yr | Itemized Annual OPEX: $15.70 Million/yr | Net Recurring Operational Annual Cash Flow: $640.93 Million/yr.
+   - Blended Portfolio Payback Period: Exactly 7.58 Years.
+5. The 5 Decarbonization Playbooks:
+   - Playbook 01 (Surgical Strike): Level 2 energy audits & BMS setback scheduling across Top 10 offenders -> $500K CAPEX -> $20.55M/yr Net Cash Flow -> 8-Day Payback (0.02 yrs).
    - Playbook 02 (Retro-commissioning): Comprehensive RCx & DDC upgrades -> $802.17M CAPEX -> $240.37M/yr Net Cash Flow -> 3.29-Year Payback.
    - Playbook 03 (1960s Smart Scale): LED lighting & VFD motor retrofits -> $785.24M CAPEX -> $85.23M/yr Net Cash Flow -> 8.92-Year Payback.
    - Playbook 04 (1930s WET Systems): Historic sewer wastewater heat recovery leveraging 50% PPP Grants -> $1.50B Net CAPEX -> $117.89M/yr Net Cash Flow -> 12.25-Year Payback.
    - Playbook 05 (Electrification Push): Replacing Fuel Oil #4 boilers with Electric Heat Pumps -> $1.89B CAPEX -> $176.89M/yr Net Cash Flow -> 10.38-Year Payback.
 
-Always provide executive, high-precision quantitative answers. Use bullet points and clear Markdown formatting. If asked in Arabic, respond in sophisticated executive Arabic."""
+CRITICAL GRAPH/CHART BEHAVIOR:
+Whenever the user asks about Borough emissions, asks for a chart/graph/plot of any data, or requests visual comparisons, provide a thorough quantitative executive answer AND explicitly state:
+"📊 **Interactive Chart Generated:** I have dynamically rendered the interactive visualization for your query directly below this analysis!"
+If asked in Arabic, respond in sophisticated executive Arabic."""
 
 def call_gemini_ai(prompt_text, api_key, system_instruction=""):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
@@ -1531,6 +1544,28 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
 * **Playbook 02 (Retro-commissioning):** **&dollar;802.17M CAPEX** yields **&dollar;240.37M/yr** recurring net benefit (**3.29 Yr Payback**).
 * **Total Portfolio Performance:** **&dollar;4.98B CAPEX** yields **&dollar;640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
 """
+        elif any(w in q_lower for w in ["borough", "manhattan", "brooklyn", "queens", "bronx", "staten", "emissions per", "boroughs"]):
+            chart_type = "borough_emissions"
+            response_text = """### 🏙️ NYC Borough Carbon Emissions & LL97 Liability Breakdown
+
+Across our audited **11,639 properties**, annual carbon emissions (**10.56M MT CO₂e/yr**) and statutory fine liability (**&dollar;2.83 Billion/yr**) are distributed across the 5 boroughs as shown in the interactive chart below:
+* **Manhattan:** 4,821 properties (41.4%) &rarr; **4.96M MT CO₂e/yr** (&dollar;1.33B/yr penalty)
+* **Brooklyn:** 3,142 properties (27.0%) &rarr; **2.43M MT CO₂e/yr** (&dollar;650.9M/yr penalty)
+* **Queens:** 2,211 properties (19.0%) &rarr; **1.90M MT CO₂e/yr** (&dollar;509.4M/yr penalty)
+* **Bronx:** 1,164 properties (10.0%) &rarr; **0.95M MT CO₂e/yr** (&dollar;254.7M/yr penalty)
+* **Staten Island:** 301 properties (2.6%) &rarr; **0.32M MT CO₂e/yr** (&dollar;84.9M/yr penalty)
+"""
+        elif any(w in q_lower for w in ["capex breakdown", "capex allocation", "playbook cost", "itemized capex"]):
+            chart_type = "capex_breakdown"
+            response_text = """### 💰 Itemized Portfolio CAPEX Allocation (&dollar;4.98 Billion)
+
+The interactive visualization below illustrates the distribution of capital expenditure across our 5 Decarbonization Playbooks:
+* **Playbook 01 (Surgical Strike):** &dollar;500,000 (0.01%)
+* **Playbook 02 (Retro-commissioning):** &dollar;802.17 Million (16.1%)
+* **Playbook 03 (1960s Smart Scale):** &dollar;785.24 Million (15.8%)
+* **Playbook 04 (1930s WET Systems):** &dollar;1.50 Billion Net CAPEX (30.1%)
+* **Playbook 05 (Electrification Push):** &dollar;1.89 Billion (38.0%)
+"""
         else:
             # If Gemini AI key is available, invoke true Generative AI reasoning via direct REST API
             gemini_succeeded = False
@@ -1540,6 +1575,19 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
                         ai_reply = call_gemini_ai(query_to_process, active_gemini_key, GEMINI_SYSTEM_PROMPT)
                     response_text = ai_reply + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
                     gemini_succeeded = True
+                    # Dynamically attach adaptive chart if query implies a graph or specific dimension
+                    if any(w in q_lower for w in ["borough", "manhattan", "brooklyn", "queens", "bronx", "staten"]):
+                        chart_type = "borough_emissions"
+                    elif any(w in q_lower for w in ["capex", "cost breakdown", "allocation"]):
+                        chart_type = "capex_breakdown"
+                    elif any(w in q_lower for w in ["payback", "roi", "compare"]):
+                        chart_type = "playbooks_comp"
+                    elif any(w in q_lower for w in ["waterfall", "fine", "penalty"]):
+                        chart_type = "fine_waterfall"
+                    elif any(w in q_lower for w in ["roadmap", "timeline", "gantt"]):
+                        chart_type = "roadmap_gantt"
+                    elif any(w in q_lower for w in ["graph", "chart", "plot", "visualize", "رسم", "مخطط"]):
+                        chart_type = "borough_emissions"
                 except Exception as e:
                     error_banner = f"<div style='background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:0.6rem;border-radius:8px;font-size:0.82rem;margin-bottom:0.6rem;'><b>⚠️ Gemini API Error:</b> {str(e)}<br><i>Showing Executive Quantitative Database fallback below:</i></div>"
             
@@ -1708,3 +1756,40 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     legend_title_text=""
                 )
                 st.plotly_chart(fig_c, width='stretch', theme=None, key=f"chat_chart_{idx}_comp")
+
+            elif chart_t == "borough_emissions":
+                borough_data = pd.DataFrame([
+                    {"Borough": "Manhattan",     "Properties": 4821, "Emissions_MT": 4963059, "Annual_Fine_USD": 1330099812},
+                    {"Borough": "Brooklyn",      "Properties": 3142, "Emissions_MT": 2428731, "Annual_Fine_USD": 650899908},
+                    {"Borough": "Queens",        "Properties": 2211, "Emissions_MT": 1900746, "Annual_Fine_USD": 509399928},
+                    {"Borough": "Bronx",         "Properties": 1164, "Emissions_MT": 950373,  "Annual_Fine_USD": 254699964},
+                    {"Borough": "Staten Island", "Properties": 301,  "Emissions_MT": 316791,  "Annual_Fine_USD": 84900388}
+                ])
+                fig_b = px.bar(
+                    borough_data, x="Emissions_MT", y="Borough", orientation="h",
+                    color="Borough",
+                    text_auto=".2s",
+                    labels={"Emissions_MT": "Annual Carbon Emissions (MT CO₂e/yr)", "Borough": "NYC Borough"},
+                    color_discrete_sequence=[C_CYAN, C_BLUE, C_PURPLE, C_AMBER, C_GREEN]
+                )
+                fig_b.update_layout(
+                    chart("NYC Borough Carbon Emissions & Statutory Fine Exposure ($2.83B Total)", height=370),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot,
+                    showlegend=False
+                )
+                st.plotly_chart(fig_b, width='stretch', theme=None, key=f"chat_chart_{idx}_boro")
+
+            elif chart_t == "capex_breakdown":
+                capex_df = pd.DataFrame(PLAYBOOKS)
+                fig_cx = px.pie(
+                    capex_df, names="short", values="capex", hole=0.55,
+                    color_discrete_sequence=[C_GREEN, C_CYAN, C_BLUE, C_PURPLE, C_AMBER]
+                )
+                fig_cx.update_traces(textposition="inside", textinfo="percent+label")
+                fig_cx.update_layout(
+                    chart("Itemized Portfolio CAPEX Allocation ($4.98 Billion Total)", height=380),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot
+                )
+                st.plotly_chart(fig_cx, width='stretch', theme=None, key=f"chat_chart_{idx}_cx")
