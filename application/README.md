@@ -5,6 +5,7 @@
   <br/>
 
   <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20APP-LAUNCH%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Streamlit App"/></a>&nbsp;
+  <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20Flash%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="AI Chatbot"/></a>&nbsp;
   <a href="https://streamlit.io"><img src="https://img.shields.io/badge/Framework-Streamlit%201.35%2B-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>&nbsp;
   <a href="https://plotly.com"><img src="https://img.shields.io/badge/Visualizations-Plotly%20Dynamic-3B82F6?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"/></a>&nbsp;
   <a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/ML%20Inference-Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
@@ -49,6 +50,13 @@ flowchart LR
     classDef ml fill:#0d1526,stroke:#A855F7,stroke-width:2px,color:#ffffff
     classDef tab fill:#0d1526,stroke:#00F59B,stroke-width:2px,color:#e2e8f0
 ```
+
+## 💬 Live AI Executive Chatbot & Dual-Engine Interactive Visualization
+
+The application header features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,639-property forensic dataset:
+
+- **🧠 Live Generative AI Mode (Google Gemini 2.5 Flash):** Connect any Google Gemini API key directly in the UI header to enable live C-Suite strategic reasoning. The AI parses any natural-language prompt, computes executive metrics, and dynamically generates custom interactive Plotly visualizations on the fly. Built-in **Multi-Model Auto-Fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`)** and exponential backoff retry guarantee high resilience.
+- **⚡ Local Quantitative & Charting Engine (Offline/Rate-Limit Safe):** Even without an API key or during API rate limits (`HTTP 429`), our embedded local dataset engine parses natural-language queries (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) and instantly renders both quantitative C-Suite text analysis and interactive Plotly charts directly from our audited `sample_nyc_energy.xlsx` database.
 
 ## 📑 Deep-Dive: Analytical Modules (Tabs)
 

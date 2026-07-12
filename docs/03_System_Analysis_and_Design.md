@@ -82,7 +82,19 @@ graph TD
         ENC --> APP
         APP --> DASH[Plotly Executive Charts & Sliders]
     end
+
+    subgraph L5 [Layer 5: Conversational AI & Dual-Engine Visualization]
+        APP --> GEMINI[Google Gemini 2.5 Flash API Mode]
+        APP --> LOCAL[Local Quantitative & Interactive Chart Engine]
+        GEMINI --> CHAT[Interactive Executive C-Suite Chatbot]
+        LOCAL --> CHAT
+    end
 ```
+
+#### Conversational AI & Dual-Engine Architecture (Layer 5)
+The interactive presentation layer incorporates an embedded **Dual-Engine Executive AI Co-Pilot & Chatbot**:
+1. **Cloud Generative Reasoning Mode (`Google Gemini 2.5 Flash`):** Executes complex strategic queries, scenario reasoning, and on-the-fly custom Plotly chart generation with automatic multi-model fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`).
+2. **Local Quantitative Charting Engine (`Embedded Fallback`):** Guarantees zero downtime during API rate limits (`HTTP 429`) or offline operations by parsing natural-language queries (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex"`, `"payback"`) and directly rendering interactive Plotly charts and quantitative text audits from `sample_nyc_energy.xlsx`.
 
 ---
 

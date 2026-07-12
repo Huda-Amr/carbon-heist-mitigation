@@ -9,7 +9,8 @@
 <a href="./04_Implementation_and_Coding_Standards.md"><img src="https://img.shields.io/badge/Doc%2004-PEP%208%20Implementation-F7931E?style=for-the-badge" alt="Doc 04"/></a>&nbsp;
 <a href="./05_Testing_and_Quality_Assurance.md"><img src="https://img.shields.io/badge/Doc%2005-QA%20Test%20Matrix-9B51E0?style=for-the-badge" alt="Doc 05"/></a>&nbsp;
 <a href="./06_User_Manual_and_Deployment.md"><img src="https://img.shields.io/badge/Doc%2006-User%20Manual-FF4B4B?style=for-the-badge" alt="Doc 06"/></a>
-<br/><a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20APP-OPEN%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Streamlit App"/></a>
+<br/><a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20APP-OPEN%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Streamlit App"/></a>&nbsp;
+<a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20Flash%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="AI Chatbot"/></a>
 
 <br/><br/>
 
@@ -67,15 +68,23 @@
     </td>
     <td align="center" width="33%">
       <br/>
-      📥 <strong>Formal Presentation</strong><br/>
-      <h2>DOCX Report</h2>
-      <em>Executive Formatted Word File</em>
+      💬 <strong>AI Executive Co-Pilot</strong><br/>
+      <h2>Gemini 2.5 + Local</h2>
+      <em>Live Dual-Engine Chatbot</em>
       <br/><br/>
     </td>
   </tr>
 </table>
 
 </div>
+
+---
+
+## 💬 Executive C-Suite AI Co-Pilot & Chatbot (Google Gemini 2.5 Flash + Local Engine)
+
+Across all documentation files and live interactive tools, our system features an embedded **AI Executive Chatbot & Dual-Engine Visualizer**:
+- **Live AI Mode (`Gemini 2.5 Flash`):** Generative strategic insights and on-the-fly custom Plotly chart generation with automatic multi-model fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`).
+- **Local Quantitative & Interactive Charting Engine:** Guaranteed resilience during offline mode or free-tier rate limits (`HTTP 429`), automatically rendering interactive Plotly charts and dataset audits directly from `sample_nyc_energy.xlsx`.
 
 ---
 

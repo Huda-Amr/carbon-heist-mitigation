@@ -137,6 +137,9 @@ python Clean_Data_Pipeline.py
    - **Peer Benchmark Gap:** See immediately whether your asset outperforms or lags behind similar buildings across New York City.
 3. **Simulate Engineering Retrofit Playbooks:**
    - Navigate to the **Decarbonization Simulation** section to model HVAC retro-commissioning, window/envelope insulation, and electrification upgrades to calculate your annual penalty savings.
+4. **Interact with the AI Executive Co-Pilot & Chatbot (Header Section):**
+   - **Generative AI Mode (`Gemini 2.5 Flash`):** Connect a Google Gemini API key to ask natural-language strategic questions and dynamically generate custom interactive Plotly charts.
+   - **Local Quantitative Engine Mode:** Ask questions (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) even without an API key or during rate limits (`HTTP 429`) to instantly render interactive Plotly charts and executive audits directly from `sample_nyc_energy.xlsx`.
 
 ---
 
