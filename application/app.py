@@ -4,6 +4,29 @@ try:
 except ImportError:
     HAS_GENAI = False
 
+import urllib.request
+import json
+
+def call_gemini_ai(prompt_text, api_key, system_instruction=""):
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+    payload = {
+        "contents": [
+            {"role": "user", "parts": [{"text": prompt_text}]}
+        ]
+    }
+    if system_instruction:
+        payload["systemInstruction"] = {
+            "parts": [{"text": system_instruction}]
+        }
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"}
+    )
+    with urllib.request.urlopen(req, timeout=15) as res:
+        res_json = json.loads(res.read().decode("utf-8"))
+        return res_json["candidates"][0]["content"]["parts"][0]["text"]
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -1410,7 +1433,9 @@ with tab5:
     # Optional Live Generative AI Gemini configuration
     with st.expander("✨ Live Generative AI Mode (Google Gemini Integration - Optional)", expanded=False):
         st.markdown("<p style='font-size:0.85rem;color:#64748b;'>Connect your Google Gemini API Key to enable true generative AI reasoning, dynamic multi-lingual conversation (Arabic/English), and live C-Suite scenario analysis across the Local Law 97 database.</p>", unsafe_allow_html=True)
-        user_gemini_key = st.text_input("🔑 Enter Gemini API Key (or set GEMINI_API_KEY in Streamlit Secrets):", type="password", key="gemini_key_input")
+        key_col, _ = st.columns([2, 1])
+        with key_col:
+            user_gemini_key = st.text_input("🔑 Enter Gemini API Key (or set GEMINI_API_KEY in Streamlit Secrets):", type="password", key="gemini_key_input")
 
     # Determine active Gemini Key (user input or Streamlit Secrets)
     active_gemini_key = user_gemini_key.strip() if user_gemini_key else None
