@@ -33,10 +33,21 @@ Your comprehensive knowledge base covers:
    - Playbook 04 (1930s WET Systems): Historic sewer wastewater heat recovery leveraging 50% PPP Grants -> $1.50B Net CAPEX -> $117.89M/yr Net Cash Flow -> 12.25-Year Payback.
    - Playbook 05 (Electrification Push): Replacing Fuel Oil #4 boilers with Electric Heat Pumps -> $1.89B CAPEX -> $176.89M/yr Net Cash Flow -> 10.38-Year Payback.
 
-CRITICAL GRAPH/CHART BEHAVIOR:
-Whenever the user asks about Borough emissions, asks for a chart/graph/plot of any data, or requests visual comparisons, provide a thorough quantitative executive answer AND explicitly state:
-"📊 **Interactive Chart Generated:** I have dynamically rendered the interactive visualization for your query directly below this analysis!"
-If asked in Arabic, respond in sophisticated executive Arabic."""
+UNIVERSAL DYNAMIC CHART GENERATION CAPABILITY:
+Whenever the user asks for ANY chart, graph, plot, visual comparison, or asks an analytical question where a chart would enhance executive decision-making, provide a thorough executive analysis AND append a JSON block formatted exactly like this at the very end of your response:
+```plotly_json
+{
+  "title": "Clear Chart Title",
+  "chart_type": "bar",
+  "x": ["Category A", "Category B", "Category C"],
+  "y": [100, 250, 400],
+  "x_label": "X Axis Title",
+  "y_label": "Y Axis Title"
+}
+```
+Supported chart_type values: "bar" (vertical bar chart), "hbar" (horizontal bar chart), "pie" (donut chart), "line" (line chart).
+Always make sure the JSON inside ```plotly_json ... ``` is valid JSON. Our platform will automatically parse it and render a stunning interactive Plotly chart directly below your text!
+If asked in Arabic, respond in sophisticated executive Arabic and generate the chart labels in Arabic as well."""
 
 def call_gemini_ai(prompt_text, api_key, system_instruction=""):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
@@ -1663,7 +1674,53 @@ Based on your query, here is our quantitative portfolio assessment across our ve
     # Display newest responses directly under the prompt/input box always
     for idx, msg in enumerate(reversed(st.session_state["chat_history"])):
         with st.chat_message(msg["role"], avatar="🤖" if msg["role"] == "assistant" else "👤"):
-            st.markdown(msg["content"], unsafe_allow_html=True)
+            content_text = msg["content"]
+            
+            # Check if Gemini generated a universal dynamic plotly_json chart block
+            gemini_custom_chart = None
+            if "```plotly_json" in content_text:
+                try:
+                    parts = content_text.split("```plotly_json")
+                    display_text = parts[0]
+                    json_raw = parts[1].split("```")[0].strip()
+                    gemini_custom_chart = json.loads(json_raw)
+                    st.markdown(display_text, unsafe_allow_html=True)
+                except Exception:
+                    st.markdown(content_text, unsafe_allow_html=True)
+            else:
+                st.markdown(content_text, unsafe_allow_html=True)
+
+            # Render custom Gemini AI generated chart if present
+            if gemini_custom_chart and isinstance(gemini_custom_chart, dict):
+                try:
+                    c_title = gemini_custom_chart.get("title", "AI Dynamic Executive Chart")
+                    c_type = gemini_custom_chart.get("chart_type", "bar")
+                    x_vals = gemini_custom_chart.get("x", [])
+                    y_vals = gemini_custom_chart.get("y", [])
+                    x_lbl = gemini_custom_chart.get("x_label", "Category")
+                    y_lbl = gemini_custom_chart.get("y_label", "Value")
+                    
+                    if x_vals and y_vals and len(x_vals) == len(y_vals):
+                        df_custom = pd.DataFrame({x_lbl: x_vals, y_lbl: y_vals})
+                        if c_type == "pie":
+                            fig_ai = px.pie(df_custom, names=x_lbl, values=y_lbl, hole=0.5, color_discrete_sequence=[C_CYAN, C_GREEN, C_BLUE, C_PURPLE, C_AMBER])
+                            fig_ai.update_traces(textposition="inside", textinfo="percent+label")
+                        elif c_type == "hbar":
+                            fig_ai = px.bar(df_custom, x=y_lbl, y=x_lbl, orientation="h", color=x_lbl, color_discrete_sequence=[C_CYAN, C_GREEN, C_BLUE, C_PURPLE, C_AMBER])
+                        elif c_type == "line":
+                            fig_ai = px.line(df_custom, x=x_lbl, y=y_lbl, markers=True, color_discrete_sequence=[C_CYAN])
+                        else:
+                            fig_ai = px.bar(df_custom, x=x_lbl, y=y_lbl, color=x_lbl, color_discrete_sequence=[C_CYAN, C_GREEN, C_BLUE, C_PURPLE, C_AMBER])
+                        
+                        fig_ai.update_layout(
+                            chart(c_title, height=380),
+                            paper_bgcolor=bg_paper,
+                            plot_bgcolor=bg_plot,
+                            showlegend=False
+                        )
+                        st.plotly_chart(fig_ai, width='stretch', theme=None, key=f"chat_chart_{idx}_custom_ai")
+                except Exception:
+                    pass
             
             chart_t = msg.get("chart")
             if chart_t == "roadmap_gantt":
