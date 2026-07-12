@@ -24,10 +24,16 @@ Your comprehensive knowledge base covers:
    - 1960–1979 (First-Gen Glass Curtain Wall): 2,560 properties | 2.43M MT CO2e/yr | $651.2M/yr fine exposure.
    - 1980–1999 (Late Century Commercial): 1,629 properties | 1.16M MT CO2e/yr | $310.9M/yr fine exposure.
    - 2000–Present (Modern Energy Code): 1,048 properties | 0.53M MT CO2e/yr | $142.0M/yr fine exposure.
-4. Building Archetype / Sector Liability Distribution:
-   - Commercial Office & Retail: 45% of total carbon liability.
-   - Multifamily Residential (Pre-1974 & Modern): 38% of total carbon liability.
-   - Institutional / Hospitality / Healthcare: 17% of total carbon liability.
+4. Granular Building Archetype / Asset Class Distribution (NEVER lump or mix distinct asset classes together):
+   - Commercial Office (Class A & B High-Rise): 3,142 properties (27.0%) | 3.38M MT CO2e/yr (32.0%) | $905.8M/yr fine exposure.
+   - Multifamily Residential (Pre-1974 Historic Steam/WET): 2,793 properties (24.0%) | 2.64M MT CO2e/yr (25.0%) | $707.5M/yr fine exposure.
+   - Multifamily Residential (Modern Post-1974 High-Rise): 1,629 properties (14.0%) | 1.37M MT CO2e/yr (13.0%) | $368.0M/yr fine exposure.
+   - Retail & Shopping Centers (Stand-alone & Big Box): 1,513 properties (13.0%) | 1.37M MT CO2e/yr (13.0%) | $368.0M/yr fine exposure.
+   - Hospitality & Luxury Hotels: 815 properties (7.0%) | 739,000 MT CO2e/yr (7.0%) | $198.0M/yr fine exposure.
+   - Educational & Institutional (Universities & Schools): 698 properties (6.0%) | 317,000 MT CO2e/yr (3.0%) | $84.9M/yr fine exposure.
+   - Healthcare & Hospitals (Inpatient & Clinical): 582 properties (5.0%) | 528,000 MT CO2e/yr (5.0%) | $141.5M/yr fine exposure.
+   - Logistics & Light Industrial: 467 properties (4.0%) | 209,701 MT CO2e/yr (2.0%) | $56.3M/yr fine exposure.
+   CRITICAL RULE: Always maintain strict separation between these 8 distinct asset classes. Do NOT lump Office with Retail, or Hospitality with Healthcare.
 5. Financial Engineering & Playbook Execution Summary:
    - Total Portfolio CAPEX: $4.98 Billion across 5 Playbooks.
    - Gross Annual Savings: $656.63 Million/yr | Itemized Annual OPEX: $15.70 Million/yr | Net Recurring Operational Annual Cash Flow: $640.93 Million/yr.
