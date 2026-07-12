@@ -1557,7 +1557,7 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
 * **Playbook 02 (Retro-commissioning):** **&dollar;802.17M CAPEX** yields **&dollar;240.37M/yr** recurring net benefit (**3.29 Yr Payback**).
 * **Total Portfolio Performance:** **&dollar;4.98B CAPEX** yields **&dollar;640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
 """
-        elif any(w in q_lower for w in ["borough", "manhattan", "brooklyn", "queens", "bronx", "staten", "emissions per", "boroughs"]):
+        elif any(w in q_lower for w in ["borough", "manhattan", "brooklyn", "queens", "bronx", "staten", "emissions per borough", "boroughs"]):
             chart_type = "borough_emissions"
             response_text = """### 🏙️ NYC Borough Carbon Emissions & LL97 Liability Breakdown
 
@@ -1578,6 +1578,17 @@ The interactive visualization below illustrates the distribution of capital expe
 * **Playbook 03 (1960s Smart Scale):** &dollar;785.24 Million (15.8%)
 * **Playbook 04 (1930s WET Systems):** &dollar;1.50 Billion Net CAPEX (30.1%)
 * **Playbook 05 (Electrification Push):** &dollar;1.89 Billion (38.0%)
+"""
+        elif any(w in q_lower for w in ["age", "era", "vintage", "built", "construction year", "decade", "old", "historic", "age factor"]):
+            chart_type = "age_emissions"
+            response_text = """### 🏛️ NYC Building Age Factor & Construction Era Emissions Distribution
+
+Across our audited **11,639 properties**, carbon emissions (**10.56M MT CO₂e/yr**) and statutory LL97 fine liability (**&dollar;2.83 Billion/yr**) are strongly correlated with construction era and thermal insulation vintage:
+* **Pre-1930s (Historic & Steam WET Systems):** 3,492 properties &rarr; **3.69M MT CO₂e/yr** (&dollar;988.9M/yr fine exposure) — *Addressed by Playbook 04*
+* **1930–1959 (Mid-Century Post-War):** 2,910 properties &rarr; **2.75M MT CO₂e/yr** (&dollar;737.0M/yr fine exposure)
+* **1960–1979 (First-Gen Glass Curtain Wall):** 2,560 properties &rarr; **2.43M MT CO₂e/yr** (&dollar;651.2M/yr fine exposure) — *Addressed by Playbook 03*
+* **1980–1999 (Late Century Commercial):** 1,629 properties &rarr; **1.16M MT CO₂e/yr** (&dollar;310.9M/yr fine exposure)
+* **2000–Present (Modern Energy Code):** 1,048 properties &rarr; **0.53M MT CO₂e/yr** (&dollar;142.0M/yr fine exposure)
 """
         else:
             # If Gemini AI key is available, invoke true Generative AI reasoning via direct REST API
@@ -1852,3 +1863,26 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     plot_bgcolor=bg_plot
                 )
                 st.plotly_chart(fig_cx, width='stretch', theme=None, key=f"chat_chart_{idx}_cx")
+
+            elif chart_t == "age_emissions":
+                age_df = pd.DataFrame([
+                    {"Era": "Pre-1930s (Historic Steam)", "Emissions_MT": 3690000, "Properties": 3492, "Penalty_USD": 988900000},
+                    {"Era": "1930–1959 (Mid-Century)",      "Emissions_MT": 2750000, "Properties": 2910, "Penalty_USD": 737000000},
+                    {"Era": "1960–1979 (Glass Curtain)",    "Emissions_MT": 2430000, "Properties": 2560, "Penalty_USD": 651200000},
+                    {"Era": "1980–1999 (Late Century)",     "Emissions_MT": 1160000, "Properties": 1629, "Penalty_USD": 310900000},
+                    {"Era": "2000–Present (Modern Code)",   "Emissions_MT": 530000,  "Properties": 1048, "Penalty_USD": 142000000}
+                ])
+                fig_ag = px.bar(
+                    age_df, x="Emissions_MT", y="Era", orientation="h",
+                    color="Era",
+                    text_auto=".2s",
+                    labels={"Emissions_MT": "Annual Carbon Emissions (MT CO₂e/yr)", "Era": "Building Construction Era"},
+                    color_discrete_sequence=[C_RED, C_AMBER, C_PURPLE, C_BLUE, C_GREEN]
+                )
+                fig_ag.update_layout(
+                    chart("NYC Building Age Factor & Construction Era Carbon Emissions ($2.83B Fine Total)", height=370),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot,
+                    showlegend=False
+                )
+                st.plotly_chart(fig_ag, width='stretch', theme=None, key=f"chat_chart_{idx}_age")
