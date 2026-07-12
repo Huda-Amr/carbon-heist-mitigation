@@ -1540,8 +1540,8 @@ Based on your query, here is our quantitative portfolio assessment across our ve
     bg_paper = "rgba(255, 255, 255, 0.85)" if IS_LIGHT else "rgba(15, 23, 42, 0.75)"
     bg_plot  = "rgba(248, 250, 252, 0.6)"  if IS_LIGHT else "rgba(15, 23, 42, 0.4)"
 
-    # Display chat messages
-    for idx, msg in enumerate(st.session_state["chat_history"]):
+    # Display newest responses directly under the prompt/input box always
+    for idx, msg in enumerate(reversed(st.session_state["chat_history"])):
         with st.chat_message(msg["role"], avatar="🤖" if msg["role"] == "assistant" else "👤"):
             st.markdown(msg["content"], unsafe_allow_html=True)
             
