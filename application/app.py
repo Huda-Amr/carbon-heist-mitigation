@@ -1540,10 +1540,20 @@ with tab4:
 # ══════════════════════════════════════════════════════════════
 with tab5:
     st.markdown(section_div(), unsafe_allow_html=True)
-    st.markdown(pill("🤖", "LL97 C-Suite AI Co-Pilot & Strategic Chart Scientist"), unsafe_allow_html=True)
+    st.markdown(pill("🤖", "LL97 C-Suite AI Co-Pilot & Real-Time Dynamic Chart Generator"), unsafe_allow_html=True)
     
     sub_color = "#374151" if IS_LIGHT else "#94a3b8"
-    st.markdown(f"<p style='color:{sub_color};font-size:0.9rem;margin-top:-0.2rem;line-height:1.6;'>Executive AI Assistant trained on all <b>11,639 NYC properties</b>, statutory Local Law 97 formulas (<b>&dollar;268/MT CO₂e</b>), and the Executive <b>5 Decarbonization Playbooks</b>. Click any strategic button below for instant adaptive visualizations & executive intelligence.</p>", unsafe_allow_html=True)
+    st.markdown(f"""
+    <div style="background:{'#f8fafc' if IS_LIGHT else '#0f172a'};border:1px solid {'#e2e8f0' if IS_LIGHT else '#1e293b'};border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;">
+        <div style="font-weight:700;font-size:0.95rem;color:{'#0f172a' if IS_LIGHT else '#f8fafc'};margin-bottom:0.4rem;">
+            📊 Live Dataset Intelligence & On-The-Fly Chart Generator
+        </div>
+        <p style="color:{sub_color};font-size:0.86rem;margin:0;line-height:1.65;">
+            Powered by <b>Google Gemini 2.5 Flash</b> and connected directly to our verified municipal database (<b>11,639 audited NYC properties</b>).
+            <b>Ask the AI to generate ANY custom chart or comparison</b> from the data (e.g., <i>"Graph emissions across the 8 building archetypes"</i>, <i>"Plot fines by construction decade"</i>, or <i>"Compare CAPEX vs Payback"</i>), and the AI will construct the data array and render an <b>interactive Plotly chart instantly!</b>
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
     # Optional Live Generative AI Gemini configuration
     with st.expander("✨ Live Generative AI Mode (Google Gemini Integration - Optional)", expanded=False):
@@ -1563,7 +1573,7 @@ with tab5:
             active_gemini_key = os.environ.get("GEMINI_API_KEY", None)
 
     if active_gemini_key:
-        st.markdown("<div style='background:#ecfdf5;border:1px solid #10b981;color:#047857;padding:0.55rem 0.9rem;border-radius:10px;font-size:0.85rem;margin:0.4rem 0;'><b>✅ Live Google Gemini AI Connected!</b> Active Model: <code>gemini-2.5-flash</code>. Ask any natural language question below for live generative reasoning.</div>", unsafe_allow_html=True)
+        st.markdown("<div style='background:#ecfdf5;border:1px solid #10b981;color:#047857;padding:0.55rem 0.9rem;border-radius:10px;font-size:0.85rem;margin:0.4rem 0;'><b>✅ Live Google Gemini 2.5 Flash Connected!</b> Ask any question or request <b>ANY custom analytical chart</b> from the 11,639-property dataset — the AI will generate and render an interactive Plotly chart on the fly!</div>", unsafe_allow_html=True)
 
     # High-impact Executive Quick Prompt Buttons
     st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.6rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
@@ -1584,11 +1594,11 @@ with tab5:
 
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = [
-            {"role": "assistant", "content": "Welcome to the **NYC Carbon Heist Mitigation AI C-Suite Co-Pilot**! 👋<br><br>I am your dedicated executive AI specialist. Ask me anything about our **11,639 audited properties**, **&dollar;4.98B CAPEX deployment**, **7.58-Year Payback**, or click any **Strategic Button above** to render interactive **Execution Roadmaps**, **15-Year Cash Flow Trajectories**, **Fine Reduction Waterfalls**, or **CAPEX vs Net Benefit Comparisons**."}
+            {"role": "assistant", "content": "Welcome to the **NYC Carbon Heist Mitigation AI C-Suite Co-Pilot & Real-Time Chart Generator**! 👋<br><br>I am connected live to our verified municipal database of **11,639 audited NYC properties**.<br><br>📊 **What can I do for you?**<br>• **Generate Custom Graphs on the Fly:** Ask me to <i>\"Graph emissions by building archetype\"</i>, <i>\"Plot fines by construction era\"</i>, or any other custom visualization — I will construct the data and render an interactive **Plotly Chart** instantly!<br>• **Quantitative Financial Engineering:** Ask about our <b>&dollar;4.98B CAPEX</b>, <b>7.58-Year Payback</b>, or <b>&dollar;640.93M/yr Net Cash Flow</b>.<br>• **Bilingual Mastery:** Speak to me in English or Arabic!"}
         ]
 
     # Handle quick query or input
-    user_input = st.chat_input("Ask any executive question (e.g., hello, explain payback, show CAPEX breakdown)...")
+    user_input = st.chat_input("Ask any question or request a custom graph from the 11,639 properties (e.g., 'Graph emissions by building type')...")
     query_to_process = quick_query if quick_query else user_input
 
     if query_to_process and query_to_process.strip():
