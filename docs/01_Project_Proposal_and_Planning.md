@@ -78,6 +78,21 @@ The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, mach
 
 ---
 
+
+### 1.1.5 Strategic Decarbonization Financial Model (CAPEX, Annual OPEX & Net Cash Flow)
+
+The project incorporates Hagar Hussein's 5 Strategic Decarbonization Playbooks, structured as a self-funding capital cascade across all 11,639 audited NYC properties under Local Law 97:
+
+| Playbook ID & Strategy | Target Scope | Initial CAPEX ($) | Annual OPEX ($/yr) | Gross Savings ($/yr) | Net Annual Benefit ($/yr) | Payback Period | Operational & Maintenance Scope |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **01 · Surgical Strike** | Top 10 Worst Offenders | **$500 K** | **$45 K / yr** | **$20.59 M / yr** | **$20.55 M / yr** | **0.02 Yrs (8 Days)** | Level 2 audits, BMS scheduling optimization & quarterly sensor calibrations. |
+| **02 · Retro-commissioning** | ENERGY STAR Score < 50 | **$802.17 M** | **$3.25 M / yr** | **$243.62 M / yr** | **$240.37 M / yr** | **3.29 Yrs** | RCx ($1.50/ft²), continuous FDD monitoring & semi-annual VAV box tuning. |
+| **03 · 1960s Smart Scale** | 1960s Commercial/Multi | **$785.24 M** | **$2.80 M / yr** | **$88.03 M / yr** | **$85.23 M / yr** | **8.92 Yrs** | Networked LED, VFD motors ($2.50/ft²), preventative motor maintenance. |
+| **04 · 1930s WET Systems** | Historic Pre-War Masonry | **$1.50 B** | **$4.50 M / yr** | **$122.39 M / yr** | **$117.89 M / yr** | **12.25 Yrs** | Wastewater Heat Exchangers + 50% PPP grant ($749M), anti-fouling protocols. |
+| **05 · Electrification Push** | Fuel Oil #4 Boilers | **$1.89 B** | **$5.10 M / yr** | **$181.99 M / yr** | **$176.89 M / yr** | **10.38 Yrs** | Electric Heat Pumps ($20/ft²), OEM service contracts & thermal scanning. |
+| **🏆 TOTAL PORTFOLIO** | **Entire Portfolio (11,639 assets)** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | **6.97 Yrs Blended** | **Total OPEX averages only 0.32% of CAPEX, preserving 97.6% net recurring cash flow.** |
+
+
 ## 1.2 Project Plan & Timeline (Gantt Chart)
 
 ```mermaid
