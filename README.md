@@ -253,14 +253,14 @@ Our capital deployment follows a strict **self-funding cascade**: rapid-payback 
 > ### **All Savings Figures Represent Recurring Annual Savings ($ / Year)**
 > Every savings metric reported across the dashboard and tables represents **recurring annual statutory fine avoidance and operational utility savings ($ / yr)** generated recursively every year following retrofit completion.
 
-| Phase & Strategy | Portfolio Scope | CAPEX | Recurring Annual Savings & Payback | Strategic Impact |
-| :--- | :--- | :---: | :--- | :--- |
-| **01 · 🟢 Surgical Strike**<br/>*Top 10 Worst Offenders* | **0.07% Area** | **$500K** | **$20.59M / yr**<br/>⚡ *Payback: 0.02 Yrs (8 Days)* | Level 2 Energy Audits & low-cost BMS/sensor fixes |
-| **02 · 🔵 Retro-commissioning**<br/>*ENERGY STAR Score < 50* | **Low-Score Bldgs** | **$802.17M** | **$243.62M / yr**<br/>⚡ *Payback: 3.29 Yrs* | RCx & BMS optimization at $1.50/ft² |
-| **03 · 🟡 1960s Smart Scale**<br/>*1960s Commercial / Multi* | **1960s Archetype** | **$785.24M** | **$88.03M / yr**<br/>⚡ *Payback: 8.92 Yrs* | Networked LED, VFD motors & steam trap repairs |
-| **04 · 🟠 1930s WET Systems**<br/>*1930s Historic Pre-War* | **Pre-War Masonry** | **$1.50B** | **$122.39M / yr**<br/>⚡ *Payback: 12.25 Yrs* | Wastewater Heat Exchangers & PPP grant funding |
-| **05 · 🔴 Electrification Push**<br/>*Fuel Oil #4 Boilers* | **High-Risk Oil #4** | **$1.89B** | **$181.99M / yr**<br/>⚡ *Payback: 10.38 Yrs* | Electric Heat Pumps conversion ($20/ft²) |
-| **🏆 TOTAL PORTFOLIO**<br/>*Blended 5-Playbook Strategy* | **Entire Portfolio** | **$4.98B** | **$656.63M / yr**<br/>🎯 **Blended: 6.97 Yrs** | **Self-Funding Decarbonization Cascade** |
+| Phase & Strategy | Target Scope | Initial CAPEX ($) | Annual OPEX ($/yr) | Gross Savings ($/yr) | Net Benefit ($/yr) | Payback Period | Strategic Execution & OPEX Scope |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **01 · 🟢 Surgical Strike**<br/>*Top 10 Worst Offenders* | **0.07% Area** | **$500 K** | **$45 K / yr** | **$20.59 M / yr** | **$20.55 M / yr** | ⚡ **0.02 Yrs (8 Days)** | Level 2 Energy Audits & low-cost OPEX fixes. OPEX covers quarterly sensor calibrations & BMS scheduling software. |
+| **02 · 🔵 Retro-commissioning**<br/>*ENERGY STAR Score < 50* | **Low-Score Bldgs** | **$802.17 M** | **$3.25 M / yr** | **$243.62 M / yr** | **$240.37 M / yr** | ⚡ **3.29 Yrs** | RCx & BMS optimization at $1.50/ft². OPEX covers continuous FDD monitoring software & semi-annual VAV box tuning. |
+| **03 · 🟡 1960s Smart Scale**<br/>*1960s Commercial / Multi* | **1960s Archetype** | **$785.24 M** | **$2.80 M / yr** | **$88.03 M / yr** | **$85.23 M / yr** | **8.92 Yrs** | Networked LED, VFD motors & steam trap repairs ($2.50/ft²). OPEX covers preventative VFD maintenance & sensor checks. |
+| **04 · 🟠 1930s WET Systems**<br/>*1930s Historic Pre-War* | **Pre-War Masonry** | **$1.50 B** | **$4.50 M / yr** | **$122.39 M / yr** | **$117.89 M / yr** | **12.25 Yrs** | Wastewater Heat Exchangers & 50% PPP grant funding. OPEX covers annual anti-fouling flush protocols & pump servicing. |
+| **05 · 🔴 Electrification Push**<br/>*Fuel Oil #4 Boilers* | **High-Risk Oil #4** | **$1.89 B** | **$5.10 M / yr** | **$181.99 M / yr** | **$176.89 M / yr** | **10.38 Yrs** | Electric Heat Pumps conversion ($20/ft²). OPEX covers comprehensive OEM maintenance contracts & thermographic checks. |
+| **🏆 TOTAL PORTFOLIO**<br/>*Blended 5-Playbook Strategy* | **Entire Portfolio** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | 🎯 **6.97 Yrs Blended** | **Self-Funding Decarbonization Cascade across 11,639 verified NYC LL84/LL97 assets (OPEX = 0.32% of CAPEX).** |
 
 ---
 

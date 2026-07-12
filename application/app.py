@@ -1206,29 +1206,29 @@ with tab4:
     PLAYBOOKS = [
         {"name":"Surgical Strike",      "short":"Surgical Strike",
          "target":"Top 10 worst offenders (0.07% portfolio area)",
-         "capex":500_000,        "savings":20_594_117,  "payback":0.024,
+         "capex":500_000,        "opex":45_000,      "savings":20_594_117,  "net_savings":20_549_117,  "payback":0.024,
          "base_pen":51_485_292,  "post_pen":30_891_175,
-         "desc":"Dispatch engineering task force for Level 2 Energy Audits on the 10 worst properties. Execute low-cost OPEX repairs: fix leaks, recalibrate sensors, correct BMS scheduling. Instantly wipes out ~2% of portfolio penalty exposure."},
+         "desc":"Dispatch engineering task force for Level 2 Energy Audits on the 10 worst properties. Execute low-cost OPEX repairs: fix leaks, recalibrate sensors, correct BMS scheduling. Annual OPEX ($45K/yr) covers quarterly sensor calibrations and ongoing BMS software fees."},
         {"name":"Retro-commissioning",  "short":"Retro-commissioning",
          "target":"Buildings with ENERGY STAR Score < 50",
-         "capex":802_166_574,    "savings":243_615_631, "payback":3.29,
+         "capex":802_166_574,    "opex":3_250_000,   "savings":243_615_631, "net_savings":240_365_631, "payback":3.29,
          "base_pen":974_462_526, "post_pen":730_846_894,
-         "desc":"Implement RCx and BMS optimization at $1.50/ft² to bring properties up to ENERGY STAR 75. Achieves 25% drop in energy consumption and LL97 penalties."},
+         "desc":"Implement RCx and BMS optimization at $1.50/ft² to bring properties up to ENERGY STAR 75. Achieves 25% drop in energy consumption and LL97 penalties. Annual OPEX ($3.25M/yr) covers automated FDD monitoring and semi-annual VAV tuning."},
         {"name":"1960s Smart Scale",    "short":"1960s Smart Scale",
          "target":"1960s-built properties ($2.50/ft² package)",
-         "capex":785_244_162,    "savings":88_033_696,  "payback":8.92,
+         "capex":785_244_162,    "opex":2_800_000,   "savings":88_033_696,  "net_savings":85_233_696,  "payback":8.92,
          "base_pen":440_168_480, "post_pen":352_134_784,
-         "desc":"Deploy $2.50/ft² package: networked LED + daylight sensors, VFD HVAC motors, CO₂-sensor Demand Control Ventilation, steam trap repairs, and boiler control upgrades."},
+         "desc":"Deploy $2.50/ft² package: networked LED + daylight sensors, VFD HVAC motors, CO₂-sensor Demand Control Ventilation, steam trap repairs, and boiler control upgrades. Annual OPEX ($2.80M/yr) covers preventative VFD maintenance and sensor checks."},
         {"name":"1930s WET Systems",    "short":"1930s WET Systems",
          "target":"1930s historic pre-war properties",
-         "capex":1_499_764_152,  "savings":122_390_647,  "payback":12.25,
+         "capex":1_499_764_152,  "opex":4_500_000,   "savings":122_390_647, "net_savings":117_890_647, "payback":12.25,
          "base_pen":305_976_618, "post_pen":183_585_971,
-         "desc":"Public-Private Partnership (50% government grant = $749M). Install basement wastewater heat exchangers and high-efficiency water-to-water heat pumps to eliminate fossil combustion."},
+         "desc":"Public-Private Partnership (50% government grant = $749M). Install basement wastewater heat exchangers and high-efficiency water-to-water heat pumps to eliminate fossil combustion. Annual OPEX ($4.50M/yr) covers anti-fouling flush protocols and pump servicing."},
         {"name":"Electrification Push", "short":"Electrification Push",
          "target":"Properties using high-risk Fuel Oil #4",
-         "capex":1_889_125_740,  "savings":181_993_196, "payback":10.38,
+         "capex":1_889_125_740,  "opex":5_100_000,   "savings":181_993_196, "net_savings":176_893_196, "payback":10.38,
          "base_pen":134_362_550, "post_pen":94_053_785,
-         "desc":"Replace Fuel Oil #4 boilers with Electric Heat Pumps at $20/ft². Combines 30% penalty reduction + $1.50/ft² utility savings for a ~10-year payback. Future-proofs as the NYC grid decarbonises."},
+         "desc":"Replace Fuel Oil #4 boilers with Electric Heat Pumps at $20/ft². Combines 30% penalty reduction + $1.50/ft² utility savings for a ~10-year payback. Annual OPEX ($5.10M/yr) covers OEM service contracts and thermographic inspections."},
     ]
     pb_df = pd.DataFrame(PLAYBOOKS)
 
@@ -1242,11 +1242,11 @@ with tab4:
     pen_saved = sp["base_pen"] - sp["post_pen"]
     st.markdown(kpi_row(
         kpi("Required CAPEX",            f"${sp['capex']/1e6:.1f}M",          sub="gross investment"),
-        kpi("Annual Fine Savings",       f"${sp['savings']/1e6:.1f}M / yr",   sub="recurring / yr", cls="green"),
-        kpi("Payback Period",            f"{sp['payback']:.2f} yrs",          sub="corporate",      cls="green"),
-        kpi("Baseline Exposure",         f"${sp['base_pen']/1e6:.1f}M / yr",  sub="before / yr",    cls="red"),
-        kpi("Post-Playbook Penalty",     f"${sp['post_pen']/1e6:.1f}M / yr",  sub="after / yr",     cls="green"),
-        kpi("Annual Penalty Eliminated", f"${pen_saved/1e6:.1f}M / yr",       sub="saved / yr",     cls="green"),
+        kpi("Annual OPEX",               f"${sp['opex']/1e6:.2f}M / yr",      sub="recurring maintenance", cls="blue"),
+        kpi("Gross Annual Savings",      f"${sp['savings']/1e6:.1f}M / yr",   sub="recurring / yr", cls="green"),
+        kpi("Net Annual Benefit",        f"${sp['net_savings']/1e6:.1f}M / yr", sub="net cash flow / yr", cls="green"),
+        kpi("Payback Period",            f"{sp['payback']:.2f} yrs",          sub="corporate payback", cls="green"),
+        kpi("Annual Penalty Eliminated", f"${pen_saved/1e6:.1f}M / yr",       sub="statutory fine saved", cls="green"),
     ), unsafe_allow_html=True)
 
     pc1, pc2 = st.columns([1.2, 1.0])
@@ -1318,7 +1318,9 @@ with tab4:
 
     with tc2:
         total_capex   = pb_df["capex"].sum()
+        total_opex    = pb_df["opex"].sum()
         total_savings = pb_df["savings"].sum()
+        total_net     = pb_df["net_savings"].sum()
         avg_payback   = pb_df["payback"].mean()
 
         st.markdown(f"""
@@ -1326,11 +1328,15 @@ with tab4:
             <div class="section-pill">🌍 Portfolio Investment Summary</div>
             {kpi_row(
                 kpi("Total CAPEX (5 Playbooks)",  f"${total_capex/1e9:.2f}B",      sub="gross investment"),
-                kpi("Total Annual Savings",       f"${total_savings/1e6:.0f}M / yr", sub="recurring annual savings", cls="green"),
+                kpi("Total Annual OPEX",          f"${total_opex/1e6:.2f}M / yr",  sub="portfolio maintenance", cls="blue"),
             )}
             {kpi_row(
-                kpi("Average Payback",   f"{avg_payback:.1f} yrs", sub="portfolio average"),
-                kpi("Self-Fund Strategy", "Phase 1 → 3", sub="0.02 yr → 12.25 yr"),
+                kpi("Gross Annual Savings",       f"${total_savings/1e6:.1f}M / yr", sub="recurring savings", cls="green"),
+                kpi("Net Annual Cash Flow",       f"${total_net/1e6:.1f}M / yr",     sub="net benefit / yr", cls="green"),
+            )}
+            {kpi_row(
+                kpi("Blended Portfolio Payback",  "6.97 yrs",                      sub="blended capital return", cls="green"),
+                kpi("Self-Fund Strategy",         "Phase 1 → 3",                   sub="0.02 yr → 12.25 yr"),
             )}
             <p style="font-size:0.82rem;color:#475569;margin-top:0.5rem;">
                 💡 The <span style="color:{C_GREEN if not IS_LIGHT else '#10b981'};font-weight:600;">Self-Funding Model</span> means you don't need
