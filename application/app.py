@@ -23,7 +23,7 @@ def call_gemini_ai(prompt_text, api_key, system_instruction=""):
         data=json.dumps(payload).encode("utf-8"),
         headers={"Content-Type": "application/json"}
     )
-    with urllib.request.urlopen(req, timeout=15) as res:
+    with urllib.request.urlopen(req, timeout=30) as res:
         res_json = json.loads(res.read().decode("utf-8"))
         return res_json["candidates"][0]["content"]["parts"][0]["text"]
 
@@ -1518,25 +1518,13 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
 * **Total Portfolio Performance:** **&dollar;4.98B CAPEX** yields **&dollar;640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
 """
         else:
-            # Determine active Gemini Key (user input or Streamlit Secrets)
-            active_gemini_key = user_gemini_key.strip() if user_gemini_key else None
-            if not active_gemini_key:
+            # If Gemini AI key is available, invoke true Generative AI reasoning via direct REST API
+            if active_gemini_key:
                 try:
-                    active_gemini_key = st.secrets.get("GEMINI_API_KEY", None)
-                except Exception:
-                    pass
-                if not active_gemini_key:
-                    active_gemini_key = os.environ.get("GEMINI_API_KEY", None)
-
-            # If Gemini AI key is available and genai is installed, invoke true Generative AI reasoning
-            if HAS_GENAI and active_gemini_key:
-                try:
-                    genai.configure(api_key=active_gemini_key)
-                    model = genai.GenerativeModel("gemini-2.5-flash", system_instruction=GEMINI_SYSTEM_PROMPT)
-                    ai_res = model.generate_content(query_to_process)
-                    response_text = ai_res.text + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
+                    ai_reply = call_gemini_ai(query_to_process, active_gemini_key, GEMINI_SYSTEM_PROMPT)
+                    response_text = ai_reply + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
                 except Exception as e:
-                    response_text = f"⚠️ *Gemini AI generation note:* Could not connect with provided API Key ({str(e)}). Falling back to Executive Database:<br><br>"
+                    response_text = f"⚠️ *Gemini AI Error: {str(e)}*<br><br>"
             
             # Fallback high-precision analytical responses if no API key or exception
             if not response_text or "⚠️" in response_text:
