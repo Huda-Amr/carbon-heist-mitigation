@@ -1,3 +1,9 @@
+try:
+    import google.generativeai as genai
+    HAS_GENAI = True
+except ImportError:
+    HAS_GENAI = False
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -1400,6 +1406,11 @@ with tab5:
     sub_color = "#374151" if IS_LIGHT else "#94a3b8"
     st.markdown(f"<p style='color:{sub_color};font-size:0.9rem;margin-top:-0.2rem;line-height:1.6;'>Executive AI Assistant trained on all <b>11,639 NYC properties</b>, statutory Local Law 97 formulas (<b>&dollar;268/MT CO₂e</b>), and the Executive <b>5 Decarbonization Playbooks</b>. Click any strategic button below for instant adaptive visualizations & executive intelligence.</p>", unsafe_allow_html=True)
 
+    # Optional Live Generative AI Gemini configuration
+    with st.expander("✨ Live Generative AI Mode (Google Gemini Integration - Optional)", expanded=False):
+        st.markdown("<p style='font-size:0.85rem;color:#64748b;'>Connect your Google Gemini API Key to enable true generative AI reasoning, dynamic multi-lingual conversation (Arabic/English), and live C-Suite scenario analysis across the Local Law 97 database.</p>", unsafe_allow_html=True)
+        user_gemini_key = st.text_input("🔑 Enter Gemini API Key (or set GEMINI_API_KEY in Streamlit Secrets):", type="password", key="gemini_key_input")
+
     # High-impact Executive Quick Prompt Buttons
     st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.6rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
     qp1, qp2, qp3, qp4 = st.columns(4)
@@ -1433,28 +1444,8 @@ with tab5:
         response_text = ""
         chart_type = None
 
-        # Conversational Greetings & Social
-        if q_lower in ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "howdy", "hola", "hi there", "hello there"]:
-            response_text = """### 👋 Hello! Welcome to the Executive C-Suite Co-Pilot
-
-I am your dedicated AI Decarbonization Specialist trained on NYC's **11,639 audited properties** and Local Law 97 statutory frameworks.
-
-**How can I assist your executive team today?**
-* 💡 Ask me to explain our **Self-Funding Strategy** or **7.58-Year Blended Payback**.
-* 📊 Ask about our **&dollar;4.98B CAPEX** or **&dollar;640.93M/yr Net Annual Cash Flow**.
-* 🗺️ Or click any of the **4 Strategic Buttons above** to dynamically render our Gantt Execution Roadmap, 15-Year Cash Trajectory, Fine Reduction Waterfall, or CAPEX Comparison chart!
-"""
-        elif any(w in q_lower for w in ["who are you", "what can you do", "help", "about you", "capabilities"]):
-            response_text = """### 🤖 About Your C-Suite Decarbonization Co-Pilot
-
-I am an executive decision-support AI engineered specifically for the Executive **NYC Carbon Heist Mitigation Master Plan**.
-
-**Core Capabilities:**
-1. **Financial Engineering & ROI Analysis:** Instant synthesis of CAPEX (&dollar;4.98B), OPEX (&dollar;15.70M/yr), Gross Savings (&dollar;656.63M/yr), and Net Annual Benefit (&dollar;640.93M/yr).
-2. **Statutory LL97 Compliance:** Auditing penalty exposure at **&dollar;268/MT CO₂e** across all 11,639 properties.
-3. **Dynamic Visualization Scientist:** Generating interactive dark-themed Gantt schedules, Area trajectory curves, Waterfalls, and comparative bar charts on demand.
-"""
-        elif any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "schedule", "milestone", "5-phase"]):
+        # Check if button chart query
+        if any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "schedule", "milestone", "5-phase"]):
             chart_type = "roadmap_gantt"
             response_text = """### 🗺️ Strategic 5-Phase Decarbonization Execution Roadmap
 
@@ -1487,8 +1478,41 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
 * **Playbook 02 (Retro-commissioning):** **&dollar;802.17M CAPEX** yields **&dollar;240.37M/yr** recurring net benefit (**3.29 Yr Payback**).
 * **Total Portfolio Performance:** **&dollar;4.98B CAPEX** yields **&dollar;640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
 """
-        elif any(w in q_lower for w in ["payback", "roi", "return", "breakeven", "self-funding"]):
-            response_text = """### ⏱️ Portfolio Payback Period & Self-Funding Financial Structure
+        else:
+            # Determine active Gemini Key (user input or Streamlit Secrets)
+            active_gemini_key = user_gemini_key.strip() if user_gemini_key else None
+            if not active_gemini_key:
+                try:
+                    active_gemini_key = st.secrets.get("GEMINI_API_KEY", None)
+                except Exception:
+                    pass
+                if not active_gemini_key:
+                    active_gemini_key = os.environ.get("GEMINI_API_KEY", None)
+
+            # If Gemini AI key is available and genai is installed, invoke true Generative AI reasoning
+            if HAS_GENAI and active_gemini_key:
+                try:
+                    genai.configure(api_key=active_gemini_key)
+                    model = genai.GenerativeModel("gemini-1.5-flash", system_instruction=GEMINI_SYSTEM_PROMPT)
+                    ai_res = model.generate_content(query_to_process)
+                    response_text = ai_res.text
+                except Exception as e:
+                    response_text = f"⚠️ *Gemini AI generation note:* Could not connect with provided API Key ({str(e)}). Falling back to Executive Database:<br><br>"
+            
+            # Fallback high-precision analytical responses if no API key or exception
+            if not response_text or "⚠️" in response_text:
+                if q_lower in ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "howdy", "hola", "hi there", "hello there", "مرحبا", "اهلا", "سلام"]:
+                    response_text = """### 👋 Hello! Welcome to the Executive C-Suite Co-Pilot
+
+I am your dedicated AI Decarbonization Specialist trained on NYC's **11,639 audited properties** and Local Law 97 statutory frameworks.
+
+**How can I assist your executive team today?**
+* 💡 Ask me to explain our **Self-Funding Strategy** or **7.58-Year Blended Payback**.
+* 📊 Ask about our **&dollar;4.98B CAPEX** or **&dollar;640.93M/yr Net Annual Cash Flow**.
+* 🗺️ Or click any of the **4 Strategic Buttons above** to dynamically render our Gantt Execution Roadmap, 15-Year Cash Trajectory, Fine Reduction Waterfall, or CAPEX Comparison chart!
+"""
+                elif any(w in q_lower for w in ["payback", "roi", "return", "breakeven", "self-funding"]):
+                    response_text = """### ⏱️ Portfolio Payback Period & Self-Funding Financial Structure
 
 Our executive master plan delivers a **Blended Portfolio Payback Period of exactly 7.58 Years**.
 
@@ -1497,8 +1521,8 @@ Our executive master plan delivers a **Blended Portfolio Payback Period of exact
 * **Phase 2 (Retro-commissioning):** Recovers capital in **3.29 Years**, adding **&dollar;240.37M/yr** in net recurring operational surpluses.
 * This early liquidity directly underwrites and de-risks the heavier structural retrofits in Phases 3, 4, and 5.
 """
-        elif any(w in q_lower for w in ["capex", "cost", "investment", "upfront", "capital"]):
-            response_text = """### 💰 Itemized Portfolio CAPEX Breakdown
+                elif any(w in q_lower for w in ["capex", "cost", "investment", "upfront", "capital"]):
+                    response_text = """### 💰 Itemized Portfolio CAPEX Breakdown
 
 The total required capital investment across all **11,639 properties** is **&dollar;4.98 Billion**, structured across 5 targeted deployment playbooks:
 1. **01 · Surgical Strike:** &dollar;500,000 CAPEX
@@ -1507,23 +1531,23 @@ The total required capital investment across all **11,639 properties** is **&dol
 4. **04 · 1930s WET Systems:** &dollar;1.50 Billion Net CAPEX (after 50% PPP Grants)
 5. **05 · Electrification Push:** &dollar;1.89 Billion CAPEX
 """
-        elif any(w in q_lower for w in ["opex", "maintenance", "net benefit", "net savings", "recurring"]):
-            response_text = """### 📈 Itemized Annual OPEX & Net Annual Cash Flow
+                elif any(w in q_lower for w in ["opex", "maintenance", "net benefit", "net savings", "recurring"]):
+                    response_text = """### 📈 Itemized Annual OPEX & Net Annual Cash Flow
 
 Every playbook accounts for annual operational and maintenance costs (OPEX) to ensure true executive net metrics:
 * **Gross Annual Financial & Utility Savings:** &dollar;656.63 Million / yr
 * **Total Annual OPEX & Maintenance:** &dollar;15.70 Million / yr
 * **Net Annual Cash Flow (Net Benefit):** **&dollar;640.93 Million / yr**
 """
-        elif any(w in q_lower for w in ["fines", "penalty", "penalties", "law", "ll97", "statutory"]):
-            response_text = """### ⚖️ Local Law 97 Statutory Liability & Mitigation
+                elif any(w in q_lower for w in ["fines", "penalty", "penalties", "law", "ll97", "statutory"]):
+                    response_text = """### ⚖️ Local Law 97 Statutory Liability & Mitigation
 
 Under NYC Local Law 97, buildings exceeding carbon emissions thresholds face strict statutory penalties evaluated at **&dollar;268 per Metric Ton of CO₂ equivalent (&dollar;268/MT CO₂e)**.
 * **Unmitigated Baseline Portfolio Fine Exposure:** **&dollar;2.83 Billion / year**
 * **Total Fines Eliminated via 5 Playbooks:** **&dollar;656.63 Million / year** recurring savings
 """
-        else:
-            response_text = f"""### 🤖 Executive C-Suite Analysis: `{query_to_process}`
+                else:
+                    response_text = f"""### 🤖 Executive C-Suite Analysis: `{query_to_process}`
 
 Based on your query, here is our quantitative portfolio assessment across our verified Local Law 97 database:
 * **Portfolio Assets:** 11,639 audited properties across NYC's 5 boroughs.
@@ -1531,7 +1555,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
 * **Blended Strategy Execution:** Combined CAPEX of **&dollar;4.98 Billion** generates **&dollar;656.63 Million/yr** in gross savings and **&dollar;640.93 Million/yr in Net Annual Cash Flow** after itemized OPEX (**&dollar;15.70M/yr**).
 * **Blended Portfolio Payback:** **7.58 Years** across all 5 Decarbonization Playbooks.
 
-💡 *Tip: Click any prompt button above or ask specifically about **CAPEX**, **Payback**, **OPEX**, or **LL97 Fines**.*
+💡 *Tip: Connect a Google Gemini API key above for live Generative AI reasoning, or click any prompt button to render interactive charts.*
 """
 
         st.session_state["chat_history"].append({"role": "assistant", "content": response_text, "chart": chart_type})
@@ -1567,7 +1591,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     plot_bgcolor=bg_plot,
                     showlegend=False
                 )
-                st.plotly_chart(fig_r, width='stretch', theme=None, key=f'chat_chart_{idx}_roadmap')
+                st.plotly_chart(fig_r, width='stretch', theme=None, key=f"chat_chart_{idx}_roadmap")
 
             elif chart_t == "cash_trajectory":
                 years = list(range(0, 16))
@@ -1589,7 +1613,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     paper_bgcolor=bg_paper,
                     plot_bgcolor=bg_plot
                 )
-                st.plotly_chart(fig_t, width='stretch', theme=None, key=f'chat_chart_{idx}_traj')
+                st.plotly_chart(fig_t, width='stretch', theme=None, key=f"chat_chart_{idx}_traj")
 
             elif chart_t == "fine_waterfall":
                 fig_w = go.Figure(go.Waterfall(
@@ -1619,7 +1643,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     plot_bgcolor=bg_plot,
                     showlegend=False
                 )
-                st.plotly_chart(fig_w, width='stretch', theme=None, key=f'chat_chart_{idx}_wf')
+                st.plotly_chart(fig_w, width='stretch', theme=None, key=f"chat_chart_{idx}_wf")
 
             elif chart_t == "playbooks_comp":
                 pb_comp_df = pd.DataFrame(PLAYBOOKS)
@@ -1635,4 +1659,4 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     plot_bgcolor=bg_plot,
                     legend_title_text=""
                 )
-                st.plotly_chart(fig_c, width='stretch', theme=None, key=f'chat_chart_{idx}_comp')
+                st.plotly_chart(fig_c, width='stretch', theme=None, key=f"chat_chart_{idx}_comp")
