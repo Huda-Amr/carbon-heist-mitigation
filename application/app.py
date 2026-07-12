@@ -1153,7 +1153,7 @@ with tab3:
 # ══════════════════════════════════════════════════════════════
 with tab4:
     st.markdown(pill("💼", "C-Suite Financial Modeling"), unsafe_allow_html=True)
-    st.markdown("<p style='color:#64748b;font-size:0.88rem;margin-top:-0.25rem;'>Integrates Hagar Hussein's financial engineering models from the Excel project (Sensitivity & Scenario sheets) — regulatory shocks, CAPEX co-funding, and WET payback analysis.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#64748b;font-size:0.88rem;margin-top:-0.25rem;'>Integrates Executive financial engineering models from the Excel project (Sensitivity & Scenario sheets) — regulatory shocks, CAPEX co-funding, and WET payback analysis.</p>", unsafe_allow_html=True)
 
     # ── Section 1: Sensitivity Simulator
     st.markdown(section_div(), unsafe_allow_html=True)
@@ -1201,7 +1201,7 @@ with tab4:
     # ── Section 2: Playbooks
     st.markdown(section_div(), unsafe_allow_html=True)
     st.markdown(pill("🎯", "The 5 Strategic Decarbonization Playbooks"), unsafe_allow_html=True)
-    st.markdown("<p style='color:#64748b;font-size:0.88rem;margin-top:-0.25rem;'>Hagar Hussein's 5 core engineering playbooks from the Excel Scenario sheet — from OPEX quick-wins to full electrification.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#64748b;font-size:0.88rem;margin-top:-0.25rem;'>The 5 core engineering playbooks from the Excel Scenario sheet — from OPEX quick-wins to full electrification.</p>", unsafe_allow_html=True)
 
     PLAYBOOKS = [
         {"name":"Surgical Strike",      "short":"Surgical Strike",
@@ -1354,7 +1354,7 @@ with tab5:
     st.markdown(pill("🤖", "LL97 C-Suite AI Co-Pilot & Strategic Chart Scientist"), unsafe_allow_html=True)
     
     sub_color = "#374151" if IS_LIGHT else "#94a3b8"
-    st.markdown(f"<p style='color:{sub_color};font-size:0.9rem;margin-top:-0.2rem;line-height:1.6;'>Executive AI Assistant trained on all <b>11,639 NYC properties</b>, statutory Local Law 97 formulas (<b>&dollar;268/MT CO₂e</b>), and Hagar Hussein's <b>5 Decarbonization Playbooks</b>. Click any strategic button below for instant adaptive visualizations & executive intelligence.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color:{sub_color};font-size:0.9rem;margin-top:-0.2rem;line-height:1.6;'>Executive AI Assistant trained on all <b>11,639 NYC properties</b>, statutory Local Law 97 formulas (<b>&dollar;268/MT CO₂e</b>), and the Executive <b>5 Decarbonization Playbooks</b>. Click any strategic button below for instant adaptive visualizations & executive intelligence.</p>", unsafe_allow_html=True)
 
     # High-impact Executive Quick Prompt Buttons
     st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.6rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
@@ -1403,7 +1403,7 @@ I am your dedicated AI Decarbonization Specialist trained on NYC's **11,639 audi
         elif any(w in q_lower for w in ["who are you", "what can you do", "help", "about you", "capabilities"]):
             response_text = """### 🤖 About Your C-Suite Decarbonization Co-Pilot
 
-I am an executive decision-support AI engineered specifically for Hagar Hussein's **NYC Carbon Heist Mitigation Master Plan**.
+I am an executive decision-support AI engineered specifically for the Executive **NYC Carbon Heist Mitigation Master Plan**.
 
 **Core Capabilities:**
 1. **Financial Engineering & ROI Analysis:** Instant synthesis of CAPEX (&dollar;4.98B), OPEX (&dollar;15.70M/yr), Gross Savings (&dollar;656.63M/yr), and Net Annual Benefit (&dollar;640.93M/yr).
@@ -1497,7 +1497,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
     bg_plot  = "rgba(248, 250, 252, 0.6)"  if IS_LIGHT else "rgba(15, 23, 42, 0.4)"
 
     # Display chat messages
-    for msg in st.session_state["chat_history"]:
+    for idx, msg in enumerate(st.session_state["chat_history"]):
         with st.chat_message(msg["role"], avatar="🤖" if msg["role"] == "assistant" else "👤"):
             st.markdown(msg["content"], unsafe_allow_html=True)
             
@@ -1523,7 +1523,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     plot_bgcolor=bg_plot,
                     showlegend=False
                 )
-                st.plotly_chart(fig_r, width='stretch', theme=None)
+                st.plotly_chart(fig_r, width='stretch', theme=None, key=f'chat_chart_{idx}_roadmap')
 
             elif chart_t == "cash_trajectory":
                 years = list(range(0, 16))
@@ -1545,7 +1545,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     paper_bgcolor=bg_paper,
                     plot_bgcolor=bg_plot
                 )
-                st.plotly_chart(fig_t, width='stretch', theme=None)
+                st.plotly_chart(fig_t, width='stretch', theme=None, key=f'chat_chart_{idx}_traj')
 
             elif chart_t == "fine_waterfall":
                 fig_w = go.Figure(go.Waterfall(
@@ -1575,7 +1575,7 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     plot_bgcolor=bg_plot,
                     showlegend=False
                 )
-                st.plotly_chart(fig_w, width='stretch', theme=None)
+                st.plotly_chart(fig_w, width='stretch', theme=None, key=f'chat_chart_{idx}_wf')
 
             elif chart_t == "playbooks_comp":
                 pb_comp_df = pd.DataFrame(PLAYBOOKS)
@@ -1591,4 +1591,4 @@ Based on your query, here is our quantitative portfolio assessment across our ve
                     plot_bgcolor=bg_plot,
                     legend_title_text=""
                 )
-                st.plotly_chart(fig_c, width='stretch', theme=None)
+                st.plotly_chart(fig_c, width='stretch', theme=None, key=f'chat_chart_{idx}_comp')
