@@ -306,44 +306,44 @@ b, strong {{ color: #ffffff !important; }}
 [data-testid="stChatInput"],
 [data-testid="stChatInput"] > div,
 [data-testid="stChatInput"] [data-baseweb="textarea"],
-[data-testid="stChatInput"] [data-baseweb="base-input"] {
+[data-testid="stChatInput"] [data-baseweb="base-input"] {{
     background-color: rgba(13, 21, 38, 0.98) !important;
     border: 1.5px solid #38bdf8 !important;
     border-radius: 14px !important;
-}
+}}
 [data-testid="stChatInput"] textarea,
-[data-testid="stChatInput"] input {
+[data-testid="stChatInput"] input {{
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     background-color: transparent !important;
     font-weight: 700 !important;
     font-size: 1rem !important;
     caret-color: #38bdf8 !important;
-}
-[data-testid="stChatInput"] textarea::placeholder {
+}}
+[data-testid="stChatInput"] textarea::placeholder {{
     color: #94a3b8 !important;
     -webkit-text-fill-color: #94a3b8 !important;
-}
-[data-testid="stChatMessage"] {
+}}
+[data-testid="stChatMessage"] {{
     background-color: rgba(13, 21, 38, 0.75) !important;
     border: 1px solid rgba(148, 163, 184, 0.25) !important;
     border-radius: 16px !important;
-}
+}}
 [data-testid="stChatMessage"] p,
 [data-testid="stChatMessage"] li,
 [data-testid="stChatMessage"] span,
-[data-testid="stChatMessage"] div {
+[data-testid="stChatMessage"] div {{
     color: #f1f5f9 !important;
     -webkit-text-fill-color: #f1f5f9 !important;
     font-size: 0.96rem !important;
     line-height: 1.65 !important;
-}
+}}
 [data-testid="stChatMessage"] strong,
-[data-testid="stChatMessage"] b {
+[data-testid="stChatMessage"] b {{
     color: #38bdf8 !important;
     -webkit-text-fill-color: #38bdf8 !important;
     font-weight: 700 !important;
-}
+}}
 
 </style>
 """, unsafe_allow_html=True)
