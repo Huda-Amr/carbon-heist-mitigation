@@ -18,15 +18,21 @@ Your comprehensive knowledge base covers:
    - Bronx: 1,164 properties (10.0%) | 950,373 MT CO2e/year | $254.7 Million/year unmitigated fine exposure.
    - Staten Island: 301 properties (2.6%) | 316,791 MT CO2e/year | $84.9 Million/year unmitigated fine exposure.
    - Total Portfolio: 11,639 properties | 10,559,701.49 MT CO2e/year | $2.83 Billion/year statutory penalty.
-3. Building Archetype / Sector Liability Distribution:
+3. Building Age Factor & Construction Era Liability Distribution:
+   - Pre-1930s (Historic & Steam WET Systems): 3,492 properties | 3.69M MT CO2e/yr | $988.9M/yr fine exposure.
+   - 1930–1959 (Mid-Century Post-War): 2,910 properties | 2.75M MT CO2e/yr | $737.0M/yr fine exposure.
+   - 1960–1979 (First-Gen Glass Curtain Wall): 2,560 properties | 2.43M MT CO2e/yr | $651.2M/yr fine exposure.
+   - 1980–1999 (Late Century Commercial): 1,629 properties | 1.16M MT CO2e/yr | $310.9M/yr fine exposure.
+   - 2000–Present (Modern Energy Code): 1,048 properties | 0.53M MT CO2e/yr | $142.0M/yr fine exposure.
+4. Building Archetype / Sector Liability Distribution:
    - Commercial Office & Retail: 45% of total carbon liability.
    - Multifamily Residential (Pre-1974 & Modern): 38% of total carbon liability.
    - Institutional / Hospitality / Healthcare: 17% of total carbon liability.
-4. Financial Engineering & Playbook Execution Summary:
+5. Financial Engineering & Playbook Execution Summary:
    - Total Portfolio CAPEX: $4.98 Billion across 5 Playbooks.
    - Gross Annual Savings: $656.63 Million/yr | Itemized Annual OPEX: $15.70 Million/yr | Net Recurring Operational Annual Cash Flow: $640.93 Million/yr.
    - Blended Portfolio Payback Period: Exactly 7.58 Years.
-5. The 5 Decarbonization Playbooks:
+6. The 5 Decarbonization Playbooks:
    - Playbook 01 (Surgical Strike): Level 2 energy audits & BMS setback scheduling across Top 10 offenders -> $500K CAPEX -> $20.55M/yr Net Cash Flow -> 8-Day Payback (0.02 yrs).
    - Playbook 02 (Retro-commissioning): Comprehensive RCx & DDC upgrades -> $802.17M CAPEX -> $240.37M/yr Net Cash Flow -> 3.29-Year Payback.
    - Playbook 03 (1960s Smart Scale): LED lighting & VFD motor retrofits -> $785.24M CAPEX -> $85.23M/yr Net Cash Flow -> 8.92-Year Payback.
@@ -37,17 +43,17 @@ UNIVERSAL DYNAMIC CHART GENERATION CAPABILITY:
 Whenever the user asks for ANY chart, graph, plot, visual comparison, or asks an analytical question where a chart would enhance executive decision-making, provide a thorough executive analysis AND append a JSON block formatted exactly like this at the very end of your response:
 ```plotly_json
 {
-  "title": "Clear Chart Title",
+  "title": "Clear Descriptive Chart Title",
   "chart_type": "bar",
   "x": ["Category A", "Category B", "Category C"],
   "y": [100, 250, 400],
-  "x_label": "X Axis Title",
-  "y_label": "Y Axis Title"
+  "x_label": "X Axis Label",
+  "y_label": "Y Axis Label"
 }
 ```
 Supported chart_type values: "bar" (vertical bar chart), "hbar" (horizontal bar chart), "pie" (donut chart), "line" (line chart).
-Always make sure the JSON inside ```plotly_json ... ``` is valid JSON. Our platform will automatically parse it and render a stunning interactive Plotly chart directly below your text!
-If asked in Arabic, respond in sophisticated executive Arabic and generate the chart labels in Arabic as well."""
+Always ensure the JSON inside ```plotly_json ... ``` is completely valid JSON. Our frontend platform will automatically extract it and render an interactive Plotly chart dynamically!
+If asked in Arabic, respond in sophisticated executive Arabic and write the chart labels and title in Arabic as well."""
 
 def call_gemini_ai(prompt_text, api_key, system_instruction=""):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
@@ -1523,10 +1529,22 @@ with tab5:
         chart_type = None
         gemini_succeeded = False
 
-        # Check if button chart query
-        if any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "schedule", "milestone", "5-phase"]):
-            chart_type = "roadmap_gantt"
-            response_text = """### 🗺️ Strategic 5-Phase Decarbonization Execution Roadmap
+        # If Gemini AI key is connected and user typed a free-form prompt (not one of the 4 quick buttons), invoke live AI reasoning FIRST
+        if active_gemini_key and not quick_query:
+            try:
+                with st.spinner("🧠 Gemini 2.5 Flash is analyzing data and generating insights..."):
+                    ai_reply = call_gemini_ai(query_to_process, active_gemini_key, GEMINI_SYSTEM_PROMPT)
+                response_text = ai_reply + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
+                gemini_succeeded = True
+            except Exception as e:
+                error_banner = f"<div style='background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:0.6rem;border-radius:8px;font-size:0.82rem;margin-bottom:0.6rem;'><b>⚠️ Gemini API Error:</b> {str(e)}<br><i>Showing quantitative database fallback below:</i></div>"
+
+        # Fallback or quick button evaluation if Gemini was not called or failed
+        if not gemini_succeeded:
+            prefix = error_banner if active_gemini_key and "error_banner" in locals() else ""
+            if quick_query == "Plot the 5-Phase Strategic Decarbonization Execution Roadmap across timelines and milestones" or any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "5-phase"]):
+                chart_type = "roadmap_gantt"
+                response_text = prefix + """### 🗺️ Strategic 5-Phase Decarbonization Execution Roadmap
 
 The interactive Gantt schedule below details the phased deployment across our **11,639 properties**. By sequencing interventions according to capital velocity, early quick-wins generate immediate liquidity to fund deeper Phase 3–5 structural retrofits:
 
@@ -1536,30 +1554,30 @@ The interactive Gantt schedule below details the phased deployment across our **
 * **Phase 4 · 1930s WET Systems (Y3.0 – Y6.0):** Historic sewer wastewater heat recovery leveraging **50% PPP Grants (&dollar;749M)** — **12.25 Yr Payback &rarr; &dollar;117.89M/yr Net Cash Flow**
 * **Phase 5 · Electrification Push (Y5.0 – Y8.0):** Complete replacement of Fuel Oil #4 boilers with Electric Heat Pumps — **10.38 Yr Payback &rarr; &dollar;176.89M/yr Net Cash Flow**
 """
-        elif any(w in q_lower for w in ["trajectory", "15-year", "cumulative", "cash flow", "horizon"]):
-            chart_type = "cash_trajectory"
-            response_text = """### 📉 15-Year Cumulative Net Cash Flow & ROI Trajectory
+            elif quick_query == "Plot the cumulative Net Cash Flow and ROI trajectory over a 15-year horizon" or any(w in q_lower for w in ["trajectory", "15-year", "cumulative", "cash flow", "horizon"]):
+                chart_type = "cash_trajectory"
+                response_text = prefix + """### 📉 15-Year Cumulative Net Cash Flow & ROI Trajectory
 
 The adaptive area chart below illustrates the self-funding financial cascade over a 15-year horizon. After achieving full blended capital recovery at **Year 7.58**, the portfolio generates exponential positive net operational surpluses, accumulating over **&dollar;4.63 Billion in cumulative net savings** by Year 15.
 """
-        elif any(w in q_lower for w in ["waterfall", "reduction", "eliminated", "liability cascade", "starting from"]):
-            chart_type = "fine_waterfall"
-            response_text = """### ⚖️ LL97 Statutory Fine Reduction Waterfall
+            elif quick_query == "Plot the statutory LL97 Fine Reduction Waterfall across all 5 Playbooks starting from &dollar;2.83B baseline" or any(w in q_lower for w in ["waterfall", "reduction", "eliminated", "liability cascade"]):
+                chart_type = "fine_waterfall"
+                response_text = prefix + """### ⚖️ LL97 Statutory Fine Reduction Waterfall
 
 The step-down waterfall chart below starts at our unmitigated baseline liability (**&dollar;2.83 Billion/year** evaluated at **&dollar;268/MT CO₂e**) and demonstrates how each individual decarbonization playbook systematically strips away statutory penalties, generating **&dollar;656.63 Million/yr** in gross annual reductions.
 """
-        elif any(w in q_lower for w in ["compare capex", "capex vs", "net benefit", "comparison", "playbooks"]):
-            chart_type = "playbooks_comp"
-            response_text = """### 📊 Strategic Comparison: Initial CAPEX vs. Net Annual Benefit
+            elif quick_query == "Compare upfront CAPEX versus Net Annual Benefit across all 5 Decarbonization Playbooks" or any(w in q_lower for w in ["compare capex", "capex vs", "net benefit", "comparison"]):
+                chart_type = "playbooks_comp"
+                response_text = prefix + """### 📊 Strategic Comparison: Initial CAPEX vs. Net Annual Benefit
 
 The grouped comparison chart below benchmarks upfront capital expenditure against recurring annual net cash flow across each of the 5 Strategic Playbooks:
 * **Playbook 01 (Surgical Strike):** Minimal **&dollar;500K CAPEX** unlocks **&dollar;20.55M/yr** recurring net benefit (**0.02 Yr Payback**).
 * **Playbook 02 (Retro-commissioning):** **&dollar;802.17M CAPEX** yields **&dollar;240.37M/yr** recurring net benefit (**3.29 Yr Payback**).
 * **Total Portfolio Performance:** **&dollar;4.98B CAPEX** yields **&dollar;640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
 """
-        elif any(w in q_lower for w in ["borough", "manhattan", "brooklyn", "queens", "bronx", "staten", "emissions per borough", "boroughs"]):
-            chart_type = "borough_emissions"
-            response_text = """### 🏙️ NYC Borough Carbon Emissions & LL97 Liability Breakdown
+            elif any(w in q_lower for w in ["borough", "manhattan", "brooklyn", "queens", "bronx", "staten", "emissions per borough", "boroughs"]):
+                chart_type = "borough_emissions"
+                response_text = prefix + """### 🏙️ NYC Borough Carbon Emissions & LL97 Liability Breakdown
 
 Across our audited **11,639 properties**, annual carbon emissions (**10.56M MT CO₂e/yr**) and statutory fine liability (**&dollar;2.83 Billion/yr**) are distributed across the 5 boroughs as shown in the interactive chart below:
 * **Manhattan:** 4,821 properties (41.4%) &rarr; **4.96M MT CO₂e/yr** (&dollar;1.33B/yr penalty)
@@ -1568,9 +1586,9 @@ Across our audited **11,639 properties**, annual carbon emissions (**10.56M MT C
 * **Bronx:** 1,164 properties (10.0%) &rarr; **0.95M MT CO₂e/yr** (&dollar;254.7M/yr penalty)
 * **Staten Island:** 301 properties (2.6%) &rarr; **0.32M MT CO₂e/yr** (&dollar;84.9M/yr penalty)
 """
-        elif any(w in q_lower for w in ["capex breakdown", "capex allocation", "playbook cost", "itemized capex"]):
-            chart_type = "capex_breakdown"
-            response_text = """### 💰 Itemized Portfolio CAPEX Allocation (&dollar;4.98 Billion)
+            elif any(w in q_lower for w in ["capex breakdown", "capex allocation", "playbook cost", "itemized capex"]):
+                chart_type = "capex_breakdown"
+                response_text = prefix + """### 💰 Itemized Portfolio CAPEX Allocation (&dollar;4.98 Billion)
 
 The interactive visualization below illustrates the distribution of capital expenditure across our 5 Decarbonization Playbooks:
 * **Playbook 01 (Surgical Strike):** &dollar;500,000 (0.01%)
@@ -1579,9 +1597,9 @@ The interactive visualization below illustrates the distribution of capital expe
 * **Playbook 04 (1930s WET Systems):** &dollar;1.50 Billion Net CAPEX (30.1%)
 * **Playbook 05 (Electrification Push):** &dollar;1.89 Billion (38.0%)
 """
-        elif any(w in q_lower for w in ["age", "era", "vintage", "built", "construction year", "decade", "old", "historic", "age factor"]):
-            chart_type = "age_emissions"
-            response_text = """### 🏛️ NYC Building Age Factor & Construction Era Emissions Distribution
+            elif any(w in q_lower for w in ["age", "era", "vintage", "built", "construction year", "decade", "old", "historic", "age factor"]):
+                chart_type = "age_emissions"
+                response_text = prefix + """### 🏛️ NYC Building Age Factor & Construction Era Emissions Distribution
 
 Across our audited **11,639 properties**, carbon emissions (**10.56M MT CO₂e/yr**) and statutory LL97 fine liability (**&dollar;2.83 Billion/yr**) are strongly correlated with construction era and thermal insulation vintage:
 * **Pre-1930s (Historic & Steam WET Systems):** 3,492 properties &rarr; **3.69M MT CO₂e/yr** (&dollar;988.9M/yr fine exposure) — *Addressed by Playbook 04*
@@ -1590,36 +1608,9 @@ Across our audited **11,639 properties**, carbon emissions (**10.56M MT CO₂e/y
 * **1980–1999 (Late Century Commercial):** 1,629 properties &rarr; **1.16M MT CO₂e/yr** (&dollar;310.9M/yr fine exposure)
 * **2000–Present (Modern Energy Code):** 1,048 properties &rarr; **0.53M MT CO₂e/yr** (&dollar;142.0M/yr fine exposure)
 """
-        else:
-            # If Gemini AI key is available, invoke true Generative AI reasoning via direct REST API
-            gemini_succeeded = False
-            if active_gemini_key:
-                try:
-                    with st.spinner("🧠 Gemini 2.5 Flash is thinking..."):
-                        ai_reply = call_gemini_ai(query_to_process, active_gemini_key, GEMINI_SYSTEM_PROMPT)
-                    response_text = ai_reply + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
-                    gemini_succeeded = True
-                    # Dynamically attach adaptive chart if query implies a graph or specific dimension
-                    if any(w in q_lower for w in ["borough", "manhattan", "brooklyn", "queens", "bronx", "staten"]):
-                        chart_type = "borough_emissions"
-                    elif any(w in q_lower for w in ["capex", "cost breakdown", "allocation"]):
-                        chart_type = "capex_breakdown"
-                    elif any(w in q_lower for w in ["payback", "roi", "compare"]):
-                        chart_type = "playbooks_comp"
-                    elif any(w in q_lower for w in ["waterfall", "fine", "penalty"]):
-                        chart_type = "fine_waterfall"
-                    elif any(w in q_lower for w in ["roadmap", "timeline", "gantt"]):
-                        chart_type = "roadmap_gantt"
-                    elif any(w in q_lower for w in ["graph", "chart", "plot", "visualize", "رسم", "مخطط"]):
-                        chart_type = "borough_emissions"
-                except Exception as e:
-                    error_banner = f"<div style='background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:0.6rem;border-radius:8px;font-size:0.82rem;margin-bottom:0.6rem;'><b>⚠️ Gemini API Error:</b> {str(e)}<br><i>Showing Executive Quantitative Database fallback below:</i></div>"
-            
-            # Fallback high-precision analytical responses if no API key or Gemini failed
-            if not gemini_succeeded:
-                prefix = error_banner if active_gemini_key and "error_banner" in locals() else ""
+            else:
                 if q_lower in ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "howdy", "hola", "hi there", "hello there", "مرحبا", "اهلا", "سلام"]:
-                    response_text = """### 👋 Hello! Welcome to the Executive C-Suite Co-Pilot
+                    response_text = prefix + """### 👋 Hello! Welcome to the Executive C-Suite Co-Pilot
 
 I am your dedicated AI Decarbonization Specialist trained on NYC's **11,639 audited properties** and Local Law 97 statutory frameworks.
 
@@ -1629,7 +1620,7 @@ I am your dedicated AI Decarbonization Specialist trained on NYC's **11,639 audi
 * 🗺️ Or click any of the **4 Strategic Buttons above** to dynamically render our Gantt Execution Roadmap, 15-Year Cash Trajectory, Fine Reduction Waterfall, or CAPEX Comparison chart!
 """
                 elif any(w in q_lower for w in ["payback", "roi", "return", "breakeven", "self-funding"]):
-                    response_text = """### ⏱️ Portfolio Payback Period & Self-Funding Financial Structure
+                    response_text = prefix + """### ⏱️ Portfolio Payback Period & Self-Funding Financial Structure
 
 Our executive master plan delivers a **Blended Portfolio Payback Period of exactly 7.58 Years**.
 
@@ -1639,44 +1630,20 @@ Our executive master plan delivers a **Blended Portfolio Payback Period of exact
 * This early liquidity directly underwrites and de-risks the heavier structural retrofits in Phases 3, 4, and 5.
 """
                 elif any(w in q_lower for w in ["capex", "cost", "investment", "upfront", "capital"]):
-                    response_text = """### 💰 Itemized Portfolio CAPEX Breakdown
+                    response_text = prefix + """### 💰 Total Portfolio Capital Expenditure (&dollar;4.98 Billion)
 
-The total required capital investment across all **11,639 properties** is **&dollar;4.98 Billion**, structured across 5 targeted deployment playbooks:
-1. **01 · Surgical Strike:** &dollar;500,000 CAPEX
-2. **02 · Retro-commissioning:** &dollar;802.17 Million CAPEX
-3. **03 · 1960s Smart Scale:** &dollar;785.24 Million CAPEX
-4. **04 · 1930s WET Systems:** &dollar;1.50 Billion Net CAPEX (after 50% PPP Grants)
-5. **05 · Electrification Push:** &dollar;1.89 Billion CAPEX
-"""
-                elif any(w in q_lower for w in ["opex", "maintenance", "net benefit", "net savings", "recurring"]):
-                    response_text = """### 📈 Itemized Annual OPEX & Net Annual Cash Flow
-
-Every playbook accounts for annual operational and maintenance costs (OPEX) to ensure true executive net metrics:
-* **Gross Annual Financial & Utility Savings:** &dollar;656.63 Million / yr
-* **Total Annual OPEX & Maintenance:** &dollar;15.70 Million / yr
-* **Net Annual Cash Flow (Net Benefit):** **&dollar;640.93 Million / yr**
-"""
-                elif any(w in q_lower for w in ["fines", "penalty", "penalties", "law", "ll97", "statutory"]):
-                    response_text = """### ⚖️ Local Law 97 Statutory Liability & Mitigation
-
-Under NYC Local Law 97, buildings exceeding carbon emissions thresholds face strict statutory penalties evaluated at **&dollar;268 per Metric Ton of CO₂ equivalent (&dollar;268/MT CO₂e)**.
-* **Unmitigated Baseline Portfolio Fine Exposure:** **&dollar;2.83 Billion / year**
-* **Total Fines Eliminated via 5 Playbooks:** **&dollar;656.63 Million / year** recurring savings
+The total upfront CAPEX required across all **11,639 audited properties** is **&dollar;4.98 Billion**, strategically structured across 5 specialized Decarbonization Playbooks.
 """
                 else:
-                    response_text = f"""### 🤖 Executive C-Suite Analysis: `{query_to_process}`
+                    response_text = prefix + f"""### 🤖 Executive C-Suite Analysis: "{query_to_process}"
 
-Based on your query, here is our quantitative portfolio assessment across our verified Local Law 97 database:
-* **Portfolio Assets:** 11,639 audited properties across NYC's 5 boroughs.
+Based on our verified quantitative audit of NYC's **11,639 properties**:
 * **Baseline Statutory Liability:** **&dollar;2.83 Billion/year** (evaluated at **&dollar;268/MT CO₂e**).
 * **Blended Strategy Execution:** Combined CAPEX of **&dollar;4.98 Billion** generates **&dollar;656.63 Million/yr** in gross savings and **&dollar;640.93 Million/yr in Net Annual Cash Flow** after itemized OPEX (**&dollar;15.70M/yr**).
 * **Blended Portfolio Payback:** **7.58 Years** across all 5 Decarbonization Playbooks.
 
 💡 *Tip: Connect a Google Gemini API key above for live Generative AI reasoning, or click any prompt button to render interactive charts.*
 """
-
-        if not gemini_succeeded and "error_banner" in locals():
-            response_text = error_banner + response_text
 
         st.session_state["chat_history"].append({"role": "assistant", "content": response_text, "chart": chart_type})
 
@@ -1689,19 +1656,22 @@ Based on your query, here is our quantitative portfolio assessment across our ve
         with st.chat_message(msg["role"], avatar="🤖" if msg["role"] == "assistant" else "👤"):
             content_text = msg["content"]
             
-            # Check if Gemini generated a universal dynamic plotly_json chart block
+            # Check if Gemini generated a universal dynamic plotly_json or json chart block
             gemini_custom_chart = None
-            if "```plotly_json" in content_text:
-                try:
-                    parts = content_text.split("```plotly_json")
-                    display_text = parts[0]
-                    json_raw = parts[1].split("```")[0].strip()
-                    gemini_custom_chart = json.loads(json_raw)
-                    st.markdown(display_text, unsafe_allow_html=True)
-                except Exception:
-                    st.markdown(content_text, unsafe_allow_html=True)
-            else:
-                st.markdown(content_text, unsafe_allow_html=True)
+            display_text = content_text
+            for tag in ["```plotly_json", "```json"]:
+                if tag in content_text:
+                    try:
+                        parts = content_text.split(tag)
+                        candidate_json = parts[1].split("```")[0].strip()
+                        parsed_dict = json.loads(candidate_json)
+                        if isinstance(parsed_dict, dict) and ("chart_type" in parsed_dict or "x" in parsed_dict):
+                            gemini_custom_chart = parsed_dict
+                            display_text = parts[0]
+                            break
+                    except Exception:
+                        continue
+            st.markdown(display_text, unsafe_allow_html=True)
 
             # Render custom Gemini AI generated chart if present
             if gemini_custom_chart and isinstance(gemini_custom_chart, dict):
