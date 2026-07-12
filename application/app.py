@@ -90,6 +90,7 @@ st.set_page_config(
 # DESIGN TOKENS
 # ──────────────────────────────────────────────────────────────
 C_CYAN   = "#00D2FF"
+C_BLUE   = "#3B82F6"
 C_GREEN  = "#00F59B"
 C_RED    = "#FF4B6E"
 C_AMBER  = "#FFB800"
