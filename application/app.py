@@ -1521,6 +1521,7 @@ with tab5:
         q_lower = query_to_process.lower().strip()
         response_text = ""
         chart_type = None
+        gemini_succeeded = False
 
         # Check if button chart query
         if any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "schedule", "milestone", "5-phase"]):
