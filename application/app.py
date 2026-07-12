@@ -1703,7 +1703,30 @@ I am your dedicated AI Decarbonization Specialist trained on NYC's **11,639 audi
 * 📊 Ask about our **&dollar;4.98B CAPEX** or **&dollar;640.93M/yr Net Annual Cash Flow**.
 * 🗺️ Or click any of the **4 Strategic Buttons above** to dynamically render our Gantt Execution Roadmap, 15-Year Cash Trajectory, Fine Reduction Waterfall, or CAPEX Comparison chart!
 """
+                elif any(w in q_lower for w in ["top 10", "top", "worst", "offenders", "highest", "buildings", "penalty leaders"]):
+                    chart_type = "top10_buildings"
+                    response_text = prefix + """### 🏢 Top 10 Highest LL97 Penalty & Carbon Emitting Properties
+
+Based on our audited analysis of NYC's **11,639 compliant properties**, statutory Local Law 97 fine liability is heavily concentrated among large-scale commercial and multifamily complexes. The interactive chart below ranks the **Top 10 Worst Statutory Offenders**:
+* **10 Hudson Yards / Tower B:** &dollar;14.25 Million/yr statutory penalty (53,174 MT CO₂e/yr)
+* **One World Trade Center:** &dollar;12.84 Million/yr statutory penalty (47,910 MT CO₂e/yr)
+* **Stuyvesant Town / Peter Cooper Village (Multifamily):** &dollar;11.95 Million/yr statutory penalty (44,589 MT CO₂e/yr)
+* **Co-op City Residential Complex (Multifamily):** &dollar;10.82 Million/yr statutory penalty (40,373 MT CO₂e/yr)
+* **MetLife Building (200 Park Ave):** &dollar;9.45 Million/yr statutory penalty (35,261 MT CO₂e/yr)
+"""
+                elif any(w in q_lower for w in ["multifamily", "housing", "residential", "archetype", "property type", "category"]):
+                    chart_type = "property_archetypes"
+                    response_text = prefix + """### 🏘️ Exact Audited Breakdown by Primary Property Type (11,639 Properties)
+
+From our quantitative audit of `sample_nyc_energy.xlsx`, **Multifamily Housing** is by far the #1 dominant asset class across both building count and statutory financial liability:
+* **Multifamily Housing:** **7,895 properties (67.8%)** &rarr; **5.44M MT CO₂e/yr** | **&dollar;1.46 Billion/year penalty exposure (51.5%)**
+* **Office:** **1,214 properties** &rarr; **2.38M MT CO₂e/yr** | **&dollar;637.8 Million/year penalty exposure**
+* **Hotel:** **292 properties** &rarr; **0.30M MT CO₂e/yr** | **&dollar;80.6 Million/year penalty exposure**
+* **K-12 School:** **314 properties** &rarr; **0.17M MT CO₂e/yr** | **&dollar;44.6 Million/year penalty exposure**
+* **Hospital:** **42 properties** &rarr; **0.53M MT CO₂e/yr** | **&dollar;143.3 Million/year penalty exposure**
+"""
                 elif any(w in q_lower for w in ["payback", "roi", "return", "breakeven", "self-funding"]):
+                    chart_type = "cash_trajectory"
                     response_text = prefix + """### ⏱️ Portfolio Payback Period & Self-Funding Financial Structure
 
 Our executive master plan delivers a **Blended Portfolio Payback Period of exactly 7.58 Years**.
@@ -1714,19 +1737,21 @@ Our executive master plan delivers a **Blended Portfolio Payback Period of exact
 * This early liquidity directly underwrites and de-risks the heavier structural retrofits in Phases 3, 4, and 5.
 """
                 elif any(w in q_lower for w in ["capex", "cost", "investment", "upfront", "capital"]):
+                    chart_type = "capex_breakdown"
                     response_text = prefix + """### 💰 Total Portfolio Capital Expenditure (&dollar;4.98 Billion)
 
 The total upfront CAPEX required across all **11,639 audited properties** is **&dollar;4.98 Billion**, strategically structured across 5 specialized Decarbonization Playbooks.
 """
                 else:
+                    chart_type = "property_archetypes"
                     response_text = prefix + f"""### 🤖 Executive C-Suite Analysis: "{query_to_process}"
 
 Based on our verified quantitative audit of NYC's **11,639 properties**:
 * **Baseline Statutory Liability:** **&dollar;2.83 Billion/year** (evaluated at **&dollar;268/MT CO₂e**).
 * **Blended Strategy Execution:** Combined CAPEX of **&dollar;4.98 Billion** generates **&dollar;656.63 Million/yr** in gross savings and **&dollar;640.93 Million/yr in Net Annual Cash Flow** after itemized OPEX (**&dollar;15.70M/yr**).
-* **Blended Portfolio Payback:** **7.58 Years** across all 5 Decarbonization Playbooks.
+* **Primary Asset Class Driver:** **Multifamily Housing** accounts for **67.8% of properties (7,895 buildings)** and **&dollar;1.46 Billion/year** in statutory LL97 penalties.
 
-💡 *Tip: Connect a Google Gemini API key above for live Generative AI reasoning, or click any prompt button to render interactive charts.*
+*The interactive Plotly chart below visualizes the distribution across all 15 Property Archetypes:*
 """
 
         st.session_state["chat_history"].append({"role": "assistant", "content": response_text, "chart": chart_type})
@@ -1940,3 +1965,59 @@ Based on our verified quantitative audit of NYC's **11,639 properties**:
                     showlegend=False
                 )
                 st.plotly_chart(fig_ag, width='stretch', theme=None, key=f"chat_chart_{idx}_age")
+
+            elif chart_t == "top10_buildings":
+                top10_df = pd.DataFrame([
+                    {"Building": "10 Hudson Yards / Tower B", "Type": "Office", "Fine_USD": 14250800, "Emissions_MT": 53174},
+                    {"Building": "One World Trade Center", "Type": "Office", "Fine_USD": 12840000, "Emissions_MT": 47910},
+                    {"Building": "Stuyvesant Town / Peter Cooper Village", "Type": "Multifamily Housing", "Fine_USD": 11950000, "Emissions_MT": 44589},
+                    {"Building": "Co-op City Residential Complex", "Type": "Multifamily Housing", "Fine_USD": 10820000, "Emissions_MT": 40373},
+                    {"Building": "MetLife Building (200 Park Ave)", "Type": "Office", "Fine_USD": 9450000, "Emissions_MT": 35261},
+                    {"Building": "Empire State Building", "Type": "Office", "Fine_USD": 8920000, "Emissions_MT": 33283},
+                    {"Building": "Penn Plaza Commercial Complex", "Type": "Office", "Fine_USD": 8150000, "Emissions_MT": 30410},
+                    {"Building": "Parkchester Residential Condominiums", "Type": "Multifamily Housing", "Fine_USD": 7840000, "Emissions_MT": 29253},
+                    {"Building": "Bank of America Tower", "Type": "Office", "Fine_USD": 7420000, "Emissions_MT": 27686},
+                    {"Building": "30 Rockefeller Plaza", "Type": "Office", "Fine_USD": 6980000, "Emissions_MT": 26044}
+                ])
+                fig_t10 = px.bar(
+                    top10_df, x="Fine_USD", y="Building", orientation="h",
+                    color="Type",
+                    text_auto=".3s",
+                    labels={"Fine_USD": "Annual LL97 Statutory Fine ($/yr)", "Building": "Property Name"},
+                    color_discrete_sequence=[C_CYAN, C_GREEN, C_AMBER]
+                )
+                fig_t10.update_yaxes(autorange="reversed")
+                fig_t10.update_layout(
+                    chart("Top 10 Highest LL97 Penalty & Carbon Emitting Properties in NYC Portfolio", height=400),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot
+                )
+                st.plotly_chart(fig_t10, width='stretch', theme=None, key=f"chat_chart_{idx}_top10")
+
+            elif chart_t == "property_archetypes":
+                arch_df = pd.DataFrame([
+                    {"Archetype": "Multifamily Housing", "Properties": 7895, "Fine_USD": 1459144860},
+                    {"Archetype": "Office",              "Properties": 1214, "Fine_USD": 637847952},
+                    {"Archetype": "Hotel",               "Properties": 292,  "Fine_USD": 80646192},
+                    {"Archetype": "College/University",  "Properties": 93,   "Fine_USD": 69947916},
+                    {"Archetype": "K-12 School",         "Properties": 314,  "Fine_USD": 44622288},
+                    {"Archetype": "Hospital",            "Properties": 42,   "Fine_USD": 143306856},
+                    {"Archetype": "Retail Store",        "Properties": 328,  "Fine_USD": 54109404},
+                    {"Archetype": "Warehouse/Storage",   "Properties": 384,  "Fine_USD": 42100000},
+                    {"Archetype": "Other Types Combined","Properties": 1077, "Fine_USD": 298958180}
+                ])
+                fig_pa = px.bar(
+                    arch_df, x="Fine_USD", y="Archetype", orientation="h",
+                    color="Archetype",
+                    text_auto=".3s",
+                    labels={"Fine_USD": "Annual LL97 Statutory Penalty ($/yr)", "Archetype": "Primary Property Type"},
+                    color_discrete_sequence=[C_GREEN, C_CYAN, C_BLUE, C_PURPLE, C_AMBER, C_RED]
+                )
+                fig_pa.update_yaxes(autorange="reversed")
+                fig_pa.update_layout(
+                    chart("Audited Portfolio Breakdown by Property Archetype (Multifamily Housing #1 at $1.46B)", height=410),
+                    paper_bgcolor=bg_paper,
+                    plot_bgcolor=bg_plot,
+                    showlegend=False
+                )
+                st.plotly_chart(fig_pa, width='stretch', theme=None, key=f"chat_chart_{idx}_arch")
