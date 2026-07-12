@@ -260,7 +260,7 @@ Our capital deployment follows a strict **self-funding cascade**: rapid-payback 
 | **03 · 🟡 1960s Smart Scale**<br/>*1960s Commercial / Multi* | **1960s Archetype** | **$785.24 M** | **$2.80 M / yr** | **$88.03 M / yr** | **$85.23 M / yr** | **8.92 Yrs** | Networked LED, VFD motors & steam trap repairs ($2.50/ft²). OPEX covers preventative VFD maintenance & sensor checks. |
 | **04 · 🟠 1930s WET Systems**<br/>*1930s Historic Pre-War* | **Pre-War Masonry** | **$1.50 B** | **$4.50 M / yr** | **$122.39 M / yr** | **$117.89 M / yr** | **12.25 Yrs** | Wastewater Heat Exchangers & 50% PPP grant funding. OPEX covers annual anti-fouling flush protocols & pump servicing. |
 | **05 · 🔴 Electrification Push**<br/>*Fuel Oil #4 Boilers* | **High-Risk Oil #4** | **$1.89 B** | **$5.10 M / yr** | **$181.99 M / yr** | **$176.89 M / yr** | **10.38 Yrs** | Electric Heat Pumps conversion ($20/ft²). OPEX covers comprehensive OEM maintenance contracts & thermographic checks. |
-| **🏆 TOTAL PORTFOLIO**<br/>*Blended 5-Playbook Strategy* | **Entire Portfolio** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | 🎯 **6.97 Yrs Blended** | **Self-Funding Decarbonization Cascade across 11,639 verified NYC LL84/LL97 assets (OPEX = 0.32% of CAPEX).** |
+| **🏆 TOTAL PORTFOLIO**<br/>*Blended 5-Playbook Strategy* | **Entire Portfolio** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | 🎯 **7.58 Yrs Blended** | **Self-Funding Decarbonization Cascade across 11,639 verified NYC LL84/LL97 assets (OPEX = 0.32% of CAPEX).** |
 
 ---
 

@@ -1335,7 +1335,7 @@ with tab4:
                 kpi("Net Annual Cash Flow",       f"${total_net/1e6:.1f}M / yr",     sub="net benefit / yr", cls="green"),
             )}
             {kpi_row(
-                kpi("Blended Portfolio Payback",  "6.97 yrs",                      sub="blended capital return", cls="green"),
+                kpi("Blended Portfolio Payback",  "7.58 yrs",                      sub="blended capital return", cls="green"),
                 kpi("Self-Fund Strategy",         "Phase 1 → 3",                   sub="0.02 yr → 12.25 yr"),
             )}
             <p style="font-size:0.82rem;color:#475569;margin-top:0.5rem;">

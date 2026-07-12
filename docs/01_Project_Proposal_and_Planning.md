@@ -90,7 +90,7 @@ The project incorporates Hagar Hussein's 5 Strategic Decarbonization Playbooks, 
 | **03 · 1960s Smart Scale** | 1960s Commercial/Multi | **$785.24 M** | **$2.80 M / yr** | **$88.03 M / yr** | **$85.23 M / yr** | **8.92 Yrs** | Networked LED, VFD motors ($2.50/ft²), preventative motor maintenance. |
 | **04 · 1930s WET Systems** | Historic Pre-War Masonry | **$1.50 B** | **$4.50 M / yr** | **$122.39 M / yr** | **$117.89 M / yr** | **12.25 Yrs** | Wastewater Heat Exchangers + 50% PPP grant ($749M), anti-fouling protocols. |
 | **05 · Electrification Push** | Fuel Oil #4 Boilers | **$1.89 B** | **$5.10 M / yr** | **$181.99 M / yr** | **$176.89 M / yr** | **10.38 Yrs** | Electric Heat Pumps ($20/ft²), OEM service contracts & thermal scanning. |
-| **🏆 TOTAL PORTFOLIO** | **Entire Portfolio (11,639 assets)** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | **6.97 Yrs Blended** | **Total OPEX averages only 0.32% of CAPEX, preserving 97.6% net recurring cash flow.** |
+| **🏆 TOTAL PORTFOLIO** | **Entire Portfolio (11,639 assets)** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | **7.58 Yrs Blended** | **Total OPEX averages only 0.32% of CAPEX, preserving 97.6% net recurring cash flow.** |
 
 
 ## 1.2 Project Plan & Timeline (Gantt Chart)
