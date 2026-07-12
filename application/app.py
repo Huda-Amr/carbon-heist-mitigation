@@ -1573,7 +1573,7 @@ with tab5:
             active_gemini_key = os.environ.get("GEMINI_API_KEY", None)
 
     if active_gemini_key:
-        st.markdown("<div style='background:#ecfdf5;border:1px solid #10b981;color:#047857;padding:0.55rem 0.9rem;border-radius:10px;font-size:0.85rem;margin:0.4rem 0;'><b>✅ Live Google Gemini 2.5 Flash Connected!</b> Ask any question or request <b>ANY custom analytical chart</b> from the 11,639-property dataset — the AI will generate and render an interactive Plotly chart on the fly!</div>", unsafe_allow_html=True)
+        st.markdown("<div style='background:#ecfdf5;border:1.5px solid #10b981;color:#064e3b;padding:0.75rem 1rem;border-radius:10px;font-size:0.88rem;margin:0.5rem 0;line-height:1.5;'><span style='color:#047857;font-weight:800;'>✅ Live Google Gemini AI Connected!</span> <span style='color:#065f46;'>Ask any question or request <b>ANY custom analytical chart</b> from the 11,639-property dataset — the AI will generate and render an interactive Plotly chart on the fly!</span></div>", unsafe_allow_html=True)
 
     # High-impact Executive Quick Prompt Buttons
     st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.6rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
@@ -1617,7 +1617,11 @@ with tab5:
                 response_text = ai_reply + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
                 gemini_succeeded = True
             except Exception as e:
-                error_banner = f"<div style='background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:0.6rem;border-radius:8px;font-size:0.82rem;margin-bottom:0.6rem;'><b>⚠️ Gemini API Error:</b> {str(e)}<br><i>Showing quantitative database fallback below:</i></div>"
+                err_msg = str(e)
+                if "429" in err_msg or "rate limit" in err_msg.lower() or "quota" in err_msg.lower():
+                    error_banner = "<div style='background:#fffbeb;border:1px solid #f59e0b;color:#92400e;padding:0.6rem 0.9rem;border-radius:8px;font-size:0.83rem;margin-bottom:0.7rem;'><b>⏳ Google Gemini Free-Tier Rate Limit Momentarily Reached (429):</b> Quota reset in progress. Automatically displaying instant quantitative database response & interactive chart below:</div>"
+                else:
+                    error_banner = f"<div style='background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:0.6rem;border-radius:8px;font-size:0.82rem;margin-bottom:0.6rem;'><b>⚠️ Gemini Notice:</b> {err_msg}<br><i>Displaying quantitative database response below:</i></div>"
 
         # Fallback or quick button evaluation if Gemini was not called or failed
         if not gemini_succeeded:
