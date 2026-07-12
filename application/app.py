@@ -1354,7 +1354,7 @@ with tab5:
     st.markdown(pill("🤖", "LL97 C-Suite AI Co-Pilot & Strategic Chart Scientist"), unsafe_allow_html=True)
     
     sub_color = "#374151" if IS_LIGHT else "#94a3b8"
-    st.markdown(f"<p style='color:{sub_color};font-size:0.9rem;margin-top:-0.2rem;line-height:1.6;'>Executive AI Assistant trained on all <b>11,639 NYC properties</b>, statutory Local Law 97 formulas (<b>$268/MT CO₂e</b>), and Hagar Hussein's <b>5 Decarbonization Playbooks</b>. Click any strategic button below for instant adaptive visualizations & executive intelligence.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color:{sub_color};font-size:0.9rem;margin-top:-0.2rem;line-height:1.6;'>Executive AI Assistant trained on all <b>11,639 NYC properties</b>, statutory Local Law 97 formulas (<b>&dollar;268/MT CO₂e</b>), and Hagar Hussein's <b>5 Decarbonization Playbooks</b>. Click any strategic button below for instant adaptive visualizations & executive intelligence.</p>", unsafe_allow_html=True)
 
     # High-impact Executive Quick Prompt Buttons
     st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.6rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
@@ -1368,70 +1368,126 @@ with tab5:
             quick_query = "Plot the cumulative Net Cash Flow and ROI trajectory over a 15-year horizon"
     with qp3:
         if st.button("⚖️ Plot Fine Reduction Waterfall", use_container_width=True):
-            quick_query = "Plot the statutory LL97 Fine Reduction Waterfall across all 5 Playbooks starting from $2.83B baseline"
+            quick_query = "Plot the statutory LL97 Fine Reduction Waterfall across all 5 Playbooks starting from &dollar;2.83B baseline"
     with qp4:
         if st.button("📊 Compare CAPEX vs Net Benefit", use_container_width=True):
             quick_query = "Compare upfront CAPEX versus Net Annual Benefit across all 5 Decarbonization Playbooks"
 
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = [
-            {"role": "assistant", "content": "Welcome to the **NYC Carbon Heist Mitigation AI C-Suite Co-Pilot**! Click any of the **Strategic Buttons above** to render interactive **Execution Roadmaps**, **15-Year Cash Flow Trajectories**, **Fine Reduction Waterfalls**, or **CAPEX vs Net Benefit Comparisons**."}
+            {"role": "assistant", "content": "Welcome to the **NYC Carbon Heist Mitigation AI C-Suite Co-Pilot**! 👋<br><br>I am your dedicated executive AI specialist. Ask me anything about our **11,639 audited properties**, **&dollar;4.98B CAPEX deployment**, **7.58-Year Payback**, or click any **Strategic Button above** to render interactive **Execution Roadmaps**, **15-Year Cash Flow Trajectories**, **Fine Reduction Waterfalls**, or **CAPEX vs Net Benefit Comparisons**."}
         ]
 
     # Handle quick query or input
-    user_input = st.chat_input("Ask any executive question about the portfolio, or request a custom interactive chart...")
+    user_input = st.chat_input("Ask any executive question (e.g., hello, explain payback, show CAPEX breakdown)...")
     query_to_process = quick_query if quick_query else user_input
 
     if query_to_process:
         st.session_state["chat_history"].append({"role": "user", "content": query_to_process})
 
-        q_lower = query_to_process.lower()
+        q_lower = query_to_process.lower().strip()
         response_text = ""
         chart_type = None
 
-        if any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "schedule", "milestone", "5-phase"]):
+        # Conversational Greetings & Social
+        if q_lower in ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "howdy", "hola", "hi there", "hello there"]:
+            response_text = """### 👋 Hello! Welcome to the Executive C-Suite Co-Pilot
+
+I am your dedicated AI Decarbonization Specialist trained on NYC's **11,639 audited properties** and Local Law 97 statutory frameworks.
+
+**How can I assist your executive team today?**
+* 💡 Ask me to explain our **Self-Funding Strategy** or **7.58-Year Blended Payback**.
+* 📊 Ask about our **&dollar;4.98B CAPEX** or **&dollar;640.93M/yr Net Annual Cash Flow**.
+* 🗺️ Or click any of the **4 Strategic Buttons above** to dynamically render our Gantt Execution Roadmap, 15-Year Cash Trajectory, Fine Reduction Waterfall, or CAPEX Comparison chart!
+"""
+        elif any(w in q_lower for w in ["who are you", "what can you do", "help", "about you", "capabilities"]):
+            response_text = """### 🤖 About Your C-Suite Decarbonization Co-Pilot
+
+I am an executive decision-support AI engineered specifically for Hagar Hussein's **NYC Carbon Heist Mitigation Master Plan**.
+
+**Core Capabilities:**
+1. **Financial Engineering & ROI Analysis:** Instant synthesis of CAPEX (&dollar;4.98B), OPEX (&dollar;15.70M/yr), Gross Savings (&dollar;656.63M/yr), and Net Annual Benefit (&dollar;640.93M/yr).
+2. **Statutory LL97 Compliance:** Auditing penalty exposure at **&dollar;268/MT CO₂e** across all 11,639 properties.
+3. **Dynamic Visualization Scientist:** Generating interactive dark-themed Gantt schedules, Area trajectory curves, Waterfalls, and comparative bar charts on demand.
+"""
+        elif any(w in q_lower for w in ["roadmap", "timeline", "gantt", "execution", "schedule", "milestone", "5-phase"]):
             chart_type = "roadmap_gantt"
             response_text = """### 🗺️ Strategic 5-Phase Decarbonization Execution Roadmap
 
 The interactive Gantt schedule below details the phased deployment across our **11,639 properties**. By sequencing interventions according to capital velocity, early quick-wins generate immediate liquidity to fund deeper Phase 3–5 structural retrofits:
 
-* **Phase 1 · Surgical Strike (Y0.0 – Y0.5):** Rapid Level 2 audits and BMS setback scheduling across Top 10 offenders — **8-Day Payback → $20.55M/yr Net Cash Flow**
-* **Phase 2 · Retro-commissioning (Y0.5 – Y2.0):** Comprehensive RCx & DDC upgrades on low-score assets — **$1.50/ft² → $240.37M/yr Net Cash Flow**
-* **Phase 3 · 1960s Smart Scale (Y1.5 – Y4.0):** Networked LED lighting & VFD motor retrofits — **$2.50/ft² → $85.23M/yr Net Cash Flow**
-* **Phase 4 · 1930s WET Systems (Y3.0 – Y6.0):** Historic sewer wastewater heat recovery leveraging **50% PPP Grants ($749M)** — **12.25 Yr Payback → $117.89M/yr Net Cash Flow**
-* **Phase 5 · Electrification Push (Y5.0 – Y8.0):** Complete replacement of Fuel Oil #4 boilers with Electric Heat Pumps — **10.38 Yr Payback → $176.89M/yr Net Cash Flow**
+* **Phase 1 · Surgical Strike (Y0.0 – Y0.5):** Rapid Level 2 audits and BMS setback scheduling across Top 10 offenders — **8-Day Payback &rarr; &dollar;20.55M/yr Net Cash Flow**
+* **Phase 2 · Retro-commissioning (Y0.5 – Y2.0):** Comprehensive RCx & DDC upgrades on low-score assets — **&dollar;1.50/ft² &rarr; &dollar;240.37M/yr Net Cash Flow**
+* **Phase 3 · 1960s Smart Scale (Y1.5 – Y4.0):** Networked LED lighting & VFD motor retrofits — **&dollar;2.50/ft² &rarr; &dollar;85.23M/yr Net Cash Flow**
+* **Phase 4 · 1930s WET Systems (Y3.0 – Y6.0):** Historic sewer wastewater heat recovery leveraging **50% PPP Grants (&dollar;749M)** — **12.25 Yr Payback &rarr; &dollar;117.89M/yr Net Cash Flow**
+* **Phase 5 · Electrification Push (Y5.0 – Y8.0):** Complete replacement of Fuel Oil #4 boilers with Electric Heat Pumps — **10.38 Yr Payback &rarr; &dollar;176.89M/yr Net Cash Flow**
 """
-        elif any(w in q_lower for w in ["trajectory", "15-year", "cumulative", "cash flow", "roi", "horizon"]):
+        elif any(w in q_lower for w in ["trajectory", "15-year", "cumulative", "cash flow", "horizon"]):
             chart_type = "cash_trajectory"
             response_text = """### 📉 15-Year Cumulative Net Cash Flow & ROI Trajectory
 
-The adaptive area chart below illustrates the self-funding financial cascade over a 15-year horizon. After achieving full blended capital recovery at **Year 7.58**, the portfolio generates exponential positive net operational surpluses, accumulating over **$4.63 Billion in cumulative net savings** by Year 15.
+The adaptive area chart below illustrates the self-funding financial cascade over a 15-year horizon. After achieving full blended capital recovery at **Year 7.58**, the portfolio generates exponential positive net operational surpluses, accumulating over **&dollar;4.63 Billion in cumulative net savings** by Year 15.
 """
         elif any(w in q_lower for w in ["waterfall", "reduction", "eliminated", "liability cascade", "starting from"]):
             chart_type = "fine_waterfall"
             response_text = """### ⚖️ LL97 Statutory Fine Reduction Waterfall
 
-The step-down waterfall chart below starts at our unmitigated baseline liability (**$2.83 Billion/year** evaluated at **$268/MT CO₂e**) and demonstrates how each individual decarbonization playbook systematically strips away statutory penalties, generating **$656.63 Million/yr** in gross annual reductions.
+The step-down waterfall chart below starts at our unmitigated baseline liability (**&dollar;2.83 Billion/year** evaluated at **&dollar;268/MT CO₂e**) and demonstrates how each individual decarbonization playbook systematically strips away statutory penalties, generating **&dollar;656.63 Million/yr** in gross annual reductions.
 """
         elif any(w in q_lower for w in ["compare capex", "capex vs", "net benefit", "comparison", "playbooks"]):
             chart_type = "playbooks_comp"
             response_text = """### 📊 Strategic Comparison: Initial CAPEX vs. Net Annual Benefit
 
 The grouped comparison chart below benchmarks upfront capital expenditure against recurring annual net cash flow across each of the 5 Strategic Playbooks:
-* **Playbook 01 (Surgical Strike):** Minimal **$500K CAPEX** unlocks **$20.55M/yr** recurring net benefit (**0.02 Yr Payback**).
-* **Playbook 02 (Retro-commissioning):** **$802.17M CAPEX** yields **$240.37M/yr** recurring net benefit (**3.29 Yr Payback**).
-* **Total Portfolio Performance:** **$4.98B CAPEX** yields **$640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
+* **Playbook 01 (Surgical Strike):** Minimal **&dollar;500K CAPEX** unlocks **&dollar;20.55M/yr** recurring net benefit (**0.02 Yr Payback**).
+* **Playbook 02 (Retro-commissioning):** **&dollar;802.17M CAPEX** yields **&dollar;240.37M/yr** recurring net benefit (**3.29 Yr Payback**).
+* **Total Portfolio Performance:** **&dollar;4.98B CAPEX** yields **&dollar;640.93M/yr Net Recurring Cash Flow** (**7.58 Yr Blended Payback**).
+"""
+        elif any(w in q_lower for w in ["payback", "roi", "return", "breakeven", "self-funding"]):
+            response_text = """### ⏱️ Portfolio Payback Period & Self-Funding Financial Structure
+
+Our executive master plan delivers a **Blended Portfolio Payback Period of exactly 7.58 Years**.
+
+**How the Self-Funding Cascade Works:**
+* **Phase 1 (Surgical Strike):** Recovers capital in just **8 Days (0.02 Years)**, instantly injecting **&dollar;20.55M/yr** in liquid net cash flow.
+* **Phase 2 (Retro-commissioning):** Recovers capital in **3.29 Years**, adding **&dollar;240.37M/yr** in net recurring operational surpluses.
+* This early liquidity directly underwrites and de-risks the heavier structural retrofits in Phases 3, 4, and 5.
+"""
+        elif any(w in q_lower for w in ["capex", "cost", "investment", "upfront", "capital"]):
+            response_text = """### 💰 Itemized Portfolio CAPEX Breakdown
+
+The total required capital investment across all **11,639 properties** is **&dollar;4.98 Billion**, structured across 5 targeted deployment playbooks:
+1. **01 · Surgical Strike:** &dollar;500,000 CAPEX
+2. **02 · Retro-commissioning:** &dollar;802.17 Million CAPEX
+3. **03 · 1960s Smart Scale:** &dollar;785.24 Million CAPEX
+4. **04 · 1930s WET Systems:** &dollar;1.50 Billion Net CAPEX (after 50% PPP Grants)
+5. **05 · Electrification Push:** &dollar;1.89 Billion CAPEX
+"""
+        elif any(w in q_lower for w in ["opex", "maintenance", "net benefit", "net savings", "recurring"]):
+            response_text = """### 📈 Itemized Annual OPEX & Net Annual Cash Flow
+
+Every playbook accounts for annual operational and maintenance costs (OPEX) to ensure true executive net metrics:
+* **Gross Annual Financial & Utility Savings:** &dollar;656.63 Million / yr
+* **Total Annual OPEX & Maintenance:** &dollar;15.70 Million / yr
+* **Net Annual Cash Flow (Net Benefit):** **&dollar;640.93 Million / yr**
+"""
+        elif any(w in q_lower for w in ["fines", "penalty", "penalties", "law", "ll97", "statutory"]):
+            response_text = """### ⚖️ Local Law 97 Statutory Liability & Mitigation
+
+Under NYC Local Law 97, buildings exceeding carbon emissions thresholds face strict statutory penalties evaluated at **&dollar;268 per Metric Ton of CO₂ equivalent (&dollar;268/MT CO₂e)**.
+* **Unmitigated Baseline Portfolio Fine Exposure:** **&dollar;2.83 Billion / year**
+* **Total Fines Eliminated via 5 Playbooks:** **&dollar;656.63 Million / year** recurring savings
 """
         else:
             response_text = f"""### 🤖 Executive C-Suite Analysis: `{query_to_process}`
 
-Based on your query, here is the quantitative portfolio assessment across our verified Local Law 97 database:
+Based on your query, here is our quantitative portfolio assessment across our verified Local Law 97 database:
 * **Portfolio Assets:** 11,639 audited properties across NYC's 5 boroughs.
-* **Baseline Statutory Liability:** **$2.83 Billion/year** (evaluated at **$268/MT CO₂e**).
-* **Blended Strategy Execution:** Combined CAPEX of **$4.98 Billion** generates **$656.63 Million/yr** in gross savings and **$640.93 Million/yr in Net Annual Cash Flow** after itemized OPEX (**$15.70M/yr**).
+* **Baseline Statutory Liability:** **&dollar;2.83 Billion/year** (evaluated at **&dollar;268/MT CO₂e**).
+* **Blended Strategy Execution:** Combined CAPEX of **&dollar;4.98 Billion** generates **&dollar;656.63 Million/yr** in gross savings and **&dollar;640.93 Million/yr in Net Annual Cash Flow** after itemized OPEX (**&dollar;15.70M/yr**).
 * **Blended Portfolio Payback:** **7.58 Years** across all 5 Decarbonization Playbooks.
 
-💡 *Tip: Click any prompt button above to render interactive Gantt Execution Roadmaps, Cash Flow Trajectories, or Fine Waterfalls.*
+💡 *Tip: Click any prompt button above or ask specifically about **CAPEX**, **Payback**, **OPEX**, or **LL97 Fines**.*
 """
 
         st.session_state["chat_history"].append({"role": "assistant", "content": response_text, "chart": chart_type})
@@ -1443,7 +1499,7 @@ Based on your query, here is the quantitative portfolio assessment across our ve
     # Display chat messages
     for msg in st.session_state["chat_history"]:
         with st.chat_message(msg["role"], avatar="🤖" if msg["role"] == "assistant" else "👤"):
-            st.markdown(msg["content"])
+            st.markdown(msg["content"], unsafe_allow_html=True)
             
             chart_t = msg.get("chart")
             if chart_t == "roadmap_gantt":
