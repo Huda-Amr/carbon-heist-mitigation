@@ -1411,6 +1411,19 @@ with tab5:
         st.markdown("<p style='font-size:0.85rem;color:#64748b;'>Connect your Google Gemini API Key to enable true generative AI reasoning, dynamic multi-lingual conversation (Arabic/English), and live C-Suite scenario analysis across the Local Law 97 database.</p>", unsafe_allow_html=True)
         user_gemini_key = st.text_input("🔑 Enter Gemini API Key (or set GEMINI_API_KEY in Streamlit Secrets):", type="password", key="gemini_key_input")
 
+    # Determine active Gemini Key (user input or Streamlit Secrets)
+    active_gemini_key = user_gemini_key.strip() if user_gemini_key else None
+    if not active_gemini_key:
+        try:
+            active_gemini_key = st.secrets.get("GEMINI_API_KEY", None)
+        except Exception:
+            pass
+        if not active_gemini_key:
+            active_gemini_key = os.environ.get("GEMINI_API_KEY", None)
+
+    if active_gemini_key:
+        st.markdown("<div style='background:#ecfdf5;border:1px solid #10b981;color:#047857;padding:0.55rem 0.9rem;border-radius:10px;font-size:0.85rem;margin:0.4rem 0;'><b>✅ Live Google Gemini AI Connected!</b> Active Model: <code>gemini-2.5-flash</code>. Ask any natural language question below for live generative reasoning.</div>", unsafe_allow_html=True)
+
     # High-impact Executive Quick Prompt Buttons
     st.markdown("<div style='font-size:0.75rem;font-weight:700;color:#0ea5e9;text-transform:uppercase;letter-spacing:0.08em;margin:0.6rem 0;'>⚡ Strategic C-Suite Intelligence & Dynamic Visualizations</div>", unsafe_allow_html=True)
     qp1, qp2, qp3, qp4 = st.columns(4)
@@ -1437,7 +1450,7 @@ with tab5:
     user_input = st.chat_input("Ask any executive question (e.g., hello, explain payback, show CAPEX breakdown)...")
     query_to_process = quick_query if quick_query else user_input
 
-    if query_to_process:
+    if query_to_process and query_to_process.strip():
         st.session_state["chat_history"].append({"role": "user", "content": query_to_process})
 
         q_lower = query_to_process.lower().strip()
@@ -1495,7 +1508,7 @@ The grouped comparison chart below benchmarks upfront capital expenditure agains
                     genai.configure(api_key=active_gemini_key)
                     model = genai.GenerativeModel("gemini-2.5-flash", system_instruction=GEMINI_SYSTEM_PROMPT)
                     ai_res = model.generate_content(query_to_process)
-                    response_text = ai_res.text
+                    response_text = ai_res.text + "<br><br><span style='font-size:0.75rem;color:#0ea5e9;font-weight:600;'>✨ Generated live by Google Gemini 2.5 Flash</span>"
                 except Exception as e:
                     response_text = f"⚠️ *Gemini AI generation note:* Could not connect with provided API Key ({str(e)}). Falling back to Executive Database:<br><br>"
             
