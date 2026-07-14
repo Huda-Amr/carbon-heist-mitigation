@@ -106,7 +106,7 @@ gantt
     axisFormat  %b %d
     section 1. Architecture
     Requirements & Scope  :a1, 2026-05-12, 12d
-    Database & ERD Design :a2, after a1, 12d
+    Database & ERD        :a2, after a1, 12d
     section 2. Data Pipeline
     Forensic ETL Pipeline :b1, after a2, 14d
     Audit & Validation    :b2, after b1, 12d
