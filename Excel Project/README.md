@@ -1,6 +1,6 @@
 # 📑 Financial Engineering & Domain Reference Models
 
-Welcome to the **Domain & Financial Engineering Layer** of the **Carbon Heist Mitigation Platform**. This directory contains our comprehensive 13-sheet financial & engineering modeling workbook (`Co2 Project.xlsx`) which serves as the domain reference for all statutory penalty calculations, capital expenditure (CAPEX) sensitivity analyses, and decarbonization playbooks.
+Welcome to the **Domain & Financial Engineering Layer** of the **Carbon Heist Mitigation Platform**. This directory contains our comprehensive **14-sheet financial, engineering, and C-Suite visualization workbook (`Co2 Project.xlsx`)**, which serves as the master reference for all Local Law 97 statutory penalty calculations, capital expenditure (CAPEX) sensitivity analyses, interactive bridge charts (`Waterfall Charts`), and the 5 Decarbonization Playbooks.
 
 ---
 
@@ -8,22 +8,22 @@ Welcome to the **Domain & Financial Engineering Layer** of the **Carbon Heist Mi
 
 | File Name | Description |
 | :--- | :--- |
-| **`Co2 Project.xlsx`** | Master 13-sheet engineering & financial reference model for **NYC Local Law 97 (LL97)** compliance modeling and retrofit planning. |
+| **`Co2 Project.xlsx`** | Master **14-sheet engineering, financial, and executive visualization reference workbook** for **NYC Local Law 97 (LL97)** compliance modeling, risk profiling, and retrofit planning across `11,639` properties. |
 
 ---
 
-## ⚙️ Financial & Engineering 13-Sheet Architecture
+## ⚙️ Financial & Engineering 14-Sheet Architecture
 
 ```mermaid
 flowchart TD
-    RAW["1️⃣ Data & 2️⃣ Clean Sheets\nNYC LL84 Benchmarking Data Records"]:::raw --> AN["3️⃣ Analysis & 8️⃣ Factors\nCarbon Emission Factors & Intensity Statistics"]:::an
-    AN --> CARDS["4️⃣ Data Cards & 7️⃣ Executive Summary\nExecutive KPI Dashboards & C-Suite Overview"]:::cards
-    AN --> SENS["5️⃣ Sensitivity & 6️⃣ Scenario Sheets\nCAPEX Stress-Testing & NPV / ROI Projections"]:::sens
-    SENS --> PB1["9️⃣ Surgical Strike Playbook\nImmediate Low-Cost Interventions (8-Day Payback)"]:::pb
-    SENS --> PB2["🔟 Retro-commissioning Playbook\nHVAC Tuning & BMS Setpoints"]:::pb
-    SENS --> PB3["1️⃣1️⃣ WET Scenario Playbook\nWaste-Heat Energy Transfer Deep Retrofit"]:::pb
-    SENS --> PB4["1️⃣2️⃣ 1960s Smart Scale Playbook\nTargeted Decarbonization for Aging Archetypes"]:::pb
-    SENS --> PB5["1️⃣3️⃣ Electrification Push Playbook\nFossil Heating to Electric Heat Pumps"]:::pb
+    RAW["1️⃣3️⃣ Pivot_Age_vs_Penalty & 1️⃣2️⃣/1️⃣3️⃣/1️⃣4️⃣ Analytical Sheets\nCore Data Models & Aggregation Engines"]:::raw --> AN["3️⃣ Factors Dashboard & 1️⃣ Dashboard\nMacro Risk Drivers, Age, Geography & Efficiency Profiling"]:::an
+    AN --> CARDS["1️⃣ Dashboard & 5️⃣ Financial Audit Model\nExecutive Summary KPIs, Total Exposure ($2.83B) & Net Annual Cash Flow"]:::cards
+    AN --> SENS["1️⃣ Playbook Model & 2️⃣ Master Schedule\nEngineering CAPEX/OPEX Modeling & 6-Year Gantt Execution Roadmap"]:::sens
+    SENS --> PB1["6️⃣ Surgical Strike Scenario\nImmediate Low-Cost BMS/VFD Interventions ($20.6M/yr Net Savings | 8-Day Payback)"]:::pb
+    SENS --> PB2["8️⃣ Retro-commissioning Scenario\nHVAC RCx & Setpoint Tuning ($243.6M/yr Maximum Fine Savings | 3.29-Yr Payback)"]:::pb
+    SENS --> PB3["9️⃣ 1960s Smart Scale Scenario\nPost-War Boom Target Subset ($88.0M/yr Saved | #1 Emitting Vintage)"]:::pb
+    SENS --> PB4["🔟 WET Systems Scenario\nPre-War 1930s Historic Masonry Wastewater Heat Recovery ($122.4M/yr Saved)"]:::pb
+    SENS --> PB5["1️⃣1️⃣ Electrification Scenario\nDeep Geothermal & Heat Pump Fossil Conversion"]:::pb
 
     classDef raw fill:#161B22,stroke:#8B949E,stroke-width:2px,color:#C9D1D9
     classDef an fill:#0D1117,stroke:#30363D,stroke-width:2px,color:#E6EDF3
@@ -40,27 +40,45 @@ Across all financial sheets, statutory penalty exposure is evaluated using the o
 
 > [!IMPORTANT]
 > ### **Penalty ($) = Total Emissions (MT CO₂e) × 268**
-> Where **$268** is the mandatory fine rate per metric ton of **CO₂e** exceeding statutory thresholds under NYC Local Law 97.
+> Where **$268** is the mandatory fine rate per metric ton of **CO₂e** exceeding statutory thresholds under NYC Local Law 97 across our analyzed portfolio of `11,639` buildings.
 
 ---
 
-## 📊 Summary of Workbook Sheets (13 Sheets)
+## 📊 Summary of Workbook Sheets (14 Sheets)
 
-| # | Sheet Name | Description & Purpose |
+Our master workbook (`Co2 Project.xlsx`) is structured into **Executive Presentation Portals**, **Decarbonization Scenario Dashboards (with Bridge/Waterfall Charts)**, and **Core Analytical Engine Sheets**:
+
+### 👑 I. Executive Presentation Portals & Macro Profiling
+| # | Sheet Name | Description & Purpose | Key Visualizations & Titles |
+| :---: | :--- | :--- | :--- |
+| **1** | **`Dashboard`** | The primary C-Suite Executive Portal summarizing portfolio scale, total baseline liability (`$2,830.3 Million`), and high-level strategy KPIs. | **`THE CARBON HEIST: 11,639 Properties across NYC`** |
+| **2** | **`Factors`** | Consolidated executive profiling & risk drivers dashboard presenting the macro-level drivers of statutory carbon liability across Age (`Decade`), Geography (`Borough`), and Efficiency (`ENERGY STAR`). | 1. **`Building Vintage Analysis: Total GHG Emissions vs. Penalty Intensity ($/ft²)`**<br/>2. **`NYC Borough Carbon Emissions Distribution (MT CO₂e / Year)`**<br/>3. **`Carbon Concentration by ENERGY STAR Bracket (1–100)`**<br/>4. **`Carbon Emissions by Property Archetype (MT CO₂e / Year)`** |
+| **3** | **`Playbook Model`** | Master engineering strategy & financial calculation table detailing initial CAPEX, annual OPEX, gross annual savings, net annual cash flows, and payback periods across all 5 Decarbonization Playbooks. | Comprehensive itemized 5-Phase Playbook matrix. |
+| **4** | **`Master Schedule`** | 6-year execution roadmap, project milestones, dependency mapping, and Gantt tracking. | Phased execution timeline from Phase 1 (`Surgical Strike`) to Phase 5 (`Electrification Push`). |
+| **5** | **`Financial Audit Model`** | Comprehensive net cash flow audit, cumulative NPV/ROI projections, and Local Law 97 statutory fine rate schedules ($268/MT). | Itemized OPEX and Net Annual Cash Flow tables verifying our `$656.6M/yr` total net fine elimination. |
+
+---
+
+### 📈 II. Decarbonization Playbook Scenarios (Interactive Bridge & Waterfall Charts)
+Each dedicated scenario tab features custom KPI cards (`Penalty Risk Per Year`, `Total Project CAPEX`, `Fine Savings Per Year`), architectural engineering illustrations, and **Financial Bridge / Waterfall Charts** (`Before vs. After Statutory Penalty Exposure`):
+
+| # | Sheet Name | Target Subset & Playbook Focus | Financial Impact & Payback | Bridge Chart Title (`Before vs. After`) |
+| :---: | :--- | :--- | :--- | :--- |
+| **6** | **`Surgical Strike Scenario`** | **Playbook 01 (`Immediate Operations & Maintenance`):** Low-cost BMS sensors, Variable Frequency Drives (VFDs), and Level 2 audit setpoint tuning for top 10 worst offenders. | **`$20.6M/yr Net Savings`**<br/>`$500K CAPEX`<br/>**8-Day Payback (`0.02 Yr`)** | **`Surgical Strike Penalty Reduction Waterfall ($20.6M/yr Saved)`**<br/>`$51.5M Exposure → $30.9M Residual Penalty` |
+| **7** | **`Retro-commissioning Scenario`** | **Playbook 02 (`HVAC & Automation`):** Whole-building HVAC retro-commissioning, automated Fault Detection & Diagnostics (FDD), and VAV box balancing at `$1.50/ft²`. | **`$243.6M/yr Maximum Savings`**<br/>`$802.2M CAPEX`<br/>**3.29-Year Payback** | **`Retro-commissioning Penalty Reduction Bridge ($243.6M/yr Saved)`**<br/>`$974.5M Exposure → $730.8M Residual Penalty` |
+| **8** | **`1960s Smart Scale Scenario`** | **Playbook 03 (`Post-War Boom Archetypes`):** Targeted smart automation, district loop scaling, and envelope weatherization for NYC's #1 single largest emitting construction decade (`1960s`). | **`$88.0M/yr Net Savings`**<br/>`$785.2M CAPEX`<br/>**8.92-Year Payback** | **`1960s Smart Scale Penalty Bridge ($88.0M/yr Saved)`**<br/>`$440.2M Exposure → $352.1M Residual Penalty` |
+| **9** | **`WET Systems Scenario`** | **Playbook 04 (`Pre-War 1930s Historic Masonry`):** Waste-heat Energy Transfer (`WET`) wastewater heat recovery systems extracting thermal energy from hot graywater inside historic properties without disrupting architectural facades. | **`$122.4M/yr Net Savings`**<br/>`$1.50B Net CAPEX`<br/>**12.25-Year Payback** | **`WET Systems Penalty Reduction Bridge ($122.4M/yr Saved)`**<br/>`$306.0M Exposure → $183.6M Residual Penalty` |
+| **10** | **`Electrification Scenario`** | **Playbook 05 (`Deep Geothermal & Heat Pumps`):** Replacement of fossil fuel boilers with high-efficiency air-source and water-source heat pump electrification networks. | **`$182.0M/yr Net Savings`**<br/>`$2.30B CAPEX`<br/>**12.63-Year Payback** | **`Electrification Push Penalty Reduction Bridge ($182.0M/yr Saved)`** |
+
+---
+
+### ⚙️ III. Underlying Analytical Engines & Pivot Models
+| # | Sheet Name | Purpose & Calculation Engine |
 | :---: | :--- | :--- |
-| **1** | **`Data`** | Raw municipal building energy disclosure records imported from NYC Local Law 84 benchmarking files. |
-| **2** | **`Clean`** | Cleaned and filtered data subset retaining compliant properties (**GFA ≥ 50,000 sq. ft.**). |
-| **3** | **`Analysis`** | Core analytical sheet computing descriptive statistics, energy intensity distributions, and initial penalty liabilities. |
-| **4** | **`Data Cards`** | Executive summary cards summarizing key portfolio metrics, total square footage, and aggregate fines. |
-| **5** | **`Sensitivity`** | Sensitivity analysis evaluating how different CAPEX reinvestment rates impact net operating income (NOI) and fine avoidance. |
-| **6** | **`Scenario`** | Multi-year scenario projections comparing baseline business-as-usual against decarbonization paths. |
-| **7** | **`Executive Summary`** | High-level presentation overview designed for C-suite asset managers and real estate stakeholders. |
-| **8** | **`Factors`** | Official municipal carbon emission coefficients (**kg CO₂e / kBtu**) across electricity, natural gas, fuel oil, and steam. |
-| **9** | **`Surgical Strike`** | Targeted engineering retrofit playbook focusing on high-impact mechanical and envelope improvements. |
-| **10** | **`Retro-commissioning`** | Playbook modeling low-cost Building Management System (BMS) tune-ups and HVAC setpoint optimizations. |
-| **11** | **`WET Scenario`** | Whole-Building Energy Transformation (WET) scenario modeling deep energy retrofits. |
-| **12** | **`1960s Smart Scale`** | Specialized decarbonization strategy tailored for aging 1960s post-war commercial and residential archetypes. |
-| **13** | **`Electrification Push`** | Playbook evaluating the conversion of fossil-based heating systems to electric heat pumps. |
+| **11** | **`Pivot_Age_vs_Penalty`** | Analytical pivot table computing total GHG emissions (`MT CO₂e`) and average penalty rate (`$/ft²`) grouped descending by construction decade (`1960s`, `1920s`, `1970s`, `1950s`, `1930s`...). |
+| **12** | **`Sheet2`** | Core analytical data model supporting the construction decade (`Age Factor`) calculations and Local Law 97 statutory rate lookups. |
+| **13** | **`Sheet3`** | Core analytical data model computing the distribution of property counts (`3,110 properties in 81-100 bracket`) and aggregate emissions (`~2.3M MT CO₂e in 61-80 bracket`) across ENERGY STAR score quantiles. |
+| **14** | **`Sheet4`** | Core analytical data model aggregating carbon emissions geographically across the 5 boroughs (`Treemap Engine` - Manhattan `$5.40M MT CO₂e`) and across primary property archetypes (`Horizontal Bar Engine` - Multifamily Housing vs. Office). |
 
 ---
 
