@@ -33,7 +33,7 @@ The **Application Layer (`application/`)** hosts the full-stack, highly interact
 ```mermaid
 flowchart LR
     RAW["📥 NYC LL84 Raw Data\n(Open Data Portal Dump)"]:::raw --> CLEAN["🧹 Forensic Data Hygiene\nCleaning Pipeline → 11,639 Cleaned Records"]:::clean
-    CLEAN --> EXCEL["📊 Excel C-Suite Dashboard\n(13-Sheet Financial Model)"]:::excel
+    CLEAN --> EXCEL["📊 Excel C-Suite Dashboard\n(16-Sheet Financial Model)"]:::excel
     CLEAN --> DATA["📊 input.xlsx / results.csv\nCleaned Portfolio Database"]:::data
     DATA --> CORE["🖥️ Streamlit Core Engine\napp.py Web Dashboard"]:::core
     ML["🤖 ../models/ll97_model.joblib\nRandom Forest Predictor"]:::ml --> CORE
@@ -41,6 +41,7 @@ flowchart LR
     CORE --> T2["🛠️ Tab 2: Mitigation Playground"]:::tab
     CORE --> T3["🤖 Tab 3: ML Predictor"]:::tab
     CORE --> T4["💼 Tab 4: Financial Playbooks"]:::tab
+    CORE --> T5["💬 Tab 5: AI Executive Co-Pilot & Chatbot"]:::tab
 
     classDef raw fill:#0d1526,stroke:#64748b,stroke-width:2px,color:#e2e8f0
     classDef clean fill:#0d1526,stroke:#00E5FF,stroke-width:2px,color:#ffffff
@@ -99,6 +100,12 @@ Delivers rigorous capital allocation and financial sensitivity analysis:
   4. *1930s WET Systems (Wastewater Heat Recovery)* — **12.25 yr payback**
   5. *Electrification Push (Fuel Oil #4 to Heat Pumps)* — **10.38 yr payback**
 - **Self-Funding Financial Engineering Model**: Demonstrates how ultra-fast payback Phase 1 projects generate immediate operational savings to de-risk and fund deeper capital investments.
+
+### 5️⃣ Tab 5 — 💬 AI Executive Co-Pilot & Chatbot
+Delivers a dedicated full-page conversational intelligence center and real-time visualization portal:
+- **Dual-Engine Strategic Chat Interface**: Interactive full-width chat terminal where asset owners and sustainability directors can query the entire 11,639-property portfolio in natural English or Arabic (`"What are the top 5 emitting property types across Manhattan?"`, `"Compare CAPEX requirements vs fine savings for 1930s buildings"`).
+- **Dynamic On-the-Fly Plotly Chart Generation**: Automatically synthesizes complex quantitative answers into custom, interactive Plotly visualizations (Bar, Pie, Line, and Scatter charts) embedded directly inside the conversation flow.
+- **Offline / Rate-Limit Safe Fallback Engine**: If no API key is provided or during rate limits (`HTTP 429`), the local dataset engine seamlessly intercepts queries to compute accurate financial totals, averages, and generate instant charts from `sample_nyc_energy.xlsx` without external connectivity.
 
 ---
 

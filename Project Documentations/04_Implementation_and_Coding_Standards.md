@@ -74,7 +74,7 @@ flowchart TD
     ROOT --> DATA["📁 data/\n• Clean_Data_Pipeline.py\n• sample_nyc_energy.xlsx"]:::pkg
     ROOT --> DB["📁 database/\n• carbon_heist_schema_mysql.sql\n• carbon_heist_schema_mssql.sql"]:::pkg
     ROOT --> ML["📁 models/\n• train_ll97_model.py\n• ll97_playground.py & .joblib"]:::pkg
-    ROOT --> EXCEL["📁 Excel Project/\n• Co2 Project.xlsx (13 Sheets)"]:::pkg
+    ROOT --> EXCEL["📁 Excel Project/\n• Co2 Project.xlsx (16 Sheets)"]:::pkg
 
     classDef root fill:#161B22,stroke:#00FF66,stroke-width:2px,color:#00FF66
     classDef pkg fill:#0D1117,stroke:#30363D,stroke-width:2px,color:#E6EDF3

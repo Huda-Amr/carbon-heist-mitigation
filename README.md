@@ -123,12 +123,12 @@ All academic and technical deliverables for the **Data Analysis & Engineering Tr
 ```mermaid
 flowchart TD
     A["📥 STAGE 1: Municipal Raw Data Ingestion\nNYC LL84 Open Data Portal (Raw Municipal Dump)"]:::stage --> B["🧹 STAGE 2: Forensic Data Cleaning & Hygiene\n8-Step Automated Pipeline → Validated Portfolio (11,639 Cleaned Records)"]:::clean
-    B --> EX["📊 STAGE 3: Excel Executive C-Suite Dashboard\n13-Sheet Interactive Financial Model & KPI Dashboard"]:::excel
+    B --> EX["📊 STAGE 3: Excel Executive C-Suite Dashboard\n16-Sheet Interactive Financial Model & KPI Dashboard"]:::excel
     B --> C["🗄️ STAGE 4: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
     C --> D["🤖 STAGE 5: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
     EX --> E["🗺️ STAGE 6: Prescriptive Capital Roadmap\n5-Phase Self-Funding Decarbonization Pipeline"]:::stage
     D --> E
-    E --> F["🖥️ STAGE 7: Full-Stack Web Application\nStreamlit & Plotly Interactive Decision Dashboard"]:::output
+    E --> F["🖥️ STAGE 7: Full-Stack Web Application\n5-Tab Streamlit Dashboard + Dual-Engine AI Chatbot"]:::output
 
     classDef stage fill:#161B22,stroke:#30363D,stroke-width:2px,color:#C9D1D9,font-size:14px
     classDef clean fill:#0D1117,stroke:#00E5FF,stroke-width:2px,color:#00E5FF,font-size:14px
@@ -153,8 +153,8 @@ carbon-heist-mitigation/
 │   └── 📄 Carbon_Heist_Mitigation_Documentation.docx
 │
 ├── 📁 Excel Project/               # Domain Reference & Financial Engineering Models
-│   ├── 📄 README.md                # Guide to all 13 financial engineering sheets
-│   └── 📊 Co2 Project.xlsx         # 13-sheet comprehensive LL97 compliance & retrofit workbook
+│   ├── 📄 README.md                # Guide to all 16 financial engineering sheets
+│   └── 📊 Co2 Project.xlsx         # 16-sheet comprehensive LL97 compliance & retrofit workbook
 │
 ├── 📁 application/                 # Presentation & UI Layer
 │   ├── 📄 README.md                # Dashboard setup & usage instructions
