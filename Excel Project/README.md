@@ -19,7 +19,7 @@ flowchart TD
     RAW["1️⃣ Data & 2️⃣ Clean Sheets\nRaw municipal LL84 benchmarking data & filtered 50k+ sq. ft. subset"]:::raw --> AN["3️⃣ Analysis & 4️⃣ Data Cards\nDescriptive statistics, EUI intensity & macro portfolio constants"]:::an
     AN --> SENS["5️⃣ Sensitivity & 6️⃣ Scenario Sheets\nCAPEX stress-testing, weather shock absorbers & multi-year paths"]:::sens
     SENS --> FIN["7️⃣ Summary Table, 8️⃣ CAPEX & Breakdown & 9️⃣ OPEX & Maintenance Breakdown\nComprehensive strategic financial matrix, granular CAPEX itemization & itemized annual OPEX"]:::fin
-    FIN --> EXEC["🔟 Executive Summary & 1️⃣1️⃣ Factors Dashboard\nC-Suite portfolio portals & macro risk drivers (Age, Geography, EUI & Archetypes)"]:::cards
+    FIN --> EXEC["🔟 Portfolio Roadmap & 1️⃣1️⃣ Factors Dashboard\nC-Suite strategic roadmap & macro risk drivers (Age, Geography, EUI & Archetypes)"]:::cards
     EXEC --> PB1["1️⃣2️⃣ Surgical Strike\nImmediate Low-Cost BMS/VFD Interventions ($20.6M/yr Net Savings | 8-Day Payback)"]:::pb
     EXEC --> PB2["1️⃣3️⃣ Retro-commissioning\nHVAC RCx & Setpoint Tuning ($243.6M/yr Maximum Fine Savings | 3.29-Yr Payback)"]:::pb
     EXEC --> PB3["1️⃣4️⃣ WET Scenario\nPre-War 1930s Historic Masonry Wastewater Heat Recovery ($122.4M/yr Saved)"]:::pb
@@ -65,10 +65,10 @@ Our master workbook (`Co2 Project.xlsx`) is logically structured into three dist
 ### 👑 II. Comprehensive Financial Breakdowns & Executive Portals (Sheets 7–11)
 | # | Sheet Name | Description & Financial Architecture | Key Visualizations & Features |
 | :---: | :--- | :--- | :--- |
-| **7** | **`Summary Table`** | **Master Strategic Executive Matrix:** Consolidated portfolio summary detailing unmitigated fine exposure (`$2,830.68M`), total 5-Playbook capital investment (`$4,976.80M`), recurring annual savings (`$656.63M/yr`), and blended capital payback (`6.97 Years`). | Master C-Suite 5-Phase Playbook matrix and macroeconomic cascade table. |
+| **7** | **`Summary Table`** | **Master Strategic Executive Matrix:** Consolidated portfolio summary detailing unmitigated fine exposure (`$2,830.68M`), total 5-Playbook capital investment (`$4,976.80M`), recurring annual savings (`$656.63M/yr`), and blended capital payback (`7.58 Years`). | Master C-Suite 5-Phase Playbook matrix and macroeconomic cascade table. |
 | **8** | **`CAPEX & Breakdown`** | **Granular Itemization of Capital Expenditure:** Detailed engineering and unit-cost breakdown (`$/ft²`, `$/building`) across equipment, labor, mechanical sub-systems, and 50% government PPP/grant subsidies for all 5 playbooks. | Itemized cost allocation rates (`Level 2 Audits: $15K/bldg`, `BMS Optimization: $12.5K/bldg`, `Steam Traps: $12.5K/bldg`). |
 | **9** | **`OPEX & Maintenance Breakdown`** | **Granular Operating Expenditure & Maintenance Schedules:** Comprehensive breakdown of recurring annual maintenance costs, operational labor overhead, sensor replacements, and ongoing measurement & verification (`M&V`) expenses. | Itemized OPEX offsets and annual net cash flow calculations verifying long-term asset profitability. |
-| **10** | **`Executive Summary`** | **C-Suite Presentation Portal:** High-level narrative overview and executive briefing dashboard designed for asset managers, real estate investment committees, and regulatory authorities. | High-level portfolio overview cards (`THE CARBON HEIST` - 11,639 Properties across NYC). |
+| **10** | **`Portfolio Roadmap`** | **Strategic Multi-Year Portfolio Roadmap:** Executive C-Suite presentation portal outlining the phased 6-year execution trajectory, cumulative fine elimination milestones, and portfolio transformation pathways from unmitigated risk (`$2.83B`) to residual compliance. | High-level strategic roadmap cards and executive presentation views (`THE CARBON HEIST` - 11,639 Properties across NYC). |
 | **11** | **`Factors`** | **Forensic Carbon Drivers Dashboard:** Consolidated visual portal analyzing macro-level risk drivers across Age (`Decade`), Geography (`Borough`), Efficiency (`ENERGY STAR`), and Property Archetypes. | 1. **`Building Vintage Analysis: Total GHG Emissions vs. Penalty Intensity ($/ft²)`**<br/>2. **`NYC Borough Carbon Emissions Distribution (MT CO₂e / Year)`**<br/>3. **`Carbon Concentration by ENERGY STAR Bracket (1–100)`**<br/>4. **`Carbon Emissions by Property Archetype (MT CO₂e / Year)`** |
 
 ---
