@@ -80,6 +80,8 @@ flowchart LR
 | **TC&#8209;05** | **Machine&nbsp;Learning** | Outlier Alignment Parity | Ensure `train_ll97_model.py` and `ll97_playground.py` match | Both scripts filter `Site EUI < 2000` | Both scripts yield exact **81.65%** accuracy | **🟢&nbsp;PASS** |
 | **TC&#8209;06** | **Financial&nbsp;Engine** | LL97 Statutory Fine Calculation | 1930s Asset (150k sq. ft., predicted 1,422.1 MT CO₂e) | Exact calculation: **$2.54 penalty / sq. ft.** | Verified exact match (**$2.54/ft²**) | **🟢&nbsp;PASS** |
 | **TC&#8209;07** | **UI&nbsp;/&nbsp;Dashboard** | Interactive Slider Recalculation | Adjust Energy Star slider from 40 to 85 | Instant chart update showing reduced carbon penalty | Rendered under 0.3s | **🟢&nbsp;PASS** |
+| **TC&#8209;08** | **AI&nbsp;Co&#8209;Pilot&nbsp;/&nbsp;Tab&nbsp;5** | Conversational Query & Dynamic Plotly Generation | Query Tab 5 (`"Show top 5 emitting property types across Manhattan in a bar chart"`) | System parses intent, calculates totals from local dataset, and renders interactive Plotly chart inside chat | Successfully generated chart & text response | **🟢&nbsp;PASS** |
+| **TC&#8209;09** | **AI&nbsp;Co&#8209;Pilot&nbsp;/&nbsp;Tab&nbsp;5** | API Rate-Limit Shielding (`HTTP 429` / No API Key) | Trigger chat query without Gemini API key or during quota exhaustion | System catches exception and routes prompt to embedded local quantitative charting engine without crashing | Zero downtime, instant local chart fallback | **🟢&nbsp;PASS** |
 
 ---
 

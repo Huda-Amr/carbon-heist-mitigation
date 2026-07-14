@@ -70,7 +70,7 @@ The codebase rigorously adheres to standard software engineering guidelines acro
 
 ```mermaid
 flowchart TD
-    ROOT["📁 carbon-heist-mitigation/ (Workspace Root)"]:::root --> APP["📁 application/\n• app.py (Streamlit UI)\n• input.xlsx & results.csv"]:::pkg
+    ROOT["📁 carbon-heist-mitigation/ (Workspace Root)"]:::root --> APP["📁 application/\n• app.py (Streamlit 5-Tab UI + AI Chatbot)\n• input.xlsx & results.csv"]:::pkg
     ROOT --> DATA["📁 data/\n• Clean_Data_Pipeline.py\n• sample_nyc_energy.xlsx"]:::pkg
     ROOT --> DB["📁 database/\n• carbon_heist_schema_mysql.sql\n• carbon_heist_schema_mssql.sql"]:::pkg
     ROOT --> ML["📁 models/\n• train_ll97_model.py\n• ll97_playground.py & .joblib"]:::pkg
@@ -85,11 +85,12 @@ flowchart TD
 ## 4.3 Security & Error Handling Architecture
 
 > [!TIP]
-> ### **Runtime Exception Shielding**
-> All external CLI and UI user inputs pass through explicit numeric type coercion and guardrail checks (`pd.to_numeric(errors='coerce')`) to eliminate unhandled runtime exceptions.
+> ### **Runtime Exception Shielding & Fallback Intercept**
+> All external CLI, UI user inputs, and cloud AI API calls (`Google Gemini`) pass through explicit type coercion (`pd.to_numeric`) and exception-catching guardrails (`try-except`) to eliminate unhandled runtime exceptions.
 
 - **Data Validation:** All external user inputs in `app.py` and `ll97_playground.py` are wrapped in type coercion blocks (`float()`, `pd.to_numeric(errors='coerce')`) to prevent unexpected runtime crashes or unhandled exceptions.
 - **Outlier Guardrails:** Predictive models enforce physical domain guardrails (`Site EUI < 2000`, `GFA > 0`) to prevent out-of-distribution hallucinations.
+- **Dual-Engine AI Rate-Limit Shielding:** External Google Gemini API calls (`gemini-2.5-flash` / `gemini-2.0-flash`) inside `Tab 5` are wrapped in resilient `try-except` blocks handling API quota limits (`HTTP 429`) and missing keys. Upon encountering cloud exceptions, the system automatically routes the prompt to an internal local quantitative charting engine that queries `sample_nyc_energy.xlsx` and synthesizes exact Plotly visualizations without dropping the user session.
 - **SQL Injection Prevention:** Database queries and schema definitions utilize strict parameterized schemas rather than string concatenation.
 
 ---
@@ -123,6 +124,12 @@ gitGraph
     commit id: "Build Interactive App UI"
     checkout main
     merge feature/streamlit-ui id: "Production Release"
+    branch feature/ai-chatbot-tab5
+    checkout feature/ai-chatbot-tab5
+    commit id: "Integrate Gemini 2.5 Flash SDK"
+    commit id: "Build Local Fallback Chart Engine"
+    checkout main
+    merge feature/ai-chatbot-tab5 id: "Final Suite Release"
 ```
 
 ---

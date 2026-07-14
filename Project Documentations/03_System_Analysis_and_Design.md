@@ -173,7 +173,7 @@ flowchart LR
 
 ---
 
-### Sequence Diagram: Real-Time Asset Analysis Workflow
+### Sequence Diagram: Real-Time Asset Analysis Workflow (`Tabs 1–4`)
 
 ```mermaid
 sequenceDiagram
@@ -189,6 +189,31 @@ sequenceDiagram
     UI->>Engine: Calculate Statutory Exposure (Emissions * $268) / GFA
     Engine-->>UI: Return Penalty Liability ($/sq. ft.) & Peer Gap %
     UI->>User: Render Visual KPI Cards & Strategic Playbook Recommendations
+```
+
+---
+
+### Sequence Diagram: Dual-Engine AI Co-Pilot Workflow (`Tab 5`)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Exec as C-Suite Executive
+    participant Tab5 as Streamlit Tab 5 UI
+    participant Gemini as Google Gemini API (gemini-2.5-flash)
+    participant Local as Local Quantitative Engine (sample_nyc_energy.xlsx)
+    participant Plotly as Dynamic Plotly Renderer
+
+    Exec->>Tab5: Submit Query ("Show top 5 boroughs by fine in a pie chart")
+    alt API Key Provided & Cloud Mode Active
+        Tab5->>Gemini: Transmit Prompt + Portfolio Metadata & Schema Context
+        Gemini-->>Tab5: Return Structured JSON / Markdown + Chart Spec
+    else API Rate Limit (HTTP 429) or Offline / No API Key
+        Tab5->>Local: Intercept Query -> Regex Parse Intent & Aggregation Target
+        Local-->>Tab5: Compute Exact Data Totals & Synthesize Fallback Chart Spec
+    end
+    Tab5->>Plotly: Execute Chart Rendering Engine (`st.plotly_chart`)
+    Plotly-->>Exec: Display Interactive Visual Chart + Quantitative Audit Text
 ```
 
 ---

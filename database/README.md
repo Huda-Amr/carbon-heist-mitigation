@@ -48,14 +48,14 @@ erDiagram
 
 ## 🏛️ Normalized Schema Architecture (3NF)
 
-The database design splits wide municipal spreadsheets into clean, normalized relational entities:
-- **`CITIES` & `BOROUGHS`:** Standardized geographical lookups enforcing unique address hierarchy.
-- **`PROPERTY_TYPES`:** Categorical classifications for commercial, residential, and institutional buildings.
+The database design splits wide municipal spreadsheets into clean, normalized relational entities that directly mirror our **16-sheet Excel financial engineering model (`Co2 Project.xlsx`)** and power our **5-Tab Streamlit Dashboard (`application/app.py`)**:
+- **`CITIES` & `BOROUGHS`:** Standardized geographical lookups enforcing unique address hierarchy across NYC's 5 boroughs.
+- **`PROPERTY_TYPES`:** Categorical classifications for commercial, residential, and institutional buildings (`11,639` assets).
 - **`PROPERTIES`:** Core entity storing physical building dimensions (`year_built`, `gfa_ft2`).
 - **`ENERGY_METRICS` & `EMISSION_METRICS`:** Annual energy consumption facts (`site_eui`, `energy_star_score`) and carbon footprint metrics (`total_ghg_emissions`).
-- **`LL97_PENALTIES`:** Statutory fine exposure (`base_ll97_penalty`, `penalty_per_ft2`).
+- **`LL97_PENALTIES`:** Statutory fine exposure (`base_ll97_penalty`, `penalty_per_ft2` strictly calculated as $\text{Emissions} \times \$268$).
 - **`PROPERTY_FUEL_USAGE`:** Granular breakdown of heating oil, district steam, natural gas, and electricity consumption.
-- **`PROPERTY_ALERTS`:** Compliance diagnostics and data integrity flags.
+- **`PROPERTY_ALERTS`:** Compliance diagnostics, data integrity flags, and audit triggers.
 
 ---
 

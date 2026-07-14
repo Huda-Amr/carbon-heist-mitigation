@@ -10,8 +10,8 @@ Welcome to the **Machine Learning Layer** of the **Carbon Heist Mitigation Platf
 | :--- | :--- |
 | **`train_ll97_model.py`** | Automated Python model training pipeline (`scikit-learn`, `joblib`). Loads cleaned records, applies outlier guardrails (**Site EUI < 2000**), encodes categorical features, trains a **Random Forest Regressor**, validates accuracy (**R² = 81.65%**), and exports serialized models. |
 | **`ll97_playground.py`** | Interactive command-line simulation playground. Allows engineers to input custom building specifications (Year Built, GFA, Energy Star, Borough, Property Type) and inspect predicted emissions and financial penalties in real time. |
-| **`ll97_model.joblib`** | Serialized trained **Random Forest Regressor** model (`n_estimators=150`, `max_depth=20`) ready for production inference. |
-| **`ll97_encoders.joblib`** | Serialized categorical feature encoders ensuring consistency across training, testing, and UI inference. |
+| **`ll97_model.joblib`** | Serialized trained **Random Forest Regressor** model (`n_estimators=150`, `max_depth=20`) ready for production inference inside **Tab 3 (`ML Predictor`)** of our **5-Tab Streamlit Dashboard (`application/app.py`)**. |
+| **`ll97_encoders.joblib`** | Serialized categorical feature encoders ensuring 100% data alignment across training, testing, CLI simulation (`ll97_playground.py`), and real-time dashboard UI inference. |
 
 ---
 

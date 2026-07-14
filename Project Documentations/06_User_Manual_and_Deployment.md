@@ -126,20 +126,19 @@ python Clean_Data_Pipeline.py
 > ### **Decarbonization Scenario Simulation**
 > Use the UI sliders in `app.py` to test how Energy Star improvements or Electrification upgrades immediately reduce statutory fine exposure ($/sq. ft.).
 
-### Navigating the Executive Streamlit Dashboard (`app.py`)
+### Navigating the 5-Tab Executive Streamlit Dashboard (`app.py`)
 1. **Sidebar Controls (Asset Profile Setup):**
    - Choose the building **Borough** (Manhattan, Queens, Brooklyn, Bronx, Staten Island).
    - Select the **Primary Property Type** (e.g., Office, Multifamily Housing, Retail Store).
    - Set the **Year Built** and **Gross Floor Area (GFA)** slider.
-2. **Review Real-Time KPI Cards:**
-   - **AI Predicted Emissions:** View annual greenhouse gas footprint in Metric Tons CO₂e.
-   - **Carbon Liability ($/sqft):** Inspect your financial risk exposure under NYC Local Law 97 statutory fine rates ($268/MT).
-   - **Peer Benchmark Gap:** See immediately whether your asset outperforms or lags behind similar buildings across New York City.
-3. **Simulate Engineering Retrofit Playbooks:**
-   - Navigate to the **Decarbonization Simulation** section to model HVAC retro-commissioning, window/envelope insulation, and electrification upgrades to calculate your annual penalty savings.
-4. **Interact with the AI Executive Co-Pilot & Chatbot (Header Section):**
-   - **Generative AI Mode (`Gemini 2.5 Flash`):** Connect a Google Gemini API key to ask natural-language strategic questions and dynamically generate custom interactive Plotly charts.
-   - **Local Quantitative Engine Mode:** Ask questions (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) even without an API key or during rate limits (`HTTP 429`) to instantly render interactive Plotly charts and executive audits directly from `sample_nyc_energy.xlsx`.
+2. **Review Real-Time KPI Cards & Tab Navigation:**
+   - **`Tab 1: Problem Analysis`** – View portfolio-wide emissions distributions, top worst offending properties (`Outliers`), and Site EUI vs. Statutory Fine correlation charts.
+   - **`Tab 2: Mitigation Playground`** – Adjust interactive sensitivity sliders (ENERGY STAR score targets, green tariff % shift, heating electrification) to instantly observe recalculated fine avoidance ($/sq. ft.).
+   - **`Tab 3: ML Predictor`** – Test building parameters against our serialized Random Forest Regressor (`ll97_model.joblib`) to infer annual greenhouse gas emissions in real time (`R² = 81.65%`).
+   - **`Tab 4: Financial Playbooks`** – Explore the 5 Decarbonization Playbooks (`Surgical Strike`, `Retro-commissioning`, `1960s Smart Scale`, `WET Systems`, `Electrification Push`), review capital expenditure (`CAPEX`) schedules, and inspect payback horizons.
+   - **`Tab 5: AI Executive Co-Pilot & Chatbot`** – Converse directly with our Dual-Engine AI Co-Pilot in natural English or Arabic:
+     - **Generative AI Mode (`Gemini 2.5 Flash`):** Connect a Google Gemini API key (`gemini-2.5-flash`) to ask complex strategic questions and dynamically generate custom interactive Plotly charts on-the-fly.
+     - **Local Quantitative Engine Mode:** Ask questions (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) even without an API key or during rate limits (`HTTP 429`) to instantly render interactive Plotly charts (`Bar`, `Pie`, `Line`) and executive audits directly from `sample_nyc_energy.xlsx`.
 
 ---
 
