@@ -104,7 +104,6 @@ gantt
     title Implementation Timeline & Project Roadmap (16 Weeks)
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
-    displayMode compact
     section 1. Architecture
     Requirements & Scope      :a1, 2026-05-12, 12d
     Database & ERD Design     :a2, after a1, 12d
