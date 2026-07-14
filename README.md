@@ -104,17 +104,17 @@ We built an end-to-end data engineering, machine learning, and interactive finan
 
 ## 📚 Official Project Documentation Suite
 
-All academic and technical deliverables for the **Data Analysis & Engineering Track** are available in the [`docs/`](./docs/) directory:
+All academic and technical deliverables for the **Data Analysis & Engineering Track** are available in the [`Project Documentations/`](./Project%20Documentations/) directory:
 
 | Doc ID | Deliverable Title | Core Focus & Highlights | Status | Read Link |
 | :---: | :--- | :--- | :---: | :---: |
-| **01** | **Project Planning & Management** | Project Proposal, Sequential Gantt Roadmap, Team Roles, Risk Matrix | 🟢 Complete | [📖 Doc 01](./docs/01_Project_Proposal_and_Planning.md) |
-| **02** | **Requirements Gathering** | Stakeholder Persona Matrix, User Stories, Functional & NFR Specs | 🟢 Complete | [📖 Doc 02](./docs/02_Requirements_and_Stakeholders.md) |
-| **03** | **System Analysis & Design** | 5-Layer Architecture, Normalized ERD, DFD Levels, Sequence Diagrams | 🟢 Complete | [📖 Doc 03](./docs/03_System_Analysis_and_Design.md) |
-| **04** | **Implementation & Standards** | PEP 8 Coding Guidelines, Modular Python Packages, Security Audits | 🟢 Complete | [📖 Doc 04](./docs/04_Implementation_and_Coding_Standards.md) |
-| **05** | **Testing & Quality Assurance** | End-to-End Verification Matrix, Pipeline Assertions, Bug Tracking | 🟢 Complete | [📖 Doc 05](./docs/05_Testing_and_Quality_Assurance.md) |
-| **06** | **User Manual & Deployment** | Step-by-Step Installation Guide, CLI Operations, Troubleshooting | 🟢 Complete | [📖 Doc 06](./docs/06_User_Manual_and_Deployment.md) |
-| **DOCX** | **Official Word Documentation** | Comprehensive formatted academic report with executive KPI cards | 🟢 Complete | [📥 Word File](./docs/Carbon_Heist_Mitigation_Documentation.docx) |
+| **01** | **Project Planning & Management** | Project Proposal, Sequential Gantt Roadmap, Team Roles, Risk Matrix | 🟢 Complete | [📖 Doc 01](./Project%20Documentations/01_Project_Proposal_and_Planning.md) |
+| **02** | **Requirements Gathering** | Stakeholder Persona Matrix, User Stories, Functional & NFR Specs | 🟢 Complete | [📖 Doc 02](./Project%20Documentations/02_Requirements_and_Stakeholders.md) |
+| **03** | **System Analysis & Design** | 5-Layer Architecture, Normalized ERD, DFD Levels, Sequence Diagrams | 🟢 Complete | [📖 Doc 03](./Project%20Documentations/03_System_Analysis_and_Design.md) |
+| **04** | **Implementation & Standards** | PEP 8 Coding Guidelines, Modular Python Packages, Security Audits | 🟢 Complete | [📖 Doc 04](./Project%20Documentations/04_Implementation_and_Coding_Standards.md) |
+| **05** | **Testing & Quality Assurance** | End-to-End Verification Matrix, Pipeline Assertions, Bug Tracking | 🟢 Complete | [📖 Doc 05](./Project%20Documentations/05_Testing_and_Quality_Assurance.md) |
+| **06** | **User Manual & Deployment** | Step-by-Step Installation Guide, CLI Operations, Troubleshooting | 🟢 Complete | [📖 Doc 06](./Project%20Documentations/06_User_Manual_and_Deployment.md) |
+| **DOCX** | **Official Word Documentation** | Comprehensive formatted academic report with executive KPI cards | 🟢 Complete | [📥 Word File](./Project%20Documentations/Carbon_Heist_Mitigation_Documentation.docx) |
 
 ---
 
@@ -143,7 +143,7 @@ flowchart TD
 ```text
 carbon-heist-mitigation/
 │
-├── 📁 docs/                        # Official 6-Part Technical & Academic Documentation Suite
+├── 📁 Project Documentations/         # Official 6-Part Technical & Academic Documentation Suite
 │   ├── 📄 01_Project_Proposal_and_Planning.md
 │   ├── 📄 02_Requirements_and_Stakeholders.md
 │   ├── 📄 03_System_Analysis_and_Design.md
@@ -362,6 +362,6 @@ streamlit run app.py
 [![Launch Live App](https://img.shields.io/badge/🌐%20LIVE%20APP-LAUNCH%20ONLINE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)&nbsp;
 [![Return to Top](https://img.shields.io/badge/⬆️%20BACK%20TO-TOP%20OF%20PAGE-00FF66?style=for-the-badge&logo=github&logoColor=black)](#top)&nbsp;
 [![Main Repo Home](https://img.shields.io/badge/🏠%20MAIN%20REPOSITORY-HOME-181717?style=for-the-badge&logo=github)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
-[![Academic Docs Suite](https://img.shields.io/badge/📑%20EXPLORE-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](./docs/README.md)
+[![Academic Docs Suite](https://img.shields.io/badge/📑%20EXPLORE-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](./Project%20Documentations/README.md)
 
 </div>
