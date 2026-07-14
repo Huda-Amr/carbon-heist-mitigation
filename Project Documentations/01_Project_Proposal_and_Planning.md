@@ -105,19 +105,19 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
     section 1. Architecture
-    Requirements & Scope      :a1, 2026-05-12, 12d
-    Database & ERD Design     :a2, after a1, 12d
+    Requirements & Scope  :a1, 2026-05-12, 12d
+    Database & ERD Design :a2, after a1, 12d
     section 2. Data Pipeline
-    Forensic ETL Pipeline     :b1, after a2, 14d
-    Audit & Validation Report :b2, after b1, 10d
+    Forensic ETL Pipeline :b1, after a2, 14d
+    Audit & Validation    :b2, after b1, 12d
     section 3. AI Modeling
-    Feature Engineering       :c1, after b2, 12d
-    ML Training & Evaluation  :c2, after c1, 12d
+    Feature Engineering   :c1, after b2, 12d
+    ML Training & Eval    :c2, after c1, 12d
     section 4. Dashboard
-    Streamlit 5-Tab UI        :d1, after c2, 14d
-    Plotly & AI Chatbot       :d2, after d1, 10d
+    Streamlit 5-Tab UI    :d1, after c2, 14d
+    Plotly & AI Chatbot   :d2, after d1, 12d
     section 5. Deployment
-    QA Testing & Docs Suite   :e1, after d2, 12d
+    QA Testing & Docs     :e1, after d2, 12d
 ```
 
 ### Detailed Milestone Execution Matrix
