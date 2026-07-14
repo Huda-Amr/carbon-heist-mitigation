@@ -104,31 +104,32 @@ gantt
     title Implementation Timeline & Project Roadmap (16 Weeks)
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
+    displayMode compact
     section 1. Architecture
-    Requirements & Scope    :a1, 2026-05-12, 7d
-    Database & ERD Design   :a2, 2026-05-19, 7d
+    Requirements & Scope      :a1, 2026-05-12, 12d
+    Database & ERD Design     :a2, after a1, 12d
     section 2. Data Pipeline
-    Forensic ETL & Hygiene  :b1, 2026-05-26, 10d
-    Audit & Reporting       :b2, 2026-06-06, 5d
+    Forensic ETL Pipeline     :b1, after a2, 14d
+    Audit & Validation Report :b2, after b1, 10d
     section 3. AI Modeling
-    Feature Engineering     :c1, 2026-06-11, 7d
-    ML Training & Evaluation:c2, 2026-06-18, 7d
+    Feature Engineering       :c1, after b2, 12d
+    ML Training & Evaluation  :c2, after c1, 12d
     section 4. Dashboard
-    Streamlit 5-Tab UI      :d1, 2026-06-25, 7d
-    Plotly & AI Chatbot     :d2, 2026-07-02, 5d
+    Streamlit 5-Tab UI        :d1, after c2, 14d
+    Plotly & AI Chatbot       :d2, after d1, 10d
     section 5. Deployment
-    QA Testing & Docs Suite :e1, 2026-07-07, 5d
+    QA Testing & Docs Suite   :e1, after d2, 12d
 ```
 
 ### Detailed Milestone Execution Matrix
 
 | Phase ID & Title | Key Milestone & Technical Deliverable | Target Completion | Duration | Verification Status |
 | :--- | :--- | :---: | :---: | :---: |
-| **Phase 1: Architecture** | Complete Stakeholder Requirements & 3NF Relational ERD (`carbon_heist_schema_mysql.sql` & `carbon_heist_schema_mssql.sql`) | May 22, 2026 | 22 Days | **🟢 Verified & Signed-Off** |
-| **Phase 2: Data Engineering** | Execute 8-Step Forensic Data Cleaning Pipeline & generate validated dataset (`sample_nyc_energy.xlsx`) + PDF Audit Report | Jun 12, 2026 | 21 Days | **🟢 Verified & Signed-Off** |
-| **Phase 3: AI & Predictive Engine** | Train and serialize Random Forest Regressor (`models/ll97_model.joblib`) with **$R^2 = 81.65\%$** & **$\text{MAE} = 212.99 \text{ MT}$** | Jul 02, 2026 | 20 Days | **🟢 Verified & Signed-Off** |
-| **Phase 4: Web Dashboard** | Deploy full-stack Streamlit application (`application/app.py`) featuring 5 interactive tabs and embedded AI Chatbot | Jul 19, 2026 | 17 Days | **🟢 Verified & Live Online** |
-| **Phase 5: Deployment & QA** | Conduct comprehensive QA Testing, standardize 16-sheet Excel reference, and publish official 6-part documentation suite | Jul 24, 2026 | 5 Days | **🟢 Verified & Published** |
+| **Phase 1: Architecture** | Complete Stakeholder Requirements & 3NF Relational ERD (`carbon_heist_schema_mysql.sql` & `carbon_heist_schema_mssql.sql`) | May 24, 2026 | 24 Days | **🟢 Verified & Signed-Off** |
+| **Phase 2: Data Engineering** | Execute 8-Step Forensic Data Cleaning Pipeline & generate validated dataset (`sample_nyc_energy.xlsx`) + PDF Audit Report | Jun 17, 2026 | 24 Days | **🟢 Verified & Signed-Off** |
+| **Phase 3: AI & Predictive Engine** | Train and serialize Random Forest Regressor (`models/ll97_model.joblib`) with **$R^2 = 81.65\%$** & **$\text{MAE} = 212.99 \text{ MT}$** | Jul 11, 2026 | 24 Days | **🟢 Verified & Signed-Off** |
+| **Phase 4: Web Dashboard** | Deploy full-stack Streamlit application (`application/app.py`) featuring 5 interactive tabs and embedded AI Chatbot | Aug 04, 2026 | 24 Days | **🟢 Verified & Live Online** |
+| **Phase 5: Deployment & QA** | Conduct comprehensive QA Testing, standardize 16-sheet Excel reference, and publish official 6-part documentation suite | Aug 16, 2026 | 16 Days | **🟢 Verified & Published** |
 
 ---
 
@@ -148,11 +149,11 @@ gantt
 
 | Risk ID | Risk Title & Technical Description | Likelihood | Impact Level | Governance & Mitigation Strategy |
 | :---: | :--- | :---: | :---: | :--- |
-| **R-01** | **Forensic Data Anomalies & Noise:** Raw municipal open data dumps contain string typos ("Not Available", misspellings of Boroughs), extreme outliers, and null entries. | **High** 🔴 | **High** 🔴 | Implemented multi-stage cleaning assertions in `Clean_Data_Pipeline.py`, including regex-based borough normalization, explicit null mappings, and strict physical filtering (`Site EUI < 2000` & `GFA > 0`). |
-| **R-02** | **ML Regressor Overfitting:** High-dimensional building parameters might cause trees to memorize dataset noise rather than generalizable structural characteristics. | **Medium** 🟡 | **High** 🔴 | Enforced strict tree regularization (`RandomForestRegressor` with `max_depth=20`, `min_samples_split=5`, `n_estimators=150`) and validated on an independent 20% holdout test set (`R² = 81.65%`). |
-| **R-03** | **SQL Dialect Incompatibility:** Enterprise deployment targets vary between open-source MySQL/PostgreSQL engines and corporate Microsoft SQL Server (T-SQL) environments. | **Medium** 🟡 | **Medium** 🟡 | Engineered separate, dedicated DDL scripts (`carbon_heist_schema_mysql.sql` and `carbon_heist_schema_mssql.sql`) ensuring strict engine syntax adherence without translation wrappers. |
-| **R-04** | **Git Buffer Exceedance on ML Assets:** Large serialized model binary files (`ll97_model.joblib` ~70 MB) exceed standard Git HTTP push transmission buffers. | **High** 🔴 | **Medium** 🟡 | Configured Git transmission buffers (`http.postBuffer 524288000`) and structured modular encoder serialization (`ll97_encoders.joblib`) to guarantee smooth cloud synchronization. |
-| **R-05** | **Cloud LLM Rate-Limiting & Latency:** External cloud AI calls (`Google Gemini API`) may encounter rate limits (`HTTP 429`), network latency, or key expiration during executive presentations. | **Medium** 🟡 | **High** 🔴 | Integrated dual-engine fallback architecture inside `app.py`. If API limits occur or no key is present, the embedded local quantitative engine seamlessly intercepts queries and renders Plotly charts instantly from `sample_nyc_energy.xlsx`. |
+| <nobr>**R&#8209;01**</nobr> | **Forensic Data Anomalies & Noise:** Raw municipal open data dumps contain string typos ("Not Available", misspellings of Boroughs), extreme outliers, and null entries. | **High** 🔴 | **High** 🔴 | Implemented multi-stage cleaning assertions in `Clean_Data_Pipeline.py`, including regex-based borough normalization, explicit null mappings, and strict physical filtering (`Site EUI < 2000` & `GFA > 0`). |
+| <nobr>**R&#8209;02**</nobr> | **ML Regressor Overfitting:** High-dimensional building parameters might cause trees to memorize dataset noise rather than generalizable structural characteristics. | **Medium** 🟡 | **High** 🔴 | Enforced strict tree regularization (`RandomForestRegressor` with `max_depth=20`, `min_samples_split=5`, `n_estimators=150`) and validated on an independent 20% holdout test set (`R² = 81.65%`). |
+| <nobr>**R&#8209;03**</nobr> | **SQL Dialect Incompatibility:** Enterprise deployment targets vary between open-source MySQL/PostgreSQL engines and corporate Microsoft SQL Server (T-SQL) environments. | **Medium** 🟡 | **Medium** 🟡 | Engineered separate, dedicated DDL scripts (`carbon_heist_schema_mysql.sql` and `carbon_heist_schema_mssql.sql`) ensuring strict engine syntax adherence without translation wrappers. |
+| <nobr>**R&#8209;04**</nobr> | **Git Buffer Exceedance on ML Assets:** Large serialized model binary files (`ll97_model.joblib` ~70 MB) exceed standard Git HTTP push transmission buffers. | **High** 🔴 | **Medium** 🟡 | Configured Git transmission buffers (`http.postBuffer 524288000`) and structured modular encoder serialization (`ll97_encoders.joblib`) to guarantee smooth cloud synchronization. |
+| <nobr>**R&#8209;05**</nobr> | **Cloud LLM Rate-Limiting & Latency:** External cloud AI calls (`Google Gemini API`) may encounter rate limits (`HTTP 429`), network latency, or key expiration during executive presentations. | **Medium** 🟡 | **High** 🔴 | Integrated dual-engine fallback architecture inside `app.py`. If API limits occur or no key is present, the embedded local quantitative engine seamlessly intercepts queries and renders Plotly charts instantly from `sample_nyc_energy.xlsx`. |
 
 ---
 
