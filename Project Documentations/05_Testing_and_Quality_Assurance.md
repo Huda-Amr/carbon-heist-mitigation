@@ -126,7 +126,7 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 </div>
 
 
-## 6. Tableau BI Dashboard Verification Matrix
+## 5.5 Tableau BI Dashboard Verification Matrix
 | Test ID | Component | Verification Procedure | Expected Outcome | Status |
 | :---: | :--- | :--- | :--- | :---: |
 | **TAB-01** | **Data Extract Binding** | Open Interactive Dashboard.twbx offline without database connection. | All 9,840 records load instantly from internal .csv extract without prompts. | 🟢 Pass |

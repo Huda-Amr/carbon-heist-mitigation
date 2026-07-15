@@ -60,7 +60,10 @@ The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, mach
 
 ---
 
+
 ### 1.1.2 Core Platform Objectives
+- **Tableau Executive BI Portal (`Interactive Dashboard.twbx`):** A 3-page progressive visual analytics dashboard with a Royal Navy & Gold aesthetic (`#0D1321` / `#FFD700`), custom calculated fields (`LL97 Risk Category`, `Penalty Savings Potential`), and an embedded mobile-scannable QR code bridge to the web AI Co-Pilot.
+
 
 1. **Automated Municipal Data Hygiene & ETL Pipeline:** Build a resilient data engineering pipeline (`Clean_Data_Pipeline.py`) capable of ingesting raw NYC LL84 annual benchmarking datasets (11,000+ properties across 240+ variables), standardizing addresses, imputing missing data, filtering statistical outliers (`Site EUI < 2000`), and generating forensic audit reports (`LL97_Data_Cleaning_Report.pdf`).
 2. **Predictive Carbon AI Inference Engine:** Train and deploy a high-precision Random Forest Machine Learning Regression model (`models/ll97_model.joblib`) with **$R^2 = 81.65\%$** and **$\text{MAE} = 212.99 \text{ MT CO}_2\text{e}$** to forecast greenhouse gas emissions and carbon liability intensity (`$/sq. ft.`) based on building physical archetypes, construction era, gross floor area (`GFA`), and ENERGY STAR scores.
@@ -181,7 +184,3 @@ gantt
 [![Next Document](https://img.shields.io/badge/NEXT-DOC%2002:%20REQUIREMENTS-00E5FF?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)
 
 </div>
-
-
-## 4. Key Deliverables
-- **Tableau Executive BI Portal (`Interactive Dashboard.twbx`):** A 3-page progressive visual analytics dashboard with a Royal Navy & Gold aesthetic (`#0D1321` / `#FFD700`), custom calculated fields (`LL97 Risk Category`, `Penalty Savings Potential`), and an embedded mobile-scannable QR code bridge to the web AI Co-Pilot.

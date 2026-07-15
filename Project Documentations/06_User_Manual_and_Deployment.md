@@ -143,6 +143,17 @@ python Clean_Data_Pipeline.py
 
 ---
 
+
+### Navigating the Tableau Executive BI Portal (`Interactive Dashboard.twbx`)
+To open and present the standalone visual BI dashboard locally during C-Suite meetings:
+1. Navigate to the `carbon-heist-mitigation/Tableau/` folder.
+2. Double-click `Interactive Dashboard.twbx` to open inside **Tableau Desktop** (2022.3+) or **Tableau Reader**. Because it is a Packaged Workbook (`.twbx`), the audited data extract (`sample_nyc_energy.csv`) is bundled directly inside without external database setup friction.
+3. Use the bottom navigation tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) or the built-in golden navigation arrows (`⬅ ➡`) to cycle through the executive story.
+4. **Interactive Filtering:** Use the synchronized dropdown filters for `Borough` and `Primary Property Type` on Page 1 or Page 2 (`Apply to Worksheets ➔ All Using This Data Source`) to slice multi-dimensional liabilities instantly across all charts.
+5. **C-Suite Mobile Bridge:** Scan the embedded QR code (`#FFFFFF` border) on Page 3 with any iOS/Android mobile device to launch the live web portal (`Streamlit AI Co-Pilot`) directly from the boardroom screen.
+
+---
+
 ## 6.5 Database Initialization Guide
 
 To initialize the relational schema in your SQL server:
@@ -159,12 +170,3 @@ To initialize the relational schema in your SQL server:
 [![Download Word Report](https://img.shields.io/badge/DOWNLOAD-DOCX%20MASTER%20REPORT-9B51E0?style=for-the-badge)](./Carbon_Heist_Mitigation_Documentation.docx)
 
 </div>
-
-
-## 3. Launching the Application
-### 3.4 Launching the Tableau Executive BI Portal
-To open the standalone visual BI dashboard locally:
-1. Navigate to `carbon-heist-mitigation/Tableau/`.
-2. Open `Interactive Dashboard.twbx` inside **Tableau Desktop** or **Tableau Reader**.
-3. Cycle through the three tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) using the bottom navigation bar or golden arrows (`⬅ ➡`).
-4. Scan the embedded C-Suite QR code on Page 3 from your mobile device to launch the live web portal.
