@@ -57,7 +57,7 @@ Municipal carbon disclosure regulations (Local Law 97) present a complex data an
 
 
 ### Software Architecture (Six-Pillar Layered Architecture)
-Alongside the full-stack web application (`Pillar 5`), our architecture incorporates a packaged **Tableau Desktop (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`) Layer (`Pillar 6`)** operating directly on the validated `sample_nyc_energy.csv` master dataset. It delivers progressive 3-page visual storytelling (`NYC Monitor` ➔ `Compliance Performance` ➔ `Decarbonization Roadmap`) enhanced with diagnostic iconography and mobile QR bridging.
+Alongside the full-stack web application (`Pillar 5`), our architecture incorporates packaged **Power BI Desktop (`PowerBI/NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`) & Tableau Desktop (`Tableau/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`) Workbooks (`Pillar 6`)** operating directly on the validated `sample_nyc_energy.csv` master dataset. They deliver progressive 3-page visual storytelling (`Overview & Drivers` ➔ `Asset Granularity` ➔ `Decarbonization Roadmap`) enhanced with diagnostic iconography, custom DAX/Calculated measures, and mobile QR bridging.
 
 
 The system is designed as a modular **Layered Decision-Support Architecture** separating ETL processing, relational persistence, predictive AI modeling, and interactive visualization.

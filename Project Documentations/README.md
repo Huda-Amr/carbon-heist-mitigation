@@ -108,11 +108,10 @@ flowchart TD
 ---
 
 
-### 🏢 Visual Business Intelligence Layer (`Tableau/`)
-In addition to the 16-sheet Excel financial engineering model and live Streamlit web app, the project suite embeds a **3-Page Tableau Executive Business Intelligence Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`)**:
-- **Page 1: `NYC Energy Efficiency & Emissions Monitor`** — Macro geographic hotspot mapping (`10.56M MT CO₂e`) and decade-built baseline distribution across the five boroughs (`Manhattan 5.40M MT`, `Brooklyn 1.75M MT`).
-- **Page 2: `LL97 Compliance & Carbon Performance`** — Financial fine exposure (`$2.83 Billion`), top building liabilities (`Co-Op City` at `$0.04B/yr`), and compliance progress banners across all `11,638` properties.
-- **Page 3: `Decarbonization Roadmap`** — Sequential 6-playbook waterfall cascade tracing exposure from `1. Baseline Liability ($2,830M)` down to `Residual Net Liability ($2,189M)` paired with a **Live C-Suite QR Code Portal** (`Scan to Explore the Live Interactive C-Suite Portal`) linking physical presentations directly to the live online Tableau C-Suite Portal.
+### 🏢 Visual Business Intelligence Layer (`PowerBI/` & `Tableau/`)
+In addition to the 16-sheet Excel financial engineering model and live Streamlit web app, the project suite embeds **Dual-Engine Enterprise Visual BI Workbooks** (`Pillar 6`):
+- **Power BI Executive BI Portal (`NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`):** A standalone 3-page interactive dashboard (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) featuring Dark Royal Navy styling (`#0F172A`), custom DAX measures, and synchronized slicers for `Borough`, `Property Type`, and `Decade Built`.
+- **Tableau Executive BI Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`):** A packaged 3-page progressive visual analytics dashboard with Royal Navy & Gold aesthetics (`#0D1321` / `#FFD700`) and mobile-scannable QR bridging directly to our live Tableau Public portal.
 
 ---
 

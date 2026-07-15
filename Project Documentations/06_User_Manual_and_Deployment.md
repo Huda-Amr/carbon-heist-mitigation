@@ -145,12 +145,21 @@ python Clean_Data_Pipeline.py
 ---
 
 
-### Navigating the Tableau Executive BI Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`)
-To open and present the standalone visual BI dashboard locally during C-Suite meetings:
+### Navigating the Enterprise Visual BI Portals (`Power BI` & `Tableau`)
+
+#### 1. Power BI Executive BI Portal (`NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`)
+To open and present the Power BI visual analytics dashboard locally during executive meetings:
+1. Navigate to the `carbon-heist-mitigation/PowerBI/` folder.
+2. Double-click `NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix` to launch inside **Microsoft Power BI Desktop** (version 2023+). All `11,638` property records and DAX measures are embedded directly inside the workbook model.
+3. Cycle through the 3 progressive analytical pages (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) using the bottom tabs.
+4. **Interactive Multi-Dimensional Filtering:** Use the synchronized left-hand **Slicers Pane** (`Borough`, `Property Type`, `Decade Built`) or click directly on any treemap block or bar sector to cross-filter the entire dashboard dynamically in real time.
+
+#### 2. Tableau Executive BI Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`)
+To open and present the Tableau packaged workbook locally:
 1. Navigate to the `carbon-heist-mitigation/Tableau/` folder.
-2. Double-click `NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx` to open inside **Tableau Desktop** (2022.3+) or **Tableau Reader**. Because it is a Packaged Workbook (`.twbx`), the audited data extract (`sample_nyc_energy.csv`) is bundled directly inside without external database setup friction.
+2. Double-click `NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx` to open inside **Tableau Desktop** or **Tableau Reader**. Because it is a Packaged Workbook (`.twbx`), the data extract (`sample_nyc_energy.csv`) is bundled directly inside without external database setup friction.
 3. Use the bottom navigation tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) or the built-in golden navigation arrows (`⬅ ➡`) to cycle through the executive story.
-4. **Interactive Filtering:** Use the synchronized dropdown filters for `Borough` and `Primary Property Type` on Page 1 or Page 2 (`Apply to Worksheets ➔ All Using This Data Source`) to slice multi-dimensional liabilities instantly across all charts.
+4. **Interactive Filtering:** Use the global dropdown filters for `Borough` and `Primary Property Type` (`Apply to Worksheets ➔ All Using This Data Source`) to slice multi-dimensional liabilities across all charts.
 5. **C-Suite Mobile Bridge:** Scan the embedded QR code (`#FFFFFF` border) on Page 3 with any iOS/Android mobile device to launch the live online Tableau C-Suite Portal directly from the boardroom screen.
 
 ---

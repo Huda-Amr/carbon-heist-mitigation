@@ -137,10 +137,10 @@ gitGraph
 
 ---
 
-## 4.5 Tableau BI & Visual Analytics Standards
-- **Workbook Packaging:** All visual analytics deliverables must be published as Packaged Workbooks (.twbx) embedding the audited sample_nyc_energy.csv dataset to prevent external database path dependencies.
-- **Design Aesthetics:** Dashboards strictly adhere to the C-Suite high-contrast palette (#0D1321 Navy background, #FFD700 Gold highlights) with standardized font scaling (Segoe UI / Tableau Semibold).
-- **Calculated Field Governance:** Custom formulas across visual sheets must use explicit conditional logic verified against statutory fine boundaries (/MT).
+## 4.5 Power BI & Tableau Visual Analytics Standards (`Pillar 6`)
+- **Workbook Packaging & Extract Binding:** All visual analytics deliverables must be published as self-contained standalone workbooks—Power BI (`.pbix`) and Tableau Packaged Workbooks (`.twbx`)—embedding the audited `sample_nyc_energy.xlsx` (`sample_nyc_energy.csv`) dataset to eliminate external path dependencies during offline presentations.
+- **Design Aesthetics & UI/UX:** Dashboards strictly adhere to the C-Suite high-contrast Dark Navy palette (`#0F172A` / `#0D1321` background, `#38BDF8` Electric Cyan, `#22C55E` Emerald Green waterfalls, `#FFD700` Gold highlights) with clear visual hierarchy and mobile scannability.
+- **DAX & Calculated Field Governance:** Custom Data Analysis Expressions (`DAX`) and calculated fields across visual sheets must use explicit conditional logic verified against statutory fine boundaries (`$268/MT`) and exact portfolio baseline totals (`10.56M tCO₂e`, `$2.83B` penalty).
 
 ---
 

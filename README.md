@@ -5,6 +5,7 @@
 <br/>
 
 <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20APP-OPEN%20STREAMLIT%20DASHBOARD-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Streamlit App"/></a>&nbsp;
+<a href="PowerBI/"><img src="https://img.shields.io/badge/📊%20Power%20BI-3--Page%20Executive%20Portal-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI BI Portal"/></a>&nbsp;
 <a href="https://public.tableau.com/app/profile/ahmed.adel.amin/viz/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard/DecarbonizationRoadmap"><img src="https://img.shields.io/badge/📊%20Tableau%20BI-3--Page%20C--Suite%20Portal-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau BI Portal"/></a>&nbsp;
 <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>&nbsp;
 <a href="https://scikit-learn.org"><img src="https://img.shields.io/badge/AI%20Engine-Random%20Forest%20(81.65%25)-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>&nbsp;
@@ -93,6 +94,14 @@ The live Streamlit application features an integrated **Executive C-Suite AI Co-
 
 ---
 
+## 📊 Enterprise Visual Business Intelligence Portals (`PowerBI/` & `Tableau/`)
+
+In addition to our full-stack Streamlit application and 16-sheet Excel financial model, the platform embeds **Dual-Engine Enterprise Visual BI Workbooks** designed for boardroom presentations and executive decision-making:
+- **📊 Power BI Executive BI Portal (`PowerBI/NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`):** A standalone 3-page interactive dashboard (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) featuring Dark Royal Navy styling (`#0F172A`), custom DAX measures, and synchronized slicers for `Borough`, `Property Type`, and `Decade Built`.
+- **📈 Tableau Executive C-Suite Portal (`Tableau/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`):** A packaged 3-page progressive visual analytics dashboard with Royal Navy & Gold aesthetics and mobile-scannable QR bridging directly to our live Tableau Public portal.
+
+---
+
 ## 🏙️ The Mission & Challenge
 
 New York City's **Local Law 97 (LL97)** imposes strict carbon emission caps on buildings exceeding 50,000 sq. ft. Starting in 2024—and escalating dramatically in 2030—properties exceeding statutory thresholds face mandatory annual fines of **$268 per metric ton of CO₂e**.
@@ -128,6 +137,7 @@ flowchart TD
     B --> C["🗄️ STAGE 4: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
     C --> D["🤖 STAGE 5: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
     EX --> E["🗺️ STAGE 6: Prescriptive Capital Roadmap\n5-Phase Self-Funding Decarbonization Pipeline"]:::stage
+    B --> BI["📊 STAGE 8: Visual Business Intelligence Portals\nPower BI (.pbix) & Tableau (.twbx) 3-Page Dashboards"]:::excel
     D --> E
     E --> F["🖥️ STAGE 7: Full-Stack Web Application\n5-Tab Streamlit Dashboard + Dual-Engine AI Chatbot"]:::output
 
@@ -152,6 +162,10 @@ carbon-heist-mitigation/
 │   ├── 📄 05_Testing_and_Quality_Assurance.md
 │   ├── 📄 06_User_Manual_and_Deployment.md
 │   └── 📄 Carbon_Heist_Mitigation_Documentation.docx
+│
+├── 📁 PowerBI/                     # 3-Page Executive C-Suite BI & Visual Analytics Portal
+│   ├── 📄 README.md                # Comprehensive guide to DAX formulas & 3-page dashboards
+│   └── 📊 NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix # Packaged Power BI Desktop workbook
 │
 ├── 📁 Tableau/                     # 3-Page Executive C-Suite BI & Visual Analytics Portal
 │   ├── 📄 README.md                # Comprehensive guide to calculated fields & dashboards

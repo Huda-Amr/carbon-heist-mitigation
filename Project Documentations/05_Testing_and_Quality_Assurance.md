@@ -117,13 +117,16 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 
 ---
 
-## 5.5 Tableau BI Dashboard Verification Matrix
+## 5.5 Enterprise Visual BI Verification Matrix (`Power BI` & `Tableau`)
 | Test ID | Component | Verification Procedure | Expected Outcome | Status |
 | :---: | :--- | :--- | :--- | :---: |
-| **TAB-01** | **Data Extract Binding** | Open NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx offline without database connection. | All 11,638 records load instantly from internal .csv extract without prompts. | 🟢 Pass |
-| **TAB-02** | **Borough & Type Filters** | Select Manhattan and Commercial Office on global dropdowns. | All charts across all 3 pages dynamically filter via synchronized actions. | 🟢 Pass |
-| **TAB-03** | **Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | Co-Op City outputs exact $0.04B/yr penalty consistent with Python ML pipeline. | 🟢 Pass |
-| **TAB-04** | **C-Suite QR Bridge** | Scan embedded QR code (#FFFFFF border) from 2 meters with iOS/Android device. | Instant camera focus and redirection to the live online Tableau C-Suite Portal. | 🟢 Pass |
+| **PBI-01** | **Power BI Data Binding** | Open `NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix` offline without external database connection. | All `11,638` records load instantly from internal excel/csv data model without prompt errors. | 🟢 Pass |
+| **PBI-02** | **Power BI Slicer Synchronization** | Select `Manhattan` and `Multifamily Housing` on the left-hand slicers panel. | All 4 KPI command cards and 4 charts across all 3 pages dynamically filter via synchronized DAX actions. | 🟢 Pass |
+| **PBI-03** | **Power BI Waterfall Calculation** | Verify Page 3 (`Carbon Cost & Savings Analysis`) waterfall bridge values. | Exact parity: Baseline `$2,830.3M` penalty reduced by `$640.9M` total fine savings across 6 playbooks down to `$2,189.37M` residual liability. | 🟢 Pass |
+| **TAB-01** | **Tableau Data Extract Binding** | Open `NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx` offline without database connection. | All `11,638` records load instantly from internal `.csv` extract without prompts. | 🟢 Pass |
+| **TAB-02** | **Tableau Borough & Type Filters** | Select `Manhattan` and `Commercial Office` on global dropdowns. | All charts across all 3 pages dynamically filter via synchronized actions. | 🟢 Pass |
+| **TAB-03** | **Tableau Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | `Co-Op City` outputs exact `$0.04B/yr` penalty consistent with Python ML pipeline. | 🟢 Pass |
+| **TAB-04** | **Tableau C-Suite QR Bridge** | Scan embedded QR code (`#FFFFFF` border) from 2 meters with iOS/Android device. | Instant camera focus and redirection to the live online Tableau C-Suite Portal. | 🟢 Pass |
 
 ---
 

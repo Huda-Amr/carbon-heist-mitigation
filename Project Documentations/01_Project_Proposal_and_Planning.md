@@ -63,6 +63,7 @@ The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, mach
 
 
 ### 1.1.2 Core Platform Objectives
+- **Power BI Executive BI Portal (`NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`):** A standalone 3-page interactive dashboard (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) featuring Dark Royal Navy styling (`#0F172A`), custom DAX measures, and synchronized slicers for `Borough`, `Property Type`, and `Decade Built`.
 - **Tableau Executive BI Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`):** A 3-page progressive visual analytics dashboard with a Royal Navy & Gold aesthetic (`#0D1321` / `#FFD700`) and an embedded mobile-scannable QR code bridge to the live online Tableau C-Suite Portal.
 
 

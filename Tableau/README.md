@@ -4,6 +4,7 @@
 
 <br/>
 
+<a href="../PowerBI/README.md"><img src="https://img.shields.io/badge/📊%20POWER%20BI-PBIX%20DASHBOARD-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI Portal"/></a>&nbsp;
 <a href="https://public.tableau.com/app/profile/ahmed.adel.amin/viz/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard/DecarbonizationRoadmap"><img src="https://img.shields.io/badge/📊%20LIVE%20PORTAL-TABLEAU%20PUBLIC-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Live Tableau Public Portal"/></a>&nbsp;
 <a href="https://www.tableau.com/products/desktop"><img src="https://img.shields.io/badge/ENGINE-TABLEAU%20DESKTOP%202026%2B-1A1A2E?style=for-the-badge&logo=tableau&logoColor=FFD700" alt="Tableau Engine"/></a>&nbsp;
 <a href="../data/sample_nyc_energy.xlsx"><img src="https://img.shields.io/badge/DATASET-11%2C638%20NYC%20PROPERTIES-00FF66?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Dataset"/></a>&nbsp;
