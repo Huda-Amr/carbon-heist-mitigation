@@ -112,7 +112,7 @@ flowchart TD
 In addition to the 16-sheet Excel financial engineering model and live Streamlit web app, the project suite embeds a **3-Page Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)**:
 - **Page 1: `NYC Energy Efficiency & Emissions Monitor`** — Macro geographic hotspot mapping (`10.56M MT CO₂e`) and decade-built baseline distribution across the five boroughs (`Manhattan 5.40M MT`, `Brooklyn 1.75M MT`).
 - **Page 2: `LL97 Compliance & Carbon Performance`** — Financial fine exposure (`$2.83 Billion`), top building liabilities (`Co-Op City` at `$0.04B/yr`), and compliance progress banners across all `11,638` properties.
-- **Page 3: `Decarbonization Roadmap`** — Sequential 6-playbook waterfall cascade tracing exposure from `1. Baseline Liability ($2,830M)` down to `Residual Net Liability ($2,189M)` paired with a **Live C-Suite QR Code Portal** (`Scan to Explore the Live Interactive C-Suite Portal`) linking physical presentations directly to the online Streamlit AI Co-Pilot.
+- **Page 3: `Decarbonization Roadmap`** — Sequential 6-playbook waterfall cascade tracing exposure from `1. Baseline Liability ($2,830M)` down to `Residual Net Liability ($2,189M)` paired with a **Live C-Suite QR Code Portal** (`Scan to Explore the Live Interactive C-Suite Portal`) linking physical presentations directly to the live online Tableau C-Suite Portal.
 
 ---
 

@@ -151,7 +151,7 @@ To open and present the standalone visual BI dashboard locally during C-Suite me
 2. Double-click `Interactive Dashboard.twbx` to open inside **Tableau Desktop** (2022.3+) or **Tableau Reader**. Because it is a Packaged Workbook (`.twbx`), the audited data extract (`sample_nyc_energy.csv`) is bundled directly inside without external database setup friction.
 3. Use the bottom navigation tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) or the built-in golden navigation arrows (`⬅ ➡`) to cycle through the executive story.
 4. **Interactive Filtering:** Use the synchronized dropdown filters for `Borough` and `Primary Property Type` on Page 1 or Page 2 (`Apply to Worksheets ➔ All Using This Data Source`) to slice multi-dimensional liabilities instantly across all charts.
-5. **C-Suite Mobile Bridge:** Scan the embedded QR code (`#FFFFFF` border) on Page 3 with any iOS/Android mobile device to launch the live web portal (`Streamlit AI Co-Pilot`) directly from the boardroom screen.
+5. **C-Suite Mobile Bridge:** Scan the embedded QR code (`#FFFFFF` border) on Page 3 with any iOS/Android mobile device to launch the live online Tableau C-Suite Portal directly from the boardroom screen.
 
 ---
 

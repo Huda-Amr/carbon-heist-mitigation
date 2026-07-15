@@ -155,7 +155,7 @@ carbon-heist-mitigation/
 │
 ├── 📁 Tableau/                     # 3-Page Executive C-Suite BI & Visual Analytics Portal
 │   ├── 📄 README.md                # Comprehensive guide to calculated fields & dashboards
-│   └── 📊 Interactive Dashboard.twbx # Packaged workbook with bundled master dataset
+│   └── 📊 NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx # Packaged workbook with bundled master dataset
 │
 ├── 📁 Excel Project/               # Domain Reference & Financial Engineering Models
 │   ├── 📄 README.md                # Guide to all 16 financial engineering sheets

@@ -21,7 +21,7 @@
 
 ## 👑 Executive Overview
 
-The **Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)** serves as the high-impact visual command center for assessing New York City Local Law 97 (LL97) compliance and financial exposure across our entire audited portfolio of **11,638 commercial and residential properties**. 
+The **Tableau Executive Business Intelligence Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`)** serves as the high-impact visual command center for assessing New York City Local Law 97 (LL97) compliance and financial exposure across our entire audited portfolio of **11,638 commercial and residential properties**. 
 
 Designed specifically for C-Suite executives, asset managers, and municipal policymakers, this packaged workbook (`.twbx`) combines **deep forensic data auditing** with an ultra-premium **C-Suite High-Contrast Navy & Golden (`#0D1321` / `#FFD700`) visual aesthetic**, bridging macro geographical trends directly to building-level statutory fine liabilities.
 
@@ -66,7 +66,7 @@ graph TD
 - **Core Infographic & Action Panels:**
   - **LL97 Mitigation Roadmap (Waterfall Chart):** Sequential 6-playbook engineering cascade tracing exposure from `1. Baseline Liability ($2,830M)` through `2. Surgical Strike (-$21M)`, `3. Retro-commissioning (-$240M)`, `4. 1960s Smart Scale (-$85M)`, `5. 1930s WET Systems (-$118M)`, and `6. Electrification Push (-$177M)` down to `Residual Net Liability ($2,189M)`.
   - **Strategic Solutions Breakdown:** Detailed prescriptive guidance on `1. Energy Efficiency` (modern low-consumption lighting & HVAC systems), `2. Building Insulation` (high-performance windows & envelope sealing), and `3. Renewable Energy` (solar installations & green energy credits).
-  - **📱 Live C-Suite QR Code Portal:** Embedded mobile-scannable QR code formatted inside a crisp white border (`#FFFFFF`) with call-to-action text (`Scan to Explore the Live Interactive C-Suite Portal`), allowing executives to launch the interactive Streamlit AI Co-Pilot directly from their smartphones during boardroom presentations.
+  - **📱 Live C-Suite QR Code Portal:** Embedded mobile-scannable QR code formatted inside a crisp white border (`#FFFFFF`) with call-to-action text (`Scan to Explore the Live Interactive C-Suite Portal`), allowing executives to launch the live online Tableau C-Suite Portal directly from their smartphones during boardroom presentations.
 
 ---
 
@@ -103,7 +103,7 @@ The dashboard adheres to modern **C-Suite visual excellence guidelines**:
    ```bash
    cd Tableau
    ```
-2. Double-click **`Interactive Dashboard.twbx`**. Because it is a Packaged Workbook (`.twbx`), the audited data extract (`sample_nyc_energy.csv`) is bundled directly inside—no external database setup or connection reconfiguration is required.
+2. Double-click **`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`**. Because it is a Packaged Workbook (`.twbx`), the audited data extract (`sample_nyc_energy.csv`) is bundled directly inside—no external database setup or connection reconfiguration is required.
 3. Use the bottom navigation tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) or the built-in golden navigation arrows (`⬅ ➡`) to cycle through the executive story.
 
 ---
