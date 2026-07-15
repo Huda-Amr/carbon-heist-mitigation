@@ -49,7 +49,7 @@ Across all financial sheets, statutory penalty exposure is evaluated using the o
 
 > [!IMPORTANT]
 > ### **Penalty ($) = Total Emissions (MT CO₂e) × 268**
-> Where **$268** is the mandatory fine rate per metric ton of **CO₂e** exceeding statutory thresholds under NYC Local Law 97 across our analyzed portfolio of `11,639` buildings.
+> Where **$268** is the mandatory Local Law 97 statutory fine rate per metric ton of total greenhouse gas emissions (`Total Emissions × $268`)s under NYC Local Law 97 across our analyzed portfolio of `11,639` buildings.
 
 ---
 

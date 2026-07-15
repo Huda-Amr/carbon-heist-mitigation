@@ -107,6 +107,15 @@ flowchart TD
 
 ---
 
+
+### 🏢 Visual Business Intelligence Layer (`Tableau/`)
+In addition to the 16-sheet Excel financial engineering model and live Streamlit web app, the project suite embeds a **3-Page Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)**:
+- **Page 1: `NYC Energy Efficiency & Emissions Monitor`** — Macro geographic hotspot mapping (`9.05M MT CO₂e`) and decade-built baseline distribution across the five boroughs.
+- **Page 2: `LL97 Compliance & Carbon Performance`** — Financial fine exposure (`$2.43B$`), top building liabilities (`Co-Op City` at `$0.04B/yr`), and compliance progress banners.
+- **Page 3: `Decarbonization Roadmap`** — 3-step prescriptive CAPEX cascade (`Energy Audit` ➔ `Retrofit` ➔ `Green Power`) paired with a **Live C-Suite QR Code Portal** (`Scan to Explore the Live Interactive C-Suite Portal`) linking physical presentations directly to the online Streamlit AI Co-Pilot.
+
+---
+
 ## 📚 Official Deliverables Master Index
 
 | ID | Specification Section | Key Topics & Engineering Scope | Verification Status | Clickable Document Link |
@@ -132,7 +141,7 @@ Across all academic documentation files, regulatory penalty exposure and capital
       <p>
         <strong>Penalty [in USD] = Total Emissions (MT CO₂e) × 268</strong>
       </p>
-      <em>Where <strong>268 USD</strong> is the mandatory fine rate per metric ton exceeding statutory carbon thresholds under NYC Local Law 97.</em>
+      <em>Where <strong>268 USD</strong> is the mandatory fine rate per metric ton of total greenhouse gas emissions across the non-compliant portfolio (`Total Emissions × $268`) under NYC Local Law 97.</em>
     </td>
     <td width="50%" style="padding: 16px;">
       <h3>📈 2. CAPEX Retrofit Payback Formula</h3>
@@ -147,6 +156,9 @@ Across all academic documentation files, regulatory penalty exposure and capital
 ---
 
 <div align="center">
+---
+
+<div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=120&section=footer" width="100%"/>
 
 <strong>End-to-End Academic & Engineering Excellence</strong><br/>
@@ -157,10 +169,3 @@ Across all academic documentation files, regulatory penalty exposure and capital
 [![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)
 
 </div>
-
-
-### 🏢 Visual Business Intelligence Layer (`Tableau/`)
-In addition to the 16-sheet Excel financial engineering model and live Streamlit web app, the project suite embeds a **3-Page Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)**:
-- **Page 1: `NYC Energy Efficiency & Emissions Monitor`** — Macro geographic hotspot mapping (`9.05M MT CO₂e`) and decade-built baseline distribution.
-- **Page 2: `LL97 Compliance & Carbon Performance`** — Financial fine exposure (`$2.43B$`), top building liabilities, and compliance rate banner.
-- **Page 3: `Decarbonization Roadmap`** — 3-step prescriptive CAPEX cascade (`Energy Audit` ➔ `Retrofit` ➔ `Green Power`) paired with a **Live C-Suite QR Code Portal** (`Scan to Explore the Live Interactive C-Suite Portal`) linking physical presentations directly to the online Streamlit AI Co-Pilot.

@@ -246,7 +246,7 @@ Across all academic documentation files, regulatory penalty exposure and capital
       <p>
         <strong>Penalty [in USD] = Total Emissions (MT CO₂e) × 268</strong>
       </p>
-      <em>Where <strong>268 USD</strong> is the mandatory fine rate per metric ton exceeding statutory carbon thresholds under NYC Local Law 97.</em>
+      <em>Where <strong>268 USD</strong> is the mandatory fine rate per metric ton of total greenhouse gas emissions across the non-compliant portfolio (`Total Emissions × $268`) under NYC Local Law 97.</em>
     </td>
     <td width="50%" style="padding: 16px;">
       <h3>📈 2. CAPEX Retrofit Payback Formula</h3>
