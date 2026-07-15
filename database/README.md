@@ -9,7 +9,7 @@
 
 ---
 
-Welcome to the **Database Layer** of the **Carbon Heist Mitigation Platform**. This directory houses the relational database schemas, Entity-Relationship Diagrams (ERD), and normalization specifications designed to persist building dimensions, annual energy benchmarking measurements, and regulatory compliance alerts.
+The **Relational Database & Persistence Layer (`database/`)** enforces rigorous data governance, structural integrity, and enterprise persistence across the **Carbon Heist Mitigation Platform**. Designed strictly to Third Normal Form (**3NF**) standards and modeled via professional **Chen Entity-Relationship Diagrams (ERD)**, our relational schema guarantees seamless multi-engine deployment across **MySQL**, **PostgreSQL**, and **Microsoft SQL Server**, eliminating data redundancy across all **11,639** audited municipal records.
 
 ---
 

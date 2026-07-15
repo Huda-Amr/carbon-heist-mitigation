@@ -9,7 +9,7 @@
 
 ---
 
-Welcome to the **Domain & Financial Engineering Layer** of the **Carbon Heist Mitigation Platform**. This directory contains our comprehensive **16-sheet financial, engineering, and C-Suite visualization workbook (`Co2 Project.xlsx`)**, which serves as the master domain reference for all Local Law 97 statutory penalty calculations, capital expenditure (CAPEX) unit-cost breakdowns, operating expenditure (OPEX) schedules, interactive bridge charts (`Waterfall Charts`), and the 5 Decarbonization Playbooks.
+The **Financial Engineering & Domain Reference Layer (`Excel Project/`)** serves as the quantitative economic core of the **Carbon Heist Mitigation Platform**. Anchored by our comprehensive **16-sheet itemized financial and thermodynamic modeling workbook (`Co2 Project.xlsx`)**, this domain suite establishes the absolute ground-truth reference for all statutory penalty assessments (`Total Emissions × 268`), capital expenditure (**CAPEX**) amortization schedules, net operating income (**NOI**) impact projections, and the self-funding **5 Strategic Decarbonization Playbooks**.
 
 ---
 

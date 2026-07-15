@@ -9,7 +9,7 @@
 
 ---
 
-Welcome to the **Data Layer** of the **Carbon Heist Mitigation Platform**. This folder manages the ingestion, preprocessing, cleaning, and quality assurance of New York City municipal energy disclosure data (**Local Law 84 Benchmarking Data**).
+The **Data Engineering & ETL Pipeline Layer (`data/`)** forms the foundational bedrock of the **Carbon Heist Mitigation Platform**. This suite manages the rigorous forensic ingestion, multi-stage hygiene cleaning, outlier normalization, and strict regulatory threshold filtering (`GFA ≥ 50,000 sq. ft.`) of New York City municipal energy disclosure records (**Local Law 84 Benchmarking Data**), transforming raw municipal dumps into an audited master portfolio of **11,639 validated properties** ready for C-Suite financial modeling and AI inference.
 
 ---
 

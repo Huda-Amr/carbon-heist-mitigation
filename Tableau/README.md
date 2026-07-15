@@ -21,9 +21,9 @@
 
 ## 👑 Executive Overview
 
-The **Tableau Executive Business Intelligence Portal** (`Interactive Dashboard.twbx`) serves as the core visual command center for assessing New York City Local Law 97 (LL97) compliance across **9,840+ benchmarked commercial and multifamily properties**. 
+The **Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)** serves as the high-impact visual command center for assessing New York City Local Law 97 (LL97) compliance and financial exposure across our entire audited portfolio of **11,639 commercial and residential properties**. 
 
-Designed specifically for C-Suite executives, asset managers, and municipal regulators, this packaged workbook combines **deep forensic data auditing** with an ultra-premium **Royal Navy & Golden (`#0D1321` / `#FFD700`) visual aesthetic**. It bridges the gap between high-level macro geographical trends and building-level financial fine liabilities.
+Designed specifically for C-Suite executives, asset managers, and municipal policymakers, this packaged workbook (`.twbx`) combines **deep forensic data auditing** with an ultra-premium **C-Suite High-Contrast Navy & Golden (`#0D1321` / `#FFD700`) visual aesthetic**, bridging macro geographical trends directly to building-level statutory fine liabilities.
 
 ---
 
