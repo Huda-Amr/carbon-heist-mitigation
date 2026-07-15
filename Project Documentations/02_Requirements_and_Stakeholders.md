@@ -95,7 +95,7 @@ flowchart LR
 | **UC&#8209;02** | **Predict&nbsp;Carbon&nbsp;Footprint** | ML Predictive Engine | Given physical building features, predict annual Total GHG Emissions using trained Random Forest Regressor. |
 | **UC&#8209;03** | **Simulate&nbsp;Decarbonization** | Asset Manager | Adjust UI sliders (Energy Star score improvement, Electrification shift) to calculate revised carbon penalty exposure. |
 | **UC&#8209;04** | **Export&nbsp;Executive&nbsp;Report** | Sustainability Officer | Generate summary KPI cards and compliance reports for presentation to C-suite executives. |
-| **UC&#8209;05** | **Conversational&nbsp;AI&nbsp;&&nbsp;Dynamic&nbsp;Charting** | C-Suite Executive / Asset Owner | Query the 11,639-building portfolio via Tab 5 Dual-Engine AI Co-Pilot (`Google Gemini 2.5 Flash` + offline fallback) to receive instant natural-language insights and custom interactive charts. |
+| **UC&#8209;05** | **Conversational&nbsp;AI&nbsp;&&nbsp;Dynamic&nbsp;Charting** | C-Suite Executive / Asset Owner | Query the 11,638-building portfolio via Tab 5 Dual-Engine AI Co-Pilot (`Google Gemini 2.5 Flash` + offline fallback) to receive instant natural-language insights and custom interactive charts. |
 
 ---
 

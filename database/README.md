@@ -9,7 +9,7 @@
 
 ---
 
-The **Relational Database & Persistence Layer (`database/`)** enforces rigorous data governance, structural integrity, and enterprise persistence across the **Carbon Heist Mitigation Platform**. Designed strictly to Third Normal Form (**3NF**) standards and modeled via professional **Chen Entity-Relationship Diagrams (ERD)**, our relational schema guarantees seamless multi-engine deployment across **MySQL**, **PostgreSQL**, and **Microsoft SQL Server**, eliminating data redundancy across all **11,639** audited municipal records.
+The **Relational Database & Persistence Layer (`database/`)** enforces rigorous data governance, structural integrity, and enterprise persistence across the **Carbon Heist Mitigation Platform**. Designed strictly to Third Normal Form (**3NF**) standards and modeled via professional **Chen Entity-Relationship Diagrams (ERD)**, our relational schema guarantees seamless multi-engine deployment across **MySQL**, **PostgreSQL**, and **Microsoft SQL Server**, eliminating data redundancy across all **11,638** audited municipal records.
 
 ---
 
@@ -59,7 +59,7 @@ erDiagram
 
 The database design splits wide municipal spreadsheets into clean, normalized relational entities that directly mirror our **16-sheet Excel financial engineering model (`Co2 Project.xlsx`)** and power our **5-Tab Streamlit Dashboard (`application/app.py`)**:
 - **`CITIES` & `BOROUGHS`:** Standardized geographical lookups enforcing unique address hierarchy across NYC's 5 boroughs.
-- **`PROPERTY_TYPES`:** Categorical classifications for commercial, residential, and institutional buildings (`11,639` assets).
+- **`PROPERTY_TYPES`:** Categorical classifications for commercial, residential, and institutional buildings (`11,638` assets).
 - **`PROPERTIES`:** Core entity storing physical building dimensions (`year_built`, `gfa_ft2`).
 - **`ENERGY_METRICS` & `EMISSION_METRICS`:** Annual energy consumption facts (`site_eui`, `energy_star_score`) and carbon footprint metrics (`total_ghg_emissions`).
 - **`LL97_PENALTIES`:** Statutory fine exposure (`base_ll97_penalty`, `penalty_per_ft2` strictly calculated as $\text{Emissions} \times \$268$).
@@ -89,10 +89,10 @@ sqlcmd -S localhost -U sa -P YourPassword -i carbon_heist_schema_mssql.sql
 
 | Layer | Directory / Deliverable | Strategic Role & Highlights | Documentation Link |
 | :---: | :--- | :--- | :---: |
-| 📊 **Visual BI Portal** | **`Tableau/Interactive Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.43B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
+| 📊 **Visual BI Portal** | **`Tableau/Interactive Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.83B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
 | 🌐 **Live Web Application** | **`application/app.py`** | 5-Tab Streamlit & Plotly interactive dashboard powered by dual-engine AI (`Google Gemini 2.5 + Local Engine`). | [📖 Streamlit Docs](../application/README.md) |
 | 📑 **Financial Engineering** | **`Excel Project/Co2 Project.xlsx`** | 16-sheet domain reference workbook featuring comprehensive CAPEX payback modeling and WET system thermodynamics. | [📖 Excel Docs](../Excel%20Project/README.md) |
-| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,639 properties. | [📖 ML Docs](../models/README.md) |
+| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,638 properties. | [📖 ML Docs](../models/README.md) |
 | 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |
 | 📚 **Academic Suite** | **`Project Documentations/`** | Official 6-part academic deliverables (`Doc 01 - Doc 06`) and comprehensive Word report (`.docx`). | [📖 Academic Suite](../Project%20Documentations/README.md) |
 

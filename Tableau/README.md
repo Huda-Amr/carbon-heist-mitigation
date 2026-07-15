@@ -6,7 +6,7 @@
 
 <a href="../Tableau/Interactive%20Dashboard.twbx"><img src="https://img.shields.io/badge/📊%20WORKBOOK-INTERACTIVE%20DASHBOARD.TWBX-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau Workbook"/></a>&nbsp;
 <a href="https://www.tableau.com/products/desktop"><img src="https://img.shields.io/badge/ENGINE-TABLEAU%20DESKTOP%202026%2B-1A1A2E?style=for-the-badge&logo=tableau&logoColor=FFD700" alt="Tableau Engine"/></a>&nbsp;
-<a href="../data/sample_nyc_energy.xlsx"><img src="https://img.shields.io/badge/DATASET-11%2C639%20NYC%20PROPERTIES-00FF66?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Dataset"/></a>&nbsp;
+<a href="../data/sample_nyc_energy.xlsx"><img src="https://img.shields.io/badge/DATASET-11%2C638%20NYC%20PROPERTIES-00FF66?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Dataset"/></a>&nbsp;
 <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20WEB%20PORTAL-OPEN%20STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit App"/></a>
 
 <br/><br/>
@@ -21,7 +21,7 @@
 
 ## 👑 Executive Overview
 
-The **Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)** serves as the high-impact visual command center for assessing New York City Local Law 97 (LL97) compliance and financial exposure across our entire audited portfolio of **11,639 commercial and residential properties**. 
+The **Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)** serves as the high-impact visual command center for assessing New York City Local Law 97 (LL97) compliance and financial exposure across our entire audited portfolio of **11,638 commercial and residential properties**. 
 
 Designed specifically for C-Suite executives, asset managers, and municipal policymakers, this packaged workbook (`.twbx`) combines **deep forensic data auditing** with an ultra-premium **C-Suite High-Contrast Navy & Golden (`#0D1321` / `#FFD700`) visual aesthetic**, bridging macro geographical trends directly to building-level statutory fine liabilities.
 
@@ -33,38 +33,38 @@ The workbook is structured into **three progressive, interactive pages** that gu
 
 ```mermaid
 graph TD
-    A["🏛️ Dashboard 1: NYC Energy Efficiency & Emissions Monitor\nMacro Geographic Hotspots & Decade Distribution"] ==> B["🏢 Dashboard 2: LL97 Compliance & Carbon Performance\nFinancial Fine Exposure ($2.43B) & Property Liabilities"]
-    B ==> C["💰 Dashboard 3: Decarbonization Roadmap & ROI\nActionable CAPEX Playbook & C-Suite QR Code Portal"]
+    A["🏛️ Dashboard 1: NYC Energy Efficiency & Emissions Monitor\nMacro Geographic Hotspots & Decade Distribution"] ==> B["🏢 Dashboard 2: LL97 Compliance & Carbon Performance\nFinancial Fine Exposure ($2.83B) & Property Liabilities"]
+    B ==> C["💰 Dashboard 3: Decarbonization Roadmap & ROI\nActionable CAPEX Playbooks ($2.83B to $2.19B Residual Net) & QR Code Portal"]
 
     classDef dash fill:#16213E,stroke:#FFD700,stroke-width:2px,color:#FFFFFF,font-size:13px
     class A,B,C dash
 ```
 
 ### 1️⃣ `NYC Energy Efficiency & Emissions Monitor` (Macro Intelligence)
-- **Primary Objective:** Establish the macro footprint of NYC's greenhouse gas emissions across the five boroughs (`9.05M Metric Tons CO₂e`).
+- **Primary Objective:** Establish the macro footprint of NYC's greenhouse gas emissions across the five boroughs (`10.56M Metric Tons CO₂e`).
 - **Core Visualizations:**
-  - **Emissions by Borough (Bar Chart):** Highlights Manhattan (`4.47M MT`) and Brooklyn (`1.61M MT`) as the primary emission drivers.
+  - **Emissions by Borough (Bar Chart):** Highlights Manhattan (`5.40M MT`) and Brooklyn (`1.75M MT`) as the primary emission drivers, followed by Bronx (`1.54M MT`) and Queens (`1.43M MT`).
   - **Geographic Distribution Map:** Spatial bubble/polygon choropleth mapping carbon intensity across NYC zip codes and boroughs.
   - **Decade Built Distribution (Histogram):** Reveals that pre-1970s masonry structures account for over 65% of total baseline emissions.
   - **Emissions vs. Property Area (Scatter Plot):** Correlates Gross Floor Area (`GFA`) against total carbon output to isolate outlier mega-towers.
-- **KPI Command Bar:** `Total GHG Emissions (9.05M)` | `GHG Intensity (4.955)` | `Avoided Emissions via Green Power (26,525 MT)`.
+- **KPI Command Bar:** `Total GHG Emissions (10.56M)` | `GHG Intensity (4.937)` | `Avoided Emissions via Green Power (28,940 MT)`.
 
 ---
 
 ### 2️⃣ `LL97 Compliance & Carbon Performance` (Financial Shock & Liabilities)
-- **Primary Objective:** Quantify the immediate financial exposure and penalties facing non-compliant properties (`$2.43 Billion` projected liabilities).
+- **Primary Objective:** Quantify the immediate financial exposure and penalties facing non-compliant properties (`$2.83 Billion` projected liabilities).
 - **Core Visualizations:**
-  - **Compliance Rate Banner:** Vertical stacked progress bar showing compliance severity broken down by borough.
+  - **Compliance Rate Banner:** Vertical stacked progress bar showing compliance severity broken down by borough (`7,309 penalized properties`).
   - **Top Penalty Buildings (Horizontal Bar):** Isolates the highest individual fine offenders across the city (e.g., *Co-Op City* at `$0.04B/yr`, *Pratt S.I. Campus* at `$0.03B/yr`).
   - **Penalties by Property Type:** Proves that **Multifamily Housing (`$1.20B+`)** and **Commercial Offices (`$0.40B+`)** hold 80% of total portfolio fine exposure.
-- **KPI Command Bar:** `Avg Energy Star (62.10)` | `Source EUI (128.0 kBtu/ft²)` | `Total Carbon Footprint (9.05M)` | `Total Buildings (9,840)` | `Projected Carbon Penalties (2.43B$)`.
+- **KPI Command Bar:** `Avg Energy Star (62.06)` | `Source EUI (126.7 kBtu/ft²)` | `Total Carbon Footprint (10.56M)` | `Total Buildings (11,638)` | `Projected Carbon Penalties (2.83B$)`.
 
 ---
 
 ### 3️⃣ `Decarbonization Roadmap` (Actionable Engineering Solutions)
 - **Primary Objective:** Provide a clean, executive infographic roadmap outlining the self-funding engineering cascade to eliminate statutory fines and achieve carbon neutrality.
 - **Core Infographic & Action Panels:**
-  - **Proposed Roadmap for Penalty Reduction:** 3-step sequential engineering cascade (`Step 1: Energy Audits` ➔ `Step 2: Building Retrofits` ➔ `Step 3: Green Power Transition`) paired with intuitive diagnostic iconography.
+  - **LL97 Mitigation Roadmap (Waterfall Chart):** Sequential 6-playbook engineering cascade tracing exposure from `1. Baseline Liability ($2,830M)` through `2. Surgical Strike (-$21M)`, `3. Retro-commissioning (-$240M)`, `4. 1960s Smart Scale (-$85M)`, `5. 1930s WET Systems (-$118M)`, and `6. Electrification Push (-$177M)` down to `Residual Net Liability ($2,189M)`.
   - **Strategic Solutions Breakdown:** Detailed prescriptive guidance on `1. Energy Efficiency` (modern low-consumption lighting & HVAC systems), `2. Building Insulation` (high-performance windows & envelope sealing), and `3. Renewable Energy` (solar installations & green energy credits).
   - **📱 Live C-Suite QR Code Portal:** Embedded mobile-scannable QR code formatted inside a crisp white border (`#FFFFFF`) with call-to-action text (`Scan to Explore the Live Interactive C-Suite Portal`), allowing executives to launch the interactive Streamlit AI Co-Pilot directly from their smartphones during boardroom presentations.
 

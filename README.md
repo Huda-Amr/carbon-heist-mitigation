@@ -34,7 +34,7 @@
       <br/>
       🏢 <strong>Portfolio Scale</strong><br/>
       <h2 style="color: #00FF66;">2.06 Billion Sq. Ft.</h2>
-      <em>11,639 NYC Properties</em>
+      <em>11,638 NYC Properties</em>
       <br/><br/>
     </td>
     <td align="center" width="33%">
@@ -80,13 +80,13 @@
 
 > [!TIP]
 > ### 🌐 **[Click Here to Launch the Live Interactive C-Suite Dashboard Online](https://carbon-heist-mitigation.streamlit.app/)**
-> Explore all 11,639 NYC properties, interactive real-time mitigation sliders, Random Forest AI compliance predictions, and 5-playbook CAPEX financial modeling directly in your browser.
+> Explore all 11,638 NYC properties, interactive real-time mitigation sliders, Random Forest AI compliance predictions, and 5-playbook CAPEX financial modeling directly in your browser.
 
 ---
 
 ## 💬 Live AI Executive Chatbot & Dual-Engine Interactive Visualization
 
-The live Streamlit application features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,639-property forensic dataset:
+The live Streamlit application features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,638-property forensic dataset:
 
 - **🧠 Live Generative AI Mode (Google Gemini 2.5 Flash):** Connect any Google Gemini API key directly in the UI header to enable live C-Suite strategic reasoning. The AI parses any natural-language prompt, computes executive metrics, and dynamically generates custom interactive Plotly visualizations on the fly. Built-in **Multi-Model Auto-Fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`)** and exponential backoff retry guarantee high resilience.
 - **⚡ Local Quantitative & Charting Engine (Offline/Rate-Limit Safe):** Even without an API key or during API rate limits (`HTTP 429`), our embedded local dataset engine parses natural-language queries (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) and instantly renders both quantitative C-Suite text analysis and interactive Plotly charts directly from our audited `sample_nyc_energy.xlsx` database.
@@ -97,7 +97,7 @@ The live Streamlit application features an integrated **Executive C-Suite AI Co-
 
 New York City's **Local Law 97 (LL97)** imposes strict carbon emission caps on buildings exceeding 50,000 sq. ft. Starting in 2024—and escalating dramatically in 2030—properties exceeding statutory thresholds face mandatory annual fines of **$268 per metric ton of CO₂e**.
 
-Across our **2.06 Billion Sq. Ft. real estate portfolio (11,639 validated records)**, unmitigated exposure amounts to **$2.83 Billion annually**—effectively a recurring carbon heist on net operating income (NOI).
+Across our **2.06 Billion Sq. Ft. real estate portfolio (11,638 validated records)**, unmitigated exposure amounts to **$2.83 Billion annually**—effectively a recurring carbon heist on net operating income (NOI).
 
 We built an end-to-end data engineering, machine learning, and interactive financial decision-support platform to forensic-audit the portfolio, isolate the **"True Culprits,"** and deploy a self-funding 5-phase decarbonization roadmap that transforms a regulatory liability into a high-yield strategic asset.
 
@@ -123,7 +123,7 @@ All academic and technical deliverables for the **Data Analysis & Engineering Tr
 
 ```mermaid
 flowchart TD
-    A["📥 STAGE 1: Municipal Raw Data Ingestion\nNYC LL84 Open Data Portal (Raw Municipal Dump)"]:::stage --> B["🧹 STAGE 2: Forensic Data Cleaning & Hygiene\n8-Step Automated Pipeline → Validated Portfolio (11,639 Cleaned Records)"]:::clean
+    A["📥 STAGE 1: Municipal Raw Data Ingestion\nNYC LL84 Open Data Portal (Raw Municipal Dump)"]:::stage --> B["🧹 STAGE 2: Forensic Data Cleaning & Hygiene\n8-Step Automated Pipeline → Validated Portfolio (11,638 Cleaned Records)"]:::clean
     B --> EX["📊 STAGE 3: Excel Executive C-Suite Dashboard\n16-Sheet Interactive Financial Model & KPI Dashboard"]:::excel
     B --> C["🗄️ STAGE 4: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
     C --> D["🤖 STAGE 5: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
@@ -177,7 +177,7 @@ carbon-heist-mitigation/
 ├── 📁 data/                        # Data Engineering & ETL Pipeline
 │   ├── 📄 README.md                # 8-step cleaning pipeline overview
 │   ├── 🐍 Clean_Data_Pipeline.py   # Automated cleaning & null imputation script
-│   ├── 📊 sample_nyc_energy.xlsx   # Validated dataset (11,639 compliant NYC buildings)
+│   ├── 📊 sample_nyc_energy.xlsx   # Validated dataset (11,638 compliant NYC buildings)
 │   └── 📄 LL97_Data_Cleaning_Report.pdf # Automated PDF audit report
 │
 ├── 📁 database/                    # Relational Database & Persistence Layer (3NF)
@@ -201,7 +201,7 @@ Our interactive simulation playground (`models/ll97_playground.py`) provides ass
 ```text
 ╔══════════════════════════════════════════════════════════════════════╗
 ║             NYC LL97 DATA-DRIVEN FORENSIC AUDIT ENGINE               ║
-║            Trained on 11,639 Compliant Building Records              ║
+║            Trained on 11,638 Compliant Building Records              ║
 ╚══════════════════════════════════════════════════════════════════════╝
 [*] Training Phase: Loading Random Forest Regressor (R² = 81.65%)...
 [✓] Model Ready & Verified.
@@ -246,7 +246,7 @@ Across all academic documentation files, regulatory penalty exposure and capital
       <p>
         <strong>Penalty [in USD] = Total Emissions (MT CO₂e) × 268</strong>
       </p>
-      <em>Where <strong>268 USD</strong> is the mandatory Local Law 97 statutory fine rate evaluated per metric ton of total greenhouse gas emissions across our non-compliant portfolio of <strong>11,639</strong> buildings.</em>
+      <em>Where <strong>268 USD</strong> is the mandatory Local Law 97 statutory fine rate evaluated per metric ton of total greenhouse gas emissions across our non-compliant portfolio of <strong>11,638</strong> buildings.</em>
     </td>
     <td width="50%" style="padding: 16px;">
       <h3>📈 2. CAPEX Retrofit Payback Formula</h3>
@@ -275,7 +275,7 @@ Our capital deployment follows a strict **self-funding cascade**: rapid-payback 
 | **03 · 🟡 1960s Smart Scale**<br/>*1960s Commercial / Multi* | **1960s Archetype** | **$785.24 M** | **$2.80 M / yr** | **$88.03 M / yr** | **$85.23 M / yr** | **8.92 Yrs** | Networked LED, VFD motors & steam trap repairs ($2.50/ft²). OPEX covers preventative VFD maintenance & sensor checks. |
 | **04 · 🟠 1930s WET Systems**<br/>*1930s Historic Pre-War* | **Pre-War Masonry** | **$1.50 B** | **$4.50 M / yr** | **$122.39 M / yr** | **$117.89 M / yr** | **12.25 Yrs** | Wastewater Heat Exchangers & 50% PPP grant funding. OPEX covers annual anti-fouling flush protocols & pump servicing. |
 | **05 · 🔴 Electrification Push**<br/>*Fuel Oil #4 Boilers* | **High-Risk Oil #4** | **$1.89 B** | **$5.10 M / yr** | **$181.99 M / yr** | **$176.89 M / yr** | **10.38 Yrs** | Electric Heat Pumps conversion ($20/ft²). OPEX covers comprehensive OEM maintenance contracts & thermographic checks. |
-| **🏆 TOTAL PORTFOLIO**<br/>*Blended 5-Playbook Strategy* | **Entire Portfolio** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | 🎯 **7.58 Yrs Blended** | **Self-Funding Decarbonization Cascade across 11,639 verified NYC LL84/LL97 assets (OPEX = 0.32% of CAPEX).** |
+| **🏆 TOTAL PORTFOLIO**<br/>*Blended 5-Playbook Strategy* | **Entire Portfolio** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | 🎯 **7.58 Yrs Blended** | **Self-Funding Decarbonization Cascade across 11,638 verified NYC LL84/LL97 assets (OPEX = 0.32% of CAPEX).** |
 
 ---
 

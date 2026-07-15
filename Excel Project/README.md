@@ -17,7 +17,7 @@ The **Financial Engineering & Domain Reference Layer (`Excel Project/`)** serves
 
 | File Name | Description |
 | :--- | :--- |
-| **`Co2 Project.xlsx`** | Master **16-sheet engineering, itemized financial breakdown, and executive visualization reference workbook** for **NYC Local Law 97 (LL97)** compliance modeling, risk profiling, and retrofit planning across `11,639` properties. |
+| **`Co2 Project.xlsx`** | Master **16-sheet engineering, itemized financial breakdown, and executive visualization reference workbook** for **NYC Local Law 97 (LL97)** compliance modeling, risk profiling, and retrofit planning across `11,638` properties. |
 
 ---
 
@@ -51,7 +51,7 @@ Across all financial sheets, statutory penalty exposure is evaluated using the o
 
 > [!IMPORTANT]
 > ### **Penalty ($) = Total Emissions (MT CO₂e) × 268**
-> Where **$268** is the mandatory Local Law 97 statutory fine rate evaluated per metric ton of total greenhouse gas emissions across our analyzed portfolio of **11,639** buildings.
+> Where **$268** is the mandatory Local Law 97 statutory fine rate evaluated per metric ton of total greenhouse gas emissions across our analyzed portfolio of **11,638** buildings.
 
 ---
 
@@ -63,7 +63,7 @@ Our master workbook (`Co2 Project.xlsx`) is logically structured into three dist
 | # | Sheet Name | Description & Analytical Purpose |
 | :---: | :--- | :--- |
 | **1** | **`Data`** | Raw municipal building energy disclosure records imported from official NYC Local Law 84 benchmarking files across `21,000+` property records. |
-| **2** | **`Clean`** | Filtered and validated data subset retaining compliant properties (**Gross Floor Area ≥ 50,000 sq. ft.**) totaling `11,639` analyzed portfolio assets. |
+| **2** | **`Clean`** | Filtered and validated data subset retaining compliant properties (**Gross Floor Area ≥ 50,000 sq. ft.**) totaling `11,638` analyzed portfolio assets. |
 | **3** | **`Analysis`** | Core analytical sheet computing descriptive statistics, energy intensity (`Site EUI`) distributions, top offender rankings, and baseline unmitigated penalty liabilities (`$2.83 Billion`). |
 | **4** | **`Data Cards`** | Executive summary cards defining core portfolio constants, total square footage (`2.01 Billion sq. ft.`), `$268/MT` penalty rate, and weather shock absorber ranges (`+5% to +15%`). |
 | **5** | **`Sensitivity`** | Sensitivity stress-testing matrix evaluating how different CAPEX reinvestment rates and weather shock absorbers impact Net Operating Income (`NOI`) and fine avoidance ($/sq. ft.). |
@@ -77,7 +77,7 @@ Our master workbook (`Co2 Project.xlsx`) is logically structured into three dist
 | **7** | **`Summary Table`** | **Master Strategic Executive Matrix:** Consolidated portfolio summary detailing unmitigated fine exposure (`$2,830.68M`), total 5-Playbook capital investment (`$4,976.80M`), recurring annual savings (`$656.63M/yr`), and blended capital payback (`7.58 Years`). | Master C-Suite 5-Phase Playbook matrix and macroeconomic cascade table. |
 | **8** | **`CAPEX & Breakdown`** | **Granular Itemization of Capital Expenditure:** Detailed engineering and unit-cost breakdown (`$/ft²`, `$/building`) across equipment, labor, mechanical sub-systems, and 50% government PPP/grant subsidies for all 5 playbooks. | Itemized cost allocation rates (`Level 2 Audits: $15K/bldg`, `BMS Optimization: $12.5K/bldg`, `Steam Traps: $12.5K/bldg`). |
 | **9** | **`OPEX & Maintenance Breakdown`** | **Granular Operating Expenditure & Maintenance Schedules:** Comprehensive breakdown of recurring annual maintenance costs, operational labor overhead, sensor replacements, and ongoing measurement & verification (`M&V`) expenses. | Itemized OPEX offsets and annual net cash flow calculations verifying long-term asset profitability. |
-| **10** | **`Portfolio Roadmap`** | **Strategic Multi-Year Portfolio Roadmap:** Executive C-Suite presentation portal outlining the phased 6-year execution trajectory, cumulative fine elimination milestones, and portfolio transformation pathways from unmitigated risk (`$2.83B`) to residual compliance. | High-level strategic roadmap cards and executive presentation views (`THE CARBON HEIST` - 11,639 Properties across NYC). |
+| **10** | **`Portfolio Roadmap`** | **Strategic Multi-Year Portfolio Roadmap:** Executive C-Suite presentation portal outlining the phased 6-year execution trajectory, cumulative fine elimination milestones, and portfolio transformation pathways from unmitigated risk (`$2.83B`) to residual compliance. | High-level strategic roadmap cards and executive presentation views (`THE CARBON HEIST` - 11,638 Properties across NYC). |
 | **11** | **`Factors`** | **Forensic Carbon Drivers Dashboard:** Consolidated visual portal analyzing macro-level risk drivers across Age (`Decade`), Geography (`Borough`), Efficiency (`ENERGY STAR`), and Property Archetypes. | 1. **`Building Vintage Analysis: Total GHG Emissions vs. Penalty Intensity ($/ft²)`**<br/>2. **`NYC Borough Carbon Emissions Distribution (MT CO₂e / Year)`**<br/>3. **`Carbon Concentration by ENERGY STAR Bracket (1–100)`**<br/>4. **`Carbon Emissions by Property Archetype (MT CO₂e / Year)`** |
 
 ---
@@ -100,10 +100,10 @@ Each dedicated scenario tab models one of the 5 engineering playbooks and featur
 
 | Layer | Directory / Deliverable | Strategic Role & Highlights | Documentation Link |
 | :---: | :--- | :--- | :---: |
-| 📊 **Visual BI Portal** | **`Tableau/Interactive Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.43B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
+| 📊 **Visual BI Portal** | **`Tableau/Interactive Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.83B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
 | 🌐 **Live Web Application** | **`application/app.py`** | 5-Tab Streamlit & Plotly interactive dashboard powered by dual-engine AI (`Google Gemini 2.5 + Local Engine`). | [📖 Streamlit Docs](../application/README.md) |
 | 📑 **Financial Engineering** | **`Excel Project/Co2 Project.xlsx`** | 16-sheet domain reference workbook featuring comprehensive CAPEX payback modeling and WET system thermodynamics. | [📖 Excel Docs](../Excel%20Project/README.md) |
-| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,639 properties. | [📖 ML Docs](../models/README.md) |
+| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,638 properties. | [📖 ML Docs](../models/README.md) |
 | 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |
 | 📚 **Academic Suite** | **`Project Documentations/`** | Official 6-part academic deliverables (`Doc 01 - Doc 06`) and comprehensive Word report (`.docx`). | [📖 Academic Suite](../Project%20Documentations/README.md) |
 

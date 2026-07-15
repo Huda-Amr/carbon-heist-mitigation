@@ -30,7 +30,7 @@
     <td align="center" width="33%">
       <br/>
       🛡️ <strong>Pipeline Hygiene</strong><br/>
-      <h2 style="color: #00E5FF;">11,639 Sites</h2>
+      <h2 style="color: #00E5FF;">11,638 Sites</h2>
       <em>0 Data Anomalies Retained</em>
       <br/><br/>
     </td>
@@ -77,7 +77,7 @@ flowchart LR
 | Test ID | Test Category | Scenario Description | Input / Condition | Expected Outcome | Actual Result | Status |
 | :---: | :--- | :--- | :--- | :--- | :--- | :---: |
 | **TC&#8209;01** | **Data&nbsp;Engineering** | Ingest Raw LL84 Spreadsheet | 11,000+ Raw NYC municipal disclosure records | Cleanly replace `"Not Available"` with `NaN` without data corruption | Successfully parsed all records | **🟢&nbsp;PASS** |
-| **TC&#8209;02** | **Data&nbsp;Engineering** | Size Threshold Compliance | Apply `GFA >= 50,000 sq ft` filter | Retain only buildings legally subject to LL97 | Retained 11,639 compliant properties | **🟢&nbsp;PASS** |
+| **TC&#8209;02** | **Data&nbsp;Engineering** | Size Threshold Compliance | Apply `GFA >= 50,000 sq ft` filter | Retain only buildings legally subject to LL97 | Retained 11,638 compliant properties | **🟢&nbsp;PASS** |
 | **TC&#8209;03** | **Data&nbsp;Engineering** | Borough Normalization | Input misspelled city names (`"Ny"`, `"Quuens"`, `"beonx"`) | Map to correct standard NYC borough strings | Exactly 0 invalid addresses remaining | **🟢&nbsp;PASS** |
 | **TC&#8209;04** | **Machine&nbsp;Learning** | Random Forest Regressor Accuracy | Train model on 80/20 train/test split | Achieve **R² ≥ 75%** and **MAE ≤ 250 MT CO₂e** | **R² = 81.65%**, **MAE = 212.99** | **🟢&nbsp;PASS** |
 | **TC&#8209;05** | **Machine&nbsp;Learning** | Outlier Alignment Parity | Ensure `train_ll97_model.py` and `ll97_playground.py` match | Both scripts filter `Site EUI < 2000` | Both scripts yield exact **81.65%** accuracy | **🟢&nbsp;PASS** |
@@ -120,7 +120,7 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 ## 5.5 Tableau BI Dashboard Verification Matrix
 | Test ID | Component | Verification Procedure | Expected Outcome | Status |
 | :---: | :--- | :--- | :--- | :---: |
-| **TAB-01** | **Data Extract Binding** | Open Interactive Dashboard.twbx offline without database connection. | All 9,840 records load instantly from internal .csv extract without prompts. | 🟢 Pass |
+| **TAB-01** | **Data Extract Binding** | Open Interactive Dashboard.twbx offline without database connection. | All 11,638 records load instantly from internal .csv extract without prompts. | 🟢 Pass |
 | **TAB-02** | **Borough & Type Filters** | Select Manhattan and Commercial Office on global dropdowns. | All charts across all 3 pages dynamically filter via synchronized actions. | 🟢 Pass |
 | **TAB-03** | **Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | Co-Op City outputs exact $0.04B/yr penalty consistent with Python ML pipeline. | 🟢 Pass |
 | **TAB-04** | **C-Suite QR Bridge** | Scan embedded QR code (#FFFFFF border) from 2 meters with iOS/Android device. | Instant camera focus and redirection to https://carbon-heist-mitigation.streamlit.app/. | 🟢 Pass |

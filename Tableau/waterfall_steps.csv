@@ -1,0 +1,7 @@
+Step_Order,Step_Name,Reduction_Pct,Step_Type
+1,1. Baseline Liability,2830080000,1. Baseline Liability
+2,2. Surgical Strike,-20549117,2. Net After Surgical Strike
+3,3. Retro-commissioning,-240365631,3. Net After RCx
+4,4. 1960s Smart Scale,-85233696,4. Net After Smart Scale
+5,5. 1930s WET Systems,-117890647,5. Net After WET Systems
+6,6. Electrification Push,-176893196,6. Residual Net Liability

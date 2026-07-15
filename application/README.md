@@ -32,7 +32,7 @@ The **Application Layer (`application/`)** hosts the full-stack, highly interact
 
 ```mermaid
 flowchart LR
-    RAW["📥 NYC LL84 Raw Data\n(Open Data Portal Dump)"]:::raw --> CLEAN["🧹 Forensic Data Hygiene\nCleaning Pipeline → 11,639 Cleaned Records"]:::clean
+    RAW["📥 NYC LL84 Raw Data\n(Open Data Portal Dump)"]:::raw --> CLEAN["🧹 Forensic Data Hygiene\nCleaning Pipeline → 11,638 Cleaned Records"]:::clean
     CLEAN --> EXCEL["📊 Excel C-Suite Dashboard\n(16-Sheet Financial Model)"]:::excel
     CLEAN --> DATA["📊 input.xlsx / results.csv\nCleaned Portfolio Database"]:::data
     DATA --> CORE["🖥️ Streamlit Core Engine\napp.py Web Dashboard"]:::core
@@ -54,7 +54,7 @@ flowchart LR
 
 ## 💬 Live AI Executive Chatbot & Dual-Engine Interactive Visualization
 
-The application header features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,639-property forensic dataset:
+The application header features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,638-property forensic dataset:
 
 - **🧠 Live Generative AI Mode (Google Gemini 2.5 Flash):** Connect any Google Gemini API key directly in the UI header to enable live C-Suite strategic reasoning. The AI parses any natural-language prompt, computes executive metrics, and dynamically generates custom interactive Plotly visualizations on the fly. Built-in **Multi-Model Auto-Fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`)** and exponential backoff retry guarantee high resilience.
 - **⚡ Local Quantitative & Charting Engine (Offline/Rate-Limit Safe):** Even without an API key or during API rate limits (`HTTP 429`), our embedded local dataset engine parses natural-language queries (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) and instantly renders both quantitative C-Suite text analysis and interactive Plotly charts directly from our audited `sample_nyc_energy.xlsx` database.
@@ -103,7 +103,7 @@ Delivers rigorous capital allocation and financial sensitivity analysis:
 
 ### 5️⃣ Tab 5 — 💬 AI Executive Co-Pilot & Chatbot
 Delivers a dedicated full-page conversational intelligence center and real-time visualization portal:
-- **Dual-Engine Strategic Chat Interface**: Interactive full-width chat terminal where asset owners and sustainability directors can query the entire 11,639-property portfolio in natural English or Arabic (`"What are the top 5 emitting property types across Manhattan?"`, `"Compare CAPEX requirements vs fine savings for 1930s buildings"`).
+- **Dual-Engine Strategic Chat Interface**: Interactive full-width chat terminal where asset owners and sustainability directors can query the entire 11,638-property portfolio in natural English or Arabic (`"What are the top 5 emitting property types across Manhattan?"`, `"Compare CAPEX requirements vs fine savings for 1930s buildings"`).
 - **Dynamic On-the-Fly Plotly Chart Generation**: Automatically synthesizes complex quantitative answers into custom, interactive Plotly visualizations (Bar, Pie, Line, and Scatter charts) embedded directly inside the conversation flow.
 - **Offline / Rate-Limit Safe Fallback Engine**: If no API key is provided or during rate limits (`HTTP 429`), the local dataset engine seamlessly intercepts queries to compute accurate financial totals, averages, and generate instant charts from `sample_nyc_energy.xlsx` without external connectivity.
 
@@ -170,10 +170,10 @@ streamlit run app.py
 
 | Layer | Directory / Deliverable | Strategic Role & Highlights | Documentation Link |
 | :---: | :--- | :--- | :---: |
-| 📊 **Visual BI Portal** | **`Tableau/Interactive Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.43B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
+| 📊 **Visual BI Portal** | **`Tableau/Interactive Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.83B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
 | 🌐 **Live Web Application** | **`application/app.py`** | 5-Tab Streamlit & Plotly interactive dashboard powered by dual-engine AI (`Google Gemini 2.5 + Local Engine`). | [📖 Streamlit Docs](../application/README.md) |
 | 📑 **Financial Engineering** | **`Excel Project/Co2 Project.xlsx`** | 16-sheet domain reference workbook featuring comprehensive CAPEX payback modeling and WET system thermodynamics. | [📖 Excel Docs](../Excel%20Project/README.md) |
-| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,639 properties. | [📖 ML Docs](../models/README.md) |
+| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,638 properties. | [📖 ML Docs](../models/README.md) |
 | 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |
 | 📚 **Academic Suite** | **`Project Documentations/`** | Official 6-part academic deliverables (`Doc 01 - Doc 06`) and comprehensive Word report (`.docx`). | [📖 Academic Suite](../Project%20Documentations/README.md) |
 

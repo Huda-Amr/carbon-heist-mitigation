@@ -30,7 +30,7 @@
       <br/>
       🏢 <strong>Target Portfolio</strong><br/>
       <h2 style="color: #00E5FF;">2.06 Billion Sq. Ft.</h2>
-      <em>11,639 NYC Properties</em>
+      <em>11,638 NYC Properties</em>
       <br/><br/>
     </td>
     <td align="center" width="33%">
@@ -57,7 +57,7 @@
 
 New York City's Local Law 97 (LL97) imposes strict carbon emission limits on buildings over 25,000 square feet starting in 2024, with statutory thresholds tightening significantly in 2030. Property owners exceeding their assigned carbon caps face mandatory statutory penalties of **$268 per metric ton of CO₂e over the limit**. Across large commercial, residential, and institutional portfolios, these statutory fines accumulate into millions of dollars annually—effectively creating a recurring "carbon heist" that erodes net operating income and asset valuations.
 
-The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, machine learning, and interactive financial decision-support system. It transforms raw municipal energy disclosure records (`sample_nyc_energy.xlsx`) into actionable engineering retrofits, strategic capital expenditure (`CAPEX`) financial modeling, and precise regulatory liability forecasting across **11,639 audited properties**.
+The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, machine learning, and interactive financial decision-support system. It transforms raw municipal energy disclosure records (`sample_nyc_energy.xlsx`) into actionable engineering retrofits, strategic capital expenditure (`CAPEX`) financial modeling, and precise regulatory liability forecasting across **11,638 audited properties**.
 
 ---
 
@@ -89,7 +89,7 @@ The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, mach
 > ### **All Savings Figures Represent Recurring Annual Savings ($ / Year)**
 > Every savings metric evaluated across the platform (`Gross Savings`, `Net Annual Benefit`, and `Annual Fine Avoided`) represents **recurring annual fine avoidance and operational cost savings ($ / yr)** generated every single year.
 
-The project incorporates **5 Strategic Decarbonization Playbooks**, structured as a self-funding capital allocation hierarchy across all **11,639 audited NYC properties**:
+The project incorporates **5 Strategic Decarbonization Playbooks**, structured as a self-funding capital allocation hierarchy across all **11,638 audited NYC properties**:
 
 | Playbook ID & Strategy | Target Subset & Asset Focus | Initial CAPEX ($) | Annual OPEX ($/yr) | Gross Savings ($/yr) | Net Annual Benefit ($/yr) | Payback Period | Technical & Operational Maintenance Scope |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -98,7 +98,7 @@ The project incorporates **5 Strategic Decarbonization Playbooks**, structured a
 | **03 · 1960s Smart Scale** | 1960–1979 Commercial & Multi | **$785.24 M** | **$2.80 M / yr** | **$88.03 M / yr** | **$85.23 M / yr** | **8.92 Yrs** | Networked LED lighting retrofits, VFD motors ($2.50/ft²) & preventative electrical maintenance. |
 | **04 · 1930s WET Systems** | Historic Pre-War Steam / WET | **$1.50 B** | **$4.50 M / yr** | **$122.39 M / yr** | **$117.89 M / yr** | **12.25 Yrs** | Sewer heat recovery heat exchangers leveraging 50% PPP Grants ($749M net) & anti-fouling protocols. |
 | **05 · Electrification Push** | Fuel Oil #4 & Fossil Boilers | **$1.89 B** | **$5.10 M / yr** | **$181.99 M / yr** | **$176.89 M / yr** | **10.38 Yrs** | Air/water electric heat pumps ($20/ft²), OEM service contracts & quarterly thermal infrared scanning. |
-| **🏆 TOTAL PORTFOLIO** | **Entire Portfolio (11,639 assets)** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | **7.58 Yrs Blended** | **Total OPEX averages only 0.32% of CAPEX, preserving 97.6% net recurring cash flow.** |
+| **🏆 TOTAL PORTFOLIO** | **Entire Portfolio (11,638 assets)** | **$4.98 B** | **$15.70 M / yr** | **$656.63 M / yr** | **$640.93 M / yr** | **7.58 Yrs Blended** | **Total OPEX averages only 0.32% of CAPEX, preserving 97.6% net recurring cash flow.** |
 
 ---
 
@@ -170,7 +170,7 @@ gantt
 
 | Performance Metric & Domain | Baseline Target Threshold | Achieved Engineering Result | Verification Method & Evidence |
 | :--- | :--- | :--- | :--- |
-| **1. ETL Data Retention & Completeness** | Retain $\ge 95\%$ of valid commercial properties over 50,000 sq. ft. with $0\%$ null values in core ML features. | **100% Validated Retention (`11,639 Cleaned Records`)** | Automated assertions in `Clean_Data_Pipeline.py` & audit verification report (`sample_nyc_energy.xlsx`). |
+| **1. ETL Data Retention & Completeness** | Retain $\ge 95\%$ of valid commercial properties over 50,000 sq. ft. with $0\%$ null values in core ML features. | **100% Validated Retention (`11,638 Cleaned Records`)** | Automated assertions in `Clean_Data_Pipeline.py` & audit verification report (`sample_nyc_energy.xlsx`). |
 | **2. Machine Learning Regression ($R^2$)** | Coefficient of Determination $R^2 \ge 0.75$ and Mean Absolute Error $\text{MAE} \le 250 \text{ MT CO}_2\text{e}$. | **$R^2 = 81.65\%$ & $\text{MAE} = 212.99 \text{ MT CO}_2\text{e}$** | Test-set evaluation metrics logged in `models/train_ll97_model.py` and model artifacts (`ll97_model.joblib`). |
 | **3. UI Rendering & Interactive Latency** | Dashboard slider recalculation and Plotly chart rendering $\le 1.5 \text{ seconds}$ during user interaction. | **Sub-Second Execution (`~0.3 Seconds`)** | Streamlit caching (`@st.cache_data` & `@st.cache_resource`) combined with vectorized Pandas calculations. |
 | **4. Statutory Financial Calculation Precision** | Mathematical parity between Streamlit web application outputs and Excel financial engineering models. | **100% Exact Parity Across All 16 Sheets** | Cross-verified across 16 workbook sheets (`Co2 Project.xlsx`) and 5 retrofit playbook scenarios. |
