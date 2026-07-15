@@ -79,27 +79,6 @@
 </table>
 </div>
 
-> [!TIP]
-> ### 🌐 **[Click Here to Launch the Live Interactive C-Suite Dashboard Online](https://carbon-heist-mitigation.streamlit.app/)**
-> Explore all 11,638 NYC properties, interactive real-time mitigation sliders, Random Forest AI compliance predictions, and 5-playbook CAPEX financial modeling directly in your browser.
-
----
-
-## 💬 Live AI Executive Chatbot & Dual-Engine Interactive Visualization
-
-The live Streamlit application features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,638-property forensic dataset:
-
-- **🧠 Live Generative AI Mode (Google Gemini 2.5 Flash):** Connect any Google Gemini API key directly in the UI header to enable live C-Suite strategic reasoning. The AI parses any natural-language prompt, computes executive metrics, and dynamically generates custom interactive Plotly visualizations on the fly. Built-in **Multi-Model Auto-Fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`)** and exponential backoff retry guarantee high resilience.
-- **⚡ Local Quantitative & Charting Engine (Offline/Rate-Limit Safe):** Even without an API key or during API rate limits (`HTTP 429`), our embedded local dataset engine parses natural-language queries (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) and instantly renders both quantitative C-Suite text analysis and interactive Plotly charts directly from our audited `sample_nyc_energy.xlsx` database.
-
----
-
-## 📊 Enterprise Visual Business Intelligence Portals (`PowerBI/` & `Tableau/`)
-
-In addition to our full-stack Streamlit application and 16-sheet Excel financial model, the platform embeds **Dual-Engine Enterprise Visual BI Workbooks** designed for boardroom presentations and executive decision-making:
-- **📊 Power BI Executive BI Portal (`PowerBI/NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`):** A standalone 3-page interactive dashboard (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) featuring Dark Royal Navy styling (`#0F172A`), custom DAX measures, and synchronized slicers for `Borough`, `Property Type`, and `Decade Built`.
-- **📈 Tableau Executive C-Suite Portal (`Tableau/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`):** A packaged 3-page progressive visual analytics dashboard with Royal Navy & Gold aesthetics and mobile-scannable QR bridging directly to our live Tableau Public portal.
-
 ---
 
 ## 🏙️ The Mission & Challenge
@@ -205,6 +184,27 @@ carbon-heist-mitigation/
 ├── ⚖️ LICENSE                      # MIT License
 └── 📄 README.md                    # Project Executive Overview (You are here)
 ```
+
+---
+
+## 🌐 Pillar 5: Streamlit Full-Stack Web Application & Dual-Engine AI Chatbot
+
+> [!TIP]
+> ### 🌐 **[Click Here to Launch the Live Interactive C-Suite Dashboard Online](https://carbon-heist-mitigation.streamlit.app/)**
+> Explore all 11,638 NYC properties, interactive real-time mitigation sliders, Random Forest AI compliance predictions, and 5-playbook CAPEX financial modeling directly in your browser without local setup.
+
+The live Streamlit application (`application/app.py`) features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,638-property forensic dataset:
+
+- **🧠 Live Generative AI Mode (Google Gemini 2.5 Flash):** Connect any Google Gemini API key directly in the UI header to enable live C-Suite strategic reasoning. The AI parses any natural-language prompt, computes executive metrics, and dynamically generates custom interactive Plotly visualizations on the fly. Built-in **Multi-Model Auto-Fallback (`Gemini 2.5 -> 2.0 -> 1.5 Flash`)** and exponential backoff retry guarantee high resilience.
+- **⚡ Local Quantitative & Charting Engine (Offline/Rate-Limit Safe):** Even without an API key or during API rate limits (`HTTP 429`), our embedded local dataset engine parses natural-language queries (`"top 10 buildings"`, `"multifamily housing"`, `"boroughs"`, `"capex breakdown"`, `"payback horizon"`) and instantly renders both quantitative C-Suite text analysis and interactive Plotly charts directly from our audited `sample_nyc_energy.xlsx` database.
+
+---
+
+## 📊 Pillar 6: Enterprise Visual Business Intelligence Portals (`PowerBI/` & `Tableau/`)
+
+In addition to our full-stack Streamlit application and 16-sheet Excel financial model, the platform embeds **Dual-Engine Enterprise Visual BI Workbooks** designed for boardroom presentations and executive decision-making:
+- **📊 Power BI Executive BI Portal (`PowerBI/NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`):** A standalone 3-page interactive dashboard (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) featuring Dark Royal Navy styling (`#0F172A`), custom DAX measures, and synchronized slicers for `Borough`, `Property Type`, and `Decade Built`.
+- **📈 Tableau Executive C-Suite Portal (`Tableau/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`):** A packaged 3-page progressive visual analytics dashboard with Royal Navy & Gold aesthetics and mobile-scannable QR bridging directly to our live Tableau Public portal.
 
 ---
 

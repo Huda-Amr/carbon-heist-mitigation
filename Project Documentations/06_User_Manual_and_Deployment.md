@@ -12,10 +12,6 @@
 
 </div>
 
-> [!TIP]
-> ### 🌐 **[Instant Online Access: Launch Live Streamlit Cloud Application](https://carbon-heist-mitigation.streamlit.app/)**
-> Explore the fully deployed dashboard in your browser without any local installation.
-
 ---
 
 <div align="center">
@@ -99,12 +95,12 @@ pip install pandas numpy scikit-learn openpyxl streamlit plotly joblib fpdf2
 ### 2. Execution Modes
 
 #### Option A: Launch Interactive Executive Web Dashboard (Streamlit)
-To start the production web interface for real-time portfolio modeling:
+To start the production web interface locally for real-time portfolio modeling:
 ```bash
 cd application
 streamlit run app.py
 ```
-*The dashboard will automatically open in your browser at `http://localhost:8501`.*
+*The dashboard will automatically open in your browser at `http://localhost:8501`. Alternatively, access the fully deployed cloud version online at **[https://carbon-heist-mitigation.streamlit.app/](https://carbon-heist-mitigation.streamlit.app/)**.*
 
 #### Option B: Run AI Predictive Playground in Terminal
 To interactively test building archetypes in your command line:
@@ -123,6 +119,10 @@ python Clean_Data_Pipeline.py
 ---
 
 ## 6.4 Step-by-Step End User Manual
+
+> [!TIP]
+> ### 🌐 **[Instant Online Access: Launch Live Streamlit Cloud Application](https://carbon-heist-mitigation.streamlit.app/)**
+> Explore the fully deployed 5-tab executive dashboard in your browser without any local installation.
 
 > [!IMPORTANT]
 > ### **Decarbonization Scenario Simulation**

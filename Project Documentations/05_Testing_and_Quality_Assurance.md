@@ -77,11 +77,11 @@ flowchart LR
 | Test ID | Test Category | Scenario Description | Input / Condition | Expected Outcome | Actual Result | Status |
 | :---: | :--- | :--- | :--- | :--- | :--- | :---: |
 | **TC&#8209;01** | **Data&nbsp;Engineering** | Ingest Raw LL84 Spreadsheet | 11,000+ Raw NYC municipal disclosure records | Cleanly replace `"Not Available"` with `NaN` without data corruption | Successfully parsed all records | **🟢&nbsp;PASS** |
-| **TC&#8209;02** | **Data&nbsp;Engineering** | Size Threshold Compliance | Apply `GFA >= 50,000 sq ft` filter | Retain only buildings legally subject to LL97 | Retained 11,638 compliant properties | **🟢&nbsp;PASS** |
-| **TC&#8209;03** | **Data&nbsp;Engineering** | Borough Normalization | Input misspelled city names (`"Ny"`, `"Quuens"`, `"beonx"`) | Map to correct standard NYC borough strings | Exactly 0 invalid addresses remaining | **🟢&nbsp;PASS** |
-| **TC&#8209;04** | **Machine&nbsp;Learning** | Random Forest Regressor Accuracy | Train model on 80/20 train/test split | Achieve **R² ≥ 75%** and **MAE ≤ 250 MT CO₂e** | **R² = 81.65%**, **MAE = 212.99** | **🟢&nbsp;PASS** |
+| **TC&#8209;02** | **Data&nbsp;Engineering** | Size Threshold Compliance | Apply `GFA >= 50,000 sq ft` filter | Retain only buildings legally subject to LL97 | Retained&nbsp;11,638&nbsp;compliant properties | **🟢&nbsp;PASS** |
+| **TC&#8209;03** | **Data&nbsp;Engineering** | Borough Normalization | Input misspelled city names (`"Ny"`, `"Quuens"`, `"beonx"`) | Map to correct standard NYC borough strings | Exactly&nbsp;0&nbsp;invalid addresses remaining | **🟢&nbsp;PASS** |
+| **TC&#8209;04** | **Machine&nbsp;Learning** | Random Forest Regressor Accuracy | Train model on 80/20 train/test split | Achieve **R²&nbsp;≥&nbsp;75%** and **MAE&nbsp;≤&nbsp;250&nbsp;MT** | **R²&nbsp;=&nbsp;81.65%**, **MAE&nbsp;=&nbsp;212.99** | **🟢&nbsp;PASS** |
 | **TC&#8209;05** | **Machine&nbsp;Learning** | Outlier Alignment Parity | Ensure `train_ll97_model.py` and `ll97_playground.py` match | Both scripts filter `Site EUI < 2000` | Both scripts yield exact **81.65%** accuracy | **🟢&nbsp;PASS** |
-| **TC&#8209;06** | **Financial&nbsp;Engine** | LL97 Statutory Fine Calculation | 1930s Asset (150k sq. ft., predicted 1,422.1 MT CO₂e) | Exact calculation: **$2.54 penalty / sq. ft.** | Verified exact match (**$2.54/ft²**) | **🟢&nbsp;PASS** |
+| **TC&#8209;06** | **Financial&nbsp;Engine** | LL97 Statutory Fine Calculation | 1930s Asset (150k sq. ft., predicted 1,422.1 MT CO₂e) | Exact calculation: **$2.54&nbsp;penalty&nbsp;/&nbsp;sq.&nbsp;ft.** | Verified exact match (**$2.54/ft²**) | **🟢&nbsp;PASS** |
 | **TC&#8209;07** | **UI&nbsp;/&nbsp;Dashboard** | Interactive Slider Recalculation | Adjust Energy Star slider from 40 to 85 | Instant chart update showing reduced carbon penalty | Rendered under 0.3s | **🟢&nbsp;PASS** |
 | **TC&#8209;08** | **AI&nbsp;Co&#8209;Pilot&nbsp;/&nbsp;Tab&nbsp;5** | Conversational Query & Dynamic Plotly Generation | Query Tab 5 (`"Show top 5 emitting property types across Manhattan in a bar chart"`) | System parses intent, calculates totals from local dataset, and renders interactive Plotly chart inside chat | Successfully generated chart & text response | **🟢&nbsp;PASS** |
 | **TC&#8209;09** | **AI&nbsp;Co&#8209;Pilot&nbsp;/&nbsp;Tab&nbsp;5** | API Rate-Limit Shielding (`HTTP 429` / No API Key) | Trigger chat query without Gemini API key or during quota exhaustion | System catches exception and routes prompt to embedded local quantitative charting engine without crashing | Zero downtime, instant local chart fallback | **🟢&nbsp;PASS** |
@@ -120,12 +120,12 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 ## 5.5 Enterprise Visual BI Verification Matrix (`Power BI` & `Tableau`)
 | Test ID | Component | Verification Procedure | Expected Outcome | Status |
 | :---: | :--- | :--- | :--- | :---: |
-| **PBI-01** | **Power BI Data Binding** | Open `NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix` offline without external database connection. | All `11,638` records load instantly from internal excel/csv data model without prompt errors. | 🟢 Pass |
+| **PBI-01** | **Power BI Data Binding** | Open `NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix` offline without external database connection. | All&nbsp;11,638&nbsp;records load instantly from internal excel/csv data model without prompt errors. | 🟢 Pass |
 | **PBI-02** | **Power BI Slicer Synchronization** | Select `Manhattan` and `Multifamily Housing` on the left-hand slicers panel. | All 4 KPI command cards and 4 charts across all 3 pages dynamically filter via synchronized DAX actions. | 🟢 Pass |
-| **PBI-03** | **Power BI Waterfall Calculation** | Verify Page 3 (`Carbon Cost & Savings Analysis`) waterfall bridge values. | Exact parity: Baseline `$2,830.3M` penalty reduced by `$640.9M` total fine savings across 6 playbooks down to `$2,189.37M` residual liability. | 🟢 Pass |
-| **TAB-01** | **Tableau Data Extract Binding** | Open `NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx` offline without database connection. | All `11,638` records load instantly from internal `.csv` extract without prompts. | 🟢 Pass |
+| **PBI-03** | **Power BI Waterfall Calculation** | Verify Page 3 (`Carbon Cost & Savings Analysis`) waterfall bridge values. | Exact parity: Baseline&nbsp;$2,830.3M&nbsp;penalty reduced by $640.9M&nbsp;total fine savings across 6 playbooks down to $2,189.37M&nbsp;residual liability. | 🟢 Pass |
+| **TAB-01** | **Tableau Data Extract Binding** | Open `NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx` offline without database connection. | All&nbsp;11,638&nbsp;records load instantly from internal .csv extract without prompts. | 🟢 Pass |
 | **TAB-02** | **Tableau Borough & Type Filters** | Select `Manhattan` and `Commercial Office` on global dropdowns. | All charts across all 3 pages dynamically filter via synchronized actions. | 🟢 Pass |
-| **TAB-03** | **Tableau Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | `Co-Op City` outputs exact `$0.04B/yr` penalty consistent with Python ML pipeline. | 🟢 Pass |
+| **TAB-03** | **Tableau Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | Co-Op&nbsp;City outputs exact $0.04B/yr&nbsp;penalty consistent with Python ML pipeline. | 🟢 Pass |
 | **TAB-04** | **Tableau C-Suite QR Bridge** | Scan embedded QR code (`#FFFFFF` border) from 2 meters with iOS/Android device. | Instant camera focus and redirection to the live online Tableau C-Suite Portal. | 🟢 Pass |
 
 ---
