@@ -91,15 +91,6 @@ Each dedicated scenario tab models one of the 5 engineering playbooks and featur
 | **15** | **`1960s Smart Scale`** | **Playbook 03 (`Post-War Boom Archetypes`):** Targeted smart automation, district loop scaling, and envelope weatherization for NYC's #1 single largest emitting construction decade (`1960s`). | **`$88.0M/yr Net Savings`**<br/>`$785.2M CAPEX`<br/>**8.92-Year Payback** | **`1960s Smart Scale Penalty Bridge ($88.0M/yr Saved)`**<br/>`$440.2M Exposure → $352.1M Residual Penalty` |
 | **16** | **`Electrification Push`** | **Playbook 05 (`Deep Geothermal & Heat Pumps`):** Replacement of fossil fuel heating boilers with high-efficiency air-source and water-source electric heat pump networks. | **`$182.0M/yr Net Savings`**<br/>`$2.30B CAPEX`<br/>**12.63-Year Payback** | **`Electrification Push Penalty Reduction Bridge ($182.0M/yr Saved)`** |
 
----
-
-<div align="center">
-
-[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
-[![Docs Suite](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../Project%20Documentations/README.md)
-
-</div>
-
 
 ---
 
@@ -113,5 +104,16 @@ Each dedicated scenario tab models one of the 5 engineering playbooks and featur
 | 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,639 properties. | [📖 ML Docs](../models/README.md) |
 | 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |
 | 📚 **Academic Suite** | **`Project Documentations/`** | Official 6-part academic deliverables (`Doc 01 - Doc 06`) and comprehensive Word report (`.docx`). | [📖 Academic Suite](../Project%20Documentations/README.md) |
+
+
+---
+
+<div align="center">
+
+[![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
+[![Docs Suite](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../Project%20Documentations/README.md)
+
+</div>
+
 
 ---

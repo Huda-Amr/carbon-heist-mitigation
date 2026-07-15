@@ -116,6 +116,16 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 
 ---
 
+## 5.5 Tableau BI Dashboard Verification Matrix
+| Test ID | Component | Verification Procedure | Expected Outcome | Status |
+| :---: | :--- | :--- | :--- | :---: |
+| **TAB-01** | **Data Extract Binding** | Open Interactive Dashboard.twbx offline without database connection. | All 9,840 records load instantly from internal .csv extract without prompts. | 🟢 Pass |
+| **TAB-02** | **Borough & Type Filters** | Select Manhattan and Commercial Office on global dropdowns. | All charts across all 3 pages dynamically filter via synchronized actions. | 🟢 Pass |
+| **TAB-03** | **Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | Co-Op City outputs exact $0.04B/yr penalty consistent with Python ML pipeline. | 🟢 Pass |
+| **TAB-04** | **C-Suite QR Bridge** | Scan embedded QR code (#FFFFFF border) from 2 meters with iOS/Android device. | Instant camera focus and redirection to https://carbon-heist-mitigation.streamlit.app/. | 🟢 Pass |
+
+---
+
 <div align="center">
 
 [![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
@@ -124,12 +134,3 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 [![Next Document](https://img.shields.io/badge/NEXT-DOC%2006:%20USER%20MANUAL-00E5FF?style=for-the-badge)](./06_User_Manual_and_Deployment.md)
 
 </div>
-
-
-## 5.5 Tableau BI Dashboard Verification Matrix
-| Test ID | Component | Verification Procedure | Expected Outcome | Status |
-| :---: | :--- | :--- | :--- | :---: |
-| **TAB-01** | **Data Extract Binding** | Open Interactive Dashboard.twbx offline without database connection. | All 9,840 records load instantly from internal .csv extract without prompts. | 🟢 Pass |
-| **TAB-02** | **Borough & Type Filters** | Select Manhattan and Commercial Office on global dropdowns. | All charts across all 3 pages dynamically filter via synchronized actions. | 🟢 Pass |
-| **TAB-03** | **Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | Co-Op City outputs exact $0.04B/yr penalty consistent with Python ML pipeline. | 🟢 Pass |
-| **TAB-04** | **C-Suite QR Bridge** | Scan embedded QR code (#FFFFFF border) from 2 meters with iOS/Android device. | Instant camera focus and redirection to https://carbon-heist-mitigation.streamlit.app/. | 🟢 Pass |
