@@ -1,5 +1,11 @@
 # 🗄️ Relational Database & Persistence Layer
 
+<div align="center">
+
+[![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+
+</div>
+
 Welcome to the **Database Layer** of the **Carbon Heist Mitigation Platform**. This directory houses the relational database schemas, Entity-Relationship Diagrams (ERD), and normalization specifications designed to persist building dimensions, annual energy benchmarking measurements, and regulatory compliance alerts.
 
 ---

@@ -2,7 +2,8 @@
 
 [![Prev Document](https://img.shields.io/badge/Prev-Doc_04:_Implementation-181717?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)&nbsp;
 [![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_06:_User_Manual-00E5FF?style=for-the-badge)](./06_User_Manual_and_Deployment.md)
+[![Next Document](https://img.shields.io/badge/Next-Doc_06:_User_Manual-00E5FF?style=for-the-badge)](./06_User_Manual_and_Deployment.md)&nbsp;
+[![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 
 # 📑 DOC 05 — TESTING & QUALITY ASSURANCE MATRIX
 ### *Carbon Heist Mitigation & NYC Local Law 97 Intelligence Platform*

@@ -1,5 +1,11 @@
 # 🤖 Artificial Intelligence & Predictive Modeling Layer
 
+<div align="center">
+
+[![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+
+</div>
+
 Welcome to the **Machine Learning Layer** of the **Carbon Heist Mitigation Platform**. This directory houses our predictive engine, feature encoders, training pipelines, and interactive CLI simulation playground used to forecast greenhouse gas emissions and evaluate statutory penalty exposure under **NYC Local Law 97**.
 
 ---

@@ -1,5 +1,11 @@
 # 📑 Financial Engineering & Domain Reference Models
 
+<div align="center">
+
+[![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+
+</div>
+
 Welcome to the **Domain & Financial Engineering Layer** of the **Carbon Heist Mitigation Platform**. This directory contains our comprehensive **16-sheet financial, engineering, and C-Suite visualization workbook (`Co2 Project.xlsx`)**, which serves as the master domain reference for all Local Law 97 statutory penalty calculations, capital expenditure (CAPEX) unit-cost breakdowns, operating expenditure (OPEX) schedules, interactive bridge charts (`Waterfall Charts`), and the 5 Decarbonization Playbooks.
 
 ---

@@ -1,5 +1,11 @@
 # 📊 Data Engineering & ETL Pipeline
 
+<div align="center">
+
+[![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+
+</div>
+
 Welcome to the **Data Layer** of the **Carbon Heist Mitigation Platform**. This folder manages the ingestion, preprocessing, cleaning, and quality assurance of New York City municipal energy disclosure data (**Local Law 84 Benchmarking Data**).
 
 ---

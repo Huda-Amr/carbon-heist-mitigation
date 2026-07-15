@@ -2,7 +2,8 @@
 
 [![Prev Document](https://img.shields.io/badge/Prev-Doc_03:_Architecture-181717?style=for-the-badge)](./03_System_Analysis_and_Design.md)&nbsp;
 [![Back to Suite](https://img.shields.io/badge/Back_to-Docs_Suite-00FF66?style=for-the-badge&logo=github)](./README.md)&nbsp;
-[![Next Document](https://img.shields.io/badge/Next-Doc_05:_Testing_QA-00E5FF?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)
+[![Next Document](https://img.shields.io/badge/Next-Doc_05:_Testing_QA-00E5FF?style=for-the-badge)](./05_Testing_and_Quality_Assurance.md)&nbsp;
+[![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 
 # 📑 DOC 04 — IMPLEMENTATION & CODING STANDARDS
 ### *Carbon Heist Mitigation & NYC Local Law 97 Intelligence Platform*
