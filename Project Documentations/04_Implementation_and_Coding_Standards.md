@@ -140,7 +140,7 @@ gitGraph
 ## 4.5 Tableau BI & Visual Analytics Standards
 - **Workbook Packaging:** All visual analytics deliverables must be published as Packaged Workbooks (.twbx) embedding the audited sample_nyc_energy.csv dataset to prevent external database path dependencies.
 - **Design Aesthetics:** Dashboards strictly adhere to the C-Suite high-contrast palette (#0D1321 Navy background, #FFD700 Gold highlights) with standardized font scaling (Segoe UI / Tableau Semibold).
-- **Calculated Field Governance:** Custom formulas (e.g., [LL97 Risk Category], [Penalty Savings Potential]) must use explicit conditional logic verified against statutory fine boundaries (/MT).
+- **Calculated Field Governance:** Custom formulas across visual sheets must use explicit conditional logic verified against statutory fine boundaries (/MT).
 
 ---
 

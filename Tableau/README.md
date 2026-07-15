@@ -70,18 +70,6 @@ graph TD
 
 ---
 
-## 🛠️ Core Calculated Fields & Formulas
-
-The workbook embeds several custom calculated fields designed to enforce strict regulatory logic and financial modeling:
-
-| Calculated Field Name | Tableau Formula / Logic | Strategic Business Purpose |
-| :--- | :--- | :--- |
-| **`LL97 Risk Category`** | `IF [Base LL97 Penalty] = 0 THEN "✅ Compliant"`<br/>`ELSEIF [Base LL97 Penalty] <= 50000 THEN "⚠️ Moderate Risk"`<br/>`ELSEIF [Base LL97 Penalty] <= 250000 THEN "🔶 High Risk"`<br/>`ELSE "🔴 Critical Risk" END` | Classifies properties into 4 actionable tier buckets for prioritized asset management intervention. |
-| **`Penalty Savings Potential`** | `IF [Base LL97 Penalty] > 0 THEN [Base LL97 Penalty] * 0.45 ELSE 0 END` | Models an immediate 45% fine reduction achievable through Level 2 Energy Audits and basic BMS retrofits. |
-| **`Total Records`** | `1` | Quantitative anchor for exact property count aggregations across complex multi-table joins. |
-
----
-
 ## 🎨 Design System & Visual Aesthetics
 
 The dashboard adheres to modern **C-Suite visual excellence guidelines**:
