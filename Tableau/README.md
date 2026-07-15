@@ -92,7 +92,7 @@ The dashboard adheres to modern **C-Suite visual excellence guidelines**:
    cd Tableau
    ```
 2. Double-click **`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`**. Because it is a Packaged Workbook (`.twbx`), the audited data extract (`sample_nyc_energy.csv`) is bundled directly inside—no external database setup or connection reconfiguration is required.
-3. Use the bottom navigation tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) or the built-in golden navigation arrows (`⬅ ➡`) to cycle through the executive story.
+3. Use the bottom navigation tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) or the built-in Red navigation arrows (`⬅ ➡`) to cycle through the executive story.
 
 ---
 
