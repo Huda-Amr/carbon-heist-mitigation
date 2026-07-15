@@ -120,7 +120,7 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 ## 5.5 Tableau BI Dashboard Verification Matrix
 | Test ID | Component | Verification Procedure | Expected Outcome | Status |
 | :---: | :--- | :--- | :--- | :---: |
-| **TAB-01** | **Data Extract Binding** | Open Interactive Dashboard.twbx offline without database connection. | All 11,638 records load instantly from internal .csv extract without prompts. | 🟢 Pass |
+| **TAB-01** | **Data Extract Binding** | Open NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx offline without database connection. | All 11,638 records load instantly from internal .csv extract without prompts. | 🟢 Pass |
 | **TAB-02** | **Borough & Type Filters** | Select Manhattan and Commercial Office on global dropdowns. | All charts across all 3 pages dynamically filter via synchronized actions. | 🟢 Pass |
 | **TAB-03** | **Fine Calculation Accuracy** | Audit Top Penalty Buildings bar chart against raw formulas. | Co-Op City outputs exact $0.04B/yr penalty consistent with Python ML pipeline. | 🟢 Pass |
 | **TAB-04** | **C-Suite QR Bridge** | Scan embedded QR code (#FFFFFF border) from 2 meters with iOS/Android device. | Instant camera focus and redirection to the live online Tableau C-Suite Portal. | 🟢 Pass |

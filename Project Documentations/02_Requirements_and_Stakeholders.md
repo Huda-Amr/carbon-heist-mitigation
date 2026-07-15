@@ -116,7 +116,7 @@ flowchart LR
 
 ---
 
-| **FR-08** | **Visual BI Presentation Layer** | The system shall provide a standalone packaged Tableau workbook (`Interactive Dashboard.twbx`) featuring multi-dimensional borough filtering, KPI command bars, and step-by-step decarbonization engineering infographics for boardroom presentations. | High |
+| **FR-08** | **Visual BI Presentation Layer** | The system shall provide a standalone packaged Tableau workbook (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`) featuring multi-dimensional borough filtering, KPI command bars, and step-by-step decarbonization engineering infographics for boardroom presentations. | High |
 
 ## 2.5 Non-Functional Requirements (NFR)
 
