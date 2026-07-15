@@ -181,3 +181,7 @@ gantt
 [![Next Document](https://img.shields.io/badge/NEXT-DOC%2002:%20REQUIREMENTS-00E5FF?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)
 
 </div>
+
+
+## 4. Key Deliverables
+- **Tableau Executive BI Portal (`Interactive Dashboard.twbx`):** A 3-page progressive visual analytics dashboard with a Royal Navy & Gold aesthetic (`#0D1321` / `#FFD700`), custom calculated fields (`LL97 Risk Category`, `Penalty Savings Potential`), and an embedded mobile-scannable QR code bridge to the web AI Co-Pilot.

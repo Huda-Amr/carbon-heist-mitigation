@@ -247,3 +247,8 @@ stateDiagram-v2
 [![Next Document](https://img.shields.io/badge/NEXT-DOC%2004:%20IMPLEMENTATION-00E5FF?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)
 
 </div>
+
+
+## 2. System Architecture
+### 2.6 Tableau Executive BI & Visual Analytics Layer
+Alongside the full-stack web application, the architecture incorporates a packaged **Tableau Desktop 2026+ (`Interactive Dashboard.twbx`)** layer operating directly on the validated `sample_nyc_energy.csv` master dataset. It delivers progressive 3-page visual storytelling (`NYC Monitor` ➔ `Compliance Performance` ➔ `Decarbonization Roadmap`) enhanced with diagnostic iconography and mobile QR bridging.

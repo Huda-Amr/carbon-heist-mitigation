@@ -159,3 +159,12 @@ To initialize the relational schema in your SQL server:
 [![Download Word Report](https://img.shields.io/badge/DOWNLOAD-DOCX%20MASTER%20REPORT-9B51E0?style=for-the-badge)](./Carbon_Heist_Mitigation_Documentation.docx)
 
 </div>
+
+
+## 3. Launching the Application
+### 3.4 Launching the Tableau Executive BI Portal
+To open the standalone visual BI dashboard locally:
+1. Navigate to `carbon-heist-mitigation/Tableau/`.
+2. Open `Interactive Dashboard.twbx` inside **Tableau Desktop** or **Tableau Reader**.
+3. Cycle through the three tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) using the bottom navigation bar or golden arrows (`⬅ ➡`).
+4. Scan the embedded C-Suite QR code on Page 3 from your mobile device to launch the live web portal.

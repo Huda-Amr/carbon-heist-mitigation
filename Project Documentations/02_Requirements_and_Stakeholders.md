@@ -137,3 +137,7 @@ flowchart LR
 [![Next Document](https://img.shields.io/badge/NEXT-DOC%2003:%20ARCHITECTURE-00E5FF?style=for-the-badge)](./03_System_Analysis_and_Design.md)
 
 </div>
+
+
+## 3. Functional Requirements
+- **FR-08 (Visual BI Presentation Layer):** The system shall provide a standalone packaged Tableau workbook (`Interactive Dashboard.twbx`) featuring multi-dimensional borough filtering, KPI command bars, and step-by-step decarbonization engineering infographics for boardroom presentations.

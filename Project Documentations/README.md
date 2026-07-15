@@ -157,3 +157,10 @@ Across all academic documentation files, regulatory penalty exposure and capital
 [![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)
 
 </div>
+
+
+### 🏢 Visual Business Intelligence Layer (`Tableau/`)
+In addition to the 16-sheet Excel financial engineering model and live Streamlit web app, the project suite embeds a **3-Page Tableau Executive Business Intelligence Portal (`Interactive Dashboard.twbx`)**:
+- **Page 1: `NYC Energy Efficiency & Emissions Monitor`** — Macro geographic hotspot mapping (`9.05M MT CO₂e`) and decade-built baseline distribution.
+- **Page 2: `LL97 Compliance & Carbon Performance`** — Financial fine exposure (`$2.43B$`), top building liabilities, and compliance rate banner.
+- **Page 3: `Decarbonization Roadmap`** — 3-step prescriptive CAPEX cascade (`Energy Audit` ➔ `Retrofit` ➔ `Green Power`) paired with a **Live C-Suite QR Code Portal** (`Scan to Explore the Live Interactive C-Suite Portal`) linking physical presentations directly to the online Streamlit AI Co-Pilot.
