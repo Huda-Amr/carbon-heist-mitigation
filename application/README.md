@@ -182,15 +182,12 @@ streamlit run app.py
 
 <div align="center">
 
+**Carbon Heist Mitigation Platform** · Engineered for NYC Local Law 97 Compliance & Strategic Decarbonization
+
+<br/>
+
 [![Return to Main Repo](https://img.shields.io/badge/🏠%20RETURN%20TO-MAIN%20REPOSITORY%20HOME-00FF66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/ahmedadelamin/carbon-heist-mitigation)&nbsp;
 [![Model Docs](https://img.shields.io/badge/🤖%20VIEW-AI%20%26%20ML%20MODELS-A855F7?style=for-the-badge)](../models/README.md)&nbsp;
 [![Academic Docs](https://img.shields.io/badge/📑%20VIEW-ACADEMIC%20DOCS%20SUITE-00E5FF?style=for-the-badge)](../Project%20Documentations/README.md)
 
-<br/>
-
-**Carbon Heist Mitigation Platform** · Engineered for NYC Local Law 97 Compliance & Strategic Decarbonization
-
 </div>
-
-
----

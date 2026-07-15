@@ -88,7 +88,7 @@ The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, mach
 > ### **All Savings Figures Represent Recurring Annual Savings ($ / Year)**
 > Every savings metric evaluated across the platform (`Gross Savings`, `Net Annual Benefit`, and `Annual Fine Avoided`) represents **recurring annual fine avoidance and operational cost savings ($ / yr)** generated every single year.
 
-The project incorporates **Hagar Hussein's 5 Strategic Decarbonization Playbooks**, structured as a self-funding capital allocation hierarchy across all **11,639 audited NYC properties**:
+The project incorporates **5 Strategic Decarbonization Playbooks**, structured as a self-funding capital allocation hierarchy across all **11,639 audited NYC properties**:
 
 | Playbook ID & Strategy | Target Subset & Asset Focus | Initial CAPEX ($) | Annual OPEX ($/yr) | Gross Savings ($/yr) | Net Annual Benefit ($/yr) | Payback Period | Technical & Operational Maintenance Scope |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
