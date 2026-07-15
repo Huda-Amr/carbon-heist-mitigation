@@ -156,9 +156,6 @@ Across all academic documentation files, regulatory penalty exposure and capital
 ---
 
 <div align="center">
----
-
-<div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=120&section=footer" width="100%"/>
 
 <strong>End-to-End Academic & Engineering Excellence</strong><br/>
