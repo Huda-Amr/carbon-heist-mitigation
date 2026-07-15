@@ -4,7 +4,7 @@
 
 <br/>
 
-<a href="../Tableau/Interactive%20Dashboard.twbx"><img src="https://img.shields.io/badge/📊%20WORKBOOK-INTERACTIVE%20DASHBOARD.TWBX-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau Workbook"/></a>&nbsp;
+<a href="https://public.tableau.com/app/profile/ahmed.adel.amin/viz/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard/DecarbonizationRoadmap"><img src="https://img.shields.io/badge/📊%20LIVE%20PORTAL-TABLEAU%20PUBLIC-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Live Tableau Public Portal"/></a>&nbsp;
 <a href="https://www.tableau.com/products/desktop"><img src="https://img.shields.io/badge/ENGINE-TABLEAU%20DESKTOP%202026%2B-1A1A2E?style=for-the-badge&logo=tableau&logoColor=FFD700" alt="Tableau Engine"/></a>&nbsp;
 <a href="../data/sample_nyc_energy.xlsx"><img src="https://img.shields.io/badge/DATASET-11%2C638%20NYC%20PROPERTIES-00FF66?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Dataset"/></a>&nbsp;
 <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20WEB%20PORTAL-OPEN%20STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit App"/></a>
@@ -105,5 +105,6 @@ The dashboard adheres to modern **C-Suite visual excellence guidelines**:
 <br/><br/>
 
 [![Return to Root Repo](https://img.shields.io/badge/🏠%20MAIN%20REPOSITORY-RETURN%20HOME-181717?style=for-the-badge&logo=github)](../README.md)&nbsp;
-[![Launch Live Web Portal](https://img.shields.io/badge/🌐%20LIVE%20APP-OPEN%20ONLINE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+[![Launch Live Tableau Portal](https://img.shields.io/badge/📊%20TABLEAU%20PUBLIC-OPEN%20LIVE%20DASHBOARD-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/ahmed.adel.amin/viz/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard/DecarbonizationRoadmap)&nbsp;
+[![Launch Live Web Portal](https://img.shields.io/badge/🌐%20STREAMLIT%20APP-OPEN%20ONLINE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 </div>
