@@ -8,7 +8,7 @@
 [![Next Document](https://img.shields.io/badge/Next-Doc_04:_Implementation-00E5FF?style=for-the-badge)](./04_Implementation_and_Coding_Standards.md)
 <br/>
 [![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)&nbsp;
-[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20Flash%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 
 </div>
 
@@ -94,6 +94,13 @@ graph TD
         APP --> LOCAL[Local Quantitative & Interactive Chart Engine]
         GEMINI --> CHAT[Interactive Executive C-Suite Chatbot]
         LOCAL --> CHAT
+    end
+
+    subgraph L6 [Layer 6: Visual BI Presentation Layer]
+        CLEAN --> PBI[Power BI Dashboard .pbix]
+        CLEAN --> TAB[Tableau Dashboard .twbx]
+        PBI --> BOARD[C-Suite Boardroom Presentations]
+        TAB --> BOARD
     end
 ```
 

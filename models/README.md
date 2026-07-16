@@ -28,7 +28,7 @@ The **Predictive Artificial Intelligence & Machine Learning Layer (`models/`)** 
 
 ```mermaid
 flowchart LR
-    IN["📊 Clean NYC Data\n11,622 Buildings"]:::input --> FE["🛠️ Feature Engineering & Guardrails\nSite EUI < 2000 & Categorical Encoders"]:::proc
+    IN["📊 Clean NYC Data\n11,638 Buildings"]:::input --> FE["🛠️ Feature Engineering & Guardrails\nSite EUI < 2000 & Categorical Encoders"]:::proc
     FE --> RF["🤖 Random Forest Regressor\n150 Decision Trees, Max Depth 20"]:::ml
     RF --> EVAL["✅ Validation Accuracy\nR² = 81.65% | MAE = 212.99 MT CO₂e"]:::eval
     EVAL --> OUT1["💾 ll97_model.joblib"]:::art
@@ -75,7 +75,6 @@ python ll97_playground.py
 | 📈 **Tableau BI Portal** | **`Tableau/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.83B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
 | 🌐 **Live Web Application** | **`application/app.py`** | 5-Tab Streamlit & Plotly interactive dashboard powered by dual-engine AI (`Google Gemini 2.5 + Local Engine`). | [📖 Streamlit Docs](../application/README.md) |
 | 📑 **Financial Engineering** | **`Excel Project/Co2 Project.xlsx`** | 16-sheet domain reference workbook featuring comprehensive CAPEX payback modeling and WET system thermodynamics. | [📖 Excel Docs](../Excel%20Project/README.md) |
-| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,638 properties. | [📖 ML Docs](../models/README.md) |
 | 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |
 | 📚 **Academic Suite** | **`Project Documentations/`** | Official 6-part academic deliverables (`Doc 01 - Doc 06`) and comprehensive Word report (`.docx`). | [📖 Academic Suite](../Project%20Documentations/README.md) |
 

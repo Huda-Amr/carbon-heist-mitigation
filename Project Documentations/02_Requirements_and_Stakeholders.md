@@ -8,7 +8,7 @@
 [![Next Document](https://img.shields.io/badge/Next-Doc_03:_Architecture-00E5FF?style=for-the-badge)](./03_System_Analysis_and_Design.md)
 <br/>
 [![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)&nbsp;
-[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20Flash%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 
 </div>
 
@@ -30,7 +30,7 @@
     <td align="center" width="33%">
       <br/>
       ⚙️ <strong>Functional Specs</strong><br/>
-      <h2 style="color: #00E5FF;">FR-01 to FR-06</h2>
+      <h2 style="color: #00E5FF;">FR-01 to FR-08</h2>
       <em>Ingestion, ML, Fine Engine, UI</em>
       <br/><br/>
     </td>
@@ -113,10 +113,9 @@ flowchart LR
 - **FR-05 (Interactive Visualization Dashboard):** The system shall render interactive KPI cards, peer comparison charts, and engineering playbook recommendations via Streamlit and Plotly across 5 specialized analytical tabs.
 - **FR-06 (Relational Persistence Integration):** The system shall define standard SQL DDL structures (`carbon_heist_schema_mysql.sql` & `carbon_heist_schema_mssql.sql`) capable of storing normalized physical property dimensions, annual metering facts, and compliance alerts.
 - **FR-07 (Dual-Engine Conversational AI & Dynamic Charting):** The system shall provide a dedicated 5th analytical tab (`Tab 5: AI Executive Co-Pilot & Chatbot`) integrating Google Gemini (`gemini-2.5-flash`) and a local offline quantitative fallback engine. The engine shall parse natural-language queries in English or Arabic, compute exact portfolio aggregation totals from `sample_nyc_energy.xlsx`, and dynamically generate interactive Plotly visualizations (`Bar`, `Pie`, `Line`, and `Scatter` charts) directly inside the conversation flow.
+- **FR-08 (Visual BI Presentation Layer):** The system shall provide standalone packaged **Power BI Desktop** (`NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`) and **Tableau Desktop** (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`) workbooks featuring multi-dimensional borough slicers, DAX/Calculated KPI command bars, and step-by-step decarbonization engineering infographics for C-Suite boardroom presentations.
 
 ---
-
-| **FR-08** | **Visual BI Presentation Layer** | The system shall provide standalone packaged **Power BI Desktop** (`NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`) and **Tableau Desktop** (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`) workbooks featuring multi-dimensional borough slicers, DAX/Calculated KPI command bars, and step-by-step decarbonization engineering infographics for C-Suite boardroom presentations. | High |
 
 ## 2.5 Non-Functional Requirements (NFR)
 

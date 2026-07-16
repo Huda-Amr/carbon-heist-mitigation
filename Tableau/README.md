@@ -6,7 +6,7 @@
 
 <a href="../PowerBI/README.md"><img src="https://img.shields.io/badge/📊%20POWER%20BI-PBIX%20DASHBOARD-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI Portal"/></a>&nbsp;
 <a href="https://public.tableau.com/app/profile/ahmed.adel.amin/viz/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard/DecarbonizationRoadmap"><img src="https://img.shields.io/badge/📊%20LIVE%20PORTAL-TABLEAU%20PUBLIC-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Live Tableau Public Portal"/></a>&nbsp;
-<a href="https://www.tableau.com/products/desktop"><img src="https://img.shields.io/badge/ENGINE-TABLEAU%20DESKTOP%202026%2B-1A1A2E?style=for-the-badge&logo=tableau&logoColor=FFD700" alt="Tableau Engine"/></a>&nbsp;
+<a href="https://www.tableau.com/products/desktop"><img src="https://img.shields.io/badge/ENGINE-TABLEAU%20DESKTOP%202024%2B-1A1A2E?style=for-the-badge&logo=tableau&logoColor=FFD700" alt="Tableau Engine"/></a>&nbsp;
 <a href="../data/sample_nyc_energy.xlsx"><img src="https://img.shields.io/badge/DATASET-11%2C638%20NYC%20PROPERTIES-00FF66?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Dataset"/></a>&nbsp;
 <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20LIVE%20WEB%20PORTAL-OPEN%20STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit App"/></a>
 
@@ -85,7 +85,7 @@ The dashboard adheres to modern **C-Suite visual excellence guidelines**:
 ## 🚀 How to Open & Explore Locally
 
 ### 1. Requirements
-- **Tableau Desktop** (Version 2022.3 or newer recommended) OR **Tableau Reader** (Free viewing software).
+- **Tableau Desktop** (Version 2024+ recommended) OR **Tableau Reader** (Free viewing software).
 
 ### 2. Launching the Workbook
 1. Navigate to the `Tableau/` directory:
@@ -94,6 +94,21 @@ The dashboard adheres to modern **C-Suite visual excellence guidelines**:
    ```
 2. Double-click **`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`**. Because it is a Packaged Workbook (`.twbx`), the audited data extract (`sample_nyc_energy.csv`) is bundled directly inside—no external database setup or connection reconfiguration is required.
 3. Use the bottom navigation tabs (`NYC Energy Efficiency...`, `LL97 Compliance...`, and `Decarbonization Roadmap`) or the built-in Red navigation arrows (`⬅ ➡`) to cycle through the executive story.
+
+---
+
+## 🔗 Explore Other Core Layers of the Project Suite
+
+| Layer | Directory / Deliverable | Strategic Role & Highlights | Documentation Link |
+| :---: | :--- | :--- | :---: |
+| 📊 **Power BI Portal** | **`PowerBI/NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`** | 3-Page Executive C-Suite BI Portal (`Factors` ➔ `Asset Granularity` ➔ `Decarbonization Waterfall`) with custom DAX & `$640.9M` fine savings. | [📖 Power BI Docs](../PowerBI/README.md) |
+| 🌐 **Live Web Application** | **`application/app.py`** | 5-Tab Streamlit & Plotly interactive dashboard powered by dual-engine AI (`Google Gemini 2.5 + Local Engine`). | [📖 Streamlit Docs](../application/README.md) |
+| 📑 **Financial Engineering** | **`Excel Project/Co2 Project.xlsx`** | 16-sheet domain reference workbook featuring comprehensive CAPEX payback modeling and WET system thermodynamics. | [📖 Excel Docs](../Excel%20Project/README.md) |
+| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,638 properties. | [📖 ML Docs](../models/README.md) |
+| 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |
+| 📁 **Data Engineering** | **`data/`** | 8-Step Automated Cleaning Pipeline. | [📖 Data Docs](../data/README.md) |
+| 📚 **Academic Suite** | **`Project Documentations/`** | Official 6-part academic deliverables (`Doc 01 - Doc 06`) and comprehensive Word report (`.docx`). | [📖 Academic Suite](../Project%20Documentations/README.md) |
+
 
 ---
 

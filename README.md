@@ -116,9 +116,9 @@ flowchart TD
     B --> C["🗄️ STAGE 4: Relational Persistence\nNormalized 3NF Schemas (MySQL & MSSQL)"]:::stage
     C --> D["🤖 STAGE 5: Predictive AI Engine\nRandom Forest Regressor (R² = 81.65%, MAE = 212.99 MT)"]:::stage
     EX --> E["🗺️ STAGE 6: Prescriptive Capital Roadmap\n5-Phase Self-Funding Decarbonization Pipeline"]:::stage
-    B --> BI["📊 STAGE 8: Visual Business Intelligence Portals\nPower BI (.pbix) & Tableau (.twbx) 3-Page Dashboards"]:::excel
+    B --> BI["📊 STAGE 7: Visual Business Intelligence Portals\nPower BI (.pbix) & Tableau (.twbx) 3-Page Dashboards"]:::excel
     D --> E
-    E --> F["🖥️ STAGE 7: Full-Stack Web Application\n5-Tab Streamlit Dashboard + Dual-Engine AI Chatbot"]:::output
+    E --> F["🖥️ STAGE 8: Full-Stack Web Application\n5-Tab Streamlit Dashboard + Dual-Engine AI Chatbot"]:::output
 
     classDef stage fill:#161B22,stroke:#30363D,stroke-width:2px,color:#C9D1D9,font-size:14px
     classDef clean fill:#0D1117,stroke:#00E5FF,stroke-width:2px,color:#00E5FF,font-size:14px
@@ -304,7 +304,7 @@ Launch the fully deployed **Streamlit C-Suite Interactive Dashboard** directly i
 
 ### 💻 Option B: Local Installation & Execution
 
-#### 1. Clone & Setup Environment
+### 1. Clone & Setup Environment
 ```bash
 git clone https://github.com/ahmedadelamin/carbon-heist-mitigation.git
 cd carbon-heist-mitigation

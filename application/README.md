@@ -52,6 +52,8 @@ flowchart LR
     classDef tab fill:#0d1526,stroke:#00F59B,stroke-width:2px,color:#e2e8f0
 ```
 
+---
+
 ## 💬 Live AI Executive Chatbot & Dual-Engine Interactive Visualization
 
 The application header features an integrated **Executive C-Suite AI Co-Pilot & Chatbot** trained on our complete 11,638-property forensic dataset:
@@ -172,7 +174,6 @@ streamlit run app.py
 | :---: | :--- | :--- | :---: |
 | 📊 **Power BI Portal** | **`PowerBI/NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`** | 3-Page Executive C-Suite BI Portal (`Factors` ➔ `Asset Granularity` ➔ `Decarbonization Waterfall`) with custom DAX & `$640.9M` fine savings. | [📖 Power BI Docs](../PowerBI/README.md) |
 | 📈 **Tableau BI Portal** | **`Tableau/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.83B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
-| 🌐 **Live Web Application** | **`application/app.py`** | 5-Tab Streamlit & Plotly interactive dashboard powered by dual-engine AI (`Google Gemini 2.5 + Local Engine`). | [📖 Streamlit Docs](../application/README.md) |
 | 📑 **Financial Engineering** | **`Excel Project/Co2 Project.xlsx`** | 16-sheet domain reference workbook featuring comprehensive CAPEX payback modeling and WET system thermodynamics. | [📖 Excel Docs](../Excel%20Project/README.md) |
 | 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,638 properties. | [📖 ML Docs](../models/README.md) |
 | 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |

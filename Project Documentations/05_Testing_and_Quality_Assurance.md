@@ -8,7 +8,7 @@
 [![Next Document](https://img.shields.io/badge/Next-Doc_06:_User_Manual-00E5FF?style=for-the-badge)](./06_User_Manual_and_Deployment.md)
 <br/>
 [![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)&nbsp;
-[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20Flash%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 
 </div>
 
@@ -24,7 +24,7 @@
       <br/>
       🧪 <strong>Test Coverage</strong><br/>
       <h2 style="color: #00FF66;">100% Pass</h2>
-      <em>7 End-to-End Test Cases</em>
+      <em>9 End-to-End Test Cases</em>
       <br/><br/>
     </td>
     <td align="center" width="33%">
@@ -113,7 +113,7 @@ assert not df["Total GHG Emissions (Metric Tons CO2e)"].isna().any(), (
 | :---: | :---: | :--- | :--- | :--- |
 | **BUG&#8209;01** | 2026&#8209;06&#8209;30 | Playground accuracy dropped to **63.8%** compared to **81.65%** in main model script. | `ll97_playground.py` had an outdated filter (`Site EUI < 1500`) that truncated extreme variance compared to `train_ll97_model.py`. | Synchronized data cleaning filters across both files (`Site EUI < 2000`); playground accuracy restored to **81.65%**. |
 | **BUG&#8209;02** | 2026&#8209;06&#8209;30 | Python terminal reported `SyntaxWarning: "\d" is an invalid escape sequence` on path load. | Windows relative file path `..\data\sample_nyc_energy.xlsx` was interpreted by Python regex tokenizer as escape sequence `\d`. | Standardized relative file paths to POSIX forward slashes (`../data/sample_nyc_energy.xlsx`) across all scripts. |
-| **BUG&#8209;03** | 2026&#8209;07&#8209;02 | Microsoft SQL Server rejected DDL file with syntax error near `ON DELETE RESTRICT`. | Microsoft SQL Server (T-SQL) does not support standard ANSI `ON DELETE RESTRICT` syntax. | Created dedicated Microsoft SQL Server schema (`carbon_heist_schema_mssql.sql`) replacing `RESTRICT` with `ON DELETE NO ACTION`. |(`carbon_heist_schema_mssql.sql`) replacing `RESTRICT` with `ON DELETE NO ACTION`. |
+| **BUG&#8209;03** | 2026&#8209;07&#8209;02 | Microsoft SQL Server rejected DDL file with syntax error near `ON DELETE RESTRICT`. | Microsoft SQL Server (T-SQL) does not support standard ANSI `ON DELETE RESTRICT` syntax. | Created dedicated Microsoft SQL Server schema (`carbon_heist_schema_mssql.sql`) replacing `RESTRICT` with `ON DELETE NO ACTION`. |
 
 ---
 

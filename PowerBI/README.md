@@ -5,7 +5,7 @@
 <br/>
 
 <a href="../PowerBI/NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix"><img src="https://img.shields.io/badge/📊%20WORKBOOK-POWER_BI_DASHBOARD.PBIX-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI Workbook"/></a>&nbsp;
-<a href="https://powerbi.microsoft.com/desktop/"><img src="https://img.shields.io/badge/ENGINE-POWER%20BI%20DESKTOP%202026%2B-0F172A?style=for-the-badge&logo=powerbi&logoColor=F2C811" alt="Power BI Engine"/></a>&nbsp;
+<a href="https://powerbi.microsoft.com/desktop/"><img src="https://img.shields.io/badge/ENGINE-POWER%20BI%20DESKTOP%202024%2B-0F172A?style=for-the-badge&logo=powerbi&logoColor=F2C811" alt="Power BI Engine"/></a>&nbsp;
 <a href="../data/sample_nyc_energy.xlsx"><img src="https://img.shields.io/badge/DATASET-11%2C638%20NYC%20PROPERTIES-00FF66?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Dataset"/></a>&nbsp;
 <a href="https://public.tableau.com/app/profile/ahmed.adel.amin/viz/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard/DecarbonizationRoadmap"><img src="https://img.shields.io/badge/📊%20TABLEAU%20PORTAL-LIVE%20ONLINE-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Live Tableau Portal"/></a>&nbsp;
 <a href="https://carbon-heist-mitigation.streamlit.app/"><img src="https://img.shields.io/badge/🌐%20STREAMLIT%20PORTAL-OPEN%20ONLINE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit App"/></a>
@@ -104,10 +104,25 @@ The Power BI dashboard enforces modern **C-Suite visual excellence and UI/UX bes
 
 To open and present the standalone visual BI dashboard locally during executive or engineering reviews:
 
-1. **Prerequisites:** Ensure you have **Microsoft Power BI Desktop** installed (Windows 10/11 x64, version 2023+ recommended). Download free from [Microsoft Power BI Desktop Store](https://powerbi.microsoft.com/desktop/).
+1. **Prerequisites:** Ensure you have **Microsoft Power BI Desktop** installed (Windows 10/11 x64, version 2024+ recommended). Download free from [Microsoft Power BI Desktop Store](https://powerbi.microsoft.com/desktop/).
 2. **Launch Workbook:** Navigate to the `carbon-heist-mitigation/PowerBI/` folder and double-click `NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`.
 3. **Explore Pages:** Use the bottom page tabs in Power BI (`Factors Affecting Greenhouse Gas Emissions`, `Factors Affecting Greenhouse Gas Emissions` - Tab 2, and `Carbon Cost & Savings Analysis`) to navigate through the executive story.
 4. **Interactive Filtering:** Click any dropdown in the left-hand **Slicers Pane** (`Borough`, `Property Type`, `Decade Built`) or click directly on any bar chart / treemap sector to cross-filter the entire dashboard dynamically.
+
+---
+
+## 🔗 Explore Other Core Layers of the Project Suite
+
+| Layer | Directory / Deliverable | Strategic Role & Highlights | Documentation Link |
+| :---: | :--- | :--- | :---: |
+| 📈 **Tableau BI Portal** | **`Tableau/NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`** | 3-Page Executive C-Suite BI Portal with macro choropleth maps, fine liability breakdowns (`$2.83B`), and mobile C-Suite QR bridging. | [📖 Tableau Docs](../Tableau/README.md) |
+| 🌐 **Live Web Application** | **`application/app.py`** | 5-Tab Streamlit & Plotly interactive dashboard powered by dual-engine AI (`Google Gemini 2.5 + Local Engine`). | [📖 Streamlit Docs](../application/README.md) |
+| 📑 **Financial Engineering** | **`Excel Project/Co2 Project.xlsx`** | 16-sheet domain reference workbook featuring comprehensive CAPEX payback modeling and WET system thermodynamics. | [📖 Excel Docs](../Excel%20Project/README.md) |
+| 🤖 **Predictive AI Engine** | **`models/ll97_model.joblib`** | Random Forest Regressor (`R² = 81.65%`) predicting statutory fine liabilities across 11,638 properties. | [📖 ML Docs](../models/README.md) |
+| 🗄️ **Relational Database** | **`database/`** | Normalized 3NF SQL schemas (`MySQL & MSSQL`) and Chen ER diagram enforcing data integrity. | [📖 Database Docs](../database/README.md) |
+| 📁 **Data Engineering** | **`data/`** | 8-Step Automated Cleaning Pipeline. | [📖 Data Docs](../data/README.md) |
+| 📚 **Academic Suite** | **`Project Documentations/`** | Official 6-part academic deliverables (`Doc 01 - Doc 06`) and comprehensive Word report (`.docx`). | [📖 Academic Suite](../Project%20Documentations/README.md) |
+
 
 ---
 

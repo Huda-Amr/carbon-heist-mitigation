@@ -7,7 +7,7 @@
 [![Next Document](https://img.shields.io/badge/Next-Doc_02:_Requirements-00E5FF?style=for-the-badge)](./02_Requirements_and_Stakeholders.md)
 <br/>
 [![Live Streamlit App](https://img.shields.io/badge/🌐%20LIVE_APP-LAUNCH_STREAMLIT-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)&nbsp;
-[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
+[![AI Chatbot](https://img.shields.io/badge/AI%20Chatbot-Google%20Gemini%202.5%20Flash%20%2B%20Local-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://carbon-heist-mitigation.streamlit.app/)
 
 </div>
 
@@ -63,8 +63,8 @@ The **Carbon Heist Mitigation Platform** is an end-to-end data engineering, mach
 
 
 ### 1.1.2 Core Platform Objectives
-- **Power BI Executive BI Portal (`NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`):** A standalone 3-page interactive dashboard (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) featuring Dark Royal Navy styling (`#0F172A`), custom DAX measures, and synchronized slicers for `Borough`, `Property Type`, and `Decade Built`.
-- **Tableau Executive BI Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`):** A 3-page progressive visual analytics dashboard with a Royal Navy & Gold aesthetic (`#0D1321` / `#FFD700`) and an embedded mobile-scannable QR code bridge to the live online Tableau C-Suite Portal.
+5. **Power BI Executive BI Portal (`NYC_Carbon_Heist_Mitigation_PowerBI_Dashboard.pbix`):** A standalone 3-page interactive dashboard (`Factors Affecting GHG Emissions` ➔ `Asset Granularity & Construction Era` ➔ `Carbon Cost & Savings Analysis Waterfall`) featuring Dark Royal Navy styling (`#0F172A`), custom DAX measures, and synchronized slicers for `Borough`, `Property Type`, and `Decade Built`.
+6. **Tableau Executive BI Portal (`NYC_Carbon_Heist_Mitigation_Tableau_Dashboard.twbx`):** A 3-page progressive visual analytics dashboard with a Royal Navy & Gold aesthetic (`#0D1321` / `#FFD700`) and an embedded mobile-scannable QR code bridge to the live online Tableau C-Suite Portal.
 
 
 1. **Automated Municipal Data Hygiene & ETL Pipeline:** Build a resilient data engineering pipeline (`Clean_Data_Pipeline.py`) capable of ingesting raw NYC LL84 annual benchmarking datasets (11,000+ properties across 240+ variables), standardizing addresses, imputing missing data, filtering statistical outliers (`Site EUI < 2000`), and generating forensic audit reports (`LL97_Data_Cleaning_Report.pdf`).
