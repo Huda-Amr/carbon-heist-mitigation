@@ -54,8 +54,8 @@ Provides granular drilling into specific high-liability buildings, construction 
 - **GHG Emissions by Borough (Treemap):** Proportional spatial treemap illustrating exact regional contribution:
   - **Manhattan:** `5.40M tCO₂e` (`~51.1%` of citywide footprint — Bright Cyan `#0EA5E9`).
   - **Brooklyn:** `1.75M tCO₂e` (`~16.6%` — Deep Navy `#1E3A8A`).
-  - **Queens:** `1.50M tCO₂e` (`~14.2%` — Maroon/Red `#BE123C`).
-  - **Bronx:** `1.20M tCO₂e` (`~11.4%` — Orange `#EA580C`).
+  - **Bronx:** `1.54M tCO₂e` (`~14.6%` — Orange `#EA580C`).
+  - **Queens:** `1.43M tCO₂e` (`~13.5%` — Maroon/Red `#BE123C`).
   - **Staten Island:** `0.71M tCO₂e` (`~6.7%` — Rose `#F43F5E`).
 - **Total Emissions by Property Name:** Individual asset ranking isolating the top municipal liabilities, led by **`Co-Op City`** (`~150K tCO₂e/yr`), **`Pratt S.I. Campus - Total`** (`~135K tCO₂e/yr`), **`Spring Creek Towers`** (`~100K tCO₂e/yr`), and major medical centers (`NYP Columbia`, `NYP Cornell`).
 
